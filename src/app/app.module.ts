@@ -26,9 +26,38 @@ import { MenubuttonComponent } from './components/menubutton/menubutton.componen
 import { PlayerComponent } from './components/player/player.component';
 import { MessageComponent } from './components/message/message.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, OverviewComponent, ResourcesComponent, BuildingsComponent, ResearchComponent, FleetComponent, AlliancesComponent, LoginComponent, RegisterComponent, AccountComponent, RankingComponent, AdminComponent, DefenseComponent, MapComponent, MenubuttonComponent, PlayerComponent, MessageComponent, PopupComponent],
+  declarations: [
+    AppComponent,
+    DemoPageComponent,
+    DemoComponent,
+    DemoPipe,
+    DemoDirective,
+    OverviewComponent,
+    ResourcesComponent,
+    BuildingsComponent,
+    ResearchComponent,
+    FleetComponent,
+    AlliancesComponent,
+    LoginComponent,
+    RegisterComponent,
+    AccountComponent,
+    RankingComponent,
+    AdminComponent,
+    DefenseComponent,
+    MapComponent,
+    MenubuttonComponent,
+    PlayerComponent,
+    MessageComponent,
+    PopupComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
