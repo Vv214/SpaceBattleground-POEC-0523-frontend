@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { DemoPageComponent } from './pages/demo/demo.component';
 import { ResearchComponent } from './components/research/research.component';
+import { MessageComponent } from './components/message/message.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,7 +26,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'messages', component: MessageComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'ranking', component: RankingComponent },
 ];
 

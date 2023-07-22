@@ -1,14 +1,22 @@
 <div id="navbar"> 
-    <p class="navButton">Fer : 200</p>
-    <p class="navButton">Hydrogène : 200</p>
-    <p class="navButton">Diamant : 200</p>
+    <div class="resources">
+        <p class="navButton">Fer</p>
+        <p class="navButton">Hydrogène</p>
+        <p class="navButton">Diamant</p>
+        <p class="navButton">Energie</p>
+    </div>
+
+    <div class="center">
+        <p class="navButton">Nom planète + position</p>
+        <p class="navButton">Heure serveur</p>
+    </div>
+
     
-    <p class="navButton">Nom planète + position</p>
-    <p class="navButton">Heure serveur</p>
-    
-    
-    <p class="navButton">Alertes</p>
-    <button class="navButton">Messages</button>
-    <button class="navButton">Compte</button>
+    <div class="account">
+        <p class="navButton">Alertes</p>
+        <button class="navButton" (click)="toMessages()">Messages</button>
+        <button class="navButton" (click)="toAccount()">Compte</button>
+    </div>
+
     
     </div>
