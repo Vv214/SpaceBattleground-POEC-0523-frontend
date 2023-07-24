@@ -1,1 +1,36 @@
-<p>register works!</p>
+<div id="login" class="login">
+    <img class="center" src="assets/images/WildLogo.png" />
+
+    <h2 class="center">Connexion</h2>
+  
+    <form class="center">
+
+          <div >
+            <label for="email-login"></label>
+            <input name="email-login" type="email"  placeholder="Adresse Mail">
+          </div>
+
+    
+        <div>
+            <label for="password-login"></label>
+            <input name="password-login" type="password"  placeholder="Mot de passe">
+        </div>
+                <div>
+            <label for="password-login"></label>
+            <input name="password-login" type="password"  placeholder="Confirmer mot de passe">
+        </div>
+        <div class="center">
+            <!-- <button type="submit">Connexion</button> -->
+            <button (click)="onSubmit()">Créer un compte</button>
+        </div>
+      </form>
+    
+
+
+      <h2 class="center">Déja un compte ?</h2>
+
+      <div class="center">
+              <button (click)="login()">Connexion</button>
+      </div>
+    
+  </div>

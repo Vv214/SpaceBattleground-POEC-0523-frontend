@@ -1,4 +1,55 @@
-<h1>Flotte</h1>
+<h1 class="title">Flotte</h1>
+
+<div class="bg-container" id="fleet">
+
+<div class="orbit">
+    <h2 class="title">Flottes en orbite</h2>
+
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 1</p>
+        <p class="capacity">Capacité : 50/50</p>
+        <!-- <button mat-button class="modify" (click)="modify()" >Modifier</button> -->
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 2</p>
+        <p class="capacity">Capacité : 50/50</p>
+        <!-- <button mat-button class="modify" (click)="modify()" >Modifier</button> -->
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 3</p>
+        <p class="capacity">Capacité : 50/50</p>
+        <!-- <button mat-button class="modify" (click)="modify()" >Modifier</button> -->
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 4</p>
+        <p class="capacity">Capacité : 50/50</p>
+        <!-- <button mat-button class="modify" (click)="modifyFleet()" >Modifier</button> -->
+    </div>
+
+</div>
+
+<div class="stock">
+    <h2 class="title">Vaisseaux disponibles</h2>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+        <p class="shipNumber">Disponibles : 50</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/mediumShip.png"/>
+        <p class="shipName">Chasseur moyen</p>
+        <p class="shipNumber">Disponibles : 40</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/heavyShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+</div>
+
+
+</div>
+<!-- 
 <p>Vaisseaux disponibles : 200</p>
 
 <div>Liste flottes</div>
@@ -9,4 +60,45 @@
 <p>Choix flottes à envoyer</p>
 <p>Choix cible à attaquer</p>
 
-<button>Attaquer</button>
+<button>Attaquer</button> -->
+
+
+<!-- 
+<div class="bg-container">
+
+    <h1 class="title">Ressources</h1>
+    <div id="resources">
+    
+        <div class="building">
+            <img class="picture" src="assets/images/mineDiamant.png"/>
+            <p class="name">Mine de fer</p>
+            <p class="level">Niveau</p>
+            <button mat-button class="upgrade" (click)="openUpgrade()" >Améliorer</button>
+        </div>
+        
+        
+        <div class="building">
+            <img class="picture" src="assets/images/mineGaz.png" />
+            <p class="name">Mine d'hydrogène</p>
+            <p class="level">Niveau</p>
+            <button mat-button class="upgrade" >Améliorer</button>
+        </div>
+        
+        <div class="building">
+            <img class="picture" src="assets/images/mineDiamant.png"/>
+            <p class="name">Mine de diamant</p>
+            <p class="level">Niveau</p>
+            <button mat-button class="upgrade" >Améliorer</button>
+        </div>
+        
+        <div class="building">
+            <img class="picture" src="assets/images/centrale.png"/>
+            <p class="name">Centrale électrique</p>
+            <p class="level">Niveau</p>
+            <button mat-button class="upgrade" >Améliorer</button>
+        </div>
+    </div>
+</div>
+
+
+ -->

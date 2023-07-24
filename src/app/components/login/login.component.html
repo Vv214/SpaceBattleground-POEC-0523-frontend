@@ -1,1 +1,99 @@
-<p>login works!</p>
+<!-- <div id="login" class="login">
+
+    <h2>Se connecter</h2>
+  
+    <form (ngSubmit)="loginForm.valid && onSubmit() " [formGroup]="loginForm" #myForm="ngForm">
+        <div >
+          <div >
+            <label for="email-login"></label>
+            <input name="email-login" type="email" formControlName="email" placeholder="Adresse Mail">
+          </div>
+          <div *ngIf="loginForm.get('email')?.errors && myForm.submitted" class="error">
+            <div *ngIf="loginForm.get('email')?.errors?.['required']">L'adresse mail est requise</div>
+          </div>
+    
+    <div>
+            <label for="password-login"></label>
+            <input name="password-login" type="password" formControlName="password" placeholder="Mot de passe">
+        </div>
+          <div *ngIf="loginForm.get('password')?.errors && myForm.submitted" class="error">
+            <div *ngIf="loginForm.get('password')?.errors?.['required']">Le mot de passe est requis</div>
+          </div>
+    
+        </div>
+        <div><button>Connexion</button></div>
+      </form>
+    
+    
+      <h2>Pas de compte ?</h2>
+      <div>
+              <button><a routerLink="/register">Créer un compte</a></button>
+      </div>
+    
+  </div>
+   -->
+   
+
+<!-- 
+<div class="login">
+    <img class="center" src="assets/images/WildLogo.png" />
+    <div class="form center">
+        <div class="center">
+            <label for="email-login"></label>
+            <input name="email-login" type="email" formControlName="email" placeholder="Adresse Mail">
+          </div>
+        
+          <div class="center">
+            <label for="password-login"></label>
+            <input name="password-login" type="password" formControlName="password" placeholder="Mot de passe">
+        </div>
+
+    </div>
+    <div><button>Connexion</button></div>
+  </form>
+
+
+  <h2>Pas de compte ?</h2>
+  <div>
+          <button><a routerLink="/register">Créer un compte</a></button>
+  </div>
+
+
+    </div>
+
+</div> -->
+
+
+<div id="login" class="login">
+    <img class="center" src="assets/images/WildLogo.png" />
+
+    <h2 class="center">Connexion</h2>
+  
+    <form class="center">
+
+          <div >
+            <label for="email-login"></label>
+            <input name="email-login" type="email"  placeholder="Adresse Mail">
+          </div>
+
+    
+        <div>
+            <label for="password-login"></label>
+            <input name="password-login" type="password"  placeholder="Mot de passe">
+        </div>
+        <div class="center">
+            <!-- <button type="submit">Connexion</button> -->
+            <button (click)="onSubmit()">Connexion</button>
+        </div>
+      </form>
+    
+
+
+      <h2 class="center">Pas de compte ?</h2>
+
+      <div class="center">
+              <button (click)="register()">Créer un compte</button>
+      </div>
+    
+  </div>
+  

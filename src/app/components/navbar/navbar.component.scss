@@ -1,0 +1,34 @@
+#navbar {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+    // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
+    // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
+}
+
+.navButton {
+    margin-right: 15px;
+}
+
+.resources {
+    display: flex;
+}
+
+.center {
+    display: flex;
+
+}
+
+.account {
+    display: flex;
+
+}
+
+button{
+    background:var(--light-color);
+    border:.1rem solid var(--light-color);
+    color:var(--body-color) !important;
+    cursor: pointer;
+
+}

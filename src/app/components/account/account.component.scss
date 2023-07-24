@@ -1,0 +1,21 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background:var(--light-color);
+    border:.1rem solid var(--light-color);
+    color:var(--body-color) !important;
+    margin: 10px;
+}
