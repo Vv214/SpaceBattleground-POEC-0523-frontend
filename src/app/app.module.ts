@@ -30,6 +30,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,7 @@ import { FooterComponent } from './components/footer/footer.component';
     buildingBuild,
     buildingDetail,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
