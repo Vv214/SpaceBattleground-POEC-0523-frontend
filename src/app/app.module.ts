@@ -7,14 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DemoPageComponent } from './pages/demo/demo.component';
-import { DemoComponent } from './components/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
 import { DemoDirective } from './directives/demo.directive';
 import { OverviewComponent } from './components/overview/overview.component';
 import { ResourcesComponent, Upgrade } from './components/resources/resources.component';
-import { BuildingsComponent } from './components/buildings/buildings.component';
-import { ResearchComponent } from './components/research/research.component';
+import { buildingBuild, buildingDetail, BuildingsComponent } from './components/buildings/buildings.component';
+import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
 import { FleetComponent, modifyFleet, shipDetail } from './components/fleet/fleet.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { LoginComponent } from './components/login/login.component';
@@ -35,8 +33,6 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DemoPageComponent,
-    DemoComponent,
     DemoPipe,
     DemoDirective,
     OverviewComponent,
@@ -62,6 +58,10 @@ import { FooterComponent } from './components/footer/footer.component';
     Upgrade,
     modifyFleet,
     shipDetail,
+    TechnologyTree,
+    researchDetail,
+    buildingBuild,
+    buildingDetail,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule],
   providers: [],

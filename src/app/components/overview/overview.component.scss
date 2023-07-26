@@ -1,5 +1,68 @@
-// .bg-container { 
-//     background: url("/assets/images/overviewBackground.jpg") no-repeat center center fixed; 
-//     background-size: cover;
-//     height: 900px;
-//   }
+.bg-container { 
+margin: auto;
+  }
+
+img {
+    display: flex;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+}
+
+.buildingList{
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 10px;
+    padding: 3px;
+}
+
+.shipList{
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 10px;
+    padding: 3px;
+}
+
+.researchList{
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 10px;
+    padding: 3px;
+}
+
+.fleetList{
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 10px;
+    padding: 3px;
+}
+
+.resource{
+    background-color: rgba(0, 44, 73, 0.8);
+margin: 10px;
+}
+
+.resources{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+
+
+
+
+
+@media (min-width:1000px){
+    .bg-container { 
+        background: url("/assets/images/overviewBackground.jpg") no-repeat center center fixed; 
+        background-size: cover;
+      }
+}
+
+@media (min-width:600px){
+    
+}
+
+@media (min-width:416px){
+
+}

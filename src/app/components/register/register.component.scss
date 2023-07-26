@@ -8,10 +8,9 @@
 
 img{
     margin-top: 10px;
-    // margin-bottom: 20px;
     border-radius: 15px;
     width: auto;
-    max-width: 500px;
+    max-width: 300px;
 }
 
 .center{
@@ -32,4 +31,50 @@ button{
     background:var(--light-color);
     border:.1rem solid var(--light-color);
     color:var(--body-color) !important;
+}
+
+
+@media (min-width:1000px){
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    
+    img{
+        margin-top: 10px;
+        border-radius: 15px;
+        width: auto;
+        max-width: 500px;
+    }
+    
+    .center{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .form{
+        margin-top: 10px;
+        margin: auto;
+    
+    }
+    
+    button{
+        background:var(--light-color);
+        border:.1rem solid var(--light-color);
+        color:var(--body-color) !important;
+    }
+}
+
+@media (min-width:600px){
+    
+}
+
+@media (min-width:416px){
+
 }
