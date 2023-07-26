@@ -13,6 +13,10 @@ export class AccountComponent {
     this.router.navigate(['/', 'messages']);
   }
 
+  toRanking() {
+    this.router.navigate(['/', 'ranking']);
+  }
+
   logout() {
     this.router.navigate(['/', 'home']);
   }
