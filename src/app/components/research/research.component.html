@@ -1,3 +1,30 @@
-<h1>Recherche</h1>
+
 <!-- Si pas de laboratoire, disabled -->
-<div>Liste améliorations</div>
+
+
+<div class="bg-container">
+
+    <h1 class="title">Recherche</h1>
+    <div id="resources">
+        <div class="center">
+            <button mat-button  (click)="openTechnologyTree()" >Arbre Technologique</button>
+        </div>
+    
+        <div class="research" (click)="openResearchDetail()">
+            <p class="name">Recherche Spatiale</p>
+            <p class="level">Niveau 1</p>
+        </div>
+        
+        
+        <div class="research" (click)="openResearchDetail()">
+            <p class="name">Recherche Minière</p>
+            <p class="level">Niveau 1</p>
+        </div>
+        
+        <div class="research" (click)="openResearchDetail()">
+            <p class="name">Recherche Militaire</p>
+            <p class="level">Niveau 1</p>
+        </div>
+    
+    </div>
+</div>

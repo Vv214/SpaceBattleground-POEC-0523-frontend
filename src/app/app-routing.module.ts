@@ -11,7 +11,6 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResourcesComponent } from './components/resources/resources.component';
-import { DemoPageComponent } from './pages/demo/demo.component';
 import { ResearchComponent } from './components/research/research.component';
 import { MessageComponent } from './components/message/message.component';
 

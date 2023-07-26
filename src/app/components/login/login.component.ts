@@ -9,11 +9,6 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   constructor(private router: Router) {}
 
-  // loginForm = this.fb.group({
-  //   email: ['', [Validators.required]],
-  //   password: ['', [Validators.required]],
-  // });
-
   onSubmit() {
     // check identifiants
     this.router.navigate(['/', 'overview']);

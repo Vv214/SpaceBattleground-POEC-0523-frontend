@@ -1,34 +1,200 @@
+
+
 #navbar {
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "planetInfo planetInfo"
+    "resources  account"
+    ;
+    font-size: 0.8em;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#resources {
+    grid-area: resources;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "ironInfo gazInfo"
+    "diamondInfo energyInfo"
+    ;
+}
+
+#planetInfo {
+    grid-area: planetInfo;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "planet serverTime"
+    ;
+}
+
+#account {
+    grid-area: account;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "messageButton accountButton"
+    ;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+}
+
+.ironInfo{
+    grid-area: ironInfo;
     margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    
-    // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
-    // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
 }
 
-.navButton {
-    margin-right: 15px;
+.gazInfo{
+    grid-area: gazInfo;
+    margin: 10px;
 }
 
-.resources {
-    display: flex;
+.diamondInfo{
+    grid-area: diamondInfo;
+    margin: 10px;
 }
 
-.center {
-    display: flex;
-
+.energyInfo{
+    grid-area: energyInfo;
+    margin: 10px;
 }
 
-.account {
-    display: flex;
-
+.planet{
+    grid-area: planet;
+    margin: 10px;
 }
+
+.serverTime{
+    grid-area: serverTime;
+    margin: 10px;
+}
+
+.alertInfo{
+    grid-area: alertInfo;
+    margin: 10px;
+}
+
+.messageButton{
+    grid-area: messageButton;
+    margin: 10px;
+}
+
+.accountButton{
+    grid-area: accountButton;
+    margin: 10px;
+}
+
 
 button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    cursor: pointer;
+    font-size: 0.8em;
+    margin: 5px;
+    height: 50px;
+}
+
+
+@media (min-width:1000px){
+    #navbar {
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "resources planetInfo account"
+        ;
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 1em;
+        text-align: center;
+        justify-content: space-between;
+    }
+    
+    #resources {
+        grid-area: resources;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "ironInfo gazInfo diamondInfo energyInfo"
+        ;
+    }
+    
+    #planetInfo {
+        grid-area: planetInfo;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "planet serverTime"
+        ;
+    }
+    
+    #account {
+        grid-area: account;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "alertInfo messageButton accountButton"
+        ;
+    }
+    
+    .ironInfo{
+        grid-area: ironInfo;
+    }
+    
+    .gazInfo{
+        grid-area: gazInfo;
+    }
+    
+    .diamondInfo{
+        grid-area: diamondInfo;
+    }
+    
+    .energyInfo{
+        grid-area: energyInfo;
+    }
+    
+    .planet{
+        grid-area: planet;
+    }
+    
+    .serverTime{
+        grid-area: serverTime;
+    }
+    
+    .alertInfo{
+        grid-area: alertInfo;
+    }
+    
+    .messageButton{
+        grid-area: messageButton;
+    }
+    
+    .accountButton{
+        grid-area: accountButton;
+    }
+    
+    
+    button{
+        font-size: 1em;
+    }
+}
+
+@media (min-width:600px){
+    
+}
+
+@media (min-width:416px){
 
 }
+
+

@@ -1,0 +1,233 @@
+
+
+
+ <div class="bg-container">
+    <h1 mat-dialog-title class="name">Arbre Technologique</h1>
+    <mat-dialog-content >
+    
+    <div id="technologyTreeMobile">
+
+
+    <div class="searchTitles">
+        <div class="spaceTitle">
+            <button (click)="switchToSpaceSearch()">Recherche Spatiale</button>
+        </div>
+    
+        <div class="mineTitle">
+            <button (click)="switchToMineSearch()">Recherche Minière</button>
+        </div>
+    
+        <div class="militaryTitle">
+            <button (click)="switchToMilitarySearch()">Recherche Militaire</button>
+        </div>
+    </div>
+    
+    <div *ngIf="this.spaceSearch" class="spaceSearch">
+        <div class="border1">Niveau 1</div>
+
+        <div class="level1">
+            <div class="searchBlock">Usine de vaisseaux 1</div>
+            <div class="searchBlock">Capacité de flotte 1</div>
+        </div>
+        <div class="border2">Niveau 2</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Usine de vaisseaux 2</div>
+            <div class="searchBlock">Capacité de flotte 2</div>
+        </div>
+        <div class="border3">Niveau 3</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Usine de vaisseaux 3</div>
+            <div class="searchBlock">Capacité de flotte 3</div>
+        </div>
+    </div>
+
+    <div *ngIf="this.mineSearch" class="mineSearch">
+        <div class="border1">Niveau 1</div>
+
+    <div class="level1">
+        <div class="searchBlock">Mine de fer 1</div>
+        <div class="searchBlock">Mine de gaz 1</div>
+        <div class="searchBlock">Mine de diamant 1</div>
+        <div class="searchBlock">Centrale électrique 1</div>
+    </div>
+        <div class="border2">Niveau 2</div>
+    <div class="level1">
+        <div class="searchBlock">Mine de fer 2</div>
+        <div class="searchBlock">Mine de gaz 2</div>
+        <div class="searchBlock">Mine de diamant 2</div>
+        <div class="searchBlock">Centrale électrique 2</div>
+    </div>
+        <div class="border3">Niveau 3</div>
+
+    <div class="level1">
+        <div class="searchBlock">Mine de fer 3</div>
+        <div class="searchBlock">Mine de gaz 3</div>
+        <div class="searchBlock">Mine de diamant 3</div>
+        <div class="searchBlock">Centrale électrique 3</div>
+    </div>
+
+    </div>
+
+    <div *ngIf="this.militarySearch" class="militarySearch">
+    <div class="border1">Niveau 1</div>
+
+    <div class="level1">
+        <div class="searchBlock">Tour de défense 1</div>
+        <div class="searchBlock">Armement de vaisseaux 1</div>
+        <div class="searchBlock">Coque de vaisseaux 1</div>
+    </div>
+    <div class="border2">Niveau 2</div>
+
+    <div class="level1">
+        <div class="searchBlock">Tour de défense 2</div>
+        <div class="searchBlock">Armement de vaisseaux 2</div>
+        <div class="searchBlock">Coque de vaisseaux 2</div>
+    </div>
+    <div class="border3">Niveau 3</div>
+
+    <div class="level1">
+        <div class="searchBlock">Tour de défense 3</div>
+        <div class="searchBlock">Armement de vaisseaux 3</div>
+        <div class="searchBlock">Coque de vaisseaux 3</div>
+    </div>
+    </div>
+
+    </div>
+
+    <div id="technologyTreeDeskop">
+
+
+        <div class="searchTitles">
+            <div class="spaceTitle">
+                <button (click)="switchToSpaceSearch()">Recherche Spatiale</button>
+            </div>
+        
+            <div class="mineTitle">
+                <button (click)="switchToMineSearch()">Recherche Minière</button>
+            </div>
+        
+            <div class="militaryTitle">
+                <button (click)="switchToMilitarySearch()">Recherche Militaire</button>
+            </div>
+        </div>
+        
+        <div *ngIf="this.spaceSearch" class="spaceSearch">
+    <div class="border1">Niveau 1</div>
+    
+            <div class="level1">
+                <div class="searchBlock">Usine de vaisseaux 1</div>
+                <div class="searchBlock">Capacité de flotte 1</div>
+            </div>
+    <div class="border2">Niveau 2</div>
+        
+            <div class="level1">
+                <div class="searchBlock">Usine de vaisseaux 2</div>
+                <div class="searchBlock">Capacité de flotte 2</div>
+            </div>
+    <div class="border3">Niveau 3</div>
+        
+            <div class="level1">
+                <div class="searchBlock">Usine de vaisseaux 3</div>
+                <div class="searchBlock">Capacité de flotte 3</div>
+            </div>
+        </div>
+    
+    <div *ngIf="this.mineSearch" class="mineSearch">
+    <div class="border1">Niveau 1</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Mine de fer 1</div>
+            <div class="searchBlock">Mine de gaz 1</div>
+            <div class="searchBlock">Mine de diamant 1</div>
+            <div class="searchBlock">Centrale électrique 1</div>
+        </div>
+    <div class="border2">Niveau 2</div>
+        <div class="level1">
+            <div class="searchBlock">Mine de fer 2</div>
+            <div class="searchBlock">Mine de gaz 2</div>
+            <div class="searchBlock">Mine de diamant 2</div>
+            <div class="searchBlock">Centrale électrique 2</div>
+        </div>
+        <div class="border3">Niveau 3</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Mine de fer 3</div>
+            <div class="searchBlock">Mine de gaz 3</div>
+            <div class="searchBlock">Mine de diamant 3</div>
+            <div class="searchBlock">Centrale électrique 3</div>
+        </div>
+    
+    </div>
+    
+    
+    
+    <div *ngIf="this.militarySearch" class="militarySearch">
+        <div class="border1">Niveau 1</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Tour de défense 1</div>
+            <div class="searchBlock">Armement de vaisseaux 1</div>
+            <div class="searchBlock">Coque de vaisseaux 1</div>
+        </div>
+        <div class="border2">Niveau 2</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Tour de défense 2</div>
+            <div class="searchBlock">Armement de vaisseaux 2</div>
+            <div class="searchBlock">Coque de vaisseaux 2</div>
+        </div>
+        <div class="border3">Niveau 3</div>
+    
+        <div class="level1">
+            <div class="searchBlock">Tour de défense 3</div>
+            <div class="searchBlock">Armement de vaisseaux 3</div>
+            <div class="searchBlock">Coque de vaisseaux 3</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- <div class="level1">Niveau 1</div> -->
+
+
+
+
+
+
+<!-- <div class="level2">Niveau 2</div> -->
+
+
+
+
+
+
+<!-- <div class="level3">Niveau 3</div> -->
+
+    </div>
+
+
+    </mat-dialog-content>
+<!--     
+    <mat-dialog-actions class="popupButtons">
+        <button mat-button mat-dialog-close>Retour</button>
+    
+        <button mat-button mat-dialog-close>Améliorer</button>
+    </mat-dialog-actions> -->
+</div>
