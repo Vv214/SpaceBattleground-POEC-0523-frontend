@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,20 +8,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private fb: FormBuilder) {}
 
-  // loginForm = this.fb.group({
-  //   email: ['', [Validators.required]],
-  //   password: ['', [Validators.required]],
-  // });
+  public incorectlogin: boolean = false;
+
+  loginForm = this.fb.group({
+    nickname: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
 
   onSubmit() {
     // check identifiants
-    this.router.navigate(['/', 'overview']);
+    this.login();
   }
 
-  register() {
-    // check si connecté
+  toRegister() {
     this.router.navigate(['/', 'register']);
+
+  }
+
+  login() {
+    // check si connecté
+    console.log(this.loginForm.value);
+    fetch("http://localhost:8080/login", {
+      method: "post",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      //make sure to serialize your JSON body
+      body: JSON.stringify(this.loginForm.value)
+    }).then(response => {
+      if (response.status === 200) {
+        this.router.navigate(['/', 'overview']);
+      } else
+        this.isNotLogin();
+    });
+  };
+
+  isNotLogin() {
+    this.incorectlogin = true;
   }
 }
