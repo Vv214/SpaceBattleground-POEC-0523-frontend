@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './alliances.component.html',
   styleUrls: ['./alliances.component.scss'],
 })
-export class AlliancesComponent {}
+export class AlliancesComponent {
+  onSubmit() {
+    // créer alliance
+  }
+}

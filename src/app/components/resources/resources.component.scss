@@ -1,0 +1,61 @@
+
+.bg-container { 
+    background: url("/assets/images/resourcesBackground.jpg") no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+
+
+.building{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "name name"
+    "picture level"
+    "picture upgrade"
+    ;
+    margin-bottom: 20px;
+    background-color: rgba(0, 44, 73, 0.9);
+    border: 1px solid var(--blue, .2) ;
+width: auto;
+max-width: 350px;
+margin: auto;
+margin-bottom: 10px;
+padding: 5px;
+
+}
+
+.name{
+    grid-area: name;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    
+}
+
+.picture{
+    width: 120px;
+    grid-area: picture;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.level{
+    grid-area: level;
+}
+
+.upgrade{
+    grid-area: upgrade;
+    width: 100px;
+}
+
+.title{
+    text-align: center;
+}
+
+button{
+    background:var(--light-color);
+    border:.1rem solid var(--light-color);
+    color:var(--body-color) !important;
+}
