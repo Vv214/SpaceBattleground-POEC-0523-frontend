@@ -1,0 +1,28 @@
+.alliance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+
+.center{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    margin-top: 10px;
+    margin: auto;
+
+}
+
+button{
+    background:var(--light-color);
+    border:.1rem solid var(--light-color);
+    color:var(--body-color) !important;
+}

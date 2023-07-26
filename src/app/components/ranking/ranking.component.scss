@@ -1,0 +1,12 @@
+button{
+    background:var(--light-color);
+    border:.1rem solid var(--light-color);
+    color:var(--body-color) !important;
+    font-family: 'Jura', sans-serif;
+    margin: 5px;
+}
+
+.title{
+    display: flex;
+    margin: 40px;
+}
