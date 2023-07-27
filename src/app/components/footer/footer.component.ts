@@ -26,7 +26,7 @@ export class FooterComponent {
   }
 
   toAlliance() {
-    this.router.navigate(['/', 'alliance']);
+    this.router.navigate(['/', 'alliances']);
   }
 
   toMarket() {
