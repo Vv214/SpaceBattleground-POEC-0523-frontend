@@ -1,1 +1,33 @@
-<p>login works!</p>
+
+<div id="login" class="login">
+  <img class="center" src="assets/images/WildLogo.png" />
+
+  <h2 class="center">Connexion</h2>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" #myForm="ngForm" class="center">
+
+    <div>
+      <label for="nickname-login"></label>
+      <input id="nickname-login" name="nickname-login" type="nickname" formControlName="nickname"
+        placeholder="Identifiant">
+    </div>
+
+
+    <div>
+      <label for="password-login"></label>
+      <input name="password-login" type="password" formControlName="password" placeholder="Mot de passe">
+    </div>
+    <div *ngIf="incorectlogin===true" style="color: red;">***| Identifiants incorrects |***</div>
+    <div class="center">
+      <button>Connexion</button>
+    </div>
+  </form>
+
+
+  <h2 class="center">Pas de compte ?</h2>
+
+  <div class="center">
+    <button (click)="toRegister()">Créer un compte</button>
+  </div>
+
+</div>

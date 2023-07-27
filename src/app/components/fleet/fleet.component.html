@@ -1,12 +1,57 @@
-<h1>Flotte</h1>
-<p>Vaisseaux disponibles : 200</p>
+<h1 class="title">Flotte</h1>
 
-<div>Liste flottes</div>
-<p>Flotte 1 : 50 vaisseaux</p>
-<button>Détails</button>
+<div class="bg-container" id="fleet">
 
-<div>Lancer une attaque</div>
-<p>Choix flottes à envoyer</p>
-<p>Choix cible à attaquer</p>
+<div class="orbit">
+    <h2 class="title">Flottes en orbite</h2>
 
-<button>Attaquer</button>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 1</p>
+        <p class="capacity">Capacité : 50/50</p>
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 2</p>
+        <p class="capacity">Capacité : 50/50</p>
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 3</p>
+        <p class="capacity">Capacité : 50/50</p>
+    </div>
+    <div class="fleet" (click)="modifyFleet()">
+        <p class="name">Flotte 4</p>
+        <p class="capacity">Capacité : 50/50</p>
+    </div>
+
+</div>
+
+<div class="stock">
+    <h2 class="title">Vaisseaux disponibles</h2>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+        <p class="shipNumber">Disponibles : 50</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/mediumShip.png"/>
+        <p class="shipName">Chasseur moyen</p>
+        <p class="shipNumber">Disponibles : 40</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/heavyShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/cargoShip.png"/>
+        <p class="shipName">Vaisseau de transport</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+    <div class="ship" (click)="shipDetail()">
+        <img class="shipPicture" src="assets/images/recyclerShip.png"/>
+        <p class="shipName">Récolteur</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+</div>
+
+
+</div>

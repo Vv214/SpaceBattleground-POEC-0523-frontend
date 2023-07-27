@@ -1,1 +1,55 @@
-<p>register works!</p>
+<div id="login" class="login">
+  <img class="center" src="assets/images/WildLogo.png" />
+
+  <h2 class="center">Créer un compte</h2>
+
+
+  <form (ngSubmit)="registerForm.valid && onSubmit()" [formGroup]="registerForm" #myForm="ngForm" class="center">
+
+    <div>
+      <label for="email-login"></label>
+      <input id="email-login" name="email-login" type="email" formControlName="email" placeholder="Adresse Mail">
+    </div>
+    <div *ngIf="registerForm.get('email')?.errors && myForm.submitted" class="error">
+      <div *ngIf="registerForm.get('email')?.errors?.['required']">L'adresse mail est requise</div>
+    </div>
+
+    <div>
+      <label for="nickname-login"></label>
+      <input id="nickname-login" name="nickname-login" type="nickname" formControlName="nickname"
+        placeholder="Nickname">
+    </div>
+    <div *ngIf="registerForm.get('nickname')?.errors?.['required'] && myForm.submitted">Le nickname est requis</div>
+
+
+    <div>
+      <label for="password-login"></label>
+      <input id="password-login" name="password-login" type="password" formControlName="password"
+        placeholder="Mot de passe">
+    </div>
+    <div *ngIf="registerForm.get('password')?.errors?.['required'] && myForm.submitted">Le mot de passe est requise
+    </div>
+
+    <div>
+      <label for="Confirmpassword-login"></label>
+      <input name="Confirmpassword-login" type="password" formControlName="confirmPassword"
+        placeholder="Confirmer mot de passe">
+    </div>
+    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted">Le mot de passe est
+      requise</div>
+
+    <div class="center">
+      <button>Créer un compte</button>
+    </div>
+
+  </form>
+
+
+
+  <h2 class="center">Déja un compte ?</h2>
+
+  <div class="center">
+    <button (click)="login()">Connexion</button>
+  </div>
+
+</div>
