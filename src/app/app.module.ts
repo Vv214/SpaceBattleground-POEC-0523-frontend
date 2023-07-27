@@ -31,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShipyardComponent } from './components/shipyard/shipyard.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     researchDetail,
     buildingBuild,
     buildingDetail,
+    ShipyardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, ReactiveFormsModule],
   providers: [],

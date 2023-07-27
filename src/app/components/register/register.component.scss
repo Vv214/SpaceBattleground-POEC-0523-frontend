@@ -27,10 +27,8 @@ img{
 
 }
 
-button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
+#nickname-login, #email-login, #password-login, #confirmPassword-login{
+    color: var(--blue-color);
 }
 
 
@@ -64,11 +62,7 @@ button{
     
     }
     
-    button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
-    }
+
 }
 
 @media (min-width:600px){

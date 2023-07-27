@@ -23,16 +23,56 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
+
+.buildingDetail{
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+grid-template-areas: 
+"picture name level"
+"picture type ."
+"picture capacity ."
+"picture time ."
+"picture ressources ."
+"picture required ."
+"picture description ."
+;
+}
+
+.level{
+    font-size: 0.8em;
+    grid-area: level;
+}
+.type{
+    grid-area: type;
+}
+.time{
+    grid-area: time;
+}
+.ressources{
+    grid-area: ressources;
+}
+.required{
+    grid-area: required;
+}
+.description{
+    grid-area: description;
+}
+.capacity{
+    grid-area: capacity;
+}
+
+
 .picture{
     width: 200px;
     grid-area: picture;
 }
 
-.position, .capacity{
+/* .position, .capacity{
     grid-area: level;
     color:var(--body-color);
     font-family: 'Jura', sans-serif;
-}
+} */
 
 .shipList{
     grid-area: level;
@@ -52,7 +92,21 @@ button{
     body{
         font-family: 'Jura', sans-serif;
     }
-    
+
+    /* .buildingDetail{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "picture name level"
+        "picture type ."
+        "picture time ."
+        "picture ressources ."
+        "picture required ."
+        "picture description ."
+        ;
+        }
+     */
     .popupButtons{
         display: flex;
         justify-content: space-evenly;
@@ -79,12 +133,7 @@ button{
         width: 400px;
         grid-area: picture;
     }
-    
-    .position, .capacity{
-        grid-area: level;
-        color:var(--body-color);
-        font-family: 'Jura', sans-serif;
-    }
+
     
     .shipList{
         grid-area: level;

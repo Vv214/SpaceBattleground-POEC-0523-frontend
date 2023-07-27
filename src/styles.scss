@@ -47,6 +47,13 @@ button{
 
 }
 
+
+.errorMessage{
+    color: red;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
 button:hover{
     background-color:var(--light-color);
     color:var(--blue-color) !important;
