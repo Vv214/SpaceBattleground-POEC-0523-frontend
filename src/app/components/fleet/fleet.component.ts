@@ -17,7 +17,7 @@ export class FleetComponent {
     });
   }
 
-  shipDetail() {
+  openShipDetail() {
     const dialogRef = this.dialog.open(shipDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

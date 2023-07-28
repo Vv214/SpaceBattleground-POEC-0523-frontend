@@ -9,7 +9,7 @@
     <div>
       <label for="nickname-login"></label>
       <input id="nickname-login" name="nickname-login" type="nickname" formControlName="nickname"
-        placeholder="Idenfiiant">
+        placeholder="Identifiant">
     </div>
     <div *ngIf="registerForm.get('nickname')?.errors?.['required'] && myForm.submitted" class="errorMessage">***| L'Identifiant est requis |***</div>
 
