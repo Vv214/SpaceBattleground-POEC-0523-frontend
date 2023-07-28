@@ -11,14 +11,14 @@ export class AnimateBackgroundComponent {
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit() {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.01, 1000);
+    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.01, 1000);
     camera.position.set(0, 0, 300);
 
     const directionalLight = new THREE.DirectionalLight('#fff', 2);
     directionalLight.position.set(0, 50, -20);
     scene.add(directionalLight);
 
-    const ambientLight = new THREE.AmbientLight('#ffffff', 2);
+    const ambientLight = new THREE.AmbientLight('#ffffff', 3);
     ambientLight.position.set(0, 20, 20);
     scene.add(ambientLight);
 
