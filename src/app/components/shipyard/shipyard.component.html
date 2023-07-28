@@ -1,17 +1,59 @@
-<h1 class="title">Bâtiments</h1>
-<h3 class="title">Capacité de la planète : 30/50</h3>
+<h1 class="title">Chantier spatial</h1>
+<!-- <h3 class="title">Capacité de la planète : 30/50</h3> -->
 
-<div class="bg-container" id="buildings">
+<div class="bg-container" id="ships">
 
-<div class="onPlanet">
-    <!-- <h2 class="title">Bâtiments construits</h2> -->
+    <h2 class="combatTitle">Combat</h2>
+    <h2 class="civilTitle">Civil</h2>
 
+<div class="combat">
+
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/mediumShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/heavyShip.png"/>
+        <p class="shipName">Destroyer</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/scoutShip.png"/>
+        <p class="shipName">Eclaireur</p>
+    </div>
+
+</div>
+
+<div class="civil">
+
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/cargoShip.png"/>
+        <p class="shipName">Transporteur léger</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/heavyCargoShip.png"/>
+        <p class="shipName">Transporteur lourd</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/recyclerShip.png"/>
+        <p class="shipName">Récolteur</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/ships/colonisateur.png"/>
+        <p class="shipName">Colonisateur</p>
+    </div>
+
+</div>
+
+<!-- <div class="onPlanet">
 
         <div class="buildings" (click)="openShipDetail()">
             <img class="buildingPicture" src="assets/images/robotFactory.png"/>
             <p class="buildingName">Usine de robots</p>
             <p class="buildingLevel">Niveau 1</p>
-        
         </div>
         <div class="buildings" (click)="openShipDetail()">
             <img class="buildingPicture" src="assets/images/laboratoire.png"/>
@@ -28,10 +70,62 @@
             <p class="buildingName">Terraformeur</p>
             <p class="buildingLevel">Niveau 1</p>
         </div>
-</div>
-</div>
+</div> -->
 
 
+</div>
+
+<!-- 
+<div class="combat">
+    <h2 class="title">Combat</h2>
+
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Destroyer</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/scoutShip.png"/>
+        <p class="shipName">Eclaireur</p>
+    </div>
+
+</div>
+
+<div class="civil">
+    <h2 class="title">Civil</h2>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+        <p class="shipNumber">Disponibles : 50</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/mediumShip.png"/>
+        <p class="shipName">Chasseur moyen</p>
+        <p class="shipNumber">Disponibles : 40</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/heavyShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/cargoShip.png"/>
+        <p class="shipName">Vaisseau de transport</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+    <div class="ship" (click)="openShipDetail()">
+        <img class="shipPicture" src="assets/images/recyclerShip.png"/>
+        <p class="shipName">Récolteur</p>
+        <p class="shipNumber">Disponibles : 10</p>
+    </div>
+</div> -->
 
 
 
@@ -41,56 +135,6 @@
 
 <div class="bg-container" id="fleet">
 
-<div class="orbit">
-    <h2 class="title">Flottes en orbite</h2>
-
-    <div class="fleet" (click)="modifyFleet()">
-        <p class="name">Flotte 1</p>
-        <p class="capacity">Capacité : 50/50</p>
-    </div>
-    <div class="fleet" (click)="modifyFleet()">
-        <p class="name">Flotte 2</p>
-        <p class="capacity">Capacité : 50/50</p>
-    </div>
-    <div class="fleet" (click)="modifyFleet()">
-        <p class="name">Flotte 3</p>
-        <p class="capacity">Capacité : 50/50</p>
-    </div>
-    <div class="fleet" (click)="modifyFleet()">
-        <p class="name">Flotte 4</p>
-        <p class="capacity">Capacité : 50/50</p>
-    </div>
-
-</div>
-
-<div class="stock">
-    <h2 class="title">Vaisseaux disponibles</h2>
-    <div class="ship" (click)="shipDetail()">
-        <img class="shipPicture" src="assets/images/lightShip.png"/>
-        <p class="shipName">Chasseur léger</p>
-        <p class="shipNumber">Disponibles : 50</p>
-    </div>
-    <div class="ship" (click)="shipDetail()">
-        <img class="shipPicture" src="assets/images/mediumShip.png"/>
-        <p class="shipName">Chasseur moyen</p>
-        <p class="shipNumber">Disponibles : 40</p>
-    </div>
-    <div class="ship" (click)="shipDetail()">
-        <img class="shipPicture" src="assets/images/heavyShip.png"/>
-        <p class="shipName">Chasseur lourd</p>
-        <p class="shipNumber">Disponibles : 10</p>
-    </div>
-    <div class="ship" (click)="shipDetail()">
-        <img class="shipPicture" src="assets/images/cargoShip.png"/>
-        <p class="shipName">Vaisseau de transport</p>
-        <p class="shipNumber">Disponibles : 10</p>
-    </div>
-    <div class="ship" (click)="shipDetail()">
-        <img class="shipPicture" src="assets/images/recyclerShip.png"/>
-        <p class="shipName">Récolteur</p>
-        <p class="shipNumber">Disponibles : 10</p>
-    </div>
-</div>
 
 
 </div> -->

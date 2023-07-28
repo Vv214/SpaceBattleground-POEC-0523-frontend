@@ -114,7 +114,7 @@
 
 @media (min-width:1000px){
     #footer {
-        margin-top: 50px;
+        // margin-top: 50px;
         display:grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -135,12 +135,17 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "buildingButton resourceButton researchButton fleetButton allianceButton marketButton"
+    "buildingButton resourceButton researchButton fleetButton shipyardButton allianceButton marketButton"
     ;
 }
 
 .buildingButton{
     grid-area: buildingButton;
+    margin: 10px;
+}
+
+.shipyardButton{
+    grid-area: shipyardButton;
     margin: 10px;
 }
 
@@ -193,13 +198,13 @@
     }
     
     .planet{
-        width: 300px;
+        // width: 300px;
       grid-area: planet;
         display: flex;
     }
     
     .planet img{
-        width: 150px;
+        width: 100px;
     }
     
     .planetButton{

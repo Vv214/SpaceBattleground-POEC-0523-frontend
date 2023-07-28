@@ -15,88 +15,88 @@
 //     ;
 // }  
 
-.onPlanet{
-    grid-area: onPlanet;
-    // background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: scroll;
+// .combat{
+//     grid-area: onPlanet;
+//     // background-color: rgba(0, 44, 73, 0.8);
+//     margin: 5px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//     // overflow: scroll;
 
-}
+// }
 
-.stock{
-    grid-area: stock;
-    // background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    overflow: scroll;
-}
+// .civil{
+//     grid-area: stock;
+//     // background-color: rgba(0, 44, 73, 0.8);
+//     margin: 5px;
+//     // overflow: scroll;
+// }
 
-.building{
-    display:grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "buildingPicture"
-    "buildingName"
-    "buildingLevel"
-    ;
-    margin-bottom: 20px;
-    // background-color: rgba(1, 117, 194, 0.8);
-    border: 1px solid var(--blue, .2) ;
-    width: auto;
-    max-width: 130px;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 5px;
-}
+// .building{
+//     display:grid;
+//     grid-template-columns: auto;
+//     grid-template-rows: auto;
+//     grid-template-areas: 
+//     "buildingPicture"
+//     "buildingName"
+//     "buildingLevel"
+//     ;
+//     margin-bottom: 20px;
+//     // background-color: rgba(1, 117, 194, 0.8);
+//     border: 1px solid var(--blue, .2) ;
+//     width: auto;
+//     max-width: 130px;
+//     margin: auto;
+//     margin-bottom: 10px;
+//     padding: 5px;
+// }
 
-.buildingName{
-    grid-area: buildingName;
-    font-size: 0.8em;
-    font-weight: 700;
-    text-align: center;
-}
+// .buildingName{
+//     grid-area: buildingName;
+//     font-size: 0.8em;
+//     font-weight: 700;
+//     text-align: center;
+// }
 
-.title{
-    text-align: center;
-    margin-bottom: 10px;
-    // font-size: 0.8em;
-}
+// .title{
+//     text-align: center;
+//     margin-bottom: 10px;
+//     // font-size: 0.8em;
+// }
 
-.buildingNumber{
-    grid-area: buildingNumber;
-}
+// .buildingNumber{
+//     grid-area: buildingNumber;
+// }
 
-.buildingPicture{
-    width: 60px;
-    grid-area: buildingPicture;
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
+// .buildingPicture{
+//     width: 60px;
+//     grid-area: buildingPicture;
+//     display: flex;
+//     align-items: center;
+//     margin: auto;
+// }
 
-.buildings{
-    // background-color: rgba(1, 117, 194, 0.8);
-    margin: 5px;
-    width: 80px;
-}
+// .buildings{
+//     // background-color: rgba(1, 117, 194, 0.8);
+//     margin: 5px;
+//     width: 80px;
+// }
 
 
-.name{
-    grid-area: name;
-    font-size: 0.8em;
-    font-weight: 700;
-    text-align: center;
-}
+// .name{
+//     grid-area: name;
+//     font-size: 0.8em;
+//     font-weight: 700;
+//     text-align: center;
+// }
 
-.capacity{
-    grid-area: capacity;
-}
+// .capacity{
+//     grid-area: capacity;
+// }
 
-.title{
-    text-align: center;
-}
+// .title{
+//     text-align: center;
+// }
 
 button{
     background:var(--light-color);
@@ -109,72 +109,79 @@ button{
 @media (min-width:1000px){
 
     .bg-container { 
-        background: url("/assets/images/resourcesBackground.jpg") no-repeat center center fixed; 
+        background: url("/assets/images/backgrounds/shipyardBackground.jpg") no-repeat center center fixed; 
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
         height: 600px;
       }
 
-    // #buildings{
-    //     display:grid;
-    //     grid-template-columns: auto 350px;
-    //     grid-template-rows: auto;
-    //     grid-template-areas: 
-    //     "onPlanet stock"
-    //     ;
-    // }  
+    #ships{
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "combatTitle civilTitle"
+        "combat civil"
+        ;
+    }  
     
-    .onPlanet{
-        grid-area: onPlanet;
-        // background-color: rgba(0, 44, 73, 0.8);
+    .combat{
+        grid-area: combat;
+        background-color: rgba(0, 44, 73, 0.8);
         margin: 5px;
         display: grid;
-        overflow: visible;
-        position: relative;
-        top: 70%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
+        grid-template-columns: auto auto;
+        height: 420px;
+        // overflow: visible;
+        // position: relative;
+        // top: 70%;
+        // margin-top: 20px;
+        // margin-bottom: 20px;
     }
     
-    .stock{
-        grid-area: stock;
-        // background-color: rgba(0, 44, 73, 0.8);
+    .civil{
+        grid-area: civil;
+        background-color: rgba(0, 44, 73, 0.8);
         margin: 5px;
-        overflow: visible;
+        display: grid;
+        grid-template-columns: auto auto;
+        height: 420px;
+        // width: 400px;
+        // overflow: visible;
     }
 
-    .buildings{
+    .ship{
         display:grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas: 
-        "buildingPicture buildingName"
-        "buildingPicture buildingLevel"
+        "shipPicture"
+        "shipName"
         ;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         background-color: rgba(0, 44, 73, 0.8);
-
-
         border: 1px solid var(--blue, .2) ;
         // width: auto;
-        width: 300px;
-        height: 150px;
+        width: 150px;
+        height: 180px;
+        // height: 150px;
         margin: auto;
         margin-bottom: 10px;
+        margin-top: 10px;
         padding: 5px;
     }
 
-    .building:hover{
+    .ship:hover{
         background-color:var(--blue-color);
         color:var(--blue-color) !important;
     }
 
-    .buildingPicture{
-        width: 120px;
+    .shipPicture{
+        width: 140px;
+        // height: 100px;
         margin-top: 15%;
-        grid-area: buildingPicture;
+        grid-area: shipPicture;
         margin-left: 5px;
         margin-bottom: 5%;
     }
@@ -193,8 +200,8 @@ button{
         text-align: center;
     }
 
-    .buildingName{
-        grid-area: buildingName;
+    .shipName{
+        grid-area: shipName;
         font-size: 20px;
         font-weight: 700;
         text-align: center;
@@ -203,7 +210,20 @@ button{
     .title{
         text-align: center;
         margin-bottom: 10px;
-        // font-size: 20px;
+    }
+
+    .combatTitle{
+        grid-area: combatTitle;
+        text-align: center;
+        // margin-bottom: 10px;
+        color: var(--blue-color);
+    }
+
+    .civilTitle{
+        grid-area: civilTitle;
+        text-align: center;
+        // margin-bottom: 10px;
+        color: var(--blue-color);
     }
 }
 
