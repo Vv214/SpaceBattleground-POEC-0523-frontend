@@ -31,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     researchDetail,
     buildingBuild,
     buildingDetail,
+    AnimateBackgroundComponent,
   ],
   imports: [
     BrowserModule,

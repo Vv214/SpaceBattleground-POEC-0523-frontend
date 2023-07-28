@@ -38,37 +38,40 @@
     width: auto;
   grid-area: planet;
     display: flex;
+    overflow: visible;
 }
 
 .planet img{
     width: 90px;
 }
 
-
 #r-arrow {
-    font-weight: 700;
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
 }
 
 #l-arrow {
-    font-weight: 700;
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#r-arrow svg, #l-arrow svg{
+    fill: var(--light-color);
+}
+
+#r-arrow svg:hover, #l-arrow svg:hover{
+    fill:var(--blue);
+    color:var(--blue-color) !important;
+    -webkit-drop-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    -moz-drop-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    filter: drop-shadow(2px 2px 4px rgba(45,255,196,0.9));
+    -moz-drop-shadow: 0px 20px 15px 0px rgba(45,255,196,0.9);
+}
 
 #footerButtons{
     grid-area: footerButtons;
@@ -210,26 +213,12 @@
         /* margin-left: 40px; */
         font-weight: 700;
         font-size: 40px;
-        color: rgb(255, 255, 255);
-        background-color: transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
     }
     
     #l-arrow {
         /* margin-right: 40px; */
         font-weight: 700;
         font-size: 40px;
-        color: rgb(255, 255, 255);
-        background-color: transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
     }
 
 
