@@ -1,5 +1,7 @@
 body{
     font-family: 'Jura', sans-serif;
+    /* color:var(--body-color); */
+    
 }
 
 .popupButtons{
@@ -13,6 +15,8 @@ body{
     url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
     border:.2rem solid var(--primary-color);
     font-family: 'Jura', sans-serif;
+    /* color:var(--body-color); */
+
 }
 
 .name{
@@ -37,6 +41,8 @@ grid-template-areas:
 "picture required ."
 "picture description ."
 ;
+color:var(--body-color);
+
 }
 
 .level{
@@ -130,7 +136,7 @@ button{
     }
     
     .picture{
-        width: 400px;
+        width: 350px;
         grid-area: picture;
     }
 
@@ -142,10 +148,28 @@ button{
     }
     
     button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
+        /* background:var(--light-color); */
+        /* border:.1rem solid var(--light-color); */
+        color:var(--body-color) ;
         font-family: 'Jura', sans-serif;
+    cursor: pointer;
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border:.1rem solid var(--light-color);
+
+    }
+/* 
+    font-family: 'Jura', sans-serif;
+    cursor: pointer;
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    color:var(--body-color);
+    border:.1rem solid var(--light-color); */
+
+    .button:hover{
+        color:var(--primary-color) !important;
+        /* // color: red; */
+        border-color: var(--primary-color) !important;
     }
 }
 

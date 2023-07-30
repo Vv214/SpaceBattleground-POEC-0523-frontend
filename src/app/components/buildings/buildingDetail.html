@@ -6,13 +6,13 @@
             <img class="picture" src="assets/images/buildings/shipFactory.png"/>
             
                 <p class="name">Chantier spatial</p>
-                <p class="type">Type : Production</p>
-                <p class="level">Niveau : 1</p>
-                <p class="capacity">Taille : 2</p>
-                <p class="time">Temps de construction : 10 min</p>
-                <p class="ressources">Ressources nécessaires :200 Fer 300 Hydrogène 100 Diamant</p>
-                <p class="required">Prérequis : Recherche spatiale niveau 1</p>
-                <p class="description">Description : Permet de construire des vaisseaux</p>
+                <p class="type"><span>Type : </span>Production</p>
+                <p class="level"><span>Niveau :</span> 1</p>
+                <p class="capacity"><span>Taille : </span>2</p>
+                <p class="time"><span>Temps de construction : </span>10 min</p>
+                <p class="ressources"><span>Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
+                <p class="required"><span>Prérequis : </span>Recherche spatiale niveau 1</p>
+                <p class="description"><span>Description : </span>Permet de construire des vaisseaux</p>
             
         </div>
 
@@ -21,12 +21,12 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button mat-button mat-dialog-close>Détruire</button>
+        <button  mat-dialog-close class="destroyButton">Détruire</button>
     
-        <button mat-button mat-dialog-close (click)="openBuildingBuild()">Construire/Améliorer</button>
+        <button  mat-dialog-close (click)="openBuildingBuild()">Construire/Améliorer</button>
 
 
-        <button mat-button mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
+        <button  mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
     </mat-dialog-actions>
 
 </div>

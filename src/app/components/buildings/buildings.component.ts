@@ -28,7 +28,7 @@ export class BuildingsComponent {
 @Component({
   selector: 'buildingDetail',
   templateUrl: 'buildingDetail.html',
-  styleUrls: ['buildingDetail.css'],
+  styleUrls: ['buildingDetail.scss'],
 })
 export class buildingDetail {
   constructor(public dialog: MatDialog, public router: Router) {}

@@ -1,8 +1,8 @@
 #footer {
-    margin-top: 10px;
+    // margin-top: 10px;
     display:grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 120px ;
+    grid-template-rows: auto ;
     grid-template-areas: 
     "footerButtons  planet"
     ;
@@ -79,7 +79,13 @@
     "buildingButton resourceButton researchButton"
     "fleetButton allianceButton marketButton"
     ;
+    position: relative;
+    // bottom: 40%;
 }
+
+
+
+
 
 .buildingButton{
     grid-area: buildingButton;
@@ -114,18 +120,21 @@
 
 @media (min-width:1000px){
     #footer {
-        // margin-top: 50px;
+        margin-top: 10px;
         display:grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas: 
         "footerButtons planet"
         ;
-        margin-left: 2%;
-        margin-right: 2%;
+        // margin-left: 2%;
+        // margin-right: 2%;
         font-size: 1em;
         text-align: center;
         justify-content: space-between;
+        align-items: center;
+         color:var(--body-color);
+        
     }
 
 
@@ -248,3 +257,89 @@
 @media (min-width:416px){
 
 }
+
+
+
+
+.corner-button:hover:before,
+.corner-button:hover p:before,
+.corner-button:hover:after,
+.corner-button:hover p:after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.corner-button {
+    display: inline-block;
+    // font-family: "Roboto", sans-serif;
+    // font-size: 20px;
+    // letter-spacing: 5px;
+    text-align: center;
+    position: relative;
+    min-width: 100px;
+    // min-height: 10px;
+    // margin: 20px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    // color: #25ccf7;
+    border-radius: 10px;
+    // padding: 12px 20px;
+    box-sizing: content-box;
+    border: 2px solid transparent;
+    text-align: center;
+    // line-height: 30px;
+    transition: 0.75s ease;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.corner-button:hover:before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover:after {
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover p {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #25ccf7;
+
+    // margin-left: 8px;
+}
+.corner-button:hover p:before {
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover p:after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+

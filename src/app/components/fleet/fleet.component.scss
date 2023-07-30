@@ -3,6 +3,8 @@
     background-size: cover;
     margin-left: 7.5px;
     margin-right: 7.5px;
+    color:var(--body-color);
+
   }
 
 
@@ -98,12 +100,12 @@
 //     text-align: center;
 // }
 
-button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    cursor: pointer;
-}
+// button{
+//     background:var(--light-color);
+//     border:.1rem solid var(--light-color);
+//     color:var(--body-color) !important;
+//     cursor: pointer;
+// }
 
 
 @media (min-width:1000px){
@@ -113,7 +115,7 @@ button{
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
-        height: 600px;
+        height: 650px;
       }
 
     #ships{
@@ -128,35 +130,41 @@ button{
     
     .combat{
         grid-area: combat;
-        background-color: rgba(0, 44, 73, 0.8);
+        // background-color: rgba(0, 44, 73, 0.8);
         margin: 5px;
         display: grid;
         grid-template-columns: auto auto auto auto;
         height: 220px;
-        // overflow: visible;
         overflow: visible;
         position: relative;
-        top: 30%;
+        // top: 30%;
         margin-top: 20px;
         margin-bottom: 20px;
-        // margin-top: 20px;
-        // margin-bottom: 20px;
     }
     
     .civil{
         grid-area: civil;
-        background-color: rgba(0, 44, 73, 0.8);
+        // background-color: rgba(0, 44, 73, 0.8);
         margin: 5px;
         display: grid;
         grid-template-columns: auto auto auto auto;
         height: 220px;
         overflow: visible;
         position: relative;
-        top: 30%;
+        // top: 30%;
         margin-top: 20px;
         margin-bottom: 20px;
-        // width: 400px;
-        // overflow: visible;
+    }
+
+    
+    .combatTitle{
+        grid-area: combatTitle;
+        text-align: center;
+    }
+
+    .civilTitle{
+        grid-area: civilTitle;
+        text-align: center;
     }
 
     .ship{
@@ -168,49 +176,42 @@ button{
         "shipName"
         "shipNumber"
         ;
-        // margin-bottom: 20px;
-        background-color: rgba(0, 44, 73, 0.8);
         border: 1px solid var(--blue, .2) ;
-        // width: auto;
-        width: 150px;
+        width: 140px;
         height: 180px;
-        // height: 150px;
         margin: auto;
         margin-bottom: 10px;
         margin-top: 10px;
         padding: 5px;
+        margin: 5px;
+        background-color:var(--blue-color);
+        
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+        padding: 5px;
+    }
+
+    .ship:hover{
+        color:var(--primary-color) !important;
+        border-color: var(--primary-color) ;
     }
 
     .shipNumber{
         grid-area: shipNumber;
-        // font-size: 20px;
         font-weight: 700;
         text-align: right;
         background-color: var(--blue-color);
-        // position: relative;
-        // top: 95%;
     }
 
-    .ship:hover{
-        background-color:var(--blue-color);
-        color:var(--blue-color) !important;
-    }
+
 
     .shipPicture{
-        width: 140px;
-        // height: 100px;
+        width: 130px;
         margin-top: 5px;
         grid-area: shipPicture;
         margin-left: 5px;
-        // margin-bottom: 5%;
     }
     
-    // .buildings{
-    //     background-color: rgba(1, 117, 194, 0.8);
-    //     margin: auto;
-    //     width: 300px;
-
-    // }
 
     .name{
         grid-area: name;
@@ -231,20 +232,7 @@ button{
     
     .title{
         text-align: center;
-        margin-bottom: 10px;
+        margin: 10px;
     }
 
-    .combatTitle{
-        grid-area: combatTitle;
-        text-align: center;
-        // margin-bottom: 10px;
-        color: var(--blue-color);
-    }
-
-    .civilTitle{
-        grid-area: civilTitle;
-        text-align: center;
-        // margin-bottom: 10px;
-        color: var(--blue-color);
-    }
 }

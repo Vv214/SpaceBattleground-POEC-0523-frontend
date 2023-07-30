@@ -4,11 +4,47 @@ body{
     color:var(--body-color);
 }
 
-#technologyTreeDesktop{
-    display: none;
+*{
+    color:var(--body-color);
 }
 
+// #technologyTreeDesktop{
+//     display: none;
+// }
 
+
+.icon{
+    width: 100px;
+    display: flex;
+    margin-left: 10%;
+}
+
+.technologyName{
+    text-align: center;
+    margin: 0;
+}
+.technologyLevel{
+    text-align: center;
+    margin: 0;
+}
+
+.technology{
+    width: 120px;
+    align-items: center;
+}
+
+.technologyLink{
+    width: 120px;
+    padding-top: 40px;
+    align-items: center;
+
+}
+
+.technologyArrow{
+    flex-grow: 1;
+    border-bottom: 1px solid var(--body-color);
+    // margin: 5px
+}
 
 .searchTitles{
     font-family: 'Jura', sans-serif;
@@ -18,15 +54,26 @@ body{
 }
 
 .spaceSearch{
-    grid-area: spaceSearch;
-
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
 }
 .mineSearch{
-    grid-area: mineSearch;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
 
 }
 .militarySearch{
-    grid-area: militarySearch;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
 }
 
 .searchBlock{
@@ -40,19 +87,19 @@ body{
 
 .spaceTitle{
     grid-area: spaceTitle;
-    font-size: 0.7em !important;
+    font-size: 0.7em ;
     margin-right: 5px;
 }
 
 .mineTitle{
     grid-area: mineTitle;
-    font-size: 0.7em !important;
+    font-size: 0.7em ;
     margin-right: 5px;
 }
 
 .militaryTitle{
     grid-area: militaryTitle;
-    font-size: 0.7em !important;
+    font-size: 0.7em ;
     margin-right: 5px;
 }
 
@@ -168,45 +215,28 @@ text{
     font-family: 'Jura', sans-serif;
 }
 
-button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    font-family: 'Jura', sans-serif;
-}
 
-button:hover{
-    background-color: rgba(0, 153, 255, 0.8);
-}
 
 @media (min-width:1000px) {
-    #technologyTreeMobile{
-        display: none;
-    }
-
-    button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
-        font-family: 'Jura', sans-serif;
-        font-size: 1em;
-    }
+    // #technologyTreeMobile{
+    //     display: none;
+    // }
 
     .spaceTitle{
         grid-area: spaceTitle;
-        font-size: 1em !important;
+        font-size: 1.2em ;
         margin-right: 5px;
     }
     
     .mineTitle{
         grid-area: mineTitle;
-        font-size: 1em !important;
+        font-size: 1.2em ;
         margin-right: 5px;
     }
     
     .militaryTitle{
         grid-area: militaryTitle;
-        font-size: 1em !important;
+        font-size: 1.2em ;
         margin-right: 5px;
     }
 
