@@ -68,7 +68,7 @@ export class RegisterComponent {
     console.log("dans la méthode update local storage après la maj", this.nicknameLocal);
   }
 }
-      body: JSON.stringify(this.registerForm.value),
-    }).then((response) => console.log(response));
-  }
-}
+//     body: JSON.stringify(this.registerForm.value),
+//   }).then((response) => console.log(response));
+// }
+// }
