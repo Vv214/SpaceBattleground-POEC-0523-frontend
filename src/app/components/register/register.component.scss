@@ -40,6 +40,14 @@ input{
     border:.1rem solid var(--light-color);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color:var(--primary-color);
+  -webkit-box-shadow: 0 0 0px 40rem  rgba(10, 24, 34) inset;
+  outline: none;
+}
+
 input:hover, input:active{
     border-color: var(--primary-color) !important;
 }
