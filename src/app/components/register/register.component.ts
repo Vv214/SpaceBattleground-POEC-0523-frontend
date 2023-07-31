@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-register',
@@ -17,22 +18,28 @@ export class RegisterComponent {
     confirmPassword: ['', Validators.required],
   });
 
+  public nicknameLocal!: string;
+
   constructor(private router: Router, private fb: FormBuilder) {};
 
+  alreadyInBase = true;
   onSubmit() {
     // création compte
     this.addUser();
-    // console.log(this.registerForm.value.nickname + "Toto");
+    this.updateLocalStorage();
+    console.log(this.registerForm.value.nickname + "Toto");
     this.router.navigate(['/', 'overview']);
   }
 
   login() {
     // redirection login
+    this.updateLocalStorage();
     this.router.navigate(['/', 'login']);
+
   }
 
   addUser() {
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
     fetch("http://localhost:8080/register", {
       method: "post",
       headers: {
@@ -41,8 +48,13 @@ export class RegisterComponent {
       },
       //make sure to serialize your JSON body
       body: JSON.stringify(this.registerForm.value)
-    }).then(response => console.log(response));
+    }).then(response => console.log(response + " response"));
   };
-}
 
+  updateLocalStorage(): void {
+    console.log("dans la méthode update local storage", localStorage.getItem("nickname"));
+    this.nicknameLocal = this.registerForm.value.nickname || " ";
+    console.log("dans la méthode update local storage après la maj", this.nicknameLocal);
+  }
+}
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-account',
@@ -7,7 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public playerService: PlayerService) {}
+
+  public nickname = localStorage.getItem('nickname');
+  public toto() {
+    console.log(this.nickname);
+  }
 
   toMessages() {
     this.router.navigate(['/', 'messages']);
@@ -19,5 +25,8 @@ export class AccountComponent {
 
   logout() {
     this.router.navigate(['/', 'home']);
+  }
+
+  onInit() {
   }
 }

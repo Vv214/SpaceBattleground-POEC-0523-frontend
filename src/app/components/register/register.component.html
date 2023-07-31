@@ -37,7 +37,7 @@
     </div>
     <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted">Le mot de passe est
       requise</div>
-
+    <div *ngIf="alreadyInBase===false">Nickname déja présent en base.</div>
     <div class="center">
       <button>Créer un compte</button>
     </div>
