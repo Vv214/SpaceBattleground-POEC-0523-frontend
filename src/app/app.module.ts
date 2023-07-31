@@ -38,6 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShipyardComponent } from './components/shipyard/shipyard.component';
+import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { ShipyardComponent } from './components/shipyard/shipyard.component';
     buildingDetail,
     ShipyardComponent,
     buildingDestroy,
+    AnimateBackgroundComponent,
   ],
   imports: [
     BrowserModule,
