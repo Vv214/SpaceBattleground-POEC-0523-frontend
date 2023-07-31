@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buildings',
@@ -27,9 +28,22 @@ export class BuildingsComponent {
 @Component({
   selector: 'buildingDetail',
   templateUrl: 'buildingDetail.html',
-  styleUrls: ['buildingDetail.css'],
+  styleUrls: ['buildingDetail.scss'],
 })
-export class buildingDetail {}
+export class buildingDetail {
+  constructor(public dialog: MatDialog, public router: Router) {}
+
+  openBuildingBuild() {
+    const dialogRef = this.dialog.open(buildingBuild);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  toShipyard() {
+    this.router.navigate(['/', 'shipyard']);
+  }
+}
 
 @Component({
   selector: 'buildingBuild',

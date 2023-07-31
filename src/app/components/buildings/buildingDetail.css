@@ -1,5 +1,7 @@
 body{
     font-family: 'Jura', sans-serif;
+    /* color:var(--body-color); */
+    
 }
 
 .popupButtons{
@@ -13,6 +15,8 @@ body{
     url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
     border:.2rem solid var(--primary-color);
     font-family: 'Jura', sans-serif;
+    /* color:var(--body-color); */
+
 }
 
 .name{
@@ -23,16 +27,58 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
+
+.buildingDetail{
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+grid-template-areas: 
+"picture name level"
+"picture type ."
+"picture capacity ."
+"picture time ."
+"picture ressources ."
+"picture required ."
+"picture description ."
+;
+color:var(--body-color);
+
+}
+
+.level{
+    font-size: 0.8em;
+    grid-area: level;
+}
+.type{
+    grid-area: type;
+}
+.time{
+    grid-area: time;
+}
+.ressources{
+    grid-area: ressources;
+}
+.required{
+    grid-area: required;
+}
+.description{
+    grid-area: description;
+}
+.capacity{
+    grid-area: capacity;
+}
+
+
 .picture{
     width: 200px;
     grid-area: picture;
 }
 
-.position, .capacity{
+/* .position, .capacity{
     grid-area: level;
     color:var(--body-color);
     font-family: 'Jura', sans-serif;
-}
+} */
 
 .shipList{
     grid-area: level;
@@ -52,7 +98,21 @@ button{
     body{
         font-family: 'Jura', sans-serif;
     }
-    
+
+    /* .buildingDetail{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "picture name level"
+        "picture type ."
+        "picture time ."
+        "picture ressources ."
+        "picture required ."
+        "picture description ."
+        ;
+        }
+     */
     .popupButtons{
         display: flex;
         justify-content: space-evenly;
@@ -76,15 +136,10 @@ button{
     }
     
     .picture{
-        width: 400px;
+        width: 350px;
         grid-area: picture;
     }
-    
-    .position, .capacity{
-        grid-area: level;
-        color:var(--body-color);
-        font-family: 'Jura', sans-serif;
-    }
+
     
     .shipList{
         grid-area: level;
@@ -93,10 +148,28 @@ button{
     }
     
     button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
+        /* background:var(--light-color); */
+        /* border:.1rem solid var(--light-color); */
+        color:var(--body-color) ;
         font-family: 'Jura', sans-serif;
+    cursor: pointer;
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border:.1rem solid var(--light-color);
+
+    }
+/* 
+    font-family: 'Jura', sans-serif;
+    cursor: pointer;
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    color:var(--body-color);
+    border:.1rem solid var(--light-color); */
+
+    .button:hover{
+        color:var(--primary-color) !important;
+        /* // color: red; */
+        border-color: var(--primary-color) !important;
     }
 }
 
