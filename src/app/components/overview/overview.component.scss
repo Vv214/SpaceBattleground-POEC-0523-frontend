@@ -1,3 +1,7 @@
+:host {
+    position: relative;
+}
+
 .bg-container { 
 margin: auto;
   }
@@ -53,10 +57,7 @@ margin: 10px;
 
 
 @media (min-width:1000px){
-    .bg-container { 
-        background: url("/assets/images/overviewBackground.jpg") no-repeat center center fixed; 
-        background-size: cover;
-      }
+  
 }
 
 @media (min-width:600px){

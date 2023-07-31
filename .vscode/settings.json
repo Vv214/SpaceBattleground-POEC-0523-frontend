@@ -10,6 +10,8 @@
   },
   "html.format.wrapLineLength": 120,
   "cSpell.words": [
+    "stompjs",
+    "tempholder",
     "texturenucleus"
   ]
 }
