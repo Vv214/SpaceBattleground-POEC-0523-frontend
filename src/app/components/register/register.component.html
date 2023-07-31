@@ -46,12 +46,13 @@
       <label for="confirmPassword-login"></label>
       <input name="confirmPassword-login" type="password" formControlName="confirmPassword" placeholder="Confirmer mot de passe">
     </div>
-    <div *ngIf="registerForm.get('password')?.errors && myForm.submitted" >
+        <div *ngIf="registerForm.get('password')?.errors && myForm.submitted" >
       <div *ngIf="registerForm.get('password')?.errors?.['isRequired']" class="errorMessage">***[ Le mot de passe est requis ]***</div>
       <div *ngIf="registerForm.get('password')?.errors?.['notEqual']" class="errorMessage">***[ Les mots de passe doivent être identiques ]***</div>
     </div>
-
-
+    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted">Le mot de passe est
+      requise</div>
+    <div *ngIf="alreadyInBase===false">Nickname déja présent en base.</div>
     <div class="center">
       <button>Créer un compte</button>
     </div>
