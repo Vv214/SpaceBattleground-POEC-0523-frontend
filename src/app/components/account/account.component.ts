@@ -23,6 +23,10 @@ export class AccountComponent {
     this.router.navigate(['/', 'ranking']);
   }
 
+  toAdmin() {
+    this.router.navigate(['/', 'admin']);
+  }
+
   logout() {
     this.router.navigate(['/', 'home']);
   }

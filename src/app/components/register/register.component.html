@@ -7,33 +7,48 @@
   <form (ngSubmit)="registerForm.valid && onSubmit()" [formGroup]="registerForm" #myForm="ngForm" class="center">
 
     <div>
+      <label for="nickname-login"></label>
+      <input id="nickname-login" name="nickname-login" type="nickname" formControlName="nickname"
+        placeholder="Identifiant">
+    </div>
+    <div *ngIf="registerForm.get('nickname')?.errors?.['required'] && myForm.submitted" class="errorMessage">***[ L'Identifiant est requis ]***</div>
+
+    <div>
       <label for="email-login"></label>
       <input id="email-login" name="email-login" type="email" formControlName="email" placeholder="Adresse Mail">
     </div>
     <div *ngIf="registerForm.get('email')?.errors && myForm.submitted" class="error">
-      <div *ngIf="registerForm.get('email')?.errors?.['required']">L'adresse mail est requise</div>
+      <div *ngIf="registerForm.get('email')?.errors?.['required']" class="errorMessage">***[ L'adresse mail est requise ]***</div>
     </div>
 
-    <div>
-      <label for="nickname-login"></label>
-      <input id="nickname-login" name="nickname-login" type="nickname" formControlName="nickname"
-        placeholder="Nickname">
-    </div>
-    <div *ngIf="registerForm.get('nickname')?.errors?.['required'] && myForm.submitted">Le nickname est requis</div>
-
-
-    <div>
+    <!-- <div>
       <label for="password-login"></label>
       <input id="password-login" name="password-login" type="password" formControlName="password"
         placeholder="Mot de passe">
     </div>
-    <div *ngIf="registerForm.get('password')?.errors?.['required'] && myForm.submitted">Le mot de passe est requise
+    <div *ngIf="registerForm.get('password')?.errors?.['required'] && myForm.submitted" class="errorMessage">***| Le mot de passe est requis |***
     </div>
 
     <div>
-      <label for="Confirmpassword-login"></label>
-      <input name="Confirmpassword-login" type="password" formControlName="confirmPassword"
+      <label for="confirmPassword-login"></label>
+      <input id="confirmPassword-login"  name="confirmPassword-login" type="password" formControlName="confirmPassword"
         placeholder="Confirmer mot de passe">
+    </div> -->
+    <!-- <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted" class="errorMessage">***| Confirmez le mot de passe |*** </div> -->
+    <!-- <div *ngIf="registerForm.get('confirmPassword')?.errors?.['notEqual']" >Les mots de passe doivent être identiques</div> -->
+
+
+    <div formGroupName="password">
+      <label for="password-login"></label>
+      <input name="password-login" type="password" formControlName="password" placeholder="Mot de passe">
+    </div>
+          <div formGroupName="password">
+      <label for="confirmPassword-login"></label>
+      <input name="confirmPassword-login" type="password" formControlName="confirmPassword" placeholder="Confirmer mot de passe">
+    </div>
+        <div *ngIf="registerForm.get('password')?.errors && myForm.submitted" >
+      <div *ngIf="registerForm.get('password')?.errors?.['isRequired']" class="errorMessage">***[ Le mot de passe est requis ]***</div>
+      <div *ngIf="registerForm.get('password')?.errors?.['notEqual']" class="errorMessage">***[ Les mots de passe doivent être identiques ]***</div>
     </div>
     <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted">Le mot de passe est
       requise</div>
