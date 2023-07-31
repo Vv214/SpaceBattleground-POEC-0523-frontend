@@ -1,21 +1,33 @@
 <div class="bg-container">
-    <h1 mat-dialog-title class="name">Mine de fer</h1>
+    <!-- <h1 mat-dialog-title class="name">Chantier spatial</h1> -->
     <mat-dialog-content class="mat-typography">
-        <img class="picture" src="assets/images/mineGaz.png"/>
-    <div>
-        <p class="capacity">Type : Récolte</p>
-        <p class="capacity">Niveau : 1</p>
-        <p class="capacity">Taille : 2</p>
-        <p class="capacity">Description : Extrait du fer</p>
-    </div>
+
+        <div class="buildingDetail">
+            <img class="picture" src="assets/images/buildings/shipFactory.png"/>
+            
+                <h1 class="name">Chantier spatial</h1>
+                <p class="type"><span>Type : </span>Production</p>
+                <p class="level"><span>Niveau :</span> 1</p>
+                <p class="capacity"><span>Taille : </span>2</p>
+                <p class="time"><span>Temps de construction : </span>10 min</p>
+                <p class="ressources"><span>Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
+                <p class="required"><span>Prérequis : </span>Recherche spatiale niveau 1</p>
+                <p class="description"><span>Description : </span>Permet de construire des vaisseaux</p>
+            
+        </div>
+
  
     </mat-dialog-content>
 
 
     <mat-dialog-actions class="popupButtons">
-        <button mat-button mat-dialog-close>Détruire</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close class="destroyButton" (click)="openBuildingDestroy()">Détruire</button>
     
-        <button mat-button mat-dialog-close>Améliorer</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
+        <button *ngIf="isBuilt == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
+
+
+        <button  mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
     </mat-dialog-actions>
 
 </div>
