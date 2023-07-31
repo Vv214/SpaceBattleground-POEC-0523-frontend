@@ -5,7 +5,7 @@
         <div class="buildingDetail">
             <img class="picture" src="assets/images/buildings/shipFactory.png"/>
             
-                <p class="name">Chantier spatial</p>
+                <h1 class="name">Chantier spatial</h1>
                 <p class="type"><span>Type : </span>Production</p>
                 <p class="level"><span>Niveau :</span> 1</p>
                 <p class="capacity"><span>Taille : </span>2</p>
@@ -21,9 +21,10 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button  mat-dialog-close class="destroyButton">Détruire</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close class="destroyButton" (click)="openBuildingDestroy()">Détruire</button>
     
-        <button  mat-dialog-close (click)="openBuildingBuild()">Construire/Améliorer</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
+        <button *ngIf="isBuilt == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
 
 
         <button  mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>

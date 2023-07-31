@@ -4,11 +4,6 @@ body{
     
 }
 
-.popupButtons{
-    // display: flex;
-    // justify-content: space-evenly;
-    // font-family: 'Jura', sans-serif;
-}
 
 .bg-container{
     background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
@@ -82,11 +77,6 @@ color:var(--body-color);
     font-family: 'Jura', sans-serif;
 } */
 
-.shipList{
-    grid-area: level;
-    color:var(--body-color);
-    font-family: 'Jura', sans-serif;
-}
 
 // button{
     // background:var(--light-color);

@@ -17,12 +17,12 @@ export class BuildingsComponent {
     });
   }
 
-  openBuildingBuild() {
-    const dialogRef = this.dialog.open(buildingBuild);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  // openBuildingBuild() {
+  //   const dialogRef = this.dialog.open(buildingBuild);
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 }
 
 @Component({
@@ -39,6 +39,14 @@ export class buildingDetail {
       console.log(`Dialog result: ${result}`);
     });
   }
+  isBuilt = true;
+
+  openBuildingDestroy() {
+    const dialogRef = this.dialog.open(buildingDestroy);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   toShipyard() {
     this.router.navigate(['/', 'shipyard']);
@@ -48,6 +56,27 @@ export class buildingDetail {
 @Component({
   selector: 'buildingBuild',
   templateUrl: 'buildingBuild.html',
-  styleUrls: ['buildingBuild.css'],
+  styleUrls: ['buildingBuild.scss'],
 })
-export class buildingBuild {}
+export class buildingBuild {
+  buildBuilding() {
+    // create building with userID
+    this.isBuilt = true;
+  }
+
+  isBuilt = true;
+  upgradeBuilding() {
+    // upgrade building with userID
+  }
+}
+
+@Component({
+  selector: 'buildingDestroy',
+  templateUrl: 'buildingDestroy.html',
+  styleUrls: ['buildingDestroy.scss'],
+})
+export class buildingDestroy {
+  destroyBuilding() {
+    // delete building with userID
+  }
+}

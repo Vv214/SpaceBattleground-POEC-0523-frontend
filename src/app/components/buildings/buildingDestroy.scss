@@ -1,5 +1,7 @@
 body{
     font-family: 'Jura', sans-serif;
+color:var(--body-color);
+
 }
 
 .popupButtons{
@@ -26,24 +28,16 @@ body{
 
 .picture{
     width: 200px;
-    grid-area: picture;
+display: flex;
+margin: auto;
 }
 
-.position, .capacity{
-    grid-area: level;
-    color:var(--body-color);
-    font-family: 'Jura', sans-serif;
-}
-
-.shipList{
-    grid-area: level;
-    color:var(--body-color);
-    font-family: 'Jura', sans-serif;
-}
 
 button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    font-family: 'Jura', sans-serif;
+    font-size: 1.2em !important;
+}
+
+.destroyButton:hover{
+    color: red !important;
+    border-color: red !important;
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { buildingBuild } from '../buildings/buildings.component';
 
 @Component({
   selector: 'app-resources',
@@ -12,6 +13,13 @@ export class ResourcesComponent {
 
   openUpgrade() {
     const dialogRef = this.dialog.open(Upgrade);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openBuildingBuild() {
+    const dialogRef = this.dialog.open(buildingBuild);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
