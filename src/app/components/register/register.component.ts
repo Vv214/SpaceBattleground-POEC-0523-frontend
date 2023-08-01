@@ -22,6 +22,8 @@ export class RegisterComponent {
 
   constructor(private router: Router, private fb: FormBuilder, public registerService: RegisterService) {};
 
+  public token!: string;
+  public nickname?: string;
 
   alreadyInBase = true;
   onSubmit() {
@@ -29,14 +31,16 @@ export class RegisterComponent {
     this.registerService.addUser(this.registerForm)
       .then(response => {
         if (response.status === 200) {
+          localStorage.setItem('nickname', this.registerForm.value.nickname ?? '');
+          this.nickname = localStorage.getItem('nickname') ?? '';
           this.router.navigate(['/', 'overview']);
         } else
           this.router.navigate(['/', 'register']);
       });
   }
+
   login() {
     // redirection login
     this.router.navigate(['/', 'login']);
-
   }
 }

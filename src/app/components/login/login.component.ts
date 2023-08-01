@@ -13,9 +13,7 @@ export class LoginComponent {
 
   incorectlogin: boolean = false;
   alreadyInBase: boolean = false;
-  token?: string;
-  // token = requestAnimationFrame.getHeader("x-token");
-
+  // token?: string;
 
   loginForm = this.fb.group({
     nickname: ['', [Validators.required]],
