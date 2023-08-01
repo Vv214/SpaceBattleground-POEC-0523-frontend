@@ -1,13 +1,14 @@
-// :host {
-//     position: relative;
-// }
 
+@media (min-width:1000px){
+    .bg-container { 
+        background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center  center fixed; 
+        background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 650px;
+        color:var(--body-color);
 
-
-  .bg-container { 
-    background: url("/assets/images/backgrounds/overviewBackground5.jpg") no-repeat center center fixed !important; 
-    background-size: cover;
-  }
+      }
 
     .mobilePlanet{
         display: none;
@@ -90,22 +91,8 @@
     background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
 
-@media (min-width:1000px){
-    .bg-container { 
-        background: url("/assets/images/backgrounds/overviewBackground5.jpg") no-repeat center center fixed !important; 
-        background-size: cover;
-      }
 }
 
 
 
 }
-
-// @media (min-width:600px){
-    
-// }
-
-// @media (min-width:416px){
-
-// }
-
