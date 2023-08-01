@@ -29,19 +29,23 @@
             <p>Marché</p>
         </div>
 
-    </div>
+ 
  
     <div class="planet">
-        <button id="l-arrow" (click)="previousPlanet()"><</button>
+      <span id="l-arrow">
+        <svg (click)="previousPlanet()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        </svg>
+      </span>
         <div >
             <img src="assets/images/planets/planet3.png" (click)="overviewRoute()" />
             <p>Planète 1</p>
         </div>
-        <button id="r-arrow" (click)="nextPlanet()">></button>
+        <span id="r-arrow">
+          <svg (click)="nextPlanet()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+          </svg>
+        </span>
     </div>
+    
 </div>
-
-
-
-
-

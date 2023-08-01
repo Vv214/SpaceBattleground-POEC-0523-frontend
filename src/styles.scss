@@ -39,10 +39,7 @@ h1{
 html, body { height: 100%; }
 body { 
     margin: 0; 
-    // margin-bottom: 200px;
-    // font-family: Roboto, "Helvetica Neue", sans-serif; 
     font-family: 'Jura', sans-serif;
-    // color:var(--body-color);
 
     background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
     url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
@@ -54,13 +51,22 @@ body {
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     color:var(--body-color) !important;
     border:.1rem solid var(--light-color);
-    // outline: none;
+    color:var(--body-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -20;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
 }
 
 button{
-    // background:var(--light-color);
-    // border:.1rem solid var(--light-color);
-    // color:var(--body-color) !important;
     font-family: 'Jura', sans-serif;
     cursor: pointer;
     background-color:var(--blue-color);
@@ -79,6 +85,7 @@ button{
 }
 
 button:hover{
+
     // background-color:var(--light-color);
     // color:var(--blue-color) !important;
     // color:var(--primary-color) !important;
@@ -106,23 +113,26 @@ button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
+
+.overlay {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), radial-gradient(circle, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5) 50%, rgba(2,0,36,0.2) 91%);
+}
+
 
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 @media (min-width:1000px){
-    button{
-        // background:var(--light-color);
-        // border:.1rem solid var(--light-color);
-        // color:var(--body-color) !important;
-        // font-family: 'Jura', sans-serif;
-    }
-    
-    button:hover{
-        // background-color: rgba(0, 153, 255, 0.8);
-    }
+
 }
 
 @media (min-width:600px){
