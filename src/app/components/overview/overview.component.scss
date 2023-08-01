@@ -1,9 +1,12 @@
-:host {
-    position: relative;
-}
+// :host {
+//     position: relative;
+// }
 
-.bg-container { 
-margin: auto;
+
+
+  .bg-container { 
+    background: url("/assets/images/backgrounds/overviewBackground5.jpg") no-repeat center center fixed !important; 
+    background-size: cover;
   }
 
     .mobilePlanet{
@@ -89,7 +92,7 @@ margin: auto;
 
 @media (min-width:1000px){
     .bg-container { 
-        background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center center fixed !important; 
+        background: url("/assets/images/backgrounds/overviewBackground5.jpg") no-repeat center center fixed !important; 
         background-size: cover;
       }
 }
