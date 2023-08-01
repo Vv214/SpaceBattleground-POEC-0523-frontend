@@ -1,14 +1,5 @@
 
-*{
-    color:var(--body-color);
 
-}
-
-body{
-    // font-family: 'Jura', sans-serif;
-    color:var(--body-color);
-
-}
 
 .popupButtons{
     display: flex;
@@ -23,13 +14,11 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
-span{
-    color:var(--secondary-color);
-}
+// span{
+//     color:var(--secondary-color);
+// }
 
-.upgradeText{
-    color: green;
-}
+
 
 .name{
     grid-area: name;

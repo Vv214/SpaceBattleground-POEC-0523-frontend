@@ -4,12 +4,12 @@
     <mat-dialog-content class="mat-typography">
     
     
-        <img class="picture" src="assets/images/mineFer.png" />
+        <img class="picture" src="assets/images/buildings/mineFer.png" />
     
     
     <div>
-        <p class="level">Niveau : 3</p>
-        <p class="level">Production : 100 fer/heure</p>
+        <p class="level"><span class="categoryTitle">Niveau : </span>3</p>
+        <p class="level"><span class="categoryTitle">Production : </span>100 fer/heure</p>
     </div>
     
     
@@ -18,8 +18,8 @@
     
     
     <mat-dialog-actions class="popupButtons">
-        <button mat-button mat-dialog-close>Retour</button>
+        <!-- <button *ngIf="isBuilt == true" mat-dialog-close class="destroyButton" (click)="openBuildingDestroy()">Détruire</button> -->
     
-        <button mat-button mat-dialog-close>Améliorer</button>
+        <!-- <button *ngIf="isBuilt == true" mat-dialog-close (click)="upgradeBuilding()">Améliorer</button> -->
     </mat-dialog-actions>
 </div>

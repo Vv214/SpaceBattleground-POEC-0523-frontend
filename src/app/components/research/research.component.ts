@@ -56,6 +56,9 @@ export class TechnologyTree {
 @Component({
   selector: 'researchDetail',
   templateUrl: 'researchDetail.html',
-  styleUrls: ['researchDetail.css'],
+  styleUrls: ['researchDetail.scss'],
 })
-export class researchDetail {}
+export class researchDetail {
+  isBuilt = true;
+  validateResearch() {}
+}

@@ -147,13 +147,18 @@ button{
 
 
 
-    span{
-        color:var(--secondary-color);
-    }
+    // span{
+    //     color:var(--secondary-color);
+    // }
 
     .destroyButton:hover{
-        color: red !important;
+        // color: red !important;
         border-color: red !important;
+        background-color:rgba(255,0,0,0.9);
+        color:var(--blue-color) !important;
+        -webkit-box-shadow:0px 0px 15px 0px rgba(255,0,0,0.9);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(255,0,0,0.9);
+        box-shadow: 0px 0px 15px 0px rgba(255,0,0,0.9);
     }
     // .shipList{
     //     grid-area: level;
