@@ -4,7 +4,7 @@ import * as SockJS from 'sockjs-client';
 
 @Injectable()
 export class WebsocketService {
-  private serverUrl = 'http://localhost:8080/api';
+  private serverUrl = 'http://localhost:8080/socket';
   private stompClient: any;
   public mapEndpointSubscription: Map<string, any> = new Map();
 
