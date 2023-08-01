@@ -40,6 +40,7 @@ export class buildingDetail {
     });
   }
   isBuilt = true;
+  chantier = false;
 
   openBuildingDestroy() {
     const dialogRef = this.dialog.open(buildingDestroy);
