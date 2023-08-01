@@ -22,7 +22,7 @@ export class RegisterComponent {
 
   constructor(private router: Router, private fb: FormBuilder, public registerService: RegisterService) {};
 
-  public token!: string;
+  // public token: string = '';
   public nickname?: string;
 
   alreadyInBase = true;
@@ -31,9 +31,13 @@ export class RegisterComponent {
     this.registerService.addUser(this.registerForm)
       .then(response => {
         if (response.status === 200) {
-          localStorage.setItem('nickname', this.registerForm.value.nickname ?? '');
-          this.nickname = localStorage.getItem('nickname') ?? '';
-          this.router.navigate(['/', 'overview']);
+          response.json().then(body => {
+            localStorage.setItem('nickname', this.registerForm.value.nickname ?? '');
+            this.nickname = localStorage.getItem('nickname') ?? '';
+            localStorage.setItem('x-token', body.data.token);
+            //this.token = localStorage.getItem('x-token') ?? '';
+            this.router.navigate(['/', 'overview']);
+          })
         } else
           this.router.navigate(['/', 'register']);
       });

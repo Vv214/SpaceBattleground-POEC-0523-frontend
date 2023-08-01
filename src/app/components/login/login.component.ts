@@ -28,6 +28,7 @@ export class LoginComponent {
             if (body.data.token === null || body.data.token === '') {
               console.log("Bad token received");
             } else {
+              localStorage.setItem('nickname', this.loginForm.value.nickname ?? '');
               localStorage.setItem('x-token', body.data.token);
               this.router.navigate(['/', 'overview']);
             }

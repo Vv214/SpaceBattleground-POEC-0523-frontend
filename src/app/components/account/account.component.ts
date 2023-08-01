@@ -37,30 +37,31 @@ export class AccountComponent implements OnInit {
       });
   }
 
-  getNickname(token: string) {
-    console.log(token);
-    this.accountService.getNickname(token)
-      .then(response => {
-        if (response.status === 200) {
-          response.json().then(body => {
-            if (body.data.login === null || body.data.login === '') {
-              console.log("bad tokene recieved");
-            }
-            else {
-              console.log(body.data.login);
-              localStorage.setItem('nickname', body.data.nickname);
-              this.nickname = localStorage.getItem('nickname') ?? '';
-            }
-          })
-        } else {
-          console.log("bad tokene recieved");
-        }
-      });
-  }
+  // getNickname(token: string) {
+  //   console.log(token);
+  //   this.accountService.getNickname(token)
+  //     .then(response => {
+  //       if (response.status === 200) {
+  //         response.json().then(body => {
+  //           if (body.data.login === null || body.data.login === '') {
+  //             console.log("bad tokene recieved");
+  //           }
+  //           else {
+  //             console.log(body.data.nickname);
+  //             localStorage.setItem('nickname', body.data.nickname);
+  //             this.nickname = localStorage.getItem('nickname') ?? '';
+  //           }
+  //         })
+  //       } else {
+  //         console.log("bad token recieved");
+  //       }
+  //     });
+  // }
 
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
-    this.getNickname(this.token);
+    this.nickname = localStorage.getItem('nickname') ?? '';
+    //this.getNickname(this.token);
   }
 }
 
