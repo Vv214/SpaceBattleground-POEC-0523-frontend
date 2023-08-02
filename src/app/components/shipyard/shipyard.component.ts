@@ -25,3 +25,29 @@ export class ShipyardComponent {
 //   styleUrls: ['../fleet/shipDetail.css'],
 // })
 // export class shipDetail {}
+
+// ferJoueur = 2000;
+// hydrogeneJoueur = 2000;
+// diamantJoueur = 2000;
+// ferRequis = 200;
+// hydrogeneRequis = 200;
+// diamantRequis = 200;
+
+// buildBuilding() {
+//   // create building with userID
+
+//   // batiment = currentPlayer.batiment
+
+//   if (
+//     this.ferJoueur > this.ferRequis &&
+//     this.hydrogeneJoueur > this.hydrogeneRequis &&
+//     this.diamantJoueur > this.diamantRequis
+//   ) {
+//     this.ferJoueur = this.ferJoueur - this.ferRequis;
+//     this.hydrogeneJoueur = this.hydrogeneJoueur - this.hydrogeneRequis;
+//     this.diamantJoueur = this.diamantJoueur - this.diamantRequis;
+//     // timer batiment
+//     // post batiment
+//     // batiment.isBuilt = true;
+//   }
+// }
