@@ -1,13 +1,20 @@
 <div class="bg-container">
-    <h1 mat-dialog-title class="name">Mine de fer</h1>
+    <!-- <h1 mat-dialog-title class="name">Mine de fer</h1> -->
     <mat-dialog-content class="mat-typography">
-        <img class="picture" src="assets/images/mineGaz.png"/>
-    <div>
-        <p class="capacity">Type : Récolte</p>
-        <p class="capacity">Temps de construction : 10 min</p>
-        <p class="capacity">Coût : 45 fer</p>
-        <p class="capacity">Taille : 2</p>
-        <p class="capacity">Description : Extrait du fer</p>
+
+    <div class="buildingDetail">
+       
+        <img class="picture" src="assets/images/buildings/shipFactory.png"/>
+        <h1 class="name">Chantier spatial</h1>
+        <p class="type"><span class="categoryTitle">Type : </span>Production</p>
+        <p class="level"><span class="categoryTitle">Niveau :</span> 1 <span class="upgradeText" *ngIf="isBuilt == true"> -> 2</span></p>
+        <p class="capacity"><span class="categoryTitle">Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p>
+        <p class="time" *ngIf="isBuilt == true"><span class="categoryTitle">Temps d'amélioration : </span>10 min</p>
+        <p class="time" *ngIf="isBuilt == false"><span class="categoryTitle">Temps de construction : </span>10 min</p>
+        <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
+        <p class="required"><span class="categoryTitle">Prérequis : </span>Recherche spatiale niveau 1</p>
+        <p class="description"><span class="categoryTitle">Description : </span>Permet de construire des vaisseaux</p>
+        
     </div>
  
     </mat-dialog-content>
@@ -16,15 +23,10 @@
     <mat-dialog-actions class="popupButtons">
         <!-- <button mat-button mat-dialog-close>Détruire</button> -->
     
-        <button mat-button mat-dialog-close>Construire</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close (click)="upgradeBuilding()">Améliorer</button>
+        <button *ngIf="isBuilt == false" mat-dialog-close (click)="buildBuilding()">Construire</button>
     </mat-dialog-actions>
 
 </div>
 
-<!-- 
-Nom : {nom}
-Type : {type}
-Temps de construction : {tempsConstruction}
-Coût : {coûtConstruction}
-Taille : {tailleBatiment}
-Description : {descriptionBatiment} -->
+            
