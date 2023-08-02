@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
 import * as THREE from 'three';
 import { OrbitControls } from '@avatsaev/three-orbitcontrols-ts';
 
@@ -87,6 +88,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     MatButtonModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

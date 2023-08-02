@@ -150,8 +150,41 @@ button:hover{
     padding-bottom: 0;
   }
 
+//   border-color: var(--primary-color);
+//   background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+//   background-color:rgba(45,255,196,0.9);
+//   color:var(--blue-color) !important;
+//   -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+//   -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+//   box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
 
+ ::-webkit-scrollbar-track
+  {
+    // -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    background-color:rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar
+  {
+      width: 7px;
+      background-color:rgba(77, 77, 77, 0.1);
+  }
+  
+  ::-webkit-scrollbar-thumb
+  {
+    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
 
+      border-radius: 10px;
+      background-color:rgba(45,255,196,0.9);
+      background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    //   background-image: -webkit-gradient(linear,
+    //                                      40% 0%,
+    //                                      75% 84%,
+    //                                      from(#4D9C41),
+    //                                      to(#19911D),
+    //                                      color-stop(.6,#54DE5D))
+  }
 
 // .corner-button:before,
 // .corner-button span:before,
