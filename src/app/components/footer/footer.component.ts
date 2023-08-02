@@ -25,6 +25,10 @@ export class FooterComponent {
     this.router.navigate(['/', 'fleet']);
   }
 
+  toShipyard() {
+    this.router.navigate(['/', 'shipyard']);
+  }
+
   toAlliance() {
     this.router.navigate(['/', 'alliances']);
   }

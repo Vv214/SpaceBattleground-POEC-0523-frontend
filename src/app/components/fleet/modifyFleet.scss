@@ -1,0 +1,136 @@
+    body{
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .popupButtons{
+        font-family: 'Jura', sans-serif;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "updateButton updateButton"
+        "moveButton attackButton "
+        ;
+    }
+
+    .bg-container{
+        border:.2rem solid var(--primary-color);
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .name{
+        grid-area: name;
+        text-align: center;
+        color:var(--body-color);
+        font-weight: 700;
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .picture{
+        width: 200px;
+        grid-area: picture;
+    }
+    
+    .position, .capacity{
+        grid-area: level;
+        color:var(--body-color);
+        font-family: 'Jura', sans-serif;
+    }
+
+    .shipList{
+        grid-area: level;
+        color:var(--body-color);
+        font-family: 'Jura', sans-serif;
+    }
+    
+    button{
+        background:var(--light-color);
+        border:.1rem solid var(--light-color);
+        color:var(--body-color) !important;
+        font-family: 'Jura', sans-serif;
+    }
+
+    .updateButton{
+        grid-area: updateButton;
+        margin: auto;
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+    .updateButton button{
+        margin: auto;
+        width: 250px;
+    }
+
+    .moveButton button, .attackButton button{
+        width: 130px;
+        margin: 2px;
+    }
+
+
+    .moveButton{
+        grid-area: moveButton;
+        width: auto;
+    }
+    .attackButton{
+        grid-area: attackButton;
+        width: auto;
+
+    }
+
+
+@media (min-width:1000px){
+    body{
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .popupButtons{
+        font-family: 'Jura', sans-serif;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "updateButton updateButton"
+        "moveButton attackButton "
+        ;
+    }
+
+    .bg-container{
+        border:.2rem solid var(--primary-color);
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .name{
+        grid-area: name;
+        text-align: center;
+        color:var(--body-color);
+        font-weight: 700;
+        font-family: 'Jura', sans-serif;
+    }
+    
+    .picture{
+        width: 200px;
+        grid-area: picture;
+    }
+    
+    .position, .capacity{
+        grid-area: level;
+        color:var(--body-color);
+        font-family: 'Jura', sans-serif;
+    }
+
+    .shipList{
+        grid-area: level;
+        color:var(--body-color);
+        font-family: 'Jura', sans-serif;
+    }
+    
+}
+
+@media (min-width:600px){
+    
+}
+
+@media (min-width:416px){
+
+}
