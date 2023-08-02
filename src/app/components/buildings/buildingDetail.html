@@ -5,14 +5,14 @@
         <div class="buildingDetail">
             <img class="picture" src="assets/images/buildings/shipFactory.png"/>
             
-                <p class="name">Chantier spatial</p>
-                <p class="type"><span>Type : </span>Production</p>
-                <p class="level"><span>Niveau :</span> 1</p>
-                <p class="capacity"><span>Taille : </span>2</p>
-                <p class="time"><span>Temps de construction : </span>10 min</p>
-                <p class="ressources"><span>Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
-                <p class="required"><span>Prérequis : </span>Recherche spatiale niveau 1</p>
-                <p class="description"><span>Description : </span>Permet de construire des vaisseaux</p>
+                <h1 class="name">Chantier spatial</h1>
+                <p class="type"><span class="categoryTitle">Type : </span>Production</p>
+                <p class="level"><span class="categoryTitle">Niveau :</span> 1</p>
+                <p class="capacity"><span class="categoryTitle">Taille : </span>2</p>
+                <p class="time"><span class="categoryTitle">Temps de construction : </span>10 min</p>
+                <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
+                <p class="required"><span class="categoryTitle">Prérequis : </span>Recherche spatiale niveau 1</p>
+                <p class="description"><span class="categoryTitle">Description : </span>Permet de construire des vaisseaux</p>
             
         </div>
 
@@ -21,12 +21,13 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button  mat-dialog-close class="destroyButton">Détruire</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close class="destroyButton" (click)="openBuildingDestroy()">Détruire</button>
     
-        <button  mat-dialog-close (click)="openBuildingBuild()">Construire/Améliorer</button>
+        <button *ngIf="isBuilt == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
+        <button *ngIf="isBuilt == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
 
 
-        <button  mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
+        <button  *ngIf="chantier" mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
     </mat-dialog-actions>
 
 </div>

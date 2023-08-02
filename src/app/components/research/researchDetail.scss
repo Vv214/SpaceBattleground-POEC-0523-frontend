@@ -1,5 +1,12 @@
 body{
     font-family: 'Jura', sans-serif;
+    text-align: center;
+    color:var(--body-color);
+}
+
+text{
+    color:var(--body-color);
+
 }
 
 .popupButtons{
@@ -13,6 +20,8 @@ body{
     url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
     border:.2rem solid var(--primary-color);
     font-family: 'Jura', sans-serif;
+    color:var(--body-color);
+
 }
 
 .name{
@@ -24,9 +33,17 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
+.text{
+    font-family: 'Jura', sans-serif;
+    color:var(--body-color);
+
+}
+
 .picture{
     width: 200px;
     grid-area: picture;
+    display: flex;
+    margin: auto;
 }
 
 .position, .capacity{
@@ -42,8 +59,5 @@ body{
 }
 
 button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    font-family: 'Jura', sans-serif;
+font-size: 1.2em;
 }

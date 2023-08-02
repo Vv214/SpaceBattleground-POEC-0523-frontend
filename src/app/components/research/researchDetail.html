@@ -1,14 +1,43 @@
-
+<!-- 
 <div class="bg-container">
     <h1 mat-dialog-title class="name">Recherche Spatiale</h1>
     <mat-dialog-content class="mat-typography">
-    <div class="text">Temps de recherche : 10 min</div>
+    <div class="text"><span class="categoryTitle">Temps de recherche : </span>10 min</div>
+    <div class="text"><span class="categoryTitle">Temps de recherche : </span>10 min</div>
 
     </mat-dialog-content>
     
     <mat-dialog-actions class="popupButtons">
-        <button mat-button mat-dialog-close>Retour</button>
+        <button mat-dialog-close>Retour</button>
     
-        <button mat-button mat-dialog-close>Recherche</button>
+        <button mat-dialog-close>Recherche</button>
     </mat-dialog-actions>
+</div> -->
+
+<div class="bg-container">
+    <!-- <h1 mat-dialog-title class="name">Mine de fer</h1> -->
+    <mat-dialog-content class="mat-typography">
+
+    <div class="buildingDetail">
+       
+        <img class="picture" src="assets/images/research/cargo.png"/>
+        <h1 class="name">Cargo amélioré</h1>
+        <p class="level"><span class="categoryTitle">Niveau :</span> 1 <span class="upgradeText" *ngIf="isBuilt == true"> -> 2</span></p>
+        <!-- <p class="capacity"><span>Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p> -->
+        <p class="time" *ngIf="isBuilt == true"><span  class="categoryTitle">Temps de recherche : </span>10 min</p>
+        <p class="ressources"><span  class="categoryTitle">Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
+        <p class="required"><span  class="categoryTitle">Prérequis : </span>Recherche spatiale niveau 1</p>
+        <p class="description"><span  class="categoryTitle">Description : </span>Permet d'augmenter la capacité des vaisseaux</p>
+        
+    </div>
+ 
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions class="popupButtons">
+        <!-- <button mat-button mat-dialog-close>Détruire</button> -->
+    
+        <button  mat-dialog-close (click)="validateResearch()">Rechercher</button>
+    </mat-dialog-actions>
+
 </div>
