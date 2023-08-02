@@ -21,6 +21,7 @@ import {
   buildingDetail,
   BuildingsComponent,
 } from './components/buildings/buildings.component';
+import { HttpClientModule  } from "@angular/common/http";
 import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
 import { FleetComponent, modifyFleet, shipBuild, shipDetail } from './components/fleet/fleet.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
@@ -88,6 +89,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     MatButtonModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
