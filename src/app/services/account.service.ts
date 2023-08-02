@@ -20,7 +20,7 @@ export class AccountService {
   logout(token: string) {
     console.log(token + "service authenticated");
     return fetch("http://localhost:8080/logout", {
-      method: 'GET',
+      method: 'post',
       headers: {
         "x-token": token
       }

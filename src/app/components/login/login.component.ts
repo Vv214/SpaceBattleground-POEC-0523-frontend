@@ -13,7 +13,9 @@ export class LoginComponent {
 
   incorectlogin: boolean = false;
   alreadyInBase: boolean = false;
+
   // token?: string;
+
 
   loginForm = this.fb.group({
     nickname: ['', [Validators.required]],
@@ -21,6 +23,7 @@ export class LoginComponent {
   });
 
   onSubmit() {
+
     this.loginService.login(this.loginForm)
       .then(response => {
         if (response.status === 200) {
@@ -28,6 +31,7 @@ export class LoginComponent {
             if (body.data.token === null || body.data.token === '') {
               console.log("Bad token received");
             } else {
+              localStorage.setItem('nickname', this.loginForm.value.nickname ?? '');
               localStorage.setItem('x-token', body.data.token);
               this.router.navigate(['/', 'overview']);
             }
@@ -38,9 +42,32 @@ export class LoginComponent {
         } else
           this.incorectlogin = true;
       });
+
   }
 
   toRegister() {
     this.router.navigate(['/', 'register']);
+  }
+
+  login() {
+    // check si connecté
+    console.log(this.loginForm.value);
+    fetch('http://localhost:8080/login', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      //make sure to serialize your JSON body
+      body: JSON.stringify(this.loginForm.value),
+    }).then((response) => {
+      if (response.status === 200) {
+        this.router.navigate(['/', 'overview']);
+      } else this.isNotLogin();
+    });
+  }
+
+  isNotLogin() {
+    this.incorectlogin = true;
   }
 }

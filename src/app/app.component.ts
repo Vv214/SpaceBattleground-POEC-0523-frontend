@@ -7,8 +7,8 @@ import { Router, NavigationStart } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  showNavBar: boolean = false;
-  showFooter: boolean = false;
+  showNavBar = false;
+  showFooter = false;
 
   ngOnInit() {}
 

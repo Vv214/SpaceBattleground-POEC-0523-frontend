@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import * as THREE from 'three';
+import { OrbitControls } from '@avatsaev/three-orbitcontrols-ts';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +21,7 @@ import {
   BuildingsComponent,
 } from './components/buildings/buildings.component';
 import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
-import { FleetComponent, modifyFleet, shipDetail } from './components/fleet/fleet.component';
+import { FleetComponent, modifyFleet, shipBuild, shipDetail } from './components/fleet/fleet.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -38,6 +40,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShipyardComponent } from './components/shipyard/shipyard.component';
+import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,8 @@ import { ShipyardComponent } from './components/shipyard/shipyard.component';
     buildingDetail,
     ShipyardComponent,
     buildingDestroy,
+    AnimateBackgroundComponent,
+    shipBuild,
   ],
   imports: [
     BrowserModule,
