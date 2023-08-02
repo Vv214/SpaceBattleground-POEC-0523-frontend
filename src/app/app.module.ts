@@ -1,8 +1,9 @@
+import { CretatedAlliancesComponent } from './components/alliances/createdAlliances/cretated-alliances/cretated-alliances.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -64,8 +65,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     researchDetail,
     buildingBuild,
     buildingDetail,
+    CretatedAlliancesComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, ReactiveFormsModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -2,30 +2,25 @@
 <div>Chercher une alliance</div>
 <p>Liste des alliances</p>
 
-
 <div id="alliance" class="alliance">
+  <h2 class="center">Créer une alliance</h2>
 
-    <h2 class="center">Créer une alliance</h2>
-  
-    <form class="center">
+  <form class="center" (submit)="onSubmit($event)">
+    <div>
+      <label for="name-alliance"></label>
+      <input name="name" type="text" placeholder="Nom de l'alliance" />
+    </div>
 
-          <div >
-            <label for="name-alliance"></label>
-            <input name="name-alliance" type="text"  placeholder="Nom de l'alliance">
-          </div>
+    <div>
+      <label for="name-alliance"></label>
+      <input name="tag" type="text" maxlength="3" placeholder="Tag de l'alliance" />
+    </div>
 
-          <div >
-            <label for="name-alliance"></label>
-            <input name="name-alliance" type="text" maxlength="3" placeholder="Tag de l'alliance">
-          </div>
-    
-        
-        <div class="center">
-            <!-- <button type="submit">Connexion</button> -->
-            <button (click)="onSubmit()">Créer</button>
-        </div>
-      </form>
-    
-    
-  </div>
-  
+    <div class="center">
+      <!-- <button type="submit">Connexion</button> -->
+      <button type="submit">Créer</button>
+    </div>
+  </form>
+</div>
+
+<!-- <app-cretated-alliances></app-cretated-alliances> -->
