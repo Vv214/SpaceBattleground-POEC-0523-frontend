@@ -65,7 +65,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     researchDetail,
     buildingBuild,
     buildingDetail,
-    CretatedAlliancesComponent
+    CretatedAlliancesComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, ReactiveFormsModule],
   providers: [],
