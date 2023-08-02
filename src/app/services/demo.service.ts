@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class DemoService {
   findAllLinter() {
-    return ['ESlint', 'Prettier'];
+    return ['Login', 'Register'];
   }
 }

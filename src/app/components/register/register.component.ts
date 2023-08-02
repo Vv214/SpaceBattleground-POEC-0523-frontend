@@ -29,15 +29,14 @@ export class RegisterComponent {
 
   public nicknameLocal!: string;
 
-  constructor(private router: Router, private fb: FormBuilder) {};
-
+  constructor(private router: Router, private fb: FormBuilder) {}
 
   alreadyInBase = true;
   onSubmit() {
     // création compte
     this.addUser();
     this.updateLocalStorage();
-    console.log(this.registerForm.value.nickname + "Toto");
+    console.log(this.registerForm.value.nickname + 'Toto');
     this.router.navigate(['/', 'overview']);
   }
 
@@ -45,30 +44,30 @@ export class RegisterComponent {
     // redirection login
     this.updateLocalStorage();
     this.router.navigate(['/', 'login']);
-
   }
 
   addUser() {
     // console.log(this.registerForm.value);
-    fetch("http://localhost:8080/register", {
-      method: "post",
+    fetch('http://localhost:8080/register', {
+      method: 'post',
 
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       //make sure to serialize your JSON body
-      body: JSON.stringify(this.registerForm.value)
-    }).then(response => console.log(response + " response"));
-  };
+      body: JSON.stringify(this.registerForm.value),
+    }).then((response) => console.log(response + ' response'));
+  }
 
   updateLocalStorage(): void {
-    console.log("dans la méthode update local storage", localStorage.getItem("nickname"));
-    this.nicknameLocal = this.registerForm.value.nickname || " ";
-    console.log("dans la méthode update local storage après la maj", this.nicknameLocal);
+    console.log('dans la méthode update local storage', localStorage.getItem('nickname'));
+    this.nicknameLocal = this.registerForm.value.nickname || ' ';
+    console.log('dans la méthode update local storage après la maj', this.nicknameLocal);
   }
 }
-//     body: JSON.stringify(this.registerForm.value),
-//   }).then((response) => console.log(response));
+//       body: JSON.stringify(this.registerForm.value),
+//     }).then((response) => console.log(response));
+//   }
 // }
 // }
