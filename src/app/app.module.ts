@@ -21,7 +21,7 @@ import {
   BuildingsComponent,
 } from './components/buildings/buildings.component';
 import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
-import { FleetComponent, modifyFleet, shipDetail } from './components/fleet/fleet.component';
+import { FleetComponent, modifyFleet, shipBuild, shipDetail } from './components/fleet/fleet.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -77,6 +77,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     ShipyardComponent,
     buildingDestroy,
     AnimateBackgroundComponent,
+    shipBuild,
   ],
   imports: [
     BrowserModule,
