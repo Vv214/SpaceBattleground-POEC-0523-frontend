@@ -14,22 +14,35 @@ export class LoginComponent {
   incorectlogin: boolean = false;
   alreadyInBase: boolean = false;
 
+  // token?: string;
+
+
   loginForm = this.fb.group({
     nickname: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
 
   onSubmit() {
-    // check identifiants
-    this.loginService.login(this.loginForm).then((response) => {
-      if (response.status === 200) {
-        localStorage.setItem('nickname', this.loginForm.value.nickname ?? '');
-        this.router.navigate(['/', 'overview']);
-      } else if (response.status === 400) {
-        this.alreadyInBase = true;
-        this.router.navigate(['/', 'regiser']);
-      } else this.incorectlogin = true;
-    });
+
+    this.loginService.login(this.loginForm)
+      .then(response => {
+        if (response.status === 200) {
+          response.json().then(body => {
+            if (body.data.token === null || body.data.token === '') {
+              console.log("Bad token received");
+            } else {
+              localStorage.setItem('nickname', this.loginForm.value.nickname ?? '');
+              localStorage.setItem('x-token', body.data.token);
+              this.router.navigate(['/', 'overview']);
+            }
+          })
+        } else if (response.status === 400) {
+          this.alreadyInBase = true;
+          this.router.navigate(['/', 'register']);
+        } else
+          this.incorectlogin = true;
+      });
+
   }
 
   toRegister() {
