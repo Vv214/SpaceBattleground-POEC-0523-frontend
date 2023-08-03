@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ResearchComponent } from './components/research/research.component';
 import { MessageComponent } from './components/message/message.component';
+import { ShipyardComponent } from './components/shipyard/shipyard.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'home', component: HomeComponent },
   { path: 'ranking', component: RankingComponent },
+  { path: 'shipyard', component: ShipyardComponent },
 ];
 
 @NgModule({

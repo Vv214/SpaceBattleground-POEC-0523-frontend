@@ -1,9 +1,21 @@
+*{
+    color:var(--body-color);
+}
+
+
+
+
+
+
+
+
+
 .login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 20px;
 }
 
 img{
@@ -27,10 +39,32 @@ img{
 
 }
 
-button{
-    background:var(--light-color);
+
+input{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    color:var(--body-color);
+    margin: 5px;
+    border-radius: 5px;
     border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color:var(--primary-color);
+  -webkit-box-shadow: 0 0 0px 40rem  rgba(10, 24, 34) inset;
+  outline: none;
+}
+
+input:hover, input:active{
+    border-color: var(--primary-color) !important;
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--primary-color) !important;
+
 }
 
 button:hover{
@@ -48,7 +82,10 @@ button:hover{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 5%;
+        margin-top: 20px;
+
+
+
     }
     
     img{
@@ -56,7 +93,7 @@ button:hover{
         // margin-bottom: 20px;
         border-radius: 15px;
         width: auto;
-        max-width: 500px;
+        max-width: 400px;
     }
     
     .center{
@@ -73,11 +110,7 @@ button:hover{
     
     }
     
-    button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
-    }
+
 }
 
 @media (min-width:600px){

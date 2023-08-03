@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-research',
   templateUrl: './research.component.html',
   styleUrls: ['./research.component.scss'],
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ResearchComponent {
   constructor(public dialog: MatDialog) {}
@@ -28,7 +29,7 @@ export class ResearchComponent {
 @Component({
   selector: 'TechnologyTree',
   templateUrl: 'TechnologyTree.html',
-  styleUrls: ['TechnologyTree.css'],
+  styleUrls: ['TechnologyTree.scss'],
 })
 export class TechnologyTree {
   spaceSearch = true;
@@ -55,6 +56,9 @@ export class TechnologyTree {
 @Component({
   selector: 'researchDetail',
   templateUrl: 'researchDetail.html',
-  styleUrls: ['researchDetail.css'],
+  styleUrls: ['researchDetail.scss'],
 })
-export class researchDetail {}
+export class researchDetail {
+  isBuilt = true;
+  validateResearch() {}
+}
