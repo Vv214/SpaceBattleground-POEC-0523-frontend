@@ -17,7 +17,7 @@ export class FleetComponent {
     });
   }
 
-  shipDetail() {
+  openShipDetail() {
     const dialogRef = this.dialog.open(shipDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
@@ -28,13 +28,31 @@ export class FleetComponent {
 @Component({
   selector: 'modifyFleet',
   templateUrl: 'modifyFleet.html',
-  styleUrls: ['modifyFleet.css'],
+  styleUrls: ['modifyFleet.scss'],
 })
 export class modifyFleet {}
 
 @Component({
   selector: 'shipDetail',
   templateUrl: 'shipDetail.html',
-  styleUrls: ['shipDetail.css'],
+  styleUrls: ['shipDetail.scss'],
 })
-export class shipDetail {}
+export class shipDetail {
+  constructor(public dialog: MatDialog) {}
+
+  openShipBuild() {
+    const dialogRef = this.dialog.open(shipBuild);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+}
+
+@Component({
+  selector: 'shipBuild',
+  templateUrl: 'shipBuild.html',
+  styleUrls: ['shipBuild.scss'],
+})
+export class shipBuild {
+  constructor(public dialog: MatDialog) {}
+}
