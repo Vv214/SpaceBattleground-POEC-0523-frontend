@@ -16,7 +16,7 @@
       <input name="name-alliance" type="text" maxlength="3" placeholder="Tag de l'alliance" />
     </div>
 
-    <div class="center">
+    <div class="center"> -->
 
    
 
@@ -30,6 +30,53 @@
   <mat-tab label="Créer une alliance"> 
     
     <div class="createAlliance">
+
+       <form (ngSubmit)="onSubmit()" [formGroup]="addClanForm" #myForm="ngForm" class="center allianceForm">
+
+    <div>
+      <label for="alliance-name"></label>
+      <input id="alliance-name" name="alliance-name" type="name" formControlName="name"
+        placeholder="Nom de l'alliance">
+    </div>
+    <div>
+      <label for="alliance-tag"></label>
+      <input id="alliance-tag" name="alliance-tag" type="tag" formControlName="tag"
+        placeholder="Tag de l'alliance">
+
+        <div class="center">
+          <button type="submit">Créer une alliance</button>
+        </div>
+    </div>
+
+  </form>
+
+  </div>
+
+  </mat-tab>
+  <mat-tab label="Rejoindre une alliance"> 
+
+    <div class="searchAlliance">
+
+      <form class="center allianceForm">
+        <input id="alliance-search" placeholder="Chercher une alliance">
+
+        <div>
+          <button class="center" type="submit">Chercher</button>
+          </div>
+      </form>
+
+
+
+
+    </div>  
+  
+  </mat-tab>
+</mat-tab-group>
+
+</div>
+
+
+
      <!-- <form (ngSubmit)="onSubmit()" [formGroup]="AllianceForm" #myForm="ngForm" class="center allianceForm">
 
         <div>
@@ -49,45 +96,3 @@
         </div>
 
       </form> -->
-      
-       <form (ngSubmit)="onSubmit()" [formGroup]="addClanForm" #myForm="ngForm" class="center">
-
-    <div>
-      <label for="alliance-name"></label>
-      <input id="alliance-name" name="alliance-name" type="name" formControlName="name"
-        placeholder="Nom de l'alliance">
-    </div>
-    <div>
-      <label for="alliance-tag"></label>
-      <input id="alliance-tag" name="alliance-tag" type="tag" formControlName="tag"
-        placeholder="Tag de l'alliance">
-
-        <div class="center">
-          <button type="submit">Connexion</button>
-        </div>
-    </div>
-
-    </div>
-
-
-
-  </mat-tab>
-  <mat-tab label="Rejoindre une alliance"> 
-
-    <div class="searchAlliance">
-
-      <form class="center allianceForm">
-        <input placeholder="Chercher une alliance">
-
-      </form>
-
-    </div>  
-  
-  
-  
-  
-  </mat-tab>
-</mat-tab-group>
-
-</div>
-
