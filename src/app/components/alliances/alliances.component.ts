@@ -50,5 +50,9 @@ onSubmit () {
     }).then(response => console.log(response));
 }
 
+toAlliancesPage(){
+  this.router.navigate(['/created-alliances']);
+}
+
 
 }
