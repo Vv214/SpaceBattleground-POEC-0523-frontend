@@ -143,7 +143,7 @@ button:hover{
 
 .futurepanel__footer {
     box-sizing: border-box;
-    font-size: .8em;
+    font-size: 0.6em;
     color: rgb(65, 116, 158);
     grid-area: futurepanel__footer;
     margin-bottom: 0;
@@ -163,19 +163,21 @@ button:hover{
     // -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
     background-color:rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+
   }
   
   ::-webkit-scrollbar
   {
       width: 7px;
       background-color:rgba(77, 77, 77, 0.1);
+
   }
   
   ::-webkit-scrollbar-thumb
   {
-    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
 
-      border-radius: 10px;
+    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    border-radius: 10px;
       background-color:rgba(45,255,196,0.9);
       background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     //   background-image: -webkit-gradient(linear,
@@ -185,6 +187,18 @@ button:hover{
     //                                      to(#19911D),
     //                                      color-stop(.6,#54DE5D))
   }
+
+  .destroyButton:hover{
+    border-color: red !important;
+    background-color:rgba(255,0,0,0.9);
+    color:var(--blue-color) !important;
+    -webkit-box-shadow:0px 0px 15px 0px rgba(255,0,0,0.9);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(255,0,0,0.9);
+    box-shadow: 0px 0px 15px 0px rgba(255,0,0,0.9);
+}
+
+
+
 
 // .corner-button:before,
 // .corner-button span:before,
@@ -285,4 +299,231 @@ button:hover{
 //     height: 50px;
 //     border-radius: 10px;
 // }
+.corner-button:hover:before,
+.corner-button:hover p:before,
+.corner-button:hover:after,
+.corner-button:hover p:after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.corner-button {
+    display: inline-block;
+    // font-family: "Roboto", sans-serif;
+    // font-size: 20px;
+    // letter-spacing: 5px;
+  //   text-align: center;
+    position: relative;
+    min-width: 65px;
+    // min-height: 10px;
+    // margin: 20px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    // color: #25ccf7;
+    border-radius: 10px;
+    // padding: 12px 20px;
+    box-sizing: content-box;
+    border: 2px solid transparent;
+    text-align: center;
+    // line-height: 30px;
+    transition: 0.75s ease;
+    display: block;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.corner-button:hover:before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover:after {
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover p {
+    display: block;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #25ccf7;
 
+    // margin-left: 8px;
+}
+.corner-button:hover p:before {
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.corner-button:hover p:after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+
+::ng-deep .mdc-tooltip__surface{
+    background-color:var(--blue-color) !important;
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png) !important;
+    color:var(--primary-color) !important;
+    border:.1rem solid var(--light-color) !important;
+}
+
+.popup-container{
+    background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
+    url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
+    border:.2rem solid var(--primary-color);
+}
+
+.bg-container { 
+    background-size: cover;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 400px;
+  }
+
+  @media (min-width:1000px){
+    .bg-container { 
+        background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 650px;
+      }
+
+      .createAlliance{
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+        height: 500px;
+        color:var(--light-color) !important;
+    }
+
+    .searchAlliance{
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+        height: 500px;
+        color:var(--light-color) !important;
+    }
+
+    ::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+        color:var(--blue-color) !important;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    
+    ::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+        color:var(--body-color) !important;
+        font-size: 1.1em;
+    }
+    
+
+    .corner-button:hover:before,
+    .corner-button:hover p:before,
+    .corner-button:hover:after,
+    .corner-button:hover p:after {
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+      //   text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button {
+        display: inline-block;
+        // font-family: "Roboto", sans-serif;
+        // font-size: 20px;
+        // letter-spacing: 5px;
+      //   text-align: center;
+        position: relative;
+        min-width: 100px;
+        // min-height: 10px;
+        // margin: 20px;
+        background: none;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        // color: #25ccf7;
+        border-radius: 10px;
+        // padding: 12px 20px;
+        box-sizing: content-box;
+        border: 2px solid transparent;
+        text-align: center;
+        // line-height: 30px;
+        transition: 0.75s ease;
+        display: block;
+      //   text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button:hover:before {
+        top: -2px;
+        left: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover:after {
+        top: -2px;
+        right: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p {
+        display: block;
+      //   text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #25ccf7;
+    
+        // margin-left: 8px;
+    }
+    .corner-button:hover p:before {
+        bottom: -2px;
+        left: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p:after {
+        bottom: -2px;
+        right: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+
+    .futurepanel__footer {
+        box-sizing: border-box;
+        font-size: .8em;
+        color: rgb(65, 116, 158);
+        grid-area: futurepanel__footer;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+}
