@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
+import { WebsocketService } from '../app/services/websocket.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,7 @@ export class AppComponent {
   showNavBar = false;
   showFooter = false;
 
-  ngOnInit() {}
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private websocketService: WebsocketService) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/login' || event['url'] == '/home' || event['url'] == '/register' || event['url'] == '/') {
@@ -23,6 +22,15 @@ export class AppComponent {
           this.showFooter = true;
         }
       }
+    });
+  }
+
+  ngOnInit() {
+    const socket = this.websocketService.getSocket();
+
+    socket.on('some-event', (data) => {
+      console.log('Received WebSocket event:', data);
+      // Faites quelque chose avec les données reçues
     });
   }
 }
