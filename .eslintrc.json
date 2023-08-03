@@ -17,6 +17,7 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "rules":{"prettier/prettier":0}, // j'ai rajouté cette ligne pour regler le problème avec prettier
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
         "@angular-eslint/directive-selector": [
