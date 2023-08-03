@@ -1,9 +1,9 @@
+
 import { FormGroup } from '@angular/forms';
 import { AlliancesService } from './../../services/alliances.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-alliances',
@@ -12,6 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 
 export class AlliancesComponent {
+
 
   public name = "";
   public tag = "";
@@ -50,5 +51,17 @@ onSubmit () {
     }).then(response => console.log(response));
 }
 
+
+
+ <!--  constructor(private fb: FormBuilder) {}
+
+  onSubmit() {
+    // créer alliance
+  }
+
+  AllianceForm = this.fb.group({
+    allianceName: ['', [Validators.required]],
+    allianceTag: ['', [Validators.required]],
+  }); -->
 
 }

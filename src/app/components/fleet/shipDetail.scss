@@ -41,12 +41,7 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
-button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    font-family: 'Jura', sans-serif;
-}
+
 
 
 @media (min-width:1000px){
@@ -94,12 +89,7 @@ button{
         font-family: 'Jura', sans-serif;
     }
     
-    button{
-        background:var(--light-color);
-        border:.1rem solid var(--light-color);
-        color:var(--body-color) !important;
-        font-family: 'Jura', sans-serif;
-    }
+
 }
 
 @media (min-width:600px){
