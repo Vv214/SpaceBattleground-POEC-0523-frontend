@@ -8,6 +8,7 @@ import { WebsocketService } from '../app/services/websocket.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  [x: string]: any;
   showNavBar = false;
   showFooter = false;
 
@@ -28,9 +29,9 @@ export class AppComponent {
   ngOnInit() {
     const socket = this.websocketService.getSocket();
 
-    socket.on('some-event', (data) => {
+    socket.on('register', (data) => {
       console.log('Received WebSocket event:', data);
-      // Faites quelque chose avec les données reçues
+      return data;
     });
   }
 }
