@@ -1,4 +1,4 @@
-<h1 class="center">Alliances</h1>
+<!-- <h1 class="center">Alliances</h1>
 <div>Chercher une alliance</div>
 <p>Liste des alliances</p>
 
@@ -18,7 +18,96 @@
 
     <div class="center">
       <!-- <button type="submit">Connexion</button> -->
-      <button (click)="onSubmit()">Créer</button>
+      <!-- <button (click)="onSubmit()">Créer</button>
     </div>
   </form>
+</div> --> 
+
+
+<h1 class="title">Alliances</h1>
+
+<!-- <div class="bg-container" id="buildings">
+
+<div class="onPlanet">
+
+        <div class="buildings" (click)="openBuildingDetail()">
+            <img class="buildingPicture" src="assets/images/buildings/robotFactory.png"/>
+            <p class="buildingName">Usine de robots</p>
+            <p class="buildingLevel">Niveau 1</p>
+            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
+        
+        </div>
+        <div class="buildings" (click)="openBuildingDetail()">
+            <img class="buildingPicture" src="assets/images/buildings/laboratoire.png"/>
+            <p class="buildingName">Laboratoire</p>
+            <p class="buildingLevel">Niveau 1</p>
+            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
+
+        </div>
+        <div class="buildings" (click)="openBuildingDetail()">
+            <img class="buildingPicture" src="assets/images/buildings/shipFactory.png"/>
+            <p class="buildingName">Chantier spatial</p>
+            <p class="buildingLevel">Niveau 1</p>
+            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
+
+        </div>
+        <div class="buildings" (click)="openBuildingDetail()">
+            <img class="buildingPicture" src="assets/images/buildings/terraformeur.png"/>
+            <p class="buildingName">Terraformeur</p>
+            <p class="buildingLevel">Niveau 1</p>
+            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
+
+        </div>
+        
+</div>
+</div> -->
+
+<div class="bg-container">
+ 
+<mat-tab-group class="tab">
+  <mat-tab label="Créer une alliance"> 
+    
+    <div class="createAlliance">
+      <form (ngSubmit)="onSubmit()" [formGroup]="AllianceForm" #myForm="ngForm" class="center allianceForm">
+
+        <div>
+          <label for="Alliance-name"></label>
+          <input id="Alliance-name" name="Alliance-name" type="text" formControlName="allianceName"
+            placeholder="Nom de l'Alliance">
+        </div>
+
+        <div>
+          <label for="Alliance-tag"></label>
+          <input id="Alliance-tag" name="Alliance-tag" type="text" formControlName="allianceTag"
+            placeholder="Tag de l'Alliance">
+        </div>
+    
+        <div class="center">
+          <button>Créer une Alliance</button>
+        </div>
+
+      </form>
+
+    </div>
+
+
+
+  </mat-tab>
+  <mat-tab label="Rejoindre une alliance"> 
+
+    <div class="searchAlliance">
+
+      <form class="center allianceForm">
+        <input placeholder="Chercher une alliance">
+
+      </form>
+
+    </div>  
+  
+  
+  
+  
+  </mat-tab>
+</mat-tab-group>
+
 </div>
