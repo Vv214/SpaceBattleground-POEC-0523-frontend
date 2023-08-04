@@ -28,7 +28,6 @@ export class RegisterComponent {
   alreadyInBase = true;
   onSubmit() {
     // création compte
-
     this.registerService.addUser(this.registerForm).then((response) => {
       if (response.status === 200) {
         response.json().then((body) => {
