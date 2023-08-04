@@ -80,7 +80,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     buildingDestroy,
     AnimateBackgroundComponent,
     shipBuild,
-    CretatedAlliancesComponent
+    CretatedAlliancesComponent,
   ],
   imports: [
     BrowserModule,

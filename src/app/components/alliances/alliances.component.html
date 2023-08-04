@@ -15,6 +15,12 @@
       <input id="alliance-name" name="alliance-name" type="name" formControlName="name"
         placeholder="Nom de l'alliance">
     </div>
+
+    <div>
+      <label for="alliance-nickname"></label>
+      <input id="alliance-nickname" name="alliance-nickname" type="name" formControlName="nickname"
+        placeholder="Nom de l'admin">
+    </div>
     <div>
       <label for="alliance-tag"></label>
       <input id="alliance-tag" name="alliance-tag" type="tag" formControlName="tag"
@@ -22,10 +28,11 @@
 
         <div class="center">
 
-          <button (click)="toAlliancesPage" type="submit">Connexion</button>
+          <button>Connexion</button>
 
         </div>
     </div>
+
 
   </form>
 
@@ -44,7 +51,7 @@
           </div>
       </form>
 
-
+      
 
 
     </div>  
@@ -52,26 +59,6 @@
   </mat-tab>
 </mat-tab-group>
 
+
+
 </div>
-
-
-
-     <!-- <form (ngSubmit)="onSubmit()" [formGroup]="AllianceForm" #myForm="ngForm" class="center allianceForm">
-
-        <div>
-          <label for="Alliance-name"></label>
-          <input id="Alliance-name" name="Alliance-name" type="text" formControlName="allianceName"
-            placeholder="Nom de l'Alliance">
-        </div>
-
-        <div>
-          <label for="Alliance-tag"></label>
-          <input id="Alliance-tag" name="Alliance-tag" type="text" formControlName="allianceTag"
-            placeholder="Tag de l'Alliance">
-        </div>
-    
-        <div class="center">
-          <button>Créer une Alliance</button>
-        </div>
-
-      </form> -->

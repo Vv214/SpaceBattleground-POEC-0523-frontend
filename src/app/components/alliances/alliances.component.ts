@@ -18,14 +18,19 @@ export class AlliancesComponent {
   addClanForm = this.fb.group({
     name: ['', [Validators.required]],
     tag: ['', [Validators.required]],
+    nickname: ['', [Validators.required]],
   });
 
-  constructor(private router: Router, private fb: FormBuilder) {}
+  constructor(private router: Router, private fb: FormBuilder){
 
-  onSubmit() {
-    this.name = this.addClanForm.value.name ?? '';
-    this.tag = this.addClanForm.value.tag ?? '';
+}
 
+onSubmit () {
+
+  // this.name = this.addClanForm.value.name ?? '';
+  // this.tag = this.addClanForm.value.tag ?? '';
+
+  console.log(this.addClanForm.value);
   //e.preventDefault();
   fetch("http://localhost:8080/clan",{
     method: "POST",
@@ -36,15 +41,16 @@ export class AlliancesComponent {
             'x-token': this.token ?? ''
         },
         //make sure to serialize your JSON body
-        body: JSON.stringify({
-            name: this.name,
-            tag: this.tag,
-        })
+        body: JSON.stringify(this.addClanForm.value)
+        
     }).then(response => console.log(response));
 }
 
-  //   AllianceForm = this.fb.group({
-  //     allianceName: ['', [Validators.required]],
-  //     allianceTag: ['', [Validators.required]],
-  //   });
+toAlliancesPage(){
+  this.router.navigate(['/created-alliances']);
 }
+
+
+
+}
+
