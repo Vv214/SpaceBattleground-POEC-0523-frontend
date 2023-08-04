@@ -9,13 +9,10 @@ import { FormBuilder, Validators } from '@angular/forms';
   templateUrl: './alliances.component.html',
   styleUrls: ['./alliances.component.scss'],
 })
+
 export class AlliancesComponent {
   public name = '';
   public tag = '';
-  private alliancesUrl = '/clan';
-  public name = '';
-  public tag = '';
-  private alliancesUrl = '/clan';
   public token = localStorage.getItem('x-token');
 
   addClanForm = this.fb.group({
@@ -26,37 +23,42 @@ export class AlliancesComponent {
 
   constructor(private router: Router, private fb: FormBuilder) {}
 
-}
 
-onSubmit () {
 
-  // this.name = this.addClanForm.value.name ?? '';
-  // this.tag = this.addClanForm.value.tag ?? '';
+  onSubmit() {
 
-  console.log(this.addClanForm.value);
-  //e.preventDefault();
-  fetch("http://localhost:8080/clan",{
-    method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin':'*',
-            'Content-Type': 'application/json',
-            'x-token': this.token ?? ''
-        },
-        //make sure to serialize your JSON body
-        body: JSON.stringify(this.addClanForm.value)
-        
+    // this.name = this.addClanForm.value.name ?? '';
+    // this.tag = this.addClanForm.value.tag ?? '';
+
+    console.log(this.addClanForm.value);
+    //e.preventDefault();
+    fetch("http://localhost:8080/clan", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'x-token': this.token ?? ''
+      },
+      //make sure to serialize your JSON body
+      body: JSON.stringify(
+        {
+          "clanName": this.addClanForm.value.name,
+          "clanTag": this.addClanForm.value.tag,
+          "adminNickname": this.addClanForm.value.nickname
+        })
+
     }).then(response => console.log(response));
+  }
+
+  toAlliancesPage() {
+    this.router.navigate(['/created-alliances']);
+  }
 }
 
-toAlliancesPage(){
-  this.router.navigate(['/created-alliances']);
-}
+//   AllianceForm = this.fb.group({
+//     allianceName: ['', [Validators.required]],
+//     allianceTag: ['', [Validators.required]],
+//   });
 
-
-  //   AllianceForm = this.fb.group({
-  //     allianceName: ['', [Validators.required]],
-  //     allianceTag: ['', [Validators.required]],
-  //   });
-}
 
