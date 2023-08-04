@@ -20,8 +20,7 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "ironInfo gazInfo"
-    "diamondInfo energyInfo"
+    "ironInfo gazInfo diamondInfo energyInfo"
     ;
 }
 
@@ -110,8 +109,8 @@
 
 button{
     font-size: 0.8em;
-    margin: 5px;
-    height: 50px;
+    // margin: 5px;
+    height: 30px;
 }
 
 
