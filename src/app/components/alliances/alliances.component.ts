@@ -13,10 +13,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AlliancesComponent {
   public name = '';
   public tag = '';
-<<<<<<< HEAD
-  private alliancesUrl = '/clan';
-=======
->>>>>>> ce61ecfe11772f14fee9ebb9f62f8861b9a11afb
+  // private alliancesUrl = '/clan';
+
   public token = localStorage.getItem('x-token');
 
   addClanForm = this.fb.group({
@@ -26,11 +24,6 @@ export class AlliancesComponent {
   });
 
   constructor(private router: Router, private fb: FormBuilder) {}
-
-<<<<<<< HEAD
-
-=======
->>>>>>> ce61ecfe11772f14fee9ebb9f62f8861b9a11afb
 
 
   onSubmit() {
