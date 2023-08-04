@@ -1,27 +1,16 @@
-body{
-    font-family: 'Jura', sans-serif;
-    text-align: center;
-    color:var(--body-color);
-}
 
-*{
-    color:var(--body-color);
-}
-
-// #technologyTreeDesktop{
-//     display: none;
-// }
 
 
 .icon{
-    width: 100px;
+    width: 50px;
     display: flex;
-    margin-left: 10%;
+    margin-left: 2%;
 }
 
 .technologyName{
     text-align: center;
     margin: 0;
+    font-size: 0.9em;
 }
 .technologyLevel{
     text-align: center;
@@ -29,12 +18,12 @@ body{
 }
 
 .technology{
-    width: 120px;
+    width: 60px;
     align-items: center;
 }
 
 .technologyLink{
-    width: 120px;
+    width: 60px;
     padding-top: 40px;
     align-items: center;
 
@@ -43,7 +32,6 @@ body{
 .technologyArrow{
     flex-grow: 1;
     border-bottom: 1px solid var(--body-color);
-    // margin: 5px
 }
 
 .searchTitles{
@@ -55,10 +43,13 @@ body{
 
 .spaceSearch{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 250px;
     padding-top: 30px;
     margin: auto;
+    overflow: scroll;
+    overflow-y:overlay;
+    scrollbar-gutter: auto;
 }
 .mineSearch{
     display: grid;
@@ -76,14 +67,6 @@ body{
     margin: auto;
 }
 
-.searchBlock{
-    background: #101010;
-    border: 2px solid #f95eff;
-    margin-bottom: 5px;
-    color: #f95eff;
-    padding: 3px;
-    margin: 5px;
-}
 
 .spaceTitle{
     grid-area: spaceTitle;
@@ -110,83 +93,7 @@ body{
     width: 90px;
 }
 
-.level1{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
-.level2{
-    height: 300px;
-}
-
-.level3{
-    height: 300px;
-}
-
-.spaceLvl1{
-    grid-area: spaceLvl1;
-    margin-right: 5px;
-    padding: 4px;
-}
-
-.mineLvl1{
-    grid-area: mineLvl1;
-    margin-right: 5px;
-    padding: 4px;
-
-}
-.militaryLvl1{
-    grid-area: militaryLvl1;
-    margin-right: 5px;
-    padding: 4px;
-}
-
-.spaceLvl2{
-    grid-area: spaceLvl2;
-    margin-right: 5px;
-    padding: 4px;
-}
-.mineLvl2{
-    grid-area: mineLvl2;
-    margin-right: 5px;
-    padding: 4px;
-}
-.militaryLvl2{
-    grid-area: militaryLvl2;
-    margin-right: 5px;
-    padding: 4px;
-}
-
-.spaceLvl3{
-    grid-area: spaceLvl3;
-    margin-right: 5px;
-    padding: 4px;
-}
-.mineLvl3{
-    grid-area: mineLvl3;
-    margin-right: 5px;
-    padding: 4px;
-}
-.militaryLvl3{
-    grid-area: militaryLvl3;
-    margin-right: 5px;
-    padding: 4px;
-}
-
-.border1{
-    border-bottom: 2px solid rgba(0, 153, 255, 0.8);
-}
-
-.border2{
-    border-bottom: 2px solid rgba(0, 153, 255, 0.8);
-    margin-top: 10px;
-}
-
-.border3{
-    border-bottom: 2px solid rgba(0, 153, 255, 0.8);
-    margin-top: 10px;
-
-}
 
 text{
     color:var(--body-color);
@@ -204,7 +111,7 @@ text{
     border:.2rem solid var(--primary-color);
     font-family: 'Jura', sans-serif;
     color:var(--body-color);
-
+    overflow-y:overlay
 }
 
 .name{
@@ -215,12 +122,18 @@ text{
     font-family: 'Jura', sans-serif;
 }
 
+#technologyTree_desktop{
+    display: none;
+  }
 
 
 @media (min-width:1000px) {
-    // #technologyTreeMobile{
-    //     display: none;
-    // }
+    #technologyTree_mobile{
+        display: none;
+      }
+      #technologyTree_desktop{
+        display: block    ;
+      }
 
     .spaceTitle{
         grid-area: spaceTitle;
@@ -262,6 +175,53 @@ text{
     button{
         font-size: 1em;
     }
+
+.icon{
+    width: 100px;
+    display: flex;
+    margin-left: 10%;
+}
+
+.technology{
+    width: 120px;
+    align-items: center;
+}
+
+.technologyLink{
+    width: 120px;
+    padding-top: 40px;
+    align-items: center;
+
+}
+
+.spaceSearch{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
+}
+.mineSearch{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
+
+}
+.militarySearch{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 250px;
+    padding-top: 30px;
+    margin: auto;
+}
+
+.technologyName{
+    text-align: center;
+    margin: 0;
+}
+    
 }
 
 @media (min-width:600px){
@@ -272,3 +232,48 @@ text{
 
 }
 
+
+mat-tab-group{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+}
+
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color:var(--blue-color) !important;
+    font-size: 1em;
+    font-weight: 700;
+    width: 60px;
+
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+    color:var(--body-color) !important;
+    font-size: 0.9em;
+    width: 60px;
+
+}
+
+::ng-deep .mat-mdc-tab{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    width: 60px;
+
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active {
+    background-color:rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border-radius: 5px;
+    margin: 0;
+    width: 40px;
+    text-align: center;
+    margin-left: -5px;
+}
+
+::ng-deep .mdc-dialog .mdc-dialog__content {
+     padding: 0px !important; 
+}
