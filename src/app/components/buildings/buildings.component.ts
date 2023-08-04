@@ -27,6 +27,8 @@ export interface Building {
   diamondPrice: number;
   hydrogenePrice: number;
   energyPrice: number;
+  timeToBuild: Date;
+  timeToStart: Date;
 }
 
 @Component({
@@ -70,6 +72,7 @@ export class BuildingsComponent implements OnInit {
     this.buildService.checkBuildingInfo(token).then((response) => {
       if (response.status === 200) {
         response.json().then((body: Buildings) => {
+          console.log("mon body ", body);
           localStorage.setItem('buildings', JSON.stringify(body));
         });
       }
@@ -80,20 +83,21 @@ export class BuildingsComponent implements OnInit {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkBuildingInfo(this.token);
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-    this.ironMineName = buildings.data.ironMine.name;
-    this.diamondMine = buildings.data.diamondMine.name;
-    this.hydrogeneMine = buildings.data.hydrogeneMine.name;
-    this.energyMine = buildings.data.energyMine.name;
+    // this.ironMineName = buildings.data.ironMine.name;
+    // this.diamondMine = buildings.data.diamondMine.name;
+    // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
+    // this.energyMine = buildings.data.energyMine.name;
 
-    this.robotFactoryName = buildings.data.robotFactory.name;
-    this.laboratoryName = buildings.data.laboratory.name;
-    this.shipyardName = buildings.data.shipyard.name;
-    this.terraformeurName = buildings.data.drill.name;
+    // this.robotFactoryName = buildings.data.robotFactory.name;
+    this.laboratoryName = buildings.data.laboratory.name.toString();
+    // this.shipyardName = buildings.data.shipyard.name;
+    // this.terraformeurName = buildings.data.drill.name;
 
-    this.robotFactoryLevel = buildings.data.robotFactory.level;
+    // this.robotFactoryLevel = buildings.data.robotFactory.level;
     this.laboratoryLevel = buildings.data.laboratory.level;
-    this.shipyardLevel = buildings.data.shipyard.level;
-    this.terraformeurLevel = buildings.data.drill.level;
+    // this.shipyardLevel = buildings.data.shipyard.level;
+    // this.terraformeurLevel = buildings.data.drill.level;
+    console.log(this.laboratoryLevel + "labo name: " + this.laboratoryName);
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     // this.hydrogene = ressources.data.hydrogene.quantity;
     // this.energy = ressources.data.energy.quantity;
