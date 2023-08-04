@@ -4,10 +4,10 @@
 
 <div class="onPlanet">
 
-        <div class="buildings" (click)="openBuildingDetail()">
+        <div class="buildings" (click)="checkBuildingInfo(token)">
             <img class="buildingPicture" src="assets/images/buildings/robotFactory.png"/>
             <p class="buildingName">Usine de robots</p>
-            <p class="buildingLevel">Niveau 1</p>
+            <p class="buildingLevel">Niveau : {{robotFactoryLevel}}</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
         
         </div>
