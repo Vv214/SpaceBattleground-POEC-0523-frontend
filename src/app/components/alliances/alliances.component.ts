@@ -13,6 +13,9 @@ export class AlliancesComponent {
   public name = '';
   public tag = '';
   private alliancesUrl = '/clan';
+  public name = '';
+  public tag = '';
+  private alliancesUrl = '/clan';
   public token = localStorage.getItem('x-token');
 
   addClanForm = this.fb.group({
@@ -21,7 +24,7 @@ export class AlliancesComponent {
     nickname: ['', [Validators.required]],
   });
 
-  constructor(private router: Router, private fb: FormBuilder){
+  constructor(private router: Router, private fb: FormBuilder) {}
 
 }
 
@@ -51,6 +54,9 @@ toAlliancesPage(){
 }
 
 
-
+  //   AllianceForm = this.fb.group({
+  //     allianceName: ['', [Validators.required]],
+  //     allianceTag: ['', [Validators.required]],
+  //   });
 }
 

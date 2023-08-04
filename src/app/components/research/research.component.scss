@@ -1,73 +1,76 @@
+mat-tab-group{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+}
 
-    .bg-container { 
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color:var(--blue-color) !important;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+    color:var(--body-color) !important;
+    font-size: 0.9em;
+}
+
+::ng-deep .mat-mdc-tab{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active {
+    background-color:rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border-radius: 5px;
+}
+  
+  .research_desktop{
+    display: none;
+  }
+ 
+.tab {
+    position: relative;
+    top:10%
+    }
+  
+  
+  .bg-container { 
         background: url("/assets/images/backgrounds/researchBackground.jpg") no-repeat center center fixed; 
-        background-size: cover;
-        margin-left: 10px;
-        margin-right: 10px;
-        height: 650px;
-        color: var(--blue);
+        // height: 700px;
       }
-
-
-
-// .research{
-//     background-color: rgba(0, 44, 73, 0.9);
-//     border: 1px solid var(--blue, .2) ;
-//     width: auto;
-//     max-width: 350px;
-//     margin: auto;
-//     padding: 5px;
-//     margin-bottom: 10px;
-// }
 
 .name{
     grid-area: name;
-    // font-size: 20px;
     font-weight: 700;
     text-align: center;
     position: relative;
     z-index: 4;
-    // top: -80px;
-
 }
-
-// .picture{
-//     width: 120px;
-//     grid-area: picture;
-//     margin-left: 10%;
-//     margin-bottom: 5%;
-// }
 
 .level{
     grid-area: level;
     z-index: 3;
     width: 40px;
-    // margin: 0;
     position: relative;
     left: 95px;
     top: -70px;
 }
 
-// .technoTree{
-//     margin: auto !important;
-//     width: 100px;
-// }
-
 .title{
     text-align: center;
     margin: 10px;
-
 }
-
-
 
 .researchLevel{
     width: 60px;
     position: relative;
     z-index: 1;
-    // top: -80px;
     top: -25px;
-    // bottom: 80px;
     left: 80px;
 }
 
@@ -102,34 +105,6 @@ button{
     grid-area: technoTree;
 }
 
-::ng-deep .mdc-tooltip__surface{
-    background-color:var(--blue-color) !important;
-    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png) !important;
-    color:var(--primary-color) !important;
-    border:.1rem solid var(--light-color) !important;
-}
-
-// .ftooltip{
-//     background-color:var(--blue-color) !important;
-//     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-//     color:var(--body-color) !important;
-//     border:.1rem solid var(--light-color);
-//     // outline: none;
-// }
-
-
-
-// .mat-tooltip{
-//     background-color:var(--blue-color);
-//     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-//     color:var(--body-color) !important;
-//     border:.1rem solid var(--light-color);
-//     // outline: none;
-// }
-// .tooltip-inner {
-//     background-color:#707070!important
-// }
-
 .SpaceSearchTitle{
     text-align: center;
     grid-area: SpaceSearchTitle;
@@ -155,21 +130,12 @@ button{
     grid-template-rows: auto;
     grid-template-areas: 
     "researchBackground researchBackground"
-
     "research_cargo research_combustion"
     "research_protection research_impulsion"
     "research_astrophysique ."
     ;
-    // background: url("/assets/images/research/researchGreen.png") top left; 
-    // background-size: 420px;
-    // background-position-x: -30px;
-    // background-position-y: -10px;
-    // background-color: rgb(7, 148, 2);
-    // border: 5px solid black;
-    // margin-top: 20px;
     background-color:var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-    // border:.1rem solid var(--primary-color);
 
     margin: 5px;
     padding: 5px;
@@ -185,8 +151,6 @@ button{
 .researchBackground{
     z-index: -2;
     position: relative;
-    // left: -100px;
-    // top: -300px;
     width: 400px;
     grid-area: researchBackground;
 }
@@ -232,7 +196,6 @@ button{
     ;
     margin: 5px;
     padding: 5px;
-
 }
 
 
@@ -281,20 +244,24 @@ button{
 .research{
     width: 140px;
     height: 115px;
-    
+
     margin: 5px;
     padding: 5px;
-
     cursor: pointer;
     border:.1rem solid rgba(16, 56, 83, 0.0);;
-
 }
 
 .research:hover{
     border-color: var(--primary-color) ;
 }
 
-
-
 // 1120px
 
+@media (min-width:1000px){
+    .research_mobile{
+        display: none;
+      }
+      .research_desktop{
+        display: block    ;
+      }
+}
