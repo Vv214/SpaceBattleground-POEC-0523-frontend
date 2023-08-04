@@ -83,11 +83,6 @@ button{
 }
 
 button:hover{
-
-    // background-color:var(--light-color);
-    // color:var(--blue-color) !important;
-    // color:var(--primary-color) !important;
-    // color: red;
     border-color: var(--primary-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     background-color:rgba(45,255,196,0.9);
@@ -95,6 +90,8 @@ button:hover{
     -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
     -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
     box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    transition: 0.75s all;
+
 }
 
 .categoryTitle{
