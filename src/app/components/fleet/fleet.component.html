@@ -56,8 +56,7 @@
 
 </div> -->
 
-<h1 class="title">Flottes</h1>
-<!-- <h3 class="title">Capacité de la planète : 30/50</h3> -->
+<!-- <h1 class="title">Flottes</h1>
 
 <div class="bg-container" id="ships">
 
@@ -75,19 +74,16 @@
         <img class="shipPicture" src="assets/images/ships/mediumShip.png"/>
         <p class="shipName">Chasseur lourd</p>
         <p class="shipNumber">3</p>
-
     </div>
     <div class="ship" (click)="openShipDetail()">
         <img class="shipPicture" src="assets/images/ships/heavyShip.png"/>
         <p class="shipName">Destroyer</p>
         <p class="shipNumber">3</p>
-
     </div>
     <div class="ship" (click)="openShipDetail()">
         <img class="shipPicture" src="assets/images/ships/scoutShip.png"/>
         <p class="shipName">Eclaireur</p>
         <p class="shipNumber">3</p>
-
     </div>
 
 </div>
@@ -98,25 +94,99 @@
         <img class="shipPicture" src="assets/images/ships/cargoShip.png"/>
         <p class="shipName">Transporteur léger</p>
         <p class="shipNumber">3</p>
-
     </div>
     <div class="ship" (click)="openShipDetail()">
         <img class="shipPicture" src="assets/images/ships/heavyCargoShip.png"/>
         <p class="shipName">Transporteur lourd</p>
         <p class="shipNumber">3</p>
-
     </div>
     <div class="ship" (click)="openShipDetail()">
         <img class="shipPicture" src="assets/images/ships/recyclerShip.png"/>
         <p class="shipName">Récolteur</p>
         <p class="shipNumber">3</p>
-
     </div>
     <div class="ship" (click)="openShipDetail()">
         <img class="shipPicture" src="assets/images/ships/colonisateur.png"/>
         <p class="shipName">Colonisateur</p>
         <p class="shipNumber">3</p>
-
     </div>
 
+</div> -->
+
+
+
+
+<h1 class="title">Flottes</h1>
+
+<div class="bg-container">
+ <div>Flottes : 0/2</div>
+
+    <div id="ships">
+
+
+
+<div class="combatShip">
+    <h2 class="combatTitle">Combat</h2>
+
+    <div class="ship_lightShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/lightShip.png"/>
+        <p class="shipName">Chasseur léger</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_mediumShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/mediumShip.png"/>
+        <p class="shipName">Chasseur lourd</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_heavyShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/heavyShip.png"/>
+        <p class="shipName">Destroyer</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_scoutShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/scoutShip.png"/>
+        <p class="shipName">Eclaireur</p>
+        <p class="shipNumber">3</p>
+    </div>
+
+</div>
+
+
+
+
+<div class="civilShip">
+
+    <h2 class="civilTitle">Civil</h2>
+
+    <div class="ship_cargoShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/cargoShip.png"/>
+        <p class="shipName">Transporteur léger</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_heavyCargoShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/heavyCargoShip.png"/>
+        <p class="shipName">Transporteur lourd</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_recyclerShip ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/recyclerShip.png"/>
+        <p class="shipName">Récolteur</p>
+        <p class="shipNumber">3</p>
+    </div>
+    <div class="ship_colonisateur ship corner-button" >
+        <img class="shipPicture" src="assets/images/ships/colonisateur.png"/>
+        <p class="shipName">Colonisateur</p>
+        <p class="shipNumber">3</p>
+    </div>
+
+</div>
+
+<div class="center fleetButton">
+    <button (click)="modifyFleet()">Continuer</button>
+  </div>
+
+
+
+
+    </div>
 </div>

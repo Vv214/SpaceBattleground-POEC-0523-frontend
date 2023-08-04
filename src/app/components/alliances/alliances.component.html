@@ -1,36 +1,14 @@
-<!-- <h1 class="center">Alliances</h1>
-<div>Chercher une alliance</div>
-<p>Liste des alliances</p>
+<h1 class="title">Alliances</h1>
 
-<div id="alliance" class="alliance">
-  <h2 class="center">Créer une alliance</h2>
 
-  <form class="center">
-    <div>
-      <label for="name-alliance"></label>
-      <input name="name-alliance" type="text" placeholder="Nom de l'alliance" />
-    </div>
+<div class="bg-container">
+ 
+<mat-tab-group class="tab">
+  <mat-tab label="Créer une alliance"> 
+    
+    <div class="createAlliance">
 
-    <div>
-      <label for="name-alliance"></label>
-      <input name="name-alliance" type="text" maxlength="3" placeholder="Tag de l'alliance" />
-    </div>
-
-    <div class="center">
-      <button type="submit">Connexion</button>
-    </div>
-  </form>
-</div> -->
-
-<h1 class="center">Alliances</h1>
-<div>Chercher une alliance</div>
-<p>Liste des alliances</p>
-
-<div id="alliance" class="alliance">
-  <h2 class="center">Créer une alliance</h2>
-
-<div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="addClanForm" #myForm="ngForm" class="center">
+       <form (ngSubmit)="onSubmit()" [formGroup]="addClanForm" #myForm="ngForm" class="center allianceForm">
 
     <div>
       <label for="alliance-name"></label>
@@ -43,6 +21,57 @@
         placeholder="Tag de l'alliance">
 
         <div class="center">
+
           <button (click)="toAlliancesPage" type="submit">Connexion</button>
+
         </div>
     </div>
+
+  </form>
+
+  </div>
+
+  </mat-tab>
+  <mat-tab label="Rejoindre une alliance"> 
+
+    <div class="searchAlliance">
+
+      <form class="center allianceForm">
+        <input id="alliance-search" placeholder="Chercher une alliance">
+
+        <div>
+          <button class="center" type="submit">Chercher</button>
+          </div>
+      </form>
+
+
+
+
+    </div>  
+  
+  </mat-tab>
+</mat-tab-group>
+
+</div>
+
+
+
+     <!-- <form (ngSubmit)="onSubmit()" [formGroup]="AllianceForm" #myForm="ngForm" class="center allianceForm">
+
+        <div>
+          <label for="Alliance-name"></label>
+          <input id="Alliance-name" name="Alliance-name" type="text" formControlName="allianceName"
+            placeholder="Nom de l'Alliance">
+        </div>
+
+        <div>
+          <label for="Alliance-tag"></label>
+          <input id="Alliance-tag" name="Alliance-tag" type="text" formControlName="allianceTag"
+            placeholder="Tag de l'Alliance">
+        </div>
+    
+        <div class="center">
+          <button>Créer une Alliance</button>
+        </div>
+
+      </form> -->
