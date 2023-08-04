@@ -48,7 +48,6 @@ export class NavbarComponent implements OnInit {
         )
       }
     });
-
   }
 
 
@@ -60,6 +59,6 @@ export class NavbarComponent implements OnInit {
     this.diamond = ressources.data.diamond.quantity
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     this.hydrogene = ressources.data.hydrogene.quantity;
-    this.energy = ressources.data.energy.maxStock;
+    this.energy = ressources.data.energy.quantity;
   }
 }
