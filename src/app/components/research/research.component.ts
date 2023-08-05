@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ResearchService } from '../../services/research.service';
 
 export interface Researchs {
   data: {
-    "Technologie cargo": Research;
+    Technologie_cargo: Research;
     "Réacteur à combustion": Research
   }
 }
@@ -30,6 +30,9 @@ export interface Research {
 })
 export class ResearchComponent implements OnInit {
   public token!: string;
+
+  public cargoAmeliore!: Research;
+  public cargoAmelioreLvl!: number;
   public name!: string;
   public description!: string;
   public ironPrice!: number;
@@ -62,16 +65,21 @@ export class ResearchComponent implements OnInit {
     this.researchService.getResearchInfo(token).then((response) => {
       if (response.status === 200) {
         response.json().then((body: Researchs) => {
+          console.log("mon body ", body);
           localStorage.setItem('researchs', JSON.stringify(body));
         });
       }
     });
+    // let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
+    // console.log("dans getResearch : ", +researchs.data.Technologie_cargo.diamondPrice);
   }
 
   ngOnInit(): void {
     this.token = localStorage.getItem('x-token') ?? '';
     this.getResearchInfo(this.token);
     let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
+    this.cargoAmelioreLvl = researchs.data.Technologie_cargo.level;
+    console.log("dans on init : ", this.cargoAmelioreLvl);
     // let
   }
 }
@@ -82,6 +90,7 @@ export class ResearchComponent implements OnInit {
   styleUrls: ['TechnologyTree.scss'],
 })
 export class TechnologyTree {
+  @Input() cargoAmelioreLvl!: number;
   spaceSearch = true;
   mineSearch = false;
   militarySearch = false;
@@ -109,6 +118,10 @@ export class TechnologyTree {
   styleUrls: ['researchDetail.scss'],
 })
 export class researchDetail {
+  // let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
+  // this.cargoAmelioreLvl = researchs.data.Technologie_cargo.level;
+  @Input()
+  cargoAmelioreLvl!: number;
   isBuilt = true;
   ferJoueur = 2000;
   hydrogeneJoueur = 2000;
@@ -118,6 +131,10 @@ export class researchDetail {
   diamantRequis = 200;
 
   validateResearch() {
+    let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
+    this.cargoAmelioreLvl = researchs.data.Technologie_cargo.level;
+
+    console.log("dans validate searche : ", +this.cargoAmelioreLvl);
     if (
       this.ferJoueur > this.ferRequis &&
       this.hydrogeneJoueur > this.hydrogeneRequis &&

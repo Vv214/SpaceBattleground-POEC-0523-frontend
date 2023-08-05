@@ -98,7 +98,7 @@ export class BuildingsComponent implements OnInit {
     this.laboratoryLevel = buildings.data.laboratory.level;
     // this.shipyardLevel = buildings.data.shipyard.level;
     // this.terraformeurLevel = buildings.data.drill.level;
-    console.log(this.laboratoryLevel + "labo name: " + this.laboratoryName);
+    console.log(this.laboratoryLevel + " labo name: " + this.laboratoryName);
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     // this.hydrogene = ressources.data.hydrogene.quantity;
     // this.energy = ressources.data.energy.quantity;
