@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlliancesService } from './../../../../services/alliances.service';
+import { AlliancesService } from '../../services/alliances.service';
 import { Router } from '@angular/router';
 
 @Component({
