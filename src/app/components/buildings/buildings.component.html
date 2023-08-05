@@ -2,38 +2,36 @@
 
 <div class="bg-container" id="buildings">
 
-<div class="onPlanet">
+    <div class="onPlanet">
 
-        <div class="buildings" (click)="openBuildingDetail()">
-            <img class="buildingPicture" src="assets/images/buildings/robotFactory.png"/>
+        <div class="buildings" (click)="checkBuildingInfo(token)">
+            <img class="buildingPicture" src="assets/images/buildings/robotFactory.png" />
             <p class="buildingName">Usine de robots</p>
-            <p class="buildingLevel">Niveau 1</p>
+            <p class="buildingLevel">Niveau : {{laboratoryLevel}}</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
-        
+
         </div>
         <div class="buildings" (click)="openBuildingDetail()">
-            <img class="buildingPicture" src="assets/images/buildings/laboratoire.png"/>
+            <img class="buildingPicture" src="assets/images/buildings/laboratoire.png" />
             <p class="buildingName">Laboratoire</p>
             <p class="buildingLevel">Niveau 1</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
         </div>
         <div class="buildings" (click)="openBuildingDetail()">
-            <img class="buildingPicture" src="assets/images/buildings/shipFactory.png"/>
+            <img class="buildingPicture" src="assets/images/buildings/shipFactory.png" />
             <p class="buildingName">Chantier spatial</p>
             <p class="buildingLevel">Niveau 1</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
         </div>
         <div class="buildings" (click)="openBuildingDetail()">
-            <img class="buildingPicture" src="assets/images/buildings/terraformeur.png"/>
+            <img class="buildingPicture" src="assets/images/buildings/terraformeur.png" />
             <p class="buildingName">Terraformeur</p>
             <p class="buildingLevel">Niveau 1</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
         </div>
-        
-</div>
-</div>
 
-
+    </div>
+</div>

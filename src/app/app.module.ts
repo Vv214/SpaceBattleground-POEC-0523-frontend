@@ -1,4 +1,4 @@
-import { CretatedAlliancesComponent } from './components/alliances/createdAlliances/cretated-alliances/cretated-alliances.component';
+import { CretatedAlliancesComponent } from './components/cretated-alliances/cretated-alliances.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -40,7 +40,6 @@ import { PopupComponent } from './components/popup/popup.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShipyardComponent } from './components/shipyard/shipyard.component';
 import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
@@ -81,6 +80,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     buildingDestroy,
     AnimateBackgroundComponent,
     shipBuild,
+    CretatedAlliancesComponent,
   ],
   imports: [
     BrowserModule,

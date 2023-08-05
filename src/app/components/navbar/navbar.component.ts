@@ -2,15 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavbarService } from '../../services/navbar.service';
 
-
 export interface Ressources {
   data: {
     iron: Ressource;
     diamond: Ressource;
     hydrogene: Ressource;
     energy: Ressource;
-  }
-
+  };
 }
 
 export interface Ressource {
@@ -44,19 +42,17 @@ export class NavbarComponent implements OnInit {
       if (response.status === 200) {
         response.json().then((body: Ressources) => {
           localStorage.setItem('ressources', JSON.stringify(body));
-        }
-        )
+        });
       }
     });
   }
-
 
   ngOnInit(): void {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkQuantityRessource(this.token);
     let ressources: Ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
     this.iron = ressources.data.iron.quantity;
-    this.diamond = ressources.data.diamond.quantity
+    this.diamond = ressources.data.diamond.quantity;
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     this.hydrogene = ressources.data.hydrogene.quantity;
     this.energy = ressources.data.energy.quantity;

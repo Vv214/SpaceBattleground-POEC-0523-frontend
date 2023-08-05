@@ -1,15 +1,48 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ResearchService } from '../../services/research.service';
 
+export interface Researchs {
+  data: {
+    "Technologie cargo": Research;
+    "Réacteur à combustion": Research
+  }
+}
+export interface Research {
+  name: string;
+  description: string;
+  ironPrice: number;
+  diamondPrice: number;
+  hydrogenPrice: number;
+  energyPrice: number;
+  level: number;
+  coef_modifier: number;
+  timeSearch: Date;
+  timeToStart: Date;
+  isDone: boolean;
+}
 @Component({
   selector: 'app-research',
   templateUrl: './research.component.html',
   styleUrls: ['./research.component.scss'],
   // encapsulation: ViewEncapsulation.None,
 })
-export class ResearchComponent {
-  constructor(public dialog: MatDialog) {}
+export class ResearchComponent implements OnInit {
+  public token!: string;
+  public name!: string;
+  public description!: string;
+  public ironPrice!: number;
+  public diamondPrice!: number;
+  public hydrogenPrice!: number;
+  public energyPrice!: number;
+  public level!: number;
+  public coef_modifier!: number;
+  public timeSearch!: Date;
+  public timeToStart!: Date;
+  public isDone!: boolean;
+
+  constructor(public dialog: MatDialog, public researchService: ResearchService) {}
 
   openTechnologyTree() {
     const dialogRef = this.dialog.open(TechnologyTree);
@@ -23,6 +56,23 @@ export class ResearchComponent {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  getResearchInfo(token: string) {
+    this.researchService.getResearchInfo(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Researchs) => {
+          localStorage.setItem('researchs', JSON.stringify(body));
+        });
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.token = localStorage.getItem('x-token') ?? '';
+    this.getResearchInfo(this.token);
+    let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
+    // let
   }
 }
 
