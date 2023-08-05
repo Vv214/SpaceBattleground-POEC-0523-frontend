@@ -74,6 +74,7 @@ export class BuildingsComponent implements OnInit {
         response.json().then((body: Buildings) => {
           console.log("mon body ", body);
           localStorage.setItem('buildings', JSON.stringify(body));
+          this.openBuildingDetail();
         });
       }
     });

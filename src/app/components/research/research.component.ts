@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ResearchService } from '../../services/research.service';
 
 @Component({
   selector: 'app-research',
@@ -8,8 +9,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./research.component.scss'],
   // encapsulation: ViewEncapsulation.None,
 })
-export class ResearchComponent {
-  constructor(public dialog: MatDialog) {}
+export class ResearchComponent implements OnInit {
+
+  public token!: string;
+
+  constructor(public dialog: MatDialog, public researchService: ResearchService) {}
 
   openTechnologyTree() {
     const dialogRef = this.dialog.open(TechnologyTree);
@@ -23,6 +27,16 @@ export class ResearchComponent {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  getResearchInfo(token: string) {
+    this.researchService.getResearchInfo(this.token);
+  }
+
+  ngOnInit(): void {
+    this.token = localStorage.getItem('x-token') ?? '';
+    this.getResearchInfo(this.token);
+
   }
 }
 
