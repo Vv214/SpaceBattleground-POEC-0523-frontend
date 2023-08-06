@@ -1,38 +1,37 @@
-
 <h1 class="title">Ressources</h1>
 
-<div class="bg-container" >
+<div class="bg-container">
 
-<div class="onPlanet">
+    <div class="onPlanet">
 
-        <div class="resourceBuilding" (click)="openBuildingDetail()">
-            <img class="resourceBuildingPicture" src="assets/images/buildings/mineFer.png"/>
-            <p class="resourceBuildingName">Mine de fer</p>
-            <p class="resourceBuildingLevel">Niveau 1</p>
+        <div class="resourceBuilding" (click)="openBuildingDetail(ironMineName)">
+            <img class="resourceBuildingPicture" src="assets/images/buildings/mineFer.png" />
+            <p class="resourceBuildingName">{{ironMineName}}</p>
+            <p class="resourceBuildingLevel">Niveau {{ironMineLevel}}</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
         </div>
-        <div class="resourceBuilding" (click)="openBuildingDetail()">
-            <img class="resourceBuildingPicture" src="assets/images/buildings/mineHydrogene.png"/>
-            <p class="resourceBuildingName">Extracteur d'Hydrogène</p>
-            <p class="resourceBuildingLevel">Niveau 1</p>
-            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
-
-        </div>
-        <div class="resourceBuilding" (click)="openBuildingDetail()">
-            <img class="resourceBuildingPicture" src="assets/images/buildings/mineDiamant.png"/>
-            <p class="resourceBuildingName">Mine de diamant</p>
-            <p class="resourceBuildingLevel">Niveau 1</p>
+        <div class="resourceBuilding" (click)="openBuildingDetail(hydrogeneMineName)">
+            <img class="resourceBuildingPicture" src="assets/images/buildings/mineHydrogene.png" />
+            <p class="resourceBuildingName">{{hydrogeneMineName}}</p>
+            <p class="resourceBuildingLevel">Niveau {{hydrogeneMineLevel}}</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
         </div>
-        <div class="resourceBuilding" (click)="openBuildingDetail()">
-            <img class="resourceBuildingPicture" src="assets/images/buildings/centrale.png"/>
-            <p class="resourceBuildingName">Centrale électrique</p>
-            <p class="resourceBuildingLevel">Niveau 1</p>
+        <div class="resourceBuilding" (click)="openBuildingDetail(diamondMineName)">
+            <img class="resourceBuildingPicture" src="assets/images/buildings/mineDiamant.png" />
+            <p class="resourceBuildingName">{{diamondMineName}}</p>
+            <p class="resourceBuildingLevel">Niveau {{diamondMineLevel}}</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
         </div>
-        <div class="resourceBuilding" (click)="openBuildingDetail()">
+        <div class="resourceBuilding" (click)="openBuildingDetail(energyMineName)">
+            <img class="resourceBuildingPicture" src="assets/images/buildings/centrale.png" />
+            <p class="resourceBuildingName">{{energyMineName}}</p>
+            <p class="resourceBuildingLevel">Niveau {{energyMineLevel}}</p>
+            <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
+
+        </div>
+        <!-- <div class="resourceBuilding" (click)="openBuildingDetail()">
             <img class="resourceBuildingPicture" src="assets/images/buildings/hangarFer.png"/>
             <p class="resourceBuildingName">Hangar de fer</p>
             <p class="resourceBuildingLevel">Niveau 1</p>
@@ -60,6 +59,6 @@
             <p class="resourceBuildingLevel">Niveau 1</p>
             <div class="futurepanel__footer">#0002134678 TFFC:3 /////////////</div>
 
-        </div>
-</div>
+        </div> -->
+    </div>
 </div>

@@ -10,12 +10,14 @@ export interface Buildings {
     diamondMine: Building;
     hydrogeneMine: Building;
     energyMine: Building;
-    // buildingName: Building;
-
     laboratory: Building;
     robotFactory: Building;
     shipyard: Building;
     terraformer: Building;
+    ironStock: Building;
+    hydrogeneStock: Building;
+    diamondStock: Building;
+    drillingMachine: Building;
   };
 }
 
