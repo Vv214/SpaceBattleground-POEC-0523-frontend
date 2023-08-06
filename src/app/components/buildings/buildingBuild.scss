@@ -3,11 +3,7 @@ body{
 }
 
 
-.bg-container{
-    background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
-    url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
-    border:.2rem solid var(--primary-color);
-}
+
 
 .name{
     grid-area: name;
@@ -95,6 +91,7 @@ font-size: 1.2em !important;
 
 @media (min-width:1000px){
     .picture{
+        // min-width: 300px;
         max-width: 450px;
         width: auto;
         margin-right: 10px;
