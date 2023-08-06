@@ -10,12 +10,13 @@ export interface Buildings {
     diamondMine: Building;
     hydrogeneMine: Building;
     energyMine: Building;
-    // buildingName: Building;
 
     laboratory: Building;
     robotFactory: Building;
     shipyard: Building;
     terraformer: Building;
+
+    [buildingName: string]: Building;
   };
 }
 
@@ -26,7 +27,7 @@ export interface Building {
   level: number;
   ironPrice: number;
   diamondPrice: number;
-  hydrogenePrice: number;
+  hydrogenPrice: number;
   energyPrice: number;
   timeToBuild: Date;
   timeToStart: Date;
@@ -44,42 +45,45 @@ export class BuildingsComponent implements OnInit {
   public hydrogeneMine!: string;
   public energyMine!: string;
 
-  public robotFactoryName!: string;
   public robotFactory = 'robotFactory';
   public laboratory = 'laboratory';
   public shipyard = 'shipyard';
   public terraformer = 'terraformer';
+
+  public robotFactoryName!: string;
   public laboratoryName!: string;
   public shipyardName!: string;
   public terraformeurName!: string;
+
+  public robotFactoryType!: string;
+  public laboratoryType!: string;
+  public shipyardType!: string;
+  public terraformeurType!: string;
+
+  public robotFactoryDescription!: string;
+  public laboratoryDescription!: string;
+  public shipyardDescription!: string;
+  public terraformeurDescription!: string;
 
   public robotFactoryLevel!: number;
   public laboratoryLevel!: number;
   public shipyardLevel!: number;
   public terraformeurLevel!: number;
-  // public name!: string | null;
-  // public type!: string | null;
-  // public description!: string | null;
-  // public ironPrice!: number;
-  // public diamondPrice!: number;
-  // public hydrogenePrice!: number;
-  // public energyPrice!: number;
   constructor(public dialog: MatDialog, public buildService: BuildService) {}
 
   openBuildingDetail(buildingName: string) {
     console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
 
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-    if (buildingName == 'robotFactory') {
-      this.buildService.buildingName = this.robotFactoryName;
-    } else if (buildingName == 'laboratory') {
-      this.buildService.buildingName = this.laboratoryName;
-    } else if (buildingName == 'shipyard') {
-      this.buildService.buildingName = this.shipyardName;
-    } else if (buildingName == 'terraformer') {
-      this.buildService.buildingName = this.terraformeurName;
-    }
-
+    this.buildService.buildingName = buildings.data[buildingName].name.toString();
+    this.buildService.buildingType = buildings.data[buildingName].type.toString();
+    this.buildService.buildingLevel = buildings.data[buildingName].level;
+    this.buildService.buildingDescription = buildings.data[buildingName].description.toString();
+    // this.buildService.buildingCapacity = buildings.data[buildingName].capacity;
+    this.buildService.buildingIronPrice = buildings.data[buildingName].ironPrice;
+    this.buildService.buildingDiamondPrice = buildings.data[buildingName].diamondPrice;
+    this.buildService.buildingHydrogenPrice = buildings.data[buildingName].hydrogenPrice;
+    this.buildService.buildingEnergyPrice = buildings.data[buildingName].energyPrice;
     const dialogRef = this.dialog.open(buildingDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
@@ -101,28 +105,10 @@ export class BuildingsComponent implements OnInit {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkBuildingInfo(this.token);
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-    // console.log('building data name ', buildings.data.robotFactory.name.toString());
-
-    // this.ironMineName = buildings.data.ironMine.name;
-    // this.diamondMine = buildings.data.diamondMine.name;
-    // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
-    // this.energyMine = buildings.data.energyMine.name;
-
-    this.robotFactoryName = buildings.data.robotFactory.name.toString();
-    this.laboratoryName = buildings.data.laboratory.name.toString();
-    this.shipyardName = buildings.data.shipyard.name.toString();
-    this.terraformeurName = buildings.data.terraformer.name.toString();
-    // this.shipyardName = buildings.data.shipyard.name;
-    // this.terraformeurName = buildings.data.drill.name;
-
-    // this.robotFactoryLevel = buildings.data.robotFactory.level;
+    this.robotFactoryLevel = buildings.data.robotFactory.level;
     this.laboratoryLevel = buildings.data.laboratory.level;
-    // this.shipyardLevel = buildings.data.shipyard.level;
-    // this.terraformeurLevel = buildings.data.drill.level;
-    console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
-    //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
-    // this.hydrogene = ressources.data.hydrogene.quantity;
-    // this.energy = ressources.data.energy.quantity;
+    this.shipyardLevel = buildings.data.shipyard.level;
+    this.terraformeurLevel = buildings.data.terraformer.level;
   }
 }
 
@@ -136,13 +122,13 @@ export class buildingDetail {
 
   public buildingName!: string;
   public buildingType!: string;
-  public buildingLevel!: string;
+  public buildingLevel!: number;
   public buildingDescription!: string;
   public buildingCapacity!: string;
-  public buildingIronPrice!: string;
-  public buildingDiamondPrice!: string;
-  public buildingHydrogenePrice!: string;
-  public buildingEnergyPrice!: string;
+  public buildingIronPrice!: number;
+  public buildingDiamondPrice!: number;
+  public buildingHydrogenePrice!: number;
+  public buildingEnergyPrice!: number;
   public token!: string;
 
   openBuildingBuild() {
@@ -182,6 +168,14 @@ export class buildingDetail {
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
     console.log('building', this.buildService.buildingName);
     this.buildingName = this.buildService.buildingName.toString();
+    this.buildingType = this.buildService.buildingType.toString();
+    this.buildingLevel = this.buildService.buildingLevel;
+    this.buildingDescription = this.buildService.buildingDescription.toString();
+    // this.buildingCapacity = this.buildService.buildingCapacity.toString();
+    this.buildingIronPrice = this.buildService.buildingIronPrice;
+    this.buildingDiamondPrice = this.buildService.buildingDiamondPrice;
+    this.buildingHydrogenePrice = this.buildService.buildingHydrogenPrice;
+    this.buildingEnergyPrice = this.buildService.buildingEnergyPrice;
 
     // this.diamondMine = buildings.data.diamondMine.name;
     // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
