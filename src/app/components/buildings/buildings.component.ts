@@ -90,7 +90,7 @@ export class BuildingsComponent implements OnInit {
     // this.energyMine = buildings.data.energyMine.name;
 
     // this.robotFactoryName = buildings.data.robotFactory.name;
-    this.laboratoryName = buildings.data.laboratory.name.toString();
+    this.laboratoryName = buildings.data.diamondMine.name;
     // this.shipyardName = buildings.data.shipyard.name;
     // this.terraformeurName = buildings.data.drill.name;
 

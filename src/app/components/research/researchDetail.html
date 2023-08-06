@@ -23,7 +23,7 @@
             <img class="picture" src="assets/images/research/cargo.png" />
             <h1 class="name">Cargo amélioré</h1>
             <p class="level"><span class="categoryTitle">Niveau :</span> {{cargoAmelioreLvl}} <span class="upgradeText"
-                    *ngIf="isBuilt == true"> {{cargoAmelioreLvl}} -> 2</span></p>
+                    *ngIf="isBuilt == true"> -> {{cargoAmelioreLvl+1}}</span></p>
             <!-- <p class="capacity"><span>Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p> -->
             <p class="time" *ngIf="isBuilt == true"><span class="categoryTitle">Temps de recherche : </span>10 min</p>
             <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>200 Fer 300 Hydrogène 100

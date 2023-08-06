@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { buildingBuild } from '../buildings/buildings.component';
@@ -10,9 +10,10 @@ import { buildingDetail } from '../buildings/buildings.component';
   templateUrl: './resources.component.html',
   styleUrls: ['./resources.component.scss'],
 })
-export class ResourcesComponent {
+export class ResourcesComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
   isBuilt = true;
+  public token!: string;
 
   // openUpgrade() {
   //   const dialogRef = this.dialog.open(Upgrade);
@@ -34,6 +35,11 @@ export class ResourcesComponent {
   //     console.log(`Dialog result: ${result}`);
   //   });
   // }
+  ngOnInit() {
+    this.token = localStorage.getItem('x-token') ?? '';
+
+
+  };
 }
 
 @Component({
