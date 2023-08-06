@@ -10,11 +10,12 @@ export interface Buildings {
     diamondMine: Building;
     hydrogeneMine: Building;
     energyMine: Building;
+    // buildingName: Building;
 
     laboratory: Building;
     robotFactory: Building;
     shipyard: Building;
-    drill: Building;
+    terraformer: Building;
   };
 }
 
@@ -44,6 +45,10 @@ export class BuildingsComponent implements OnInit {
   public energyMine!: string;
 
   public robotFactoryName!: string;
+  public robotFactory = 'robotFactory';
+  public laboratory = 'laboratory';
+  public shipyard = 'shipyard';
+  public terraformer = 'terraformer';
   public laboratoryName!: string;
   public shipyardName!: string;
   public terraformeurName!: string;
@@ -61,7 +66,20 @@ export class BuildingsComponent implements OnInit {
   // public energyPrice!: number;
   constructor(public dialog: MatDialog, public buildService: BuildService) {}
 
-  openBuildingDetail() {
+  openBuildingDetail(buildingName: string) {
+    console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
+
+    let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    if (buildingName == 'robotFactory') {
+      this.buildService.buildingName = this.robotFactoryName;
+    } else if (buildingName == 'laboratory') {
+      this.buildService.buildingName = this.laboratoryName;
+    } else if (buildingName == 'shipyard') {
+      this.buildService.buildingName = this.shipyardName;
+    } else if (buildingName == 'terraformer') {
+      this.buildService.buildingName = this.terraformeurName;
+    }
+
     const dialogRef = this.dialog.open(buildingDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
@@ -72,9 +90,8 @@ export class BuildingsComponent implements OnInit {
     this.buildService.checkBuildingInfo(token).then((response) => {
       if (response.status === 200) {
         response.json().then((body: Buildings) => {
-          console.log("mon body ", body);
+          console.log('mon body ', body);
           localStorage.setItem('buildings', JSON.stringify(body));
-          this.openBuildingDetail();
         });
       }
     });
@@ -84,13 +101,17 @@ export class BuildingsComponent implements OnInit {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkBuildingInfo(this.token);
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    // console.log('building data name ', buildings.data.robotFactory.name.toString());
+
     // this.ironMineName = buildings.data.ironMine.name;
     // this.diamondMine = buildings.data.diamondMine.name;
     // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
     // this.energyMine = buildings.data.energyMine.name;
 
-    // this.robotFactoryName = buildings.data.robotFactory.name;
+    this.robotFactoryName = buildings.data.robotFactory.name.toString();
     this.laboratoryName = buildings.data.laboratory.name.toString();
+    this.shipyardName = buildings.data.shipyard.name.toString();
+    this.terraformeurName = buildings.data.terraformer.name.toString();
     // this.shipyardName = buildings.data.shipyard.name;
     // this.terraformeurName = buildings.data.drill.name;
 
@@ -98,7 +119,7 @@ export class BuildingsComponent implements OnInit {
     this.laboratoryLevel = buildings.data.laboratory.level;
     // this.shipyardLevel = buildings.data.shipyard.level;
     // this.terraformeurLevel = buildings.data.drill.level;
-    console.log(this.laboratoryLevel + " labo name: " + this.laboratoryName);
+    console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     // this.hydrogene = ressources.data.hydrogene.quantity;
     // this.energy = ressources.data.energy.quantity;
@@ -112,6 +133,17 @@ export class BuildingsComponent implements OnInit {
 })
 export class buildingDetail {
   constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService) {}
+
+  public buildingName!: string;
+  public buildingType!: string;
+  public buildingLevel!: string;
+  public buildingDescription!: string;
+  public buildingCapacity!: string;
+  public buildingIronPrice!: string;
+  public buildingDiamondPrice!: string;
+  public buildingHydrogenePrice!: string;
+  public buildingEnergyPrice!: string;
+  public token!: string;
 
   openBuildingBuild() {
     const dialogRef = this.dialog.open(buildingBuild);
@@ -131,6 +163,43 @@ export class buildingDetail {
 
   toShipyard() {
     this.router.navigate(['/', 'shipyard']);
+  }
+
+  checkBuildingInfo(token: string) {
+    this.buildService.checkBuildingInfo(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Buildings) => {
+          console.log('mon body ', body);
+          localStorage.setItem('buildings', JSON.stringify(body));
+        });
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.token = localStorage.getItem('x-token') ?? '';
+    this.checkBuildingInfo(this.token);
+    let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    console.log('building', this.buildService.buildingName);
+    this.buildingName = this.buildService.buildingName.toString();
+
+    // this.diamondMine = buildings.data.diamondMine.name;
+    // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
+    // this.energyMine = buildings.data.energyMine.name;
+
+    // this.robotFactoryName = buildings.data.robotFactory.name;
+    // this.laboratoryName = buildings.data.laboratory.name.toString();
+    // this.shipyardName = buildings.data.shipyard.name;
+    // this.terraformeurName = buildings.data.drill.name;
+
+    // this.robotFactoryLevel = buildings.data.robotFactory.level;
+    // this.laboratoryLevel = buildings.data.laboratory.level;
+    // this.shipyardLevel = buildings.data.shipyard.level;
+    // this.terraformeurLevel = buildings.data.drill.level;
+    // console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
+    //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
+    // this.hydrogene = ressources.data.hydrogene.quantity;
+    // this.energy = ressources.data.energy.quantity;
   }
 }
 
