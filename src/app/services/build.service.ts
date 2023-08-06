@@ -32,6 +32,8 @@ export class BuildService {
   constructor() {}
 
   public buildingName = '';
+  public buildingNameSrc = '';
+  public buildingIsBuild = false;
   public buildingType = '';
   public buildingLevel = 0;
   public buildingDescription = '';

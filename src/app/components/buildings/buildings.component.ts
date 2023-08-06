@@ -29,6 +29,7 @@ export interface Building {
   diamondPrice: number;
   hydrogenPrice: number;
   energyPrice: number;
+  isBuild: boolean;
   timeToBuild: Date;
   timeToStart: Date;
 }
@@ -55,16 +56,6 @@ export class BuildingsComponent implements OnInit {
   public shipyardName!: string;
   public terraformeurName!: string;
 
-  public robotFactoryType!: string;
-  public laboratoryType!: string;
-  public shipyardType!: string;
-  public terraformeurType!: string;
-
-  public robotFactoryDescription!: string;
-  public laboratoryDescription!: string;
-  public shipyardDescription!: string;
-  public terraformeurDescription!: string;
-
   public robotFactoryLevel!: number;
   public laboratoryLevel!: number;
   public shipyardLevel!: number;
@@ -72,18 +63,21 @@ export class BuildingsComponent implements OnInit {
   constructor(public dialog: MatDialog, public buildService: BuildService) {}
 
   openBuildingDetail(buildingName: string) {
-    console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
-
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
     this.buildService.buildingName = buildings.data[buildingName].name.toString();
     this.buildService.buildingType = buildings.data[buildingName].type.toString();
     this.buildService.buildingLevel = buildings.data[buildingName].level;
     this.buildService.buildingDescription = buildings.data[buildingName].description.toString();
-    // this.buildService.buildingCapacity = buildings.data[buildingName].capacity;
     this.buildService.buildingIronPrice = buildings.data[buildingName].ironPrice;
     this.buildService.buildingDiamondPrice = buildings.data[buildingName].diamondPrice;
     this.buildService.buildingHydrogenPrice = buildings.data[buildingName].hydrogenPrice;
     this.buildService.buildingEnergyPrice = buildings.data[buildingName].energyPrice;
+    this.buildService.buildingNameSrc = buildingName;
+    this.buildService.buildingIsBuild = buildings.data[buildingName].isBuild;
+    console.log('src', this.buildService.buildingNameSrc);
+    console.log('build ', this.buildService.buildingIsBuild);
+    // this.buildService.buildingCapacity = buildings.data[buildingName].capacity;
+
     const dialogRef = this.dialog.open(buildingDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
@@ -121,6 +115,8 @@ export class buildingDetail {
   constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService) {}
 
   public buildingName!: string;
+  public buildingNameSrc!: string;
+  public buildingIsBuild!: boolean;
   public buildingType!: string;
   public buildingLevel!: number;
   public buildingDescription!: string;
@@ -137,7 +133,6 @@ export class buildingDetail {
       console.log(`Dialog result: ${result}`);
     });
   }
-  isBuilt = true;
   chantier = false;
 
   openBuildingDestroy() {
@@ -166,34 +161,16 @@ export class buildingDetail {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkBuildingInfo(this.token);
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-    console.log('building', this.buildService.buildingName);
     this.buildingName = this.buildService.buildingName.toString();
     this.buildingType = this.buildService.buildingType.toString();
     this.buildingLevel = this.buildService.buildingLevel;
     this.buildingDescription = this.buildService.buildingDescription.toString();
-    // this.buildingCapacity = this.buildService.buildingCapacity.toString();
     this.buildingIronPrice = this.buildService.buildingIronPrice;
     this.buildingDiamondPrice = this.buildService.buildingDiamondPrice;
     this.buildingHydrogenePrice = this.buildService.buildingHydrogenPrice;
     this.buildingEnergyPrice = this.buildService.buildingEnergyPrice;
-
-    // this.diamondMine = buildings.data.diamondMine.name;
-    // this.hydrogeneMine = buildings.data.hydrogeneMine.name;
-    // this.energyMine = buildings.data.energyMine.name;
-
-    // this.robotFactoryName = buildings.data.robotFactory.name;
-    // this.laboratoryName = buildings.data.laboratory.name.toString();
-    // this.shipyardName = buildings.data.shipyard.name;
-    // this.terraformeurName = buildings.data.drill.name;
-
-    // this.robotFactoryLevel = buildings.data.robotFactory.level;
-    // this.laboratoryLevel = buildings.data.laboratory.level;
-    // this.shipyardLevel = buildings.data.shipyard.level;
-    // this.terraformeurLevel = buildings.data.drill.level;
-    // console.log(this.laboratoryLevel + ' labo name: ' + this.laboratoryName);
-    //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
-    // this.hydrogene = ressources.data.hydrogene.quantity;
-    // this.energy = ressources.data.energy.quantity;
+    this.buildingNameSrc = this.buildService.buildingNameSrc;
+    this.buildingIsBuild = this.buildService.buildingIsBuild;
   }
 }
 
@@ -204,51 +181,42 @@ export class buildingDetail {
 })
 export class buildingBuild implements OnInit {
   constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService) {}
+  public buildingName!: string;
+  public buildingNameSrc!: string;
+  public buildingIsBuild!: boolean;
+  public buildingType!: string;
+  public buildingLevel!: number;
+  public buildingDescription!: string;
+  public buildingCapacity!: string;
+  public buildingIronPrice!: number;
+  public buildingDiamondPrice!: number;
+  public buildingHydrogenePrice!: number;
+  public buildingEnergyPrice!: number;
   public token!: string;
-  // ferJoueur = 2000;
-  // hydrogeneJoueur = 2000;
-  // diamantJoueur = 2000;
-  // ferRequis = 200;
-  // hydrogeneRequis = 200;
-  // diamantRequis = 200;
 
-  buildBuilding(token: string) {
-    console.log(token);
-    this.buildService.buildBuilding(token).then((response) => {
-      if (response.status === 200) {
-        console.log('building created');
-      } else {
-        console.log(token + ' failed token');
-      }
-    });
+  buildBuilding() {
+    // modifier isBuild du batiment en cours en true avec setIsBuild
   }
 
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
+    // this.token = localStorage.getItem('x-token') ?? '';
+    // this.checkBuildingInfo(this.token);
+    // let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    this.buildingName = this.buildService.buildingName.toString();
+    this.buildingType = this.buildService.buildingType.toString();
+    this.buildingLevel = this.buildService.buildingLevel;
+    this.buildingDescription = this.buildService.buildingDescription.toString();
+    this.buildingIronPrice = this.buildService.buildingIronPrice;
+    this.buildingDiamondPrice = this.buildService.buildingDiamondPrice;
+    this.buildingHydrogenePrice = this.buildService.buildingHydrogenPrice;
+    this.buildingEnergyPrice = this.buildService.buildingEnergyPrice;
+    this.buildingNameSrc = this.buildService.buildingNameSrc;
+    this.buildingIsBuild = this.buildService.buildingIsBuild;
   }
 
-  // buildBuilding() {
-  //   // create building with userID
-
-  //   // batiment = currentPlayer.batiment
-
-  //   if (
-  //     this.ferJoueur > this.ferRequis &&
-  //     this.hydrogeneJoueur > this.hydrogeneRequis &&
-  //     this.diamantJoueur > this.diamantRequis
-  //   ) {
-  //     this.ferJoueur = this.ferJoueur - this.ferRequis;
-  //     this.hydrogeneJoueur = this.hydrogeneJoueur - this.hydrogeneRequis;
-  //     this.diamantJoueur = this.diamantJoueur - this.diamantRequis;
-  //     // timer batiment
-  //     // post batiment
-  //     // batiment.isBuilt = true;
-  //   }
-  // }
-
-  isBuilt = true;
   upgradeBuilding() {
-    // upgrade building with userID
+    // incrémenter level, coeff prod et ressources requises du batiment en cours
   }
 }
 
@@ -259,9 +227,8 @@ export class buildingBuild implements OnInit {
 })
 export class buildingDestroy {
   destroyBuilding() {
-    // delete building with userID
-    // batiment = currentPlayer.batiment
-    //delete batiment
+    // modifier isBuild du batiment en cours en false avec setIsBuild
+    // modifier ressources du joueur en cours (remboursé du dixième du prix de construction)
     // ferJoueur = ferJoueur + ferRequis/10;
     // hydrogeneJoueur = hydrogeneJoueur + hydrogeneRequis/10;
     // diamantJoueur = diamantJoueur + diamantRequis/10;
