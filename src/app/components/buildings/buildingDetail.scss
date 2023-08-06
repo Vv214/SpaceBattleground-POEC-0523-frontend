@@ -22,7 +22,6 @@ grid-template-areas:
 "picture"
 "level"
 "type "
-"capacity "
 "time "
 "ressources "
 "required "
@@ -105,7 +104,6 @@ font-size: 1.2em !important;
         grid-template-areas: 
         "picture name level"
         "picture type ."
-        "picture capacity ."
         "picture time ."
         "picture ressources ."
         "picture required ."
