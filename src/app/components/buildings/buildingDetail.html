@@ -2,7 +2,7 @@
     <mat-dialog-content class="mat-typography">
 
         <div class="buildingDetail">
-            <img class="picture" src="assets/images/buildings/shipFactory.png" />
+            <img class="picture"  src='assets/images/buildings/{{buildingNameSrc}}.png'/>
 
             <h1 class="name">{{buildingName}}</h1>
             <p class="type"><span class="categoryTitle">Type : </span>{{buildingType}}</p>
@@ -20,14 +20,14 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button *ngIf="isBuilt == true" mat-dialog-close class="destroyButton"
+        <button *ngIf="this.buildingIsBuild == true" mat-dialog-close class="destroyButton"
             (click)="openBuildingDestroy()">Détruire</button>
 
-        <button *ngIf="isBuilt == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
-        <button *ngIf="isBuilt == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
+        <button *ngIf="this.buildingIsBuild == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
+        <button *ngIf="this.buildingIsBuild == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
 
 
-        <button *ngIf="this.buildingName == 'Chantier spatial' " mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
+        <button *ngIf="this.buildingName == 'Chantier spatial' && this.buildingIsBuild == true " mat-dialog-close (click)="toShipyard()">Accéder au chantier spatial</button>
     </mat-dialog-actions>
 
 </div>
