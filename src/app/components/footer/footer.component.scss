@@ -486,7 +486,6 @@
         text-align: center;
         justify-content: space-between;
         align-items: center;
-         color:var(--body-color);
         
     }
 
@@ -497,7 +496,7 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "buildingButton resourceButton researchButton fleetButton shipyardButton allianceButton "
+    "buildingButton resourceButton researchButton shipyardButton fleetButton  allianceButton "
     ;
 }
 
@@ -602,4 +601,79 @@
 
 
 
+// .active{
 
+// }
+// .active:before{
+//     top: -2px;
+//     left: -2px;
+//     border-top: 2px solid #0fbcf9;
+//     border-top-left-radius: 8px;
+//     border-left: 2px solid #0fbcf9;
+//     transition: 0.75s all;
+// }
+// .active:after{
+//     top: -2px;
+//     right: -2px;
+//     border-top: 2px solid #0fbcf9;
+//     border-top-right-radius: 8px;
+//     border-right: 2px solid #0fbcf9;
+//     transition: 0.75s all;
+// }
+
+
+.activeTab:before,
+.activeTab p:before,
+.activeTab:after,
+.activeTab p:after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.activeTab:before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab:after {
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab p {
+    display: block;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #25ccf7 !important;
+
+    // margin-left: 8px;
+}
+.activeTab p:before {
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab p:after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}

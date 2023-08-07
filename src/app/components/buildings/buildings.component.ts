@@ -41,10 +41,10 @@ export interface Building {
 })
 export class BuildingsComponent implements OnInit {
   public token!: string;
-  public ironMineName!: string;
-  public diamondMine!: string;
-  public hydrogeneMine!: string;
-  public energyMine!: string;
+  // public ironMineName!: string;
+  // public diamondMine!: string;
+  // public hydrogeneMine!: string;
+  // public energyMine!: string;
 
   public robotFactory = 'robotFactory';
   public laboratory = 'laboratory';
