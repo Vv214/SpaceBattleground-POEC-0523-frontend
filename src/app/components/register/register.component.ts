@@ -43,7 +43,7 @@ export class RegisterComponent {
 
   addUser() {
     // console.log(this.registerForm.value);
-    fetch('http://localhost:8080/register', {
+    fetch('http://localhost:8080/player', {
       method: 'post',
 
       headers: {

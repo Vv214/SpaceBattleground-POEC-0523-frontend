@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { WebsocketService } from '../app/services/websocket.service';
+import io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,6 @@ import { WebsocketService } from '../app/services/websocket.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  [x: string]: any;
   showNavBar = false;
   showFooter = false;
 
@@ -25,13 +25,9 @@ export class AppComponent {
       }
     });
   }
-
-  ngOnInit() {
-    const socket = this.websocketService.getSocket();
-
-    socket.on('register', (data) => {
-      console.log('Received WebSocket event:', data);
-      return data;
-    });
+  public socket: any;
+  public xToken: any;
+  ngOnInit(): void {
+    this.socket = io('ws://localhost:8080/socket');
   }
 }

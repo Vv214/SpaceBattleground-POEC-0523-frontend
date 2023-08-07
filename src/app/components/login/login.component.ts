@@ -11,8 +11,8 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent {
   constructor(private router: Router, private fb: FormBuilder, public loginService: LoginService) {}
 
-  incorectlogin: boolean = false;
-  alreadyInBase: boolean = false;
+  incorectlogin = false;
+  alreadyInBase = false;
 
   loginForm = this.fb.group({
     nickname: ['', [Validators.required]],
