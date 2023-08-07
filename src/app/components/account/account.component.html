@@ -1,9 +1,10 @@
 <div class="account">
-    <h1>Bienvenue nickname</h1>
+    <h1>Bienvenue {{nickname}}</h1>
     <button (click)="toMessages()">Messages</button>
-    <button >Modifier le pseudo</button>
-    <button >Modifier l'adresse mail</button>
-    <button >Modifier le mot de passe</button>
+    <button>Modifier le pseudo</button>
+    <button>Modifier l'adresse mail</button>
+    <button>Modifier le mot de passe</button>
     <button (click)="toRanking()">Classement</button>
-    <button (click)="logout()">Déconnexion</button>
+    <button (click)="logout(token)">Déconnexion</button>
+    <button (click)="toAdmin()">Passer Admin</button>
 </div>

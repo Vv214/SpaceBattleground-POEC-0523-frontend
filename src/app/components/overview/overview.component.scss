@@ -1,68 +1,98 @@
-.bg-container { 
-margin: auto;
-  }
-
-img {
-    display: flex;
-    margin: auto;
-}
-
-.title{
-    text-align: center;
-}
-
-.buildingList{
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 10px;
-    padding: 3px;
-}
-
-.shipList{
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 10px;
-    padding: 3px;
-}
-
-.researchList{
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 10px;
-    padding: 3px;
-}
-
-.fleetList{
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 10px;
-    padding: 3px;
-}
-
-.resource{
-    background-color: rgba(0, 44, 73, 0.8);
-margin: 10px;
-}
-
-.resources{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-
-
-
-
-
-
 
 @media (min-width:1000px){
     .bg-container { 
-        background: url("/assets/images/overviewBackground.jpg") no-repeat center center fixed; 
+        background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center  center fixed; 
         background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 650px;
+        color:var(--body-color);
+
       }
+
+    .mobilePlanet{
+        display: none;
+    }
+
+    .title{
+        // justify-content: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    #overview{
+        display: grid;
+        grid-template-areas: 
+        "resourceFer . . . . . . . . . . ."
+        ". . . . . . . . . . . buildingList"
+        "resourceEnergie . . . . . . . . . . ."
+        ". . . . . . . . . . . shipList"
+        "resourceDiamant . . . . . . . . . . ."
+        ". . . . . . . . . . . researchList"
+        "resourceHydrogene . . . . . . . . . . ."
+        ;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin: 10px;
+    }
+
+.resourceFer{
+    grid-area: resourceFer;
+    background-color: rgba(0, 44, 73, 0.8);
+    width: 200px;
+    margin: 5px;
+    height: 3em;
+    margin-top: 10px;
+}
+.resourceHydrogene{
+    grid-area: resourceHydrogene;
+    background-color: rgba(0, 44, 73, 0.8);
+    width: 200px;
+    margin: 5px;
+    height: 3em;
+
+
+}
+.resourceDiamant{
+    grid-area: resourceDiamant;
+    background-color: rgba(0, 44, 73, 0.8);
+    width: 200px;
+    margin: 5px;
+    height: 3em;
+
+}
+.resourceEnergie{
+    grid-area: resourceEnergie;
+    background-color: rgba(0, 44, 73, 0.8);
+    width: 200px;
+    margin: 5px;
+    height: 3em;
+
 }
 
-@media (min-width:600px){
-    
+.buildingList{
+    grid-area: buildingList;
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 5px;
+    list-style-type: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+
+}
+.shipList{
+    grid-area: shipList;
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 5px;
+
+}
+.researchList{
+    grid-area: researchList;
+    background-color: rgba(0, 44, 73, 0.8);
+    margin: 5px;
+
 }
 
-@media (min-width:416px){
+
 
 }

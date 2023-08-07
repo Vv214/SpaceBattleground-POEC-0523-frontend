@@ -1,52 +1,40 @@
 .bg-container { 
-    background: url("/assets/images/resourcesBackgroundMobile.jpg") no-repeat center center fixed; 
-    background-size: cover;
-    margin-left: 7.5px;
-    margin-right: 7.5px;
+    background: url("/assets/images/backgrounds/buildingsBackground.jpg") no-repeat center center ; 
   }
 
-
-#buildings{
-    display:grid;
-    grid-template-columns: auto 170px;
-    grid-template-rows: 400px;
-    grid-template-areas: 
-    "onPlanet stock"
-    ;
-}  
-
-.onPlanet{
+  .onPlanet{
     grid-area: onPlanet;
-    background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
     display: grid;
-    overflow: scroll;
-
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    top: 10%;
 }
 
-.stock{
-    grid-area: stock;
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    overflow: scroll;
-}
-
-.building{
+.buildings{
     display:grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "buildingName"
+    "buildingName "
     "buildingPicture "
+    "buildingLevel "
+    "futurepanel__footer "
     ;
-    margin-bottom: 20px;
-    background-color: rgba(1, 117, 194, 0.8);
-    border: 1px solid var(--blue, .2) ;
-    width: auto;
-    max-width: 130px;
-    margin: auto;
-    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+    background-color:var(--blue-color);
+    
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border:.1rem solid var(--light-color);
     padding: 5px;
+}
+
+
+.buildings:hover{
+    color:var(--primary-color) !important;
+    border-color: var(--primary-color);
 }
 
 .buildingName{
@@ -56,10 +44,14 @@
     text-align: center;
 }
 
+.buildingLevel{
+    grid-area: buildingLevel;
+    font-size: 0.8em;
+}
+
 .title{
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 0.8em;
+    margin: 10px;
 }
 
 .buildingNumber{
@@ -69,14 +61,11 @@
 .buildingPicture{
     width: 60px;
     grid-area: buildingPicture;
+    display: flex;
+    align-items: center;
     margin: auto;
 }
 
-.buildings{
-    background-color: rgba(1, 117, 194, 0.8);
-    margin: 5px;
-    width: 80px;
-}
 
 
 .name{
@@ -90,89 +79,61 @@
     grid-area: capacity;
 }
 
-.title{
-    text-align: center;
-}
-
-button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    cursor: pointer;
-}
-
-
 @media (min-width:1000px){
 
     .bg-container { 
-        background: url("/assets/images/resourcesBackground.jpg") no-repeat center center fixed; 
-        background-size: cover;
-        margin-left: 7.5px;
-        margin-right: 7.5px;
+        background: url("/assets/images/backgrounds/buildingsBackground.png") no-repeat center center fixed; 
       }
 
-    #buildings{
-        display:grid;
-        grid-template-columns: auto 350px;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "onPlanet stock"
-        ;
-    }  
     
     .onPlanet{
         grid-area: onPlanet;
-        background-color: rgba(0, 44, 73, 0.8);
         margin: 5px;
         display: grid;
-        overflow: visible;
-
-    }
-    
-    .stock{
-        grid-area: stock;
-        background-color: rgba(0, 44, 73, 0.8);
-        margin: 5px;
-        overflow: visible;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        position: relative;
+        top: 70%;
     }
 
-    .building{
+    .buildings{
         display:grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas: 
         "buildingPicture buildingName"
-        "buildingPicture buildingNumber"
+        "buildingPicture buildingLevel"
+        "futurepanel__footer futurepanel__footer"
         ;
-        margin-bottom: 20px;
-        background-color: rgba(1, 117, 194, 0.8);
-        border: 1px solid var(--blue, .2) ;
-        width: auto;
-        max-width: 300px;
+        width: 300px;
+        height: 150px;
         margin: auto;
-        margin-bottom: 10px;
+        background-color:var(--blue-color);
+        
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
         padding: 5px;
     }
+    
+    .buildings:hover{
+        color:var(--primary-color) !important;
+        border-color: var(--primary-color) ;
+        cursor: pointer;
 
-    .building:hover{
-        background-color:var(--blue-color);
-        color:var(--blue-color) !important;
     }
 
     .buildingPicture{
-        width: 120px;
+        width: 100px;
         margin-top: 15%;
         grid-area: buildingPicture;
         margin-left: 5px;
         margin-bottom: 5%;
     }
-    
-    .buildings{
-        background-color: rgba(1, 117, 194, 0.8);
-        margin: 5px;
-        width: 200px;
-        width: 150px;
+
+    .buildingLevel{
+        font-size: 1em;
+
     }
+    
 
     .name{
         grid-area: name;
@@ -190,121 +151,5 @@ button{
     
     .title{
         text-align: center;
-        margin-bottom: 10px;
-        font-size: 20px;
     }
 }
-
-// @media (min-width:600px){
-//     #buildings{
-//         display:grid;
-//         grid-template-columns: auto 350px;
-//         grid-template-rows: auto;
-//         grid-template-areas: 
-//         "onPlanet stock"
-//         ;
-//     }  
-    
-//     .onPlanet{
-//         grid-area: onPlanet;
-//         background-color: rgba(0, 44, 73, 0.8);
-//         margin: 5px;
-//         display: grid;
-//     }
-    
-//     .stock{
-//         grid-area: stock;
-//         background-color: rgba(0, 44, 73, 0.8);
-//         margin: 5px;
-//     }
-
-//     .building{
-//         display:grid;
-//         grid-template-columns: auto;
-//         grid-template-rows: auto;
-//         grid-template-areas: 
-//         "buildingPicture buildingName"
-//         "buildingPicture buildingNumber"
-//         ;
-//         margin-bottom: 20px;
-//         background-color: rgba(1, 117, 194, 0.8);
-//         border: 1px solid var(--blue, .2) ;
-//         width: auto;
-//         max-width: 300px;
-//         margin: auto;
-//         margin-bottom: 10px;
-//         padding: 5px;
-//     }
-
-//     .buildingPicture{
-//         width: 120px;
-//         margin-top: 15%;
-//         grid-area: buildingPicture;
-//         margin-left: 5px;
-//         margin-bottom: 5%;
-//     }
-    
-//     .buildings{
-//         background-color: rgba(1, 117, 194, 0.8);
-//         margin: 5px;
-//         width: 200px;
-//         width: 150px;
-//     }
-// }
-
-// @media (min-width:416px){
-//     #buildings{
-//         display:grid;
-//         grid-template-columns: auto 350px;
-//         grid-template-rows: auto;
-//         grid-template-areas: 
-//         "onPlanet stock"
-//         ;
-//     }  
-    
-//     .onPlanet{
-//         grid-area: onPlanet;
-//         background-color: rgba(0, 44, 73, 0.8);
-//         margin: 5px;
-//         display: grid;
-//     }
-    
-//     .stock{
-//         grid-area: stock;
-//         background-color: rgba(0, 44, 73, 0.8);
-//         margin: 5px;
-//     }
-
-//     .building{
-//         display:grid;
-//         grid-template-columns: auto;
-//         grid-template-rows: auto;
-//         grid-template-areas: 
-//         "buildingPicture buildingName"
-//         "buildingPicture buildingNumber"
-//         ;
-//         margin-bottom: 20px;
-//         background-color: rgba(1, 117, 194, 0.8);
-//         border: 1px solid var(--blue, .2) ;
-//         width: auto;
-//         max-width: 300px;
-//         margin: auto;
-//         margin-bottom: 10px;
-//         padding: 5px;
-//     }
-
-//     .buildingPicture{
-//         width: 120px;
-//         margin-top: 15%;
-//         grid-area: buildingPicture;
-//         margin-left: 5px;
-//         margin-bottom: 5%;
-//     }
-    
-//     .buildings{
-//         background-color: rgba(1, 117, 194, 0.8);
-//         margin: 5px;
-//         width: 200px;
-//         width: 150px;
-//     }
-// }

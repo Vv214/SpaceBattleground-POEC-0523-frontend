@@ -1,0 +1,19 @@
+<div class="popup-container">
+    <h1 mat-dialog-title class="name">Mine de fer</h1>
+    <mat-dialog-content class="mat-typography">
+        <img class="picture" src="assets/images/buildings/mineHydrogene.png"/>
+    <div>
+        <p class="errorMessage">Voulez-vous détruire ce bâtiment ?</p>
+
+    </div>
+ 
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions class="popupButtons">
+        <button mat-dialog-close>Non</button>
+        <button mat-dialog-close class="destroyButton" (click)="destroyBuilding()">Oui</button>
+    
+    </mat-dialog-actions>
+
+</div>

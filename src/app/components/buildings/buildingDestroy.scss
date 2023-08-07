@@ -1,0 +1,116 @@
+
+
+
+.picture{
+    width: 150px;
+    grid-area: picture;
+    display: flex;
+    margin: auto;
+}
+
+body{
+    font-family: 'Jura', sans-serif;
+}
+
+
+.bg-container{
+    background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
+    url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
+    border:.2rem solid var(--primary-color);
+}
+
+.name{
+    grid-area: name;
+    text-align: center;
+    color:var(--body-color);
+    font-weight: 700;
+    font-family: 'Jura', sans-serif;
+}
+
+.buildingDetail{
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+grid-template-areas: 
+"name"
+"picture"
+"level"
+"type "
+"capacity "
+"time "
+"ressources "
+"required "
+"description "
+;
+}
+
+.level{
+    font-size: 0.8em;
+    grid-area: level;
+}
+.type{
+    font-size: 0.8em;
+    grid-area: type;
+}
+.time{
+    font-size: 0.8em;
+    grid-area: time;
+}
+.ressources{
+    font-size: 0.8em;
+    grid-area: ressources;
+}
+.required{
+    font-size: 0.8em;
+    grid-area: required;
+}
+.description{
+    font-size: 0.8em;
+    grid-area: description;
+}
+.capacity{
+    font-size: 0.8em;
+    grid-area: capacity;
+}
+
+
+.popupButtons{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Jura', sans-serif;
+}
+
+button{
+font-size: 1.2em !important;
+}
+
+
+
+.name{
+    grid-area: name;
+    text-align: center;
+    color:var(--body-color);
+    font-weight: 700;
+    font-family: 'Jura', sans-serif;
+}
+
+.picture{
+    width: 150px;
+    grid-area: picture;
+    display: flex;
+    margin: auto;
+}
+
+
+
+@media (min-width:1000px){
+
+}
+
+// @media (min-width:600px){
+    
+// }
+
+// @media (min-width:416px){
+
+// }

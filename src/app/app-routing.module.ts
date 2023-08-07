@@ -1,3 +1,4 @@
+import { CretatedAlliancesComponent } from './components/cretated-alliances/cretated-alliances.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -13,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ResearchComponent } from './components/research/research.component';
 import { MessageComponent } from './components/message/message.component';
+import { ShipyardComponent } from './components/shipyard/shipyard.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'fleet', component: FleetComponent },
   { path: 'alliances', component: AlliancesComponent },
+  { path: 'created-alliances', component: CretatedAlliancesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
@@ -29,6 +32,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'home', component: HomeComponent },
   { path: 'ranking', component: RankingComponent },
+  { path: 'shipyard', component: ShipyardComponent },
 ];
 
 @NgModule({
