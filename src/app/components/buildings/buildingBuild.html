@@ -1,5 +1,4 @@
-<div class="bg-container">
-    <!-- <h1 mat-dialog-title class="name">Mine de fer</h1> -->
+<div class="popup-container">
     <mat-dialog-content class="mat-typography">
 
     <div class="buildingDetail">
@@ -21,10 +20,9 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <!-- <button mat-button mat-dialog-close>Détruire</button> -->
     
-        <button *ngIf="isBuilt == true" mat-dialog-close (click)="upgradeBuilding()">Améliorer</button>
-        <button *ngIf="isBuilt == false" mat-dialog-close (click)="buildBuilding()">Construire</button>
+        <button  mat-dialog-close (click)="upgradeBuilding()">Améliorer</button>
+        <button  mat-dialog-close (click)="buildBuilding(token)">Construire</button>
     </mat-dialog-actions>
 
 </div>

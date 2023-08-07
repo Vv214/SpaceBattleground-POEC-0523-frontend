@@ -111,7 +111,7 @@
 @media (min-width:1000px){
 
     .bg-container { 
-        background: url("/assets/images/backgrounds/shipyardBackground.jpg") no-repeat center center fixed; 
+        background: url("/assets/images/backgrounds/fleetBackground.jpg") no-repeat center center fixed; 
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
@@ -119,53 +119,109 @@
       }
 
     #ships{
-        display:grid;
-        grid-template-columns: auto auto;
+        display: grid;
+        grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas: 
-        "combatTitle civilTitle"
-        "combat civil"
+        // "combatTitle civilTitle"
+        "combatShip civilShip"
+        ". fleetButton"
         ;
-    }  
-    
-    .combat{
-        grid-area: combat;
-        // background-color: rgba(0, 44, 73, 0.8);
-        margin: 5px;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        height: 220px;
-        overflow: visible;
+        justify-content: space-between;
+        margin-left: 2%;
+        margin-right: 2%;
         position: relative;
-        // top: 30%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .civil{
-        grid-area: civil;
-        // background-color: rgba(0, 44, 73, 0.8);
-        margin: 5px;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        height: 220px;
-        overflow: visible;
-        position: relative;
-        // top: 30%;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        top: 40%
     }
 
-    
     .combatTitle{
         grid-area: combatTitle;
+        margin-top: 0;
         text-align: center;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     }
 
     .civilTitle{
         grid-area: civilTitle;
+        margin-top: 0;
         text-align: center;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     }
+
+    .fleetButton{
+        grid-area: fleetButton;
+        margin: 10px;
+    }
+
+    button{
+        font-size: 1.4em;
+    }
+
+    .ship_lightShip{
+        grid-area: ship_lightShip;
+    }
+    .ship_mediumShip{
+        grid-area: ship_mediumShip;
+    }
+    .ship_heavyShip{
+        grid-area: ship_heavyShip;
+    }
+    .ship_scoutShip{
+        grid-area: ship_scoutShip;
+    }
+
+    .ship_cargoShip{
+        grid-area: ship_cargoShip;
+    }
+    .ship_heavyCargoShip{
+        grid-area: ship_heavyCargoShip;
+    }
+    .ship_recyclerShip{
+        grid-area: ship_recyclerShip;
+    }
+    .ship_colonisateur{
+        grid-area: ship_colonisateur;
+    }
+    .combatShip{
+        grid-area: combatShip;
+        grid-template-areas: 
+        "combatTitle combatTitle combatTitle combatTitle"
+        "ship_lightShip ship_mediumShip ship_heavyShip ship_scoutShip";
+        margin: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 250px;
+        overflow: visible;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+    }
+    
+    .civilShip{
+        grid-area: civilShip;
+        grid-template-areas: 
+        "civilTitle civilTitle civilTitle civilTitle"
+        "ship_cargoShip ship_heavyCargoShip ship_recyclerShip ship_colonisateur";
+        margin: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 250px;
+        overflow: visible;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+    }
+
+    
+
 
     .ship{
         display:grid;
@@ -176,25 +232,24 @@
         "shipName"
         "shipNumber"
         ;
-        border: 1px solid var(--blue, .2) ;
+        // border: 1px solid var(--blue, .2) ;
         width: 140px;
         height: 180px;
         margin: auto;
         margin-bottom: 10px;
         margin-top: 10px;
-        padding: 5px;
         margin: 5px;
-        background-color:var(--blue-color);
-        
-        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-        border:.1rem solid var(--light-color);
         padding: 5px;
+        cursor: pointer;
+        border:.1rem solid rgba(16, 56, 83, 0.0);;
+    
+        // background-color:var(--blue-color);
+        
+        // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        // border:.1rem solid var(--light-color);
+        // padding: 5px;
     }
 
-    .ship:hover{
-        color:var(--primary-color) !important;
-        border-color: var(--primary-color) ;
-    }
 
     .shipNumber{
         grid-area: shipNumber;
@@ -234,5 +289,91 @@
         text-align: center;
         margin: 10px;
     }
+
+
+
+    .corner-button:hover:before,
+    .corner-button:hover p:before,
+    .corner-button:hover:after,
+    .corner-button:hover p:after {
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        // text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button {
+        display: inline-block;
+        // font-family: "Roboto", sans-serif;
+        // font-size: 20px;
+        // letter-spacing: 5px;
+        // text-align: center;
+        position: relative;
+        min-width: 100px;
+        // min-height: 10px;
+        // margin: 20px;
+        background: none;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        // color: #25ccf7;
+        border-radius: 10px;
+        // padding: 12px 20px;
+        box-sizing: content-box;
+        border: 2px solid transparent;
+        text-align: center;
+        // line-height: 30px;
+        transition: 0.75s ease;
+        display: block;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button:hover:before {
+        top: -2px;
+        left: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover:after {
+        top: -2px;
+        right: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p {
+        display: block;
+        // text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #25ccf7;
+    
+        // margin-left: 8px;
+    }
+    .corner-button:hover p:before {
+        bottom: -2px;
+        left: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p:after {
+        bottom: -2px;
+        right: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+
+
 
 }

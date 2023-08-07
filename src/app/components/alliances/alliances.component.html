@@ -1,24 +1,64 @@
-<h1 class="center">Alliances</h1>
-<div>Chercher une alliance</div>
-<p>Liste des alliances</p>
+<h1 class="title">Alliances</h1>
 
-<div id="alliance" class="alliance">
-  <h2 class="center">Créer une alliance</h2>
 
-  <form class="center">
+<div class="bg-container">
+ 
+<mat-tab-group class="tab">
+  <mat-tab label="Créer une alliance"> 
+    
+    <div class="createAlliance">
+
+       <form (ngSubmit)="onSubmit()" [formGroup]="addClanForm" #myForm="ngForm" class="center allianceForm">
+
     <div>
-      <label for="name-alliance"></label>
-      <input name="name-alliance" type="text" placeholder="Nom de l'alliance" />
+      <label for="alliance-name"></label>
+      <input id="alliance-name" name="alliance-name" type="name" formControlName="name"
+        placeholder="Nom de l'alliance">
     </div>
 
     <div>
-      <label for="name-alliance"></label>
-      <input name="name-alliance" type="text" maxlength="3" placeholder="Tag de l'alliance" />
+      <label for="alliance-nickname"></label>
+      <input id="alliance-nickname" name="alliance-nickname" type="name" formControlName="nickname"
+        placeholder="Nom de l'admin">
+    </div>
+    <div>
+      <label for="alliance-tag"></label>
+      <input id="alliance-tag" name="alliance-tag" type="tag" formControlName="tag"
+        placeholder="Tag de l'alliance">
+
+        <div class="center">
+
+          <button>Connexion</button>
+
+        </div>
     </div>
 
-    <div class="center">
-      <!-- <button type="submit">Connexion</button> -->
-      <button (click)="onSubmit()">Créer</button>
-    </div>
+
   </form>
+
+  </div>
+
+  </mat-tab>
+  <mat-tab label="Rejoindre une alliance"> 
+
+    <div class="searchAlliance">
+
+      <form class="center allianceForm">
+        <input id="alliance-search" placeholder="Chercher une alliance">
+
+        <div>
+          <button class="center" type="submit">Chercher</button>
+          </div>
+      </form>
+
+      
+
+
+    </div>  
+  
+  </mat-tab>
+</mat-tab-group>
+
+
+
 </div>

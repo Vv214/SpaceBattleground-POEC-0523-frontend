@@ -6,6 +6,11 @@
     margin-top: 5%;
 }
 
+.title{
+    text-align: center;
+    margin: 10px;
+
+}
 
 .center{
     margin: 5px;
@@ -15,14 +20,150 @@
     align-items: center;
 }
 
-.form{
-    margin-top: 10px;
-    margin: auto;
+.createAlliance{
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border:.1rem solid var(--light-color);
+    height: 300px;
+    color:var(--light-color) !important;
+}
 
+.searchAlliance{
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border:.1rem solid var(--light-color);
+    height: 300px;
+    color:var(--light-color) !important;
+}
+
+.allianceForm{
+    padding-top: 50px;
+
+}
+
+.bg-container { 
+    background: url("/assets/images/backgrounds/allianceBackground.jpg") no-repeat center center fixed; 
+  }
+
+  .form{
+    margin: auto;
+}
+
+input{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    color:var(--body-color);
+    margin: 5px;
+    border-radius: 5px;
+    border:.1rem solid var(--light-color);
+    font-size: 1.2em;
 }
 
 button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
+font-size: 1.2em;
+
 }
+
+mat-tab-group{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+}
+
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color:var(--blue-color) !important;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+    color:var(--body-color) !important;
+    font-size: 0.9em;
+}
+
+::ng-deep .mat-mdc-tab{
+    background-color:var(--blue-color);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active {
+    background-color:rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    border-radius: 5px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color:var(--primary-color);
+  -webkit-box-shadow: 0 0 0px 40rem  rgba(10, 24, 34) inset;
+  outline: none;
+}
+
+input:hover, input:active{
+    border-color: var(--primary-color) !important;
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--primary-color) !important;
+}
+
+
+#alliance-name, #alliance-tag, #alliance-search{
+    color:var(--primary-color) !important;
+}
+
+
+
+.tab {
+    position: relative;
+    top:10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    }
+
+
+    @media (min-width:1000px){
+        .bg-container { 
+            background: url("/assets/images/backgrounds/allianceBackground.jpg") no-repeat center center fixed; 
+          }
+
+          .createAlliance{
+            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+            border:.1rem solid var(--light-color);
+            height: 500px;
+            color:var(--light-color) !important;
+        }
+
+        .searchAlliance{
+            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+            border:.1rem solid var(--light-color);
+            height: 500px;
+            color:var(--light-color) !important;
+        }
+
+        ::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+            color:var(--blue-color) !important;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        
+        ::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+            color:var(--body-color) !important;
+            font-size: 1.1em;
+        }
+        
+
+    }
+
+    @media (min-width:600px){
+    
+    }
+    
+    @media (min-width:416px){
+    
+    }
