@@ -75,6 +75,13 @@
 
 
 @media (min-width:1000px){
+    .bg-container { 
+        background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed; 
+        height: 650px;
+    }
+
+
+
     .resourceBuilding{
         display:grid;
         grid-template-columns: auto;

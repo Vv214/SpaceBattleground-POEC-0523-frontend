@@ -5,7 +5,6 @@
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
-        height: 650px;
         color:var(--body-color);
 
       }
@@ -15,25 +14,24 @@
     }
 
     .title{
-        // justify-content: center;
         text-align: center;
-        margin: 0;
+        margin: 10px;
     }
 
     #overview{
         display: grid;
         grid-template-areas: 
-        "resourceFer . . . . . . . . . . ."
-        ". . . . . . . . . . . buildingList"
-        "resourceEnergie . . . . . . . . . . ."
-        ". . . . . . . . . . . shipList"
-        "resourceDiamant . . . . . . . . . . ."
-        ". . . . . . . . . . . researchList"
-        "resourceHydrogene . . . . . . . . . . ."
+        "buildingList . . . . . . . . . . shipList"
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ."
+        "researchList . . . . . . . . . . ."
         ;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        margin: 10px;
+        // margin: 10px;
     }
 
 .resourceFer{
@@ -78,18 +76,21 @@
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 10px;
+    width: 300px;
 
 }
 .shipList{
     grid-area: shipList;
     background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
+    width: 300px;
 
 }
 .researchList{
     grid-area: researchList;
     background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
+    width: 300px;
 
 }
 

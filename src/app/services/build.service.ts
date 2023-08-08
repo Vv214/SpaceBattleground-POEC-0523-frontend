@@ -31,6 +31,19 @@ export interface Building {
 export class BuildService {
   constructor() {}
 
+  public buildingName = '';
+  public buildingNameSrc = '';
+  public buildingIsBuild!: Boolean;
+  public buildingType = '';
+  public buildingLevel = 0;
+  public buildingDescription = '';
+  public buildingCapacity = 0;
+
+  public buildingIronPrice = 0;
+  public buildingDiamondPrice = 0;
+  public buildingHydrogenPrice = 0;
+  public buildingEnergyPrice = 0;
+
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {
       method: 'GET',
