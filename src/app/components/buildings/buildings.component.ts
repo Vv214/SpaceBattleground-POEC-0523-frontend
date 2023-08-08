@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BuildService } from 'src/app/services/build.service';
 import { OnInit } from '@angular/core';
+import { MethodService } from 'src/app/services/method.service';
 
 export interface Buildings {
   data: {
@@ -29,7 +30,7 @@ export interface Building {
   diamondPrice: number;
   hydrogenPrice: number;
   energyPrice: number;
-  isBuild: boolean;
+  isBuild: Boolean;
   timeToBuild: Date;
   timeToStart: Date;
 }
@@ -116,7 +117,7 @@ export class buildingDetail {
 
   public buildingName!: string;
   public buildingNameSrc!: string;
-  public buildingIsBuild!: boolean;
+  public buildingIsBuild!: Boolean;
   public buildingType!: string;
   public buildingLevel!: number;
   public buildingDescription!: string;
@@ -180,10 +181,10 @@ export class buildingDetail {
   styleUrls: ['buildingBuild.scss'],
 })
 export class buildingBuild implements OnInit {
-  constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService) {}
+  constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService, private methodService: MethodService) {}
   public buildingName!: string;
   public buildingNameSrc!: string;
-  public buildingIsBuild!: boolean;
+  public buildingIsBuild!: Boolean;
   public buildingType!: string;
   public buildingLevel!: number;
   public buildingDescription!: string;
@@ -193,16 +194,53 @@ export class buildingBuild implements OnInit {
   public buildingHydrogenePrice!: number;
   public buildingEnergyPrice!: number;
   public token!: string;
+  public ironPlayer!: number;
+  public diamondPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
 
-  buildBuilding() {
-    // modifier isBuild du batiment en cours en true avec setIsBuild
+  buildBuilding(token: string, buildingName: string, buildingLevel: number, buildingIronPrice: number, buildingDiamondPrice: number,
+    buildingEnergyPrice: number, buildingHydrogenePrice: number, buildingIsBuild: Boolean,
+    ironPlayer: number, diamondPlayer: number, hydrogenePlayer: number, energyPlayer: number) {
+    let ressourcesPlayer: Array<number> = [4]
+    ressourcesPlayer[0] = ironPlayer
+    ressourcesPlayer[1] = diamondPlayer;
+    ressourcesPlayer[2] = hydrogenePlayer;
+    ressourcesPlayer[3] = energyPlayer;
+
+    let canBuild = this.methodService.canDoneAction(buildingIronPrice, buildingDiamondPrice, buildingEnergyPrice, buildingHydrogenePrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer);
+    console.log("dans methode véran ", canBuild);
+
+    if (canBuild) {
+      console.log("dans methode véran");
+
+      ressourcesPlayer = this.methodService.updateStockPlayer(buildingIronPrice, buildingDiamondPrice, buildingEnergyPrice, buildingHydrogenePrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer);
+      this.methodService.changeIsBuild(token, buildingIsBuild, buildingName).then((response) => {
+        if (response.status === 200) {
+          response.json().then((body) => {
+            if (buildingIsBuild === true) {
+              let buildingIsBuildString = 'true';
+              localStorage.setItem('buildingIsBuild', buildingIsBuildString);
+            }
+            else {
+              let buildingIsBuildString = 'false';
+              localStorage.setItem('buildingIsBuild', buildingIsBuildString);
+            }
+            console.log(body.buildingIsBuild, " dans ma fonction");
+            if (body.buildingIsBuild === true) {
+              this.buildingIsBuild = true;
+              console.log("Building is true");
+            } else
+              this.buildingIsBuild = false;
+          });
+        } else console.log(response.status + " Building can't be updated");
+      });
+      // modifier isBuild du batiment en cours en true avec setIsBuild
+    }
   }
 
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
-    // this.token = localStorage.getItem('x-token') ?? '';
-    // this.checkBuildingInfo(this.token);
-    // let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
     this.buildingName = this.buildService.buildingName.toString();
     this.buildingType = this.buildService.buildingType.toString();
     this.buildingLevel = this.buildService.buildingLevel;
@@ -213,6 +251,12 @@ export class buildingBuild implements OnInit {
     this.buildingEnergyPrice = this.buildService.buildingEnergyPrice;
     this.buildingNameSrc = this.buildService.buildingNameSrc;
     this.buildingIsBuild = this.buildService.buildingIsBuild;
+    console.log(this.buildingIsBuild, " dans ng On init de building Build");
+    let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
+    this.ironPlayer = ressources.data.iron.quantity;
+    this.diamondPlayer = ressources.data.diamond.quantity;
+    this.hydrogenePlayer = ressources.data.hydrogene.quantity;
+    this.energyPlayer = ressources.data.energy.quantity;
   }
 
   upgradeBuilding() {
@@ -234,3 +278,5 @@ export class buildingDestroy {
     // diamantJoueur = diamantJoueur + diamantRequis/10;
   }
 }
+
+

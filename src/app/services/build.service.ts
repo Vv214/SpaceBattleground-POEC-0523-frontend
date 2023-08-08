@@ -33,7 +33,7 @@ export class BuildService {
 
   public buildingName = '';
   public buildingNameSrc = '';
-  public buildingIsBuild = false;
+  public buildingIsBuild!: Boolean;
   public buildingType = '';
   public buildingLevel = 0;
   public buildingDescription = '';

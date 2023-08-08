@@ -186,7 +186,7 @@ export class researchDetail implements OnInit {
     }
   }
   ngOnInit(): void {
-    // this.cargoAmelioreLvl = this.cargoAmelioreLvl;
+    //this.cargoAmelioreLvl = this.cargoAmelioreLvl;
 
   }
 }
