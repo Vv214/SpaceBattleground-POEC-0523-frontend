@@ -278,6 +278,14 @@ button{
 // 1120px
 
 @media (min-width:1000px){
+    .bg-container { 
+        background: url("/assets/images/backgrounds/researchBackground.jpg") no-repeat center center fixed;
+        background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 650px;
+      }
+
     .research_mobile{
         display: none;
       }

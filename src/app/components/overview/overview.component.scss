@@ -40,8 +40,18 @@
     .overviewMobile{
         display: none;
     }
+
+    // .overviewDesktop{
+    //     display: block;
+    // }
     .bg-container { 
         background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center  center fixed; 
+        background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        color:var(--body-color);
+        height: 650px;
+
       }
 
     .mobilePlanet{
@@ -53,7 +63,7 @@
         margin: 10px;
     }
 
-    #overview{
+    .overviewDesktop{
         display: grid;
         grid-template-areas: 
         "buildingList . . . . . . . . . . shipList"
@@ -126,6 +136,11 @@
     background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
     width: 300px;
+
+    // position: relative;
+    // top:500%;
+    // bottom: 0;
+    // right: 0;
 
 }
 

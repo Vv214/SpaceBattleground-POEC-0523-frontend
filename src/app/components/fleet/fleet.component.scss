@@ -272,6 +272,10 @@ height: 1060px;
 
     .bg-container { 
         background: url("/assets/images/backgrounds/fleetBackground.jpg") no-repeat center center fixed; 
+        background-size: cover;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 650px;
       }
 
     #ships{
