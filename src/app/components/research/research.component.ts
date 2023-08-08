@@ -95,6 +95,7 @@ export class ResearchComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public researchService: ResearchService) {}
 
+
   openTechnologyTree() {
     const dialogRef = this.dialog.open(TechnologyTree);
     dialogRef.afterClosed().subscribe((result) => {
@@ -258,4 +259,5 @@ export class researchDetail implements OnInit {
     this.researchHydrogenPrice = this.researchService.researchHydrogenPrice;
     this.researchEnergyPrice = this.researchService.researchEnergyPrice;
   }
+
 }
