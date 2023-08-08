@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ShipService } from 'src/app/services/ship.service';
 import { shipDetail } from '../shipyard/shipyard.component';
 import { shipBuild } from '../shipyard/shipyard.component';
+import { PlanetService } from 'src/app/services/planet.service';
 
 export interface Ships {
   data: {
@@ -81,7 +82,7 @@ export class FleetComponent implements OnInit {
   public recyclerShipQuantity!: number;
   public colonisateurQuantity!: number;
 
-  constructor(public dialog: MatDialog, public shipService: ShipService) {}
+  constructor(public dialog: MatDialog, public shipService: ShipService, private planetService: PlanetService) {}
 
   modifyFleet() {
     const dialogRef = this.dialog.open(modifyFleet);
@@ -147,4 +148,25 @@ export class FleetComponent implements OnInit {
   templateUrl: 'modifyFleet.html',
   styleUrls: ['modifyFleet.scss'],
 })
-export class modifyFleet {}
+export class modifyFleet {
+  constructor(public dialog: MatDialog, private planetService: PlanetService) {}
+
+  public currentPlanet = 1;
+  public planetName: string = '';
+  public positionX: number = 0;
+  public positionY: number = 0;
+  public ennemyPositionX: number = 19;
+  public ennemyPositionY: number = 12;
+
+  calculateDistance() {
+    let distance = Math.abs(this.positionX + this.positionY - (this.ennemyPositionX + this.ennemyPositionY)) / 2;
+    return Math.floor(distance);
+  }
+
+  ngOnInit(): void {
+    this.planetName = this.planetService.planetList[this.planetService.planetId].name;
+    this.positionX = this.planetService.planetList[this.planetService.planetId].positionX;
+    this.positionY = this.planetService.planetList[this.planetService.planetId].positionY;
+    this.currentPlanet = this.planetService.planetId + 1;
+  }
+}

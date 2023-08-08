@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
+import { PlanetService } from 'src/app/services/planet.service';
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +18,9 @@ export class FooterComponent {
   activeShipyard = false;
   activeAlliance = false;
 
-  constructor(private router: Router) {
+  showFooter = false;
+
+  constructor(private router: Router, private loginService: LoginService, private planetService: PlanetService) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/buildings') {
@@ -74,6 +78,7 @@ export class FooterComponent {
   }
 
   currentPlanet = 1;
+  planetName = '';
 
   toBuildings() {
     this.router.navigate(['/', 'buildings']);
@@ -107,12 +112,19 @@ export class FooterComponent {
     this.router.navigate(['/', 'overview']);
   }
 
+  updatePlanetNameInUI() {
+    this.planetName = this.planetService.planetList[this.planetService.planetId].name;
+    return this.planetName;
+  }
+
   previousPlanet() {
     // Changer planète
     this.currentPlanet = this.currentPlanet - 1;
     if (this.currentPlanet < 1) {
       this.currentPlanet = 10;
+      // this.planetService.planetName = planets.data[planetName].name;
     }
+    this.planetService.planetId = this.currentPlanet - 1;
   }
 
   nextPlanet() {
@@ -120,6 +132,8 @@ export class FooterComponent {
     this.currentPlanet = this.currentPlanet + 1;
     if (this.currentPlanet > 10) {
       this.currentPlanet = 1;
+      // this.planetService.planetName = planets.data[planetName].name;
     }
+    this.planetService.planetId = this.currentPlanet - 1;
   }
 }

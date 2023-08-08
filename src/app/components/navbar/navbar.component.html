@@ -8,8 +8,9 @@
     </div>
 
     <div id="planetInfo">
-        <p class="planet">Nom planète + position</p>
-        <p class="serverTime">Heure serveur</p>
+        <p class="planet">{{updatePlanetNameInUI()}} - Position {{updatePositionXInUI()}}:{{updatePositionYInUI()}}</p>
+        <!-- <p class="planet">Nom planète + position</p> -->
+        <p class="serverTime">{{spaceHour}}:{{spaceMinute}}:{{spaceSecond}} ({{currentTime | date:"HH:mm:ss"}} Heure Terrestre)</p>
     </div>
 
     <div id="account">

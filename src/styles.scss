@@ -524,3 +524,32 @@ button:hover{
       }
 
 }
+
+
+// #page-container {
+//     position: relative;
+//     min-height: 100vh;
+//   }
+
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;  
+    // height: 130px;        /* Footer height */
+    margin-top: auto;
+  }
+
+//   #content-wrap {
+//     padding-bottom: 130px;    /* Footer height */
+//   }
+
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }

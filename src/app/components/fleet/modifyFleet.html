@@ -42,37 +42,37 @@
 <div class="sendFleet">
     <div class="travel">
         <div class="depart">
-            <img src="assets/images/planets/planet3.png" class="planetPicture" />
-            <div class="planet">Planète1</div>
-            <div class="position">23:2</div>
+            <img src="assets/images/planets/planet{{currentPlanet}}.png" class="planetPicture" />
+            <div class="planet">{{planetName}}</div>
+            <div class="position">{{positionX}}:{{positionY}}</div>
         </div>
         <div class="distance">
                 <p class="distanceArrow"></p>
-                <p class="distanceNumber">Distance : 46</p>
+                <p class="distanceNumber">Distance : {{calculateDistance()}}</p>
         </div>
         <div class="arrivee">
             <img src="assets/images/planets/planet5.png" class="planetPicture" />
             <div class="planet">Planète 2</div>
-            <div class="position">12:45</div>
+            <div class="position">{{ennemyPositionX}}:{{ennemyPositionY}}</div>
         </div>
     </div>
 
 
 <div class="missionButtons">
 <div class="exploreButton">
-    <button mat-dialog-close >Expédition</button>
+    <button  >Expédition</button>
 </div>
 <div class="attackButton">
-    <button mat-dialog-close >Attaquer</button>
+    <button  >Attaquer</button>
 </div>  
 <div class="transportButton">
-    <button mat-dialog-close >Transporter</button>
+    <button  >Transporter</button>
 </div>
 <div class="spyButton">
-    <button mat-dialog-close >Espionner</button>
+    <button  >Espionner</button>
 </div>
 <div class="colonizeButton">
-    <button mat-dialog-close >Coloniser</button>
+    <button >Coloniser</button>
 </div>  
 </div>
 </div>
