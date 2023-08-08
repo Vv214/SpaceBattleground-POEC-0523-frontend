@@ -376,6 +376,7 @@
     width: auto;
     grid-area: topButton;
     display: flex;
+    font-size: 20px;
 }
 
 .bottomButtons{
@@ -391,8 +392,17 @@
     overflow: visible;
 }
 
+.planetText{
+    font-size: 15px;
+}
+
+.footerButtonsText{
+    font-size: 12px;
+}
+
 .planet img{
     width: 90px;
+    padding-top: 35px;
 }
 
 #r-arrow {
@@ -430,7 +440,7 @@
     grid-template-rows: auto;
     grid-template-areas: 
     "buildingButton resourceButton researchButton"
-    "fleetButton shipyardButton allianceButton"
+    "shipyardButton fleetButton allianceButton"
     ;
     position: relative;
     // bottom: 40%;

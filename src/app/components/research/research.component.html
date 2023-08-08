@@ -144,6 +144,7 @@
 
 
 <div class="research_mobile">
+    <div class="bg-container">
     <div class="center technoTree">
         <button (click)="openTechnologyTree()">Arbre Technologique</button>
     </div>
@@ -231,7 +232,7 @@
                 </div>
                 <div class="research_plasma research" (click)="openResearchDetail(plasma)"
                     matTooltip="Centrale électrique améliorée">
-                    <img class="icon" src="assets/images/research/centrale.png" />
+                    <img class="icon" src="assets/images/research/energie.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
                     <p class="level">{{plasmaLevel}} / 5</p>
                 </div>
@@ -245,4 +246,6 @@
         </mat-tab>
 
     </mat-tab-group>
+</div>
+
 </div>

@@ -1,39 +1,3 @@
-<!-- <div class="bg-container">
-    <h1 mat-dialog-title class="name"> Flotte 1</h1>
-    <mat-dialog-content class="mat-typography">
-    
-    <div>
-        <p class="position">Position actuelle : X:Y</p>
-        <p class="capacity">Capacité : 50/50</p>
-    </div>
-
-    <div class="shipList">
-        <h2 class="name">Liste vaisseaux</h2>
-        <ul>
-            <li>Chasseurs légers : 40</li>
-            <li>Chasseurs moyens : 5</li>
-            <li>Chasseurs lourds : 5</li>
-        </ul>
-    </div>
-    
-    
-    </mat-dialog-content>
-    
-    <mat-dialog-actions class="popupButtons">
-        <div class="updateButton">
-        <button mat-button mat-dialog-close >Modifier</button>
-        </div>
-        <div class="moveButton">
-        <button mat-button mat-dialog-close >Déplacer</button>
-        </div>
-        <div class="attackButton">
-        <button mat-button mat-dialog-close >Attaquer</button>
-        </div>    
-    </mat-dialog-actions>
-</div> -->
-
-
-
 
 
 <div class="popup-container">
@@ -43,16 +7,16 @@
     <div class="travel">
         <div class="depart">
             <img src="assets/images/planets/planet{{currentPlanet}}.png" class="planetPicture" />
-            <div class="planet">{{planetName}}</div>
+            <div class="planet"><span class="categoryTitle">{{planetName}}</span></div>
             <div class="position">{{positionX}}:{{positionY}}</div>
         </div>
         <div class="distance">
                 <p class="distanceArrow"></p>
-                <p class="distanceNumber">Distance : {{calculateDistance()}}</p>
+                <p class="distanceNumber">Distance: {{calculateDistance()}}</p>
         </div>
         <div class="arrivee">
             <img src="assets/images/planets/planet5.png" class="planetPicture" />
-            <div class="planet">Planète 2</div>
+            <div class="planet"><span class="categoryTitle">Terra Nova</span></div>
             <div class="position">{{ennemyPositionX}}:{{ennemyPositionY}}</div>
         </div>
     </div>
@@ -60,10 +24,10 @@
 
 <div class="missionButtons">
 <div class="exploreButton">
-    <button  >Expédition</button>
+    <button  >Explorer</button>
 </div>
 <div class="attackButton">
-    <button  >Attaquer</button>
+    <button  class="atkButton">Attaquer</button>
 </div>  
 <div class="transportButton">
     <button  >Transporter</button>
