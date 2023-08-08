@@ -43,6 +43,12 @@ export class BuildService {
   public buildingDiamondPrice = 0;
   public buildingHydrogenPrice = 0;
   public buildingEnergyPrice = 0;
+  public robotFactoryLevel!: number;
+  public laboratoryLevel!: number;
+  public shipyardLevel!: number;
+  public terraformerLevel!: number;
+
+
 
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {

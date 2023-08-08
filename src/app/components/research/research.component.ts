@@ -259,8 +259,5 @@ export class researchDetail implements OnInit {
     this.researchHydrogenPrice = this.researchService.researchHydrogenPrice;
     this.researchEnergyPrice = this.researchService.researchEnergyPrice;
   }
-  ngOnInit(): void {
-    //this.cargoAmelioreLvl = this.cargoAmelioreLvl;
 
-  }
 }
