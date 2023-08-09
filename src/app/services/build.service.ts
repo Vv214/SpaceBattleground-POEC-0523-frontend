@@ -33,7 +33,7 @@ export class BuildService {
 
   public buildingName = '';
   public buildingNameSrc = '';
-  public buildingIsBuild = false;
+  public buildingIsBuild!: Boolean;
   public buildingType = '';
   public buildingLevel = 0;
   public buildingDescription = '';
@@ -43,6 +43,11 @@ export class BuildService {
   public buildingDiamondPrice = 0;
   public buildingHydrogenPrice = 0;
   public buildingEnergyPrice = 0;
+  public robotFactoryLevel!: number;
+  public laboratoryLevel!: number;
+  public shipyardLevel!: number;
+  public terraformerLevel!: number;
+  public eMessage = '';
 
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {

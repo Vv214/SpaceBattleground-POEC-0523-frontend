@@ -1,345 +1,6 @@
-// #footer {
-//     // margin-top: 10px;
-//     display:grid;
-//     grid-template-columns: auto auto;
-//     grid-template-rows: 100px ;
-//     grid-template-areas: 
-//     "footerButtons  planet"
-//     ;
-//     margin-left: 2%;
-//     margin-right: 2%;
-//     font-size: 9px;
-//     text-align: center;
-//     justify-content: space-between;
-//         // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
-//     // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
-// }
-
-// .button{
-//     margin: 10px;
-// }
-
-// .icon{
-//     width: 30px;
-//     height: 30px;
-// }
-
-// .topButtons{
-//     width: auto;
-//     grid-area: topButton;
-//     display: flex;
-// }
-
-// .bottomButtons{
-//     width: auto;
-//     grid-area: botButton;
-//     display: flex;
-// }
-
-// .planet{
-//     width: auto;
-//   grid-area: planet;
-//     display: flex;
-//     overflow: visible;
-// }
-
-// .planet img{
-//     width: 90px;
-// }
-
-// #r-arrow {
-//     height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     overflow: visible;
-// }
-
-// #l-arrow {
-//     height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-
-// #r-arrow svg, #l-arrow svg{
-//     fill: #89b1c4;
-// }
-
-// #r-arrow svg:hover, #l-arrow svg:hover{
-//     fill:var(--blue);
-//     color:var(--blue-color) !important;
-//     -webkit-drop-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
-//     -moz-drop-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
-//     filter: drop-shadow(2px 2px 4px rgba(45,255,196,0.9));
-//     -moz-drop-shadow: 0px 20px 15px 0px rgba(45,255,196,0.9);
-// }
-
-// #footerButtons{
-//     grid-area: footerButtons;
-//     display:grid;
-//     grid-template-columns: 70px 70px 70px;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "buildingButton resourceButton researchButton"
-//     "fleetButton allianceButton marketButton"
-//     ;
-//     position: relative;
-//     // bottom: 40%;
-// }
-
-
-
-
-
-// .buildingButton{
-//     grid-area: buildingButton;
-//     margin: 10px;
-// }
-
-// .resourceButton{
-//     grid-area: resourceButton;
-//     margin: 10px;
-// }
-
-// .researchButton{
-//     grid-area: researchButton;
-//     margin: 10px;
-// }
-
-// .fleetButton{
-//     grid-area: fleetButton;
-//     margin: 10px;
-// }
-
-// .allianceButton{
-//     grid-area: allianceButton;
-//     margin: 10px;
-// }
-
-// .marketButton{
-//     grid-area: marketButton;
-//     margin: 10px;
-// }
-
-
-// @media (min-width:1000px){
-//     #footer {
-//         margin-top: 10px;
-//         display:grid;
-//         grid-template-columns: auto;
-//         grid-template-rows: auto;
-//         grid-template-areas: 
-//         "footerButtons planet"
-//         ;
-//         // margin-left: 2%;
-//         // margin-right: 2%;
-//         font-size: 1em;
-//         text-align: center;
-//         justify-content: space-between;
-//         align-items: center;
-//          color:var(--body-color);
-        
-//     }
-
-
-// #footerButtons{
-//     grid-area: footerButtons;
-//     display:grid;
-//     grid-template-columns: auto;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "buildingButton resourceButton researchButton fleetButton shipyardButton allianceButton marketButton"
-//     ;
-// }
-
-// .buildingButton{
-//     grid-area: buildingButton;
-//     margin: 10px;
-// }
-
-// .shipyardButton{
-//     grid-area: shipyardButton;
-//     margin: 10px;
-// }
-
-// .resourceButton{
-//     grid-area: resourceButton;
-//     margin: 10px;
-// }
-
-// .researchButton{
-//     grid-area: researchButton;
-//     margin: 10px;
-// }
-
-// .fleetButton{
-//     grid-area: fleetButton;
-//     margin: 10px;
-// }
-
-// .allianceButton{
-//     grid-area: allianceButton;
-//     margin: 10px;
-// }
-
-// .marketButton{
-//     grid-area: marketButton;
-//     margin: 10px;
-// }
-    
-//     .button{
-//         margin: 10px;
-//     }
-    
-//     .icon{
-//         width: 50px;
-//         height: 50px;
-//     }
-    
-//     .topButtons{
-//         width: auto;
-//         grid-area: topButton;
-//         display: flex;
-//         // margin: 10px;
-//     }
-    
-//     .bottomButtons{
-//         width: auto;
-//         grid-area: botButton;
-//         // margin: 10px;
-//         display: flex;
-//     }
-    
-//     .planet{
-//         // width: 300px;
-//       grid-area: planet;
-//         display: flex;
-//     }
-    
-//     .planet img{
-//         width: 100px;
-//     }
-    
-//     // .planetButton{
-    
-//     // }
-    
-//     #r-arrow {
-//         /* margin-left: 40px; */
-//         font-weight: 700;
-//         font-size: 40px;
-//     }
-    
-//     #l-arrow {
-//         /* margin-right: 40px; */
-//         font-weight: 700;
-//         font-size: 40px;
-//     }
-
-
-
-// }
-
-// @media (min-width:600px){
-    
-// }
-
-// @media (min-width:416px){
-
-// }
-
-
-
-
-// .corner-button:hover:before,
-// .corner-button:hover p:before,
-// .corner-button:hover:after,
-// .corner-button:hover p:after {
-//     display: block;
-//     content: "";
-//     width: 15px;
-//     height: 15px;
-//     position: absolute;
-//     text-align: center;
-//     justify-content: center;
-//     align-items: center;
-// }
-// .corner-button {
-//     display: inline-block;
-//     // font-family: "Roboto", sans-serif;
-//     // font-size: 20px;
-//     // letter-spacing: 5px;
-//     text-align: center;
-//     position: relative;
-//     min-width: 100px;
-//     // min-height: 10px;
-//     // margin: 20px;
-//     background: none;
-//     border: none;
-//     text-decoration: none;
-//     cursor: pointer;
-//     // color: #25ccf7;
-//     border-radius: 10px;
-//     // padding: 12px 20px;
-//     box-sizing: content-box;
-//     border: 2px solid transparent;
-//     text-align: center;
-//     // line-height: 30px;
-//     transition: 0.75s ease;
-//     display: block;
-//     text-align: center;
-//     justify-content: center;
-//     align-items: center;
-// }
-// .corner-button:hover:before {
-//     top: -2px;
-//     left: -2px;
-//     border-top: 2px solid #0fbcf9;
-//     border-top-left-radius: 8px;
-//     border-left: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-// .corner-button:hover:after {
-//     top: -2px;
-//     right: -2px;
-//     border-top: 2px solid #0fbcf9;
-//     border-top-right-radius: 8px;
-//     border-right: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-// .corner-button:hover p {
-//     display: block;
-//     text-align: center;
-//     justify-content: center;
-//     align-items: center;
-//     color: #25ccf7;
-
-//     // margin-left: 8px;
-// }
-// .corner-button:hover p:before {
-//     bottom: -2px;
-//     left: -2px;
-//     border-bottom: 2px solid #0fbcf9;
-//     border-bottom-left-radius: 8px;
-//     border-left: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-// .corner-button:hover p:after {
-//     bottom: -2px;
-//     right: -2px;
-//     border-bottom: 2px solid #0fbcf9;
-//     border-bottom-right-radius: 8px;
-//     border-right: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-
-
-
-
 
 #footer {
-    padding-top: 10px;
+    // padding-top: 10px;
     display:grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto ;
@@ -351,6 +12,14 @@
     font-size: 9px;
     text-align: center;
     justify-content: space-between;
+    // margin-top: auto;
+    padding-bottom: 10px;
+
+
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
+    // height: 2.5rem;     
         // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
     // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
 }
@@ -368,6 +37,7 @@
     width: auto;
     grid-area: topButton;
     display: flex;
+    font-size: 20px;
 }
 
 .bottomButtons{
@@ -383,8 +53,17 @@
     overflow: visible;
 }
 
+.planetText{
+    font-size: 15px;
+}
+
+.footerButtonsText{
+    font-size: 12px;
+}
+
 .planet img{
     width: 90px;
+    padding-top: 35px;
 }
 
 #r-arrow {
@@ -422,7 +101,7 @@
     grid-template-rows: auto;
     grid-template-areas: 
     "buildingButton resourceButton researchButton"
-    "fleetButton shipyardButton allianceButton"
+    "shipyardButton fleetButton allianceButton"
     ;
     position: relative;
     // bottom: 40%;
@@ -486,7 +165,7 @@
         text-align: center;
         justify-content: space-between;
         align-items: center;
-         color:var(--body-color);
+    padding-bottom: 10px;
         
     }
 
@@ -497,7 +176,7 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "buildingButton resourceButton researchButton fleetButton shipyardButton allianceButton "
+    "buildingButton resourceButton researchButton shipyardButton fleetButton  allianceButton "
     ;
 }
 
@@ -560,31 +239,48 @@
     }
     
     .planet{
-        // width: 300px;
-      grid-area: planet;
-        display: flex;
+        // width: auto;
+        grid-area: planet;
+          display: flex;
+    padding-bottom: 35px;
+
     }
     
     .planet img{
         width: 100px;
+
     }
     
     // .planetButton{
     
     // }
+    // #r-arrow {
+    //     height: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     overflow: visible;
+    // }
     
+    // #l-arrow {
+    //     height: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+
     #r-arrow {
         /* margin-left: 40px; */
         // font-weight: 700;
         // font-size: 40px;
-        margin-top: 40px;
+        margin-top: 60px;
     }
     
     #l-arrow {
         /* margin-right: 40px; */
         // font-weight: 700;
         // font-size: 40px;
-        margin-top: 40px;
+        margin-top: 60px;
 
     }
 
@@ -602,4 +298,79 @@
 
 
 
+// .active{
 
+// }
+// .active:before{
+//     top: -2px;
+//     left: -2px;
+//     border-top: 2px solid #0fbcf9;
+//     border-top-left-radius: 8px;
+//     border-left: 2px solid #0fbcf9;
+//     transition: 0.75s all;
+// }
+// .active:after{
+//     top: -2px;
+//     right: -2px;
+//     border-top: 2px solid #0fbcf9;
+//     border-top-right-radius: 8px;
+//     border-right: 2px solid #0fbcf9;
+//     transition: 0.75s all;
+// }
+
+
+.activeTab:before,
+.activeTab p:before,
+.activeTab:after,
+.activeTab p:after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.activeTab:before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab:after {
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid #0fbcf9;
+    border-top-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab p {
+    display: block;
+  //   text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #25ccf7 !important;
+
+    // margin-left: 8px;
+}
+.activeTab p:before {
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
+.activeTab p:after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid #0fbcf9;
+    border-bottom-right-radius: 8px;
+    border-right: 2px solid #0fbcf9;
+    transition: 0.75s all;
+}
