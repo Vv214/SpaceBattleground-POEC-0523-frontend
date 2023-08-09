@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class CretatedAlliancesComponent implements OnInit {
 
+  createdAlliances : any; 
+  alliances: any;
+
 
   constructor(private router: Router) {}
 
@@ -16,8 +19,20 @@ export class CretatedAlliancesComponent implements OnInit {
     const alliances = ["toto", "tata"];
     let toto: string;
 
+    this.fetchAlliance();
+
   }
-  onsubmit() {
-      
-   }
+
+  fetchAlliance() {
+    this.alliances.getAlliance().subscribe(
+      () => {
+        this.alliances = this.fetchAlliance();
+      },
+      () => {
+        console.error();
+      }
+      );
+
+  }
+  onsubmit() {}
 }
