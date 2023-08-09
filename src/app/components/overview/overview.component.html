@@ -1,50 +1,77 @@
-<h1 class="title">Vue d'ensemble</h1>
+<h1 class="title center">Vue d'ensemble</h1>
 
 <div class="bg-container">
-    <img class="mobilePlanet" src="assets/images/planets/planet1.png" />
+    <img class="mobilePlanet" src="assets/images/planets/planet{{updatePlanetInUI()}}.png" />
 
 
     <div id="overview">
-        <div class="resourceFer">
-            <p class="name">Fer : 4000/5000</p>
-        </div>
-        <div class="resourceHydrogene">
-            <p class="name">Hydrogène : 5000/5000</p>
-        </div>
-        <div class="resourceDiamant">
-            <p class="name">Diamants : 2000/5000</p>
-        </div>
 
-        <div class="resourceEnergie">
-            <p class="name">Energie : 200/heure</p>
-        </div>
+        <div class="overviewMobile">
+            <div class="mobileLists">
 
-        <div class="buildingList">
-            <h2 class="name">Bâtiments en construction</h2>
-            <div>
-                Mine de fer : 40min
+                <div class="mobileList">
+                    <h2 class="name center">Bâtiments en construction</h2>
+                    <ul>
+                        <li>
+                            Mine de fer : 40min
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="mobileList">
+                    <h2 class="name center">Vaisseaux en construction</h2>
+                    <ul>
+                        <li>
+                            Chasseur léger : 10 min
+                        </li>
+                        <li>
+                            Chasseur lourd : 5 min
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="mobileList">
+                    <h2 class="name center">Recherches en cours</h2>
+                    <ul>
+                        <li>
+                            Mine de diamant : niveau 2 : 2h30
+                        </li>
+                    </ul>
+
+                </div>
+                
+                
+                
+                
             </div>
-            <!-- <ul>
-                <li>Mine de fer : 40 min</li>
-                <li>Laboratoire : 5 min</li>
-                <li>Tour de défense : 10 min</li>
-            </ul> -->
+
         </div>
-    
-        <div class="shipList">
-            <h2 class="name">Vaisseaux en construction</h2>
-            <ul>
-                <li>Chasseur léger : 10 min</li>
-                <li>Chasseur lourd : 5 min</li>
-            </ul>
+        <div class="overviewDesktop">
+            <div class="buildingList">
+                <h2 class="name center">Bâtiments en construction</h2>
+                <div>
+                    Mine de fer : 40min
+                </div>
+            </div>
+        
+            <div class="shipList">
+                <h2 class="name center">Vaisseaux en construction</h2>
+                <div>
+                    Chasseur léger : 10 min
+                </div>
+                <div>
+                    Chasseur lourd : 5 min
+                </div>
+            </div>
+        
+            <div class="researchList">
+                <h2 class="name center">Recherches en cours</h2>
+                <div>
+                    Mine de diamant : niveau 2 : 2h30
+                </div>
+            </div>
         </div>
-    
-        <div class="researchList">
-            <h2 class="name">Recherches en cours</h2>
-            <ul>
-                <li>Mine de fer niveau 2 : 2h30</li>
-            </ul>
-        </div>
+        
 
 
 

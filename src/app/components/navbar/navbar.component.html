@@ -1,15 +1,22 @@
 <div id="navbar">
 
     <div id="resources">
-        <div class="ironInfo">Fer : {{iron}}</div>
-        <div class="gazInfo">Hydrogène : {{hydrogene}}</div>
-        <div class="diamondInfo">Diamant : {{diamond}}</div>
-        <div class="energyInfo">Energie : {{energy}}</div>
+        <div class="ironInfo"><span class="categoryTitle">Fer : </span>{{iron}}</div>
+        <div class="gazInfo"><span class="categoryTitle">Hydrogène : </span>{{hydrogene}}</div>
+        <div class="diamondInfo"><span class="categoryTitle">Diamant : </span>{{diamond}}</div>
+        <div class="energyInfo"><span class="categoryTitle">Energie : </span>{{energy}}</div>
     </div>
 
-    <div id="planetInfo">
-        <p class="planet">Nom planète + position</p>
-        <p class="serverTime">Heure serveur</p>
+    <div id="planetInfoDesktop">
+        <p class="planet"><span class="categoryTitle">{{updatePlanetNameInUI()}}</span> - Position {{updatePositionXInUI()}}:{{updatePositionYInUI()}}</p>
+        <!-- <p class="planet">Nom planète + position</p> -->
+        <p class="serverTime">{{spaceHour}}:{{spaceMinute}}:{{spaceSecond}} ({{currentTime | date:"HH:mm:ss"}} Heure Terrestre)</p>
+    </div>
+
+    <div id="planetInfoMobile">
+        <p class="planet"><span class="categoryTitle">{{updatePlanetNameInUI()}}</span> <br> Position {{updatePositionXInUI()}}:{{updatePositionYInUI()}}</p>
+        <!-- <p class="planet">Nom planète + position</p> -->
+        <p class="serverTime">{{spaceHour}}:{{spaceMinute}}:{{spaceSecond}} <br> ({{currentTime | date:"HH:mm:ss"}} Heure Terrestre)</p>
     </div>
 
     <div id="account">

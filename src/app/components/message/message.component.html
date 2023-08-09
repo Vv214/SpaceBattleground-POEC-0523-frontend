@@ -2,12 +2,12 @@
     <h1>Transmissions</h1>
 
     <div class="messageButtons">
-        <button class="messageButton">Transmissions Serveur</button>
+        <button (click)="switchToTransmission()" class="messageButton">Transmissions Serveur</button>
         <button class="messageButton">Rapports de bataille</button>
-        <button class="messageButton">Expéditions</button>
+        <button (click)="switchToMockup()" class="messageButton">Expéditions</button>
     </div>
 
-<div class="mockupTransmission">
+<div *ngIf="this.mockupTransmissionActive" class="mockupTransmission">
 <div style="color: red;">***| SECURING PROXY CONNECTION |***</div>
 <div style="color: red;">***| STARTING PROXY SESSION |***</div>
 <div>// TSS Messages downloading</div>
@@ -18,8 +18,14 @@
 <div>Entry 'Goal_BiomeSafeAsteroidCave' is missing in PDA Data</div>
 <div>ORDERoS 5.0.01 . 2040-08-02 . <br> System 01 <br> Build x325</div>
 
-
 </div>
 
+<div *ngIf="this.transmissionActive" class="transmission">
+    <ul>
+<li *ngFor="let message of messageList" (click)="openMessage()">{{message.titre}} <div *ngIf="this.messageOpen">{{message.contenu}}</div> </li>
+
+    </ul>
+    
+</div>
 
 </div>
