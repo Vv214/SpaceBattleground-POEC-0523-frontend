@@ -55,9 +55,9 @@
       <div *ngIf="registerForm.get('password')?.errors?.['notEqual']" class="errorMessage">***[ Les mots de passe
         doivent être identiques ]***</div>
     </div>
-    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted">Le mot de passe est
-      requis</div>
-    <div *ngIf="alreadyInBase===false">Nickname déja présent en base.</div>
+    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && myForm.submitted" class="errorMessage">***[ Le mot de passe est
+      requis ]***</div>
+    <div *ngIf="alreadyInBase===false">***[ Identifiant déja pris  ]***</div>
     <div class="center">
       <button>Créer un compte</button>
     </div>
