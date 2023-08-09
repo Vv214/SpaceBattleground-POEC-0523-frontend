@@ -21,9 +21,14 @@
 
         <div class="buildingList">
             <h2 class="name">Bâtiments en construction</h2>
-            <div>
-                Mine de fer : 40min
-            </div>
+            
+            <ul>
+                <li *ngFor=" let construction of getObjectProperty(constructions)">
+                    <p *ngIf="constructions[construction].isBuild == false">
+                        {{constructions[construction].name}} : {{startCounter(constructions[construction].buildTime)}}
+                    </p>
+                </li>
+            </ul>
             <!-- <ul>
                 <li>Mine de fer : 40 min</li>
                 <li>Laboratoire : 5 min</li>

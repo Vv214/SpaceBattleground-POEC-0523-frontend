@@ -5,8 +5,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
-import * as THREE from 'three';
-import { OrbitControls } from '@avatsaev/three-orbitcontrols-ts';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +41,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShipyardComponent, shipBuild, shipDetail } from './components/shipyard/shipyard.component';
 import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavbarService } from '../../services/navbar.service';
+import { Subscription, timer } from "rxjs";
 
 export interface Ressources {
   data: {
@@ -21,13 +22,23 @@ export interface Ressource {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   public token!: string;
   public iron: number = 0;
   public diamond!: number | null;
   public hydrogene!: number;
   public energy!: number;
+  public time = new Date();
+  public intervalId !: any;
+  public subscription: Subscription | undefined;
   constructor(private router: Router, public navbarService: NavbarService) {}
+  
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   toMessages() {
     this.router.navigate(['/', 'messages']);
@@ -56,5 +67,8 @@ export class NavbarComponent implements OnInit {
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);
     this.hydrogene = ressources.data.hydrogene.quantity;
     this.energy = ressources.data.energy.quantity;
+    this.intervalId = setInterval(() => {
+      this.time = new Date();
+    }, 1000);
   }
 }

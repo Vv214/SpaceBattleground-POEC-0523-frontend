@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import { WebsocketService } from '../app/services/websocket.service';
-import io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,7 @@ export class AppComponent {
   showNavBar = false;
   showFooter = false;
 
-  constructor(private router: Router, private websocketService: WebsocketService) {
+  constructor(private router: Router) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/login' || event['url'] == '/home' || event['url'] == '/register' || event['url'] == '/') {
@@ -24,10 +22,5 @@ export class AppComponent {
         }
       }
     });
-  }
-  public socket: any;
-  public xToken: any;
-  ngOnInit(): void {
-    this.socket = io('ws://localhost:8080/socket');
   }
 }
