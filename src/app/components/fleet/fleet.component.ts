@@ -91,6 +91,26 @@ export class FleetComponent implements OnInit {
     });
   }
 
+  addQuantity(ship: string) {
+    if (ship == 'lightShip') {
+      this.lightShipQuantity = this.lightShipQuantity + 1;
+    } else if (ship == 'mediumShip') {
+      this.mediumShipQuantity = this.mediumShipQuantity + 1;
+    } else if (ship == 'heavyShip') {
+      this.heavyShipQuantity = this.heavyShipQuantity + 1;
+    } else if (ship == 'scoutShip') {
+      this.scoutShipQuantity = this.scoutShipQuantity + 1;
+    } else if (ship == 'cargoShip') {
+      this.cargoShipQuantity = this.cargoShipQuantity + 1;
+    } else if (ship == 'heavyCargoShip') {
+      this.heavyCargoShipQuantity = this.heavyCargoShipQuantity + 1;
+    } else if (ship == 'recyclerShip') {
+      this.recyclerShipQuantity = this.recyclerShipQuantity + 1;
+    } else if (ship == 'colonisateur') {
+      this.colonisateurQuantity = this.colonisateurQuantity + 1;
+    }
+  }
+
   openShipDetail(shipName: string) {
     let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
     this.shipService.shipName = ships.data[shipName].name.toString();

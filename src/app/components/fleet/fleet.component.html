@@ -10,22 +10,22 @@
 <div class="combatShip">
     <h2 class="combatTitle">Combat</h2>
 
-    <div class="ship_lightShip ship corner-button" >
+    <div class="ship_lightShip ship corner-button" (click)="addQuantity(lightShip)">
         <img class="shipPicture" src="assets/images/ships/lightShip.png"/>
         <p class="shipName">Chasseur léger</p>
         <p class="shipNumber">{{lightShipQuantity}}</p>
     </div>
-    <div class="ship_mediumShip ship corner-button" >
+    <div class="ship_mediumShip ship corner-button" (click)="addQuantity(mediumShip)">
         <img class="shipPicture" src="assets/images/ships/mediumShip.png"/>
         <p class="shipName">Chasseur lourd</p>
         <p class="shipNumber">{{mediumShipQuantity}}</p>
     </div>
-    <div class="ship_heavyShip ship corner-button" >
+    <div class="ship_heavyShip ship corner-button" (click)="addQuantity(heavyShip)">
         <img class="shipPicture" src="assets/images/ships/heavyShip.png"/>
         <p class="shipName">Destroyer</p>
         <p class="shipNumber">{{heavyShipQuantity}}</p>
     </div>
-    <div class="ship_scoutShip ship corner-button" >
+    <div class="ship_scoutShip ship corner-button" (click)="addQuantity(scoutShip)">
         <img class="shipPicture" src="assets/images/ships/scoutShip.png"/>
         <p class="shipName">Eclaireur</p>
         <p class="shipNumber">{{scoutShipQuantity}}</p>
@@ -40,22 +40,22 @@
 
     <h2 class="civilTitle">Civil</h2>
 
-    <div class="ship_cargoShip ship corner-button" >
+    <div class="ship_cargoShip ship corner-button" (click)="addQuantity(cargoShip)">
         <img class="shipPicture" src="assets/images/ships/cargoShip.png"/>
         <p class="shipName">Transporteur léger</p>
         <p class="shipNumber">{{cargoShipQuantity}}</p>
     </div>
-    <div class="ship_heavyCargoShip ship corner-button" >
+    <div class="ship_heavyCargoShip ship corner-button" (click)="addQuantity(heavyCargoShip)">
         <img class="shipPicture" src="assets/images/ships/heavyCargoShip.png"/>
         <p class="shipName">Transporteur lourd</p>
         <p class="shipNumber">{{heavyCargoShipQuantity}}</p>
     </div>
-    <div class="ship_recyclerShip ship corner-button" >
+    <div class="ship_recyclerShip ship corner-button" (click)="addQuantity(recyclerShip)">
         <img class="shipPicture" src="assets/images/ships/recyclerShip.png"/>
         <p class="shipName">Récolteur</p>
         <p class="shipNumber">{{recyclerShipQuantity}}</p>
     </div>
-    <div class="ship_colonisateur ship corner-button" >
+    <div class="ship_colonisateur ship corner-button" (click)="addQuantity(colonisateur)">
         <img class="shipPicture" src="assets/images/ships/colonisateur.png"/>
         <p class="shipName">Colonisateur</p>
         <p class="shipNumber">{{colonisateurQuantity}}</p>
