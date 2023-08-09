@@ -82,6 +82,7 @@ export class ShipyardComponent implements OnInit {
   constructor(public dialog: MatDialog, public shipService: ShipService) {}
 
   openShipDetail(shipName: string) {
+    console.log(shipName);
     let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
     this.shipService.shipName = ships.data[shipName].name.toString();
     this.shipService.shipType = ships.data[shipName].type.toString();

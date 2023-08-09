@@ -4,7 +4,22 @@ import { Router } from '@angular/router';
 import { BuildService } from 'src/app/services/build.service';
 import { OnInit } from '@angular/core';
 import { MethodService } from 'src/app/services/method.service';
+import { NavbarService } from '../../services/navbar.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
+export interface Ressources {
+  data: {
+    iron: Ressource;
+    diamond: Ressource;
+    hydrogene: Ressource;
+    energy: Ressource;
+  };
+}
+
+export interface Ressource {
+  quantity: number;
+  maxStock: number;
+}
 export interface Buildings {
   data: {
     ironMine: Building;
@@ -211,7 +226,8 @@ export class buildingBuild implements OnInit {
     public dialog: MatDialog,
     public router: Router,
     private buildService: BuildService,
-    private methodService: MethodService
+    private methodService: MethodService,
+    private navbarService: NavbarService
   ) {}
   public buildingName!: string;
   public buildingNameSrc!: string;
@@ -312,9 +328,10 @@ export class buildingBuild implements OnInit {
                     this.buildService.robotFactoryLevel = buildingLevel;
                   }
                   console.log(`buildingIsBuild :  ${this.buildingIsBuild}` + ` buildingName : ${buildingName}`);
-                  // let buildingIsBuildString = 'true';
+                  // let buildingIsBuildString  'true';
                   // buildingLevel++;
                   console.log('level quand true : ', buildingLevel);
+                  this.checkQuantityRessource(token);
                   // localStorage.setItem('level', buildingLevel);
                 } else {
                   let buildingIsBuildString = 'false';
@@ -357,6 +374,15 @@ export class buildingBuild implements OnInit {
     this.energyPlayer = ressources.data.energy.quantity;
   }
 
+  checkQuantityRessource(token: string) {
+    this.navbarService.checkQuantityRessource(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Ressources) => {
+          localStorage.setItem('ressources', JSON.stringify(body));
+        });
+      }
+    });
+  }
   upgradeBuilding() {
     // incrémenter level, coeff prod et ressources requises du batiment en cours
   }
