@@ -150,9 +150,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkQuantityRessource(this.token);
-    this.checkPlanetInfo(this.token);
+    // this.checkPlanetInfo(this.token);
     let ressources: Ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
-    let planets: Planets = JSON.parse(localStorage.getItem('planets') ?? '');
+    // let planets: Planets = JSON.parse(localStorage.getItem('planets') ?? '');
     this.iron = ressources.data.iron.quantity;
     this.diamond = ressources.data.diamond.quantity;
     //+(localStorage.getItem('ressources').diamond.quantity ?? 0);

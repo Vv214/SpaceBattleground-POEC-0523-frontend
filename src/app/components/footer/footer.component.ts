@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { PlanetService } from 'src/app/services/planet.service';
+import { BuildService } from 'src/app/services/build.service';
+import { errorMessage } from '../buildings/buildings.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-footer',
@@ -17,10 +20,15 @@ export class FooterComponent {
   activeFleet = false;
   activeShipyard = false;
   activeAlliance = false;
-
   showFooter = false;
 
-  constructor(private router: Router, private loginService: LoginService, private planetService: PlanetService) {
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private loginService: LoginService,
+    private planetService: PlanetService,
+    private buildService: BuildService
+  ) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/buildings') {
@@ -79,6 +87,26 @@ export class FooterComponent {
 
   currentPlanet = 1;
   planetName = '';
+  laboratoryLevel = 1;
+  public laboratory = 'laboratory';
+  public shipyard = 'shipyard';
+
+  openErrorMessage() {
+    // this.buildService.
+    const dialogRef = this.dialog.open(errorMessage);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  checkShipyardLevel() {
+    this.laboratoryLevel = this.buildService.shipyardLevel;
+    return this.laboratoryLevel;
+  }
+
+  checkLaboratoryLevel() {
+    return this.buildService.laboratoryLevel;
+  }
 
   toBuildings() {
     this.router.navigate(['/', 'buildings']);
@@ -89,15 +117,22 @@ export class FooterComponent {
   }
 
   toResearch() {
-    this.router.navigate(['/', 'research']);
+    if (this.buildService.laboratoryLevel == 0) {
+    } else this.router.navigate(['/', 'research']);
   }
 
   toFleet() {
     this.router.navigate(['/', 'fleet']);
+    console.log(this.checkLaboratoryLevel());
   }
 
   toShipyard() {
-    this.router.navigate(['/', 'shipyard']);
+    console.log(this.buildService.shipyardLevel);
+
+    if (this.buildService.shipyardLevel == 0) {
+      this.buildService.eMessage = 'shipyard';
+      this.openErrorMessage();
+    } else this.router.navigate(['/', 'shipyard']);
   }
 
   toAlliance() {

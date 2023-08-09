@@ -21,6 +21,7 @@ import {
   buildingDestroy,
   buildingDetail,
   BuildingsComponent,
+  errorMessage,
 } from './components/buildings/buildings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
@@ -81,6 +82,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     AnimateBackgroundComponent,
     shipBuild,
     CretatedAlliancesComponent,
+    errorMessage,
   ],
   imports: [
     BrowserModule,

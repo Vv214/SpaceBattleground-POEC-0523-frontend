@@ -67,7 +67,7 @@ export class BuildingsComponent implements OnInit {
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
     this.buildService.buildingName = buildings.data[buildingName].name.toString();
     this.buildService.buildingType = buildings.data[buildingName].type.toString();
-    this.buildService.buildingLevel = buildings.data[buildingName].level;
+    // this.buildService.buildingLevel = buildings.data[buildingName].level;
     this.buildService.buildingDescription = buildings.data[buildingName].description.toString();
     this.buildService.buildingIronPrice = buildings.data[buildingName].ironPrice;
     this.buildService.buildingDiamondPrice = buildings.data[buildingName].diamondPrice;
@@ -75,6 +75,17 @@ export class BuildingsComponent implements OnInit {
     this.buildService.buildingEnergyPrice = buildings.data[buildingName].energyPrice;
     this.buildService.buildingNameSrc = buildingName;
     this.buildService.buildingIsBuild = buildings.data[buildingName].isBuild;
+
+    if (buildingName == 'robotFactory') {
+      this.buildService.buildingLevel = this.buildService.robotFactoryLevel;
+    } else if (buildingName == 'laboratory') {
+      this.buildService.buildingLevel = this.buildService.laboratoryLevel;
+    } else if (buildingName == 'shipyard') {
+      this.buildService.buildingLevel = this.buildService.shipyardLevel;
+    } else if (buildingName == 'terraformer') {
+      this.buildService.buildingLevel = this.buildService.terraformerLevel;
+    }
+
     console.log('src', this.buildService.buildingNameSrc);
     console.log('build ', this.buildService.buildingIsBuild);
     // this.buildService.buildingCapacity = buildings.data[buildingName].capacity;
@@ -196,7 +207,12 @@ export class buildingDetail {
   styleUrls: ['buildingBuild.scss'],
 })
 export class buildingBuild implements OnInit {
-  constructor(public dialog: MatDialog, public router: Router, private buildService: BuildService, private methodService: MethodService) {}
+  constructor(
+    public dialog: MatDialog,
+    public router: Router,
+    private buildService: BuildService,
+    private methodService: MethodService
+  ) {}
   public buildingName!: string;
   public buildingNameSrc!: string;
   public buildingIsBuild!: Boolean;
@@ -214,71 +230,110 @@ export class buildingBuild implements OnInit {
   public hydrogenePlayer!: number;
   public energyPlayer!: number;
 
-  buildBuilding(token: string, buildingName: string, buildingLevel: number, buildingIronPrice: number, buildingDiamondPrice: number,
-    buildingEnergyPrice: number, buildingHydrogenePrice: number, buildingIsBuild: Boolean,
-    ironPlayer: number, diamondPlayer: number, hydrogenePlayer: number, energyPlayer: number) {
-    let ressourcesPlayer: Array<number> = [4]
-    ressourcesPlayer[0] = ironPlayer
+  openErrorMessage() {
+    const dialogRef = this.dialog.open(errorMessage);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  buildBuilding(
+    token: string,
+    buildingName: string,
+    buildingLevel: number,
+    buildingIronPrice: number,
+    buildingDiamondPrice: number,
+    buildingEnergyPrice: number,
+    buildingHydrogenePrice: number,
+    buildingIsBuild: Boolean,
+    ironPlayer: number,
+    diamondPlayer: number,
+    hydrogenePlayer: number,
+    energyPlayer: number
+  ) {
+    let ressourcesPlayer: Array<number> = [4];
+    ressourcesPlayer[0] = ironPlayer;
     ressourcesPlayer[1] = diamondPlayer;
     ressourcesPlayer[2] = hydrogenePlayer;
     ressourcesPlayer[3] = energyPlayer;
 
-    let canBuild = this.methodService.canDoneAction(buildingIronPrice, buildingDiamondPrice, buildingEnergyPrice, buildingHydrogenePrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer);
+    let canBuild = this.methodService.canDoneAction(
+      buildingIronPrice,
+      buildingDiamondPrice,
+      buildingEnergyPrice,
+      buildingHydrogenePrice,
+      ironPlayer,
+      diamondPlayer,
+      hydrogenePlayer,
+      energyPlayer
+    );
     // console.log("dans methode véran ", canBuild);
 
     if (canBuild) {
       // console.log("dans methode véran avec canBuild = true");
       let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
 
-      this.methodService.updateStockPlayer(token, buildingIronPrice, buildingDiamondPrice, buildingEnergyPrice, buildingHydrogenePrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer).then(() => {
-        buildingLevel++;
-        this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
-          if (response.status === 200) {
-            response.json().then((body) => {
-              console.log("pwet : ", body.level);
-              if (body.level !== 0) {
-                console.log("level avant true : ", this.buildingLevel);
-                this.buildingIsBuild = body.isBuild;
-                console.log(buildingName);
-                if (buildingName === "Laboratoire") {
-                  console.log("Update level dans if Laboratoire");
-                  this.buildService.laboratoryLevel = buildingLevel
+      this.methodService
+        .updateStockPlayer(
+          token,
+          buildingIronPrice,
+          buildingDiamondPrice,
+          buildingEnergyPrice,
+          buildingHydrogenePrice,
+          ironPlayer,
+          diamondPlayer,
+          hydrogenePlayer,
+          energyPlayer
+        )
+        .then(() => {
+          buildingLevel++;
+          this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
+            if (response.status === 200) {
+              response.json().then((body) => {
+                console.log('pwet : ', body.level);
+                if (body.level !== 0) {
+                  console.log('level avant true : ', this.buildingLevel);
+                  this.buildingIsBuild = body.isBuild;
+                  console.log(buildingName);
+                  if (buildingName === 'Laboratoire') {
+                    console.log('Update level dans if Laboratoire');
+                    this.buildService.laboratoryLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Chantier spatial') {
+                    console.log('Update level dans if shipyard');
+                    this.buildService.shipyardLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Terraformeur') {
+                    console.log('Update level dans if terraformer');
+                    this.buildService.terraformerLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Usine de robots') {
+                    console.log('Update level dans if robotFactory');
+                    this.buildService.robotFactoryLevel = buildingLevel;
+                  }
+                  console.log(`buildingIsBuild :  ${this.buildingIsBuild}` + ` buildingName : ${buildingName}`);
+                  // let buildingIsBuildString = 'true';
+                  // buildingLevel++;
+                  console.log('level quand true : ', buildingLevel);
+                  // localStorage.setItem('level', buildingLevel);
+                } else {
+                  let buildingIsBuildString = 'false';
+                  localStorage.setItem('buildingIsBuild', buildingIsBuildString);
                 }
-                if (buildingName === "Chantier spatial") {
-                  console.log("Update level dans if shipyard");
-                  this.buildService.shipyardLevel = buildingLevel
-                }
-                if (buildingName === "Terraformeur") {
-                  console.log("Update level dans if terraformer");
-                  this.buildService.terraformerLevel = buildingLevel
-                }
-                if (buildingName === "Usine de robots") {
-                  console.log("Update level dans if robotFactory");
-                  this.buildService.robotFactoryLevel = buildingLevel;
-                }
-                console.log(`buildingIsBuild :  ${this.buildingIsBuild}` + ` buildingName : ${buildingName}`)
-                // let buildingIsBuildString = 'true';
-                // buildingLevel++;
-                console.log("level quand true : ", buildingLevel);
-                // localStorage.setItem('level', buildingLevel);
-              }
-              else {
-                let buildingIsBuildString = 'false';
-                localStorage.setItem('buildingIsBuild', buildingIsBuildString);
-              }
-              console.log(buildingLevel, " dans ma fonction");
-              if (body.level !== 0) {
-                // localStorage.setItem('buildingIsBuild', buildingIsBuildString);
-                this.buildingIsBuild = true;
-                console.log("Building is true");
-              } else
-                this.buildingIsBuild = false;
-            });
-          } else console.log(response.status + " Building can't be updated");
+                console.log(buildingLevel, ' dans ma fonction');
+                if (body.level !== 0) {
+                  // localStorage.setItem('buildingIsBuild', buildingIsBuildString);
+                  this.buildingIsBuild = true;
+                  console.log('Building is true');
+                } else this.buildingIsBuild = false;
+              });
+            }
+          });
         });
-
-      });
       // modifier isBuild du batiment en cours en true avec setIsBuild
+    } else {
+      this.buildService.eMessage = 'ressources';
+      this.openErrorMessage();
     }
   }
 
@@ -294,7 +349,7 @@ export class buildingBuild implements OnInit {
     this.buildingEnergyPrice = this.buildService.buildingEnergyPrice;
     this.buildingNameSrc = this.buildService.buildingNameSrc;
     this.buildingIsBuild = this.buildService.buildingIsBuild;
-    console.log(this.buildingIsBuild, " dans ng On init de building Build");
+    console.log(this.buildingIsBuild, ' dans ng On init de building Build');
     let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
     this.ironPlayer = ressources.data.iron.quantity;
     this.diamondPlayer = ressources.data.diamond.quantity;
@@ -322,4 +377,16 @@ export class buildingDestroy {
   }
 }
 
+@Component({
+  selector: 'errorMessage',
+  templateUrl: 'errorMessage.html',
+  styleUrls: ['errorMessage.scss'],
+})
+export class errorMessage {
+  public eMessage!: string;
+  constructor(private buildService: BuildService) {}
 
+  ngOnInit() {
+    this.eMessage = this.buildService.eMessage;
+  }
+}

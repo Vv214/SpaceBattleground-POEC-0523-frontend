@@ -126,9 +126,6 @@ button:hover{
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-@media (min-width:1000px){
-
-}
 
 @media (min-width:600px){
     
@@ -315,13 +312,8 @@ button:hover{
         height: 650px;
       }
 
-      .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;  
-        // height: 130px;        /* Footer height */
-        margin-top: auto;
-      }
+
+
 
       .createAlliance{
         background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
@@ -455,12 +447,26 @@ button:hover{
 //     padding-bottom: 130px;    /* Footer height */
 //   }
 
-  .wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;  
+  // height: 130px;        /* Footer height */
+  margin-top: auto;
+}
 
-  main {
-    flex: 1;
-  }
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// main {
+//   flex: 1;
+// }
+
+.disable{
+  filter: grayscale(100%);
+  pointer-events:none;
+  // border-color: transparent ;
+}

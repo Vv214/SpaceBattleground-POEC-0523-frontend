@@ -299,6 +299,73 @@ button{
         // height: 100%;
         // overflow: visible;
         }
+
+        .spaceSearch{
+            grid-area: spaceSearch;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "researchBackground researchBackground"
+            "research_cargo research_combustion"
+            "research_protection research_impulsion"
+            "research_astrophysique ."
+            ;
+            background-color:var(--blue-color);
+            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        
+            margin: 5px;
+            padding: 5px;
+            height: 450px;
+            // height: 100%;
+        
+            // max-width: 400px;
+        
+            // -webkit-clip-path: var(--cropped-corner);
+            // clip-path: var(--cropped-corner);
+        
+            // --corner-value: 20px;
+            // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
+        }
+
+        .armySearch{
+            grid-area: armySearch;
+            background-color:var(--blue-color);
+            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "research_fleet research_weapon "
+            ". research_laser "
+            ;
+            height: 350px;
+        
+            // height: 100%;
+            // margin: 5px;
+            // padding: 5px;
+        
+        }
+        
+        .mineSearch{
+            grid-area: mineSearch;
+            background-color:var(--blue-color);
+            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "research_fer research_hydrogene "
+            "research_diamant research_energie "
+            "research_plasma . "
+            ;
+            margin: 5px;
+            padding: 5px;
+            height: 450px;
+        
+            // height: 100%;
+        
+        }
       
 }
 

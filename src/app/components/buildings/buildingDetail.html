@@ -21,14 +21,14 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button *ngIf="this.buildingIsBuild == true" mat-dialog-close class="destroyButton"
+        <button *ngIf="this.buildingLevel !== 0" mat-dialog-close class="destroyButton"
             (click)="openBuildingDestroy()">Détruire</button>
 
-        <button *ngIf="this.buildingIsBuild == true" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
-        <button *ngIf="this.buildingIsBuild == false" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
+        <button *ngIf="this.buildingLevel !== 0 && this.buildingLevel < 5" mat-dialog-close (click)="openBuildingBuild()">Améliorer</button>
+        <button *ngIf="this.buildingLevel == 0" mat-dialog-close (click)="openBuildingBuild()">Construire</button>
 
 
-        <button *ngIf="this.buildingName == 'Chantier spatial' && this.buildingIsBuild == true " mat-dialog-close
+        <button *ngIf="this.buildingName == 'Chantier spatial' && this.buildingLevel !== 0 " mat-dialog-close
             (click)="toShipyard()">Accéder au chantier spatial</button>
     </mat-dialog-actions>
 

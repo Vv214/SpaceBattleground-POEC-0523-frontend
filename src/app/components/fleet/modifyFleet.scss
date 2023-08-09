@@ -160,6 +160,17 @@ button{
     margin: 5px;
 }
 
+.attackButton{
+    grid-area: attackButton;
+    text-align: center;
+
+    }
+
+    .atkButton{
+        display: flex;
+        margin: auto;
+        text-align: center;
+    }
 // .updateButton{
 //     grid-area: updateButton;
 //     margin: auto;
@@ -217,7 +228,8 @@ text-align: center;
 grid-area: missionButtons;
 display: grid;
 grid-template-areas:  
-"exploreButton colonizeButton transportButton spyButton attackButton"
+"exploreButton colonizeButton transportButton spyButton"
+"attackButton attackButton attackButton attackButton"
 ;
 margin-top: 10px;
 }

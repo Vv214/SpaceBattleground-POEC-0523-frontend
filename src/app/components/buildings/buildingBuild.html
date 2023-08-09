@@ -6,13 +6,12 @@
             <img class="picture" src="assets/images/buildings/{{buildingNameSrc}}.png" />
             <h1 class="name">{{buildingName}}</h1>
             <p class="type"><span class="categoryTitle">Type : </span>{{buildingType}}</p>
-            <p class="level"><span class="categoryTitle">Niveau :</span> {{buildingLevel}} <span class="upgradeText"
-                    *ngIf="this.buildingIsBuild == true"> -> {{buildingLevel +1}}</span></p>
+            <p class="level"><span class="categoryTitle">Niveau :</span> {{buildingLevel}} <span class="upgradeText"> -> {{buildingLevel +1}}</span></p>
             <!-- <p class="capacity"><span class="categoryTitle">Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p> -->
-            <p class="time" *ngIf="this.buildingIsBuild == true"><span class="categoryTitle">Temps d'amélioration :
+            <p class="time" *ngIf="this.buildingLevel !== 0"><span class="categoryTitle">Temps d'amélioration :
                 </span>10 min
             </p>
-            <p class="time" *ngIf="this.buildingIsBuild == false"><span class="categoryTitle">Temps de construction :
+            <p class="time" *ngIf="this.buildingLevel == 0"><span class="categoryTitle">Temps de construction :
                 </span>10 min
             </p>
             <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>Fer :

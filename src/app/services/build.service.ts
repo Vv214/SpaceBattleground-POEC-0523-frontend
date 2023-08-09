@@ -47,8 +47,7 @@ export class BuildService {
   public laboratoryLevel!: number;
   public shipyardLevel!: number;
   public terraformerLevel!: number;
-
-
+  public eMessage = '';
 
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {
