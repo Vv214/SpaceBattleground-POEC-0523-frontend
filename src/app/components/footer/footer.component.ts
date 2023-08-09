@@ -105,6 +105,8 @@ export class FooterComponent {
   }
 
   checkLaboratoryLevel() {
+    this.laboratoryLevel = this.buildService.laboratoryLevel;
+
     return this.buildService.laboratoryLevel;
   }
 
@@ -118,6 +120,9 @@ export class FooterComponent {
 
   toResearch() {
     if (this.buildService.laboratoryLevel == 0) {
+
+      this.buildService.eMessage = 'laboratory';
+      this.openErrorMessage();
     } else this.router.navigate(['/', 'research']);
   }
 

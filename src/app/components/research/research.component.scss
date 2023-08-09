@@ -1,54 +1,56 @@
-mat-tab-group{
-    background-color:var(--blue-color);
+mat-tab-group {
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 }
 
 
-::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
-    color:var(--blue-color) !important;
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: var(--blue-color) !important;
     font-size: 1em;
     font-weight: 700;
 }
 
-::ng-deep .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
-    color:var(--body-color) !important;
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+.mat-mdc-tab-link .mdc-tab__text-label {
+    color: var(--body-color) !important;
     font-size: 0.9em;
 }
 
-::ng-deep .mat-mdc-tab{
-    background-color:var(--blue-color);
+::ng-deep .mat-mdc-tab {
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 }
 
 ::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active {
-    background-color:rgba(45,255,196,0.9);
-    -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
-    box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
+    background-color: rgba(45, 255, 196, 0.9);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(45, 255, 196, 0.9);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(45, 255, 196, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(45, 255, 196, 0.9);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     border-radius: 5px;
 }
 
 
-  
-  .research_desktop{
+
+.research_desktop {
     display: none;
-  }
- 
+}
+
 .tab {
     position: relative;
-    top:2%;
+    top: 2%;
     // height: 100%;
     // overflow: visible;
-    }
-  
-  
-  .bg-container { 
-        background: url("/assets/images/backgrounds/researchBackground.jpg") no-repeat center center fixed; 
-        height: 580px;
-      }
+}
 
-.name{
+
+.bg-container {
+    background: url("/assets/images/backgrounds/researchBackground.jpg") no-repeat center center fixed;
+    height: 580px;
+}
+
+.name {
     grid-area: name;
     font-weight: 700;
     text-align: center;
@@ -56,7 +58,7 @@ mat-tab-group{
     z-index: 4;
 }
 
-.level{
+.level {
     grid-area: level;
     z-index: 3;
     width: 40px;
@@ -65,12 +67,12 @@ mat-tab-group{
     top: -70px;
 }
 
-.title{
+.title {
     text-align: center;
     margin: 10px;
 }
 
-.researchLevel{
+.researchLevel {
     width: 60px;
     position: relative;
     z-index: 1;
@@ -78,65 +80,68 @@ mat-tab-group{
     left: 80px;
 }
 
-.center{
+.center {
     margin: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
-    align-items: center  !important;
+    align-items: center !important;
 }
 
-button{
+button {
     font-size: 2em !important;
     margin-top: 5px;
 }
 
-#resources{
+#resources {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "technoTree technoTree technoTree"
-    "SpaceSearchTitle ArmySearchTitle MineSearchTitle"
-    "spaceSearch armySearch mineSearch"
+    grid-template-areas:
+        "technoTree technoTree technoTree"
+        "SpaceSearchTitle ArmySearchTitle MineSearchTitle"
+        "spaceSearch armySearch mineSearch"
     ;
     justify-content: space-between;
     margin-left: 2%;
     margin-right: 2%;
 }
 
-.technoTree{
+.technoTree {
     grid-area: technoTree;
 }
 
-.SpaceSearchTitle{
+.SpaceSearchTitle {
     text-align: center;
     grid-area: SpaceSearchTitle;
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 }
-.ArmySearchTitle{
+
+.ArmySearchTitle {
     text-align: center;
     grid-area: ArmySearchTitle;
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 }
-.MineSearchTitle{
+
+.MineSearchTitle {
     text-align: center;
     grid-area: MineSearchTitle;
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 }
-.spaceSearch{
+
+.spaceSearch {
     grid-area: spaceSearch;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "researchBackground researchBackground"
-    "research_cargo research_combustion"
-    "research_protection research_impulsion"
-    "research_astrophysique ."
+    grid-template-areas:
+        "researchBackground researchBackground"
+        "research_cargo research_combustion"
+        "research_protection research_impulsion"
+        "research_astrophysique ."
     ;
     // background-color:var(--blue-color);
     // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
@@ -155,35 +160,36 @@ button{
     // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
 }
 
-.researchBackground{
+.researchBackground {
     z-index: -2;
     position: relative;
     width: 400px;
     grid-area: researchBackground;
 }
 
-.icon{
+.icon {
     display: flex;
     width: 100px;
     margin: auto;
 }
 
-.spaceSearch::after{
+.spaceSearch::after {
     width: var(--corner-value);
     height: calc(var(--corner-value) * 2);
     bottom: calc(var(--corner-value) * -1);
     right: calc(var(--corner-value) * -0.3);
 }
-.armySearch{
+
+.armySearch {
     grid-area: armySearch;
     // background-color:var(--blue-color);
     // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "research_fleet research_weapon "
-    ". research_laser "
+    grid-template-areas:
+        "research_fleet research_weapon "
+        ". research_laser "
     ;
     height: 350px;
 
@@ -193,17 +199,17 @@ button{
 
 }
 
-.mineSearch{
+.mineSearch {
     grid-area: mineSearch;
     // background-color:var(--blue-color);
     // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "research_fer research_hydrogene "
-    "research_diamant research_energie "
-    "research_plasma . "
+    grid-template-areas:
+        "research_fer research_hydrogene "
+        "research_diamant research_energie "
+        "research_plasma . "
     ;
     margin: 5px;
     padding: 5px;
@@ -214,49 +220,59 @@ button{
 }
 
 
-.research_cargo{
+.research_cargo {
     grid-area: research_cargo;
 }
-.research_protection{
+
+.research_protection {
     grid-area: research_protection;
 }
-.research_astrophysique{
+
+.research_astrophysique {
     grid-area: research_astrophysique;
 }
-.research_combustion{
+
+.research_combustion {
     grid-area: research_combustion;
 }
-.research_impulsion{
+
+.research_impulsion {
     grid-area: research_impulsion;
 }
 
-.research_fleet{
+.research_fleet {
     grid-area: research_fleet;
 }
-.research_weapon{
+
+.research_weapon {
     grid-area: research_weapon;
 }
-.research_laser{
+
+.research_laser {
     grid-area: research_laser;
 }
 
-.research_fer{
+.research_fer {
     grid-area: research_fer;
 }
-.research_hydrogene{
+
+.research_hydrogene {
     grid-area: research_hydrogene;
 }
-.research_diamant{
+
+.research_diamant {
     grid-area: research_diamant;
 }
-.research_plasma{
+
+.research_plasma {
     grid-area: research_plasma;
 }
-.research_energie{
+
+.research_energie {
     grid-area: research_energie;
 }
 
-.research{
+.research {
     width: 140px;
     height: 115px;
 
@@ -269,7 +285,7 @@ button{
 
 }
 
-.research:hover{
+.research:hover {
     border-radius: 10px;
     border: 2px solid var(--primary-color);
     transition: 0.75s all;
@@ -277,101 +293,104 @@ button{
 
 // 1120px
 
-@media (min-width:1000px){
-    .bg-container { 
+@media (min-width:1000px) {
+    .bg-container {
         background: url("/assets/images/backgrounds/researchBackground.jpg") no-repeat center center fixed;
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
-        height: 650px;
-      }
+        height: 450px;
+    }
 
-    .research_mobile{
+    .research_mobile {
         display: none;
-      }
-      .research_desktop{
-        display: block    ;
-      }
+    }
 
-      .tab {
+    .research_desktop {
+        display: block;
+    }
+
+    .tab {
         position: relative;
-        top:10%;
+        top: 10%;
         // height: 100%;
         // overflow: visible;
-        }
+    }
 
-        .spaceSearch{
-            grid-area: spaceSearch;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: 
+    .spaceSearch {
+        grid-area: spaceSearch;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
             "researchBackground researchBackground"
             "research_cargo research_combustion"
             "research_protection research_impulsion"
             "research_astrophysique ."
-            ;
-            background-color:var(--blue-color);
-            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-        
-            margin: 5px;
-            padding: 5px;
-            height: 450px;
-            // height: 100%;
-        
-            // max-width: 400px;
-        
-            // -webkit-clip-path: var(--cropped-corner);
-            // clip-path: var(--cropped-corner);
-        
-            // --corner-value: 20px;
-            // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
-        }
+        ;
+        background-color: var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 
-        .armySearch{
-            grid-area: armySearch;
-            background-color:var(--blue-color);
-            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: 
+        margin: 5px;
+        padding: 5px;
+        height: 280px;
+        overflow: scroll;
+        // height: 100%;
+
+        // max-width: 400px;
+
+        // -webkit-clip-path: var(--cropped-corner);
+        // clip-path: var(--cropped-corner);
+
+        // --corner-value: 20px;
+        // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
+    }
+
+    .armySearch {
+        grid-area: armySearch;
+        background-color: var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
             "research_fleet research_weapon "
             ". research_laser "
-            ;
-            height: 350px;
-        
-            // height: 100%;
-            // margin: 5px;
-            // padding: 5px;
-        
-        }
-        
-        .mineSearch{
-            grid-area: mineSearch;
-            background-color:var(--blue-color);
-            background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: 
+        ;
+        height: 280px;
+
+        // height: 100%;
+        // margin: 5px;
+        // padding: 5px;
+
+    }
+
+    .mineSearch {
+        grid-area: mineSearch;
+        background-color: var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
             "research_fer research_hydrogene "
             "research_diamant research_energie "
             "research_plasma . "
-            ;
-            margin: 5px;
-            padding: 5px;
-            height: 450px;
-        
-            // height: 100%;
-        
-        }
-      
+        ;
+        margin: 5px;
+        padding: 5px;
+        height: 280px;
+        overflow: scroll;
+
+        // height: 100%;
+
+    }
+
 }
 
-::ng-deep .mdc-tooltip__surface{
-    background-color:var(--blue-color) !important;
+::ng-deep .mdc-tooltip__surface {
+    background-color: var(--blue-color) !important;
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png) !important;
-    color:var(--primary-color) !important;
-    border:.1rem solid var(--light-color) !important;
+    color: var(--primary-color) !important;
+    border: .1rem solid var(--light-color) !important;
 }

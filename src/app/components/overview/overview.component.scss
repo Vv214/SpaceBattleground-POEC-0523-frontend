@@ -1,16 +1,16 @@
-.bg-container { 
-    background: url("/assets/images/backgrounds/overviewBackground3.jpg") no-repeat center  center fixed; 
- height: 450px;
+.bg-container {
+    background: url("/assets/images/backgrounds/overviewBackground3.jpg") no-repeat center center fixed;
+    height: 450px;
 }
 
 
-.mobilePlanet{
+.mobilePlanet {
     padding-top: 15px;
     display: flex;
     margin: auto;
 }
 
-.mobileLists{
+.mobileLists {
     grid-area: buildingList;
     margin: 10px;
     list-style-type: none;
@@ -18,131 +18,137 @@
     padding-right: 5px;
     // padding-bottom: 10px;
     width: 1fr;
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
 
     // padding-bottom: 40px;
 }
 
-.mobileList{
+.mobileList {
     padding: 5px;
 }
 
-.name{
+.name {
     font-size: 1.2em;
 }
 
-.overviewDesktop{
+.overviewDesktop {
     display: none;
 }
 
-@media (min-width:1000px){
-    .overviewMobile{
+@media (min-width:1000px) {
+    .overviewMobile {
         display: none;
     }
 
     // .overviewDesktop{
     //     display: block;
     // }
-    .bg-container { 
-        background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center  center fixed; 
+    .bg-container {
+        background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center center fixed;
         background-size: cover;
         margin-left: 10px;
         margin-right: 10px;
-        color:var(--body-color);
-        height: 650px;
+        color: var(--body-color);
+        height: 450px;
+        font-size: 1.2em;
 
-      }
+    }
 
-    .mobilePlanet{
+    .mobilePlanet {
         display: none;
     }
 
-    .title{
+    .title {
         text-align: center;
         margin: 10px;
     }
 
-    .overviewDesktop{
+    .overviewDesktop {
         display: grid;
-        grid-template-areas: 
-        "buildingList . . . . . . . . . . shipList"
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        "researchList . . . . . . . . . . ."
+        grid-template-areas:
+            "buildingList . . . . . . . . . . shipList"
+            ". . . . . . . . . . . ."
+            ". . . . . . . . . . . ."
+            ". . . . . . . . . . . ."
+            ". . . . . . . . . . . ."
+            ". . . . . . . . . . . ."
+            "researchList . . . . . . . . . . ."
         ;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         // margin: 10px;
     }
 
-.resourceFer{
-    grid-area: resourceFer;
-    background-color: rgba(0, 44, 73, 0.8);
-    width: 200px;
-    margin: 5px;
-    height: 3em;
-    margin-top: 10px;
-}
-.resourceHydrogene{
-    grid-area: resourceHydrogene;
-    background-color: rgba(0, 44, 73, 0.8);
-    width: 200px;
-    margin: 5px;
-    height: 3em;
+    .resourceFer {
+        grid-area: resourceFer;
+        background-color: rgba(0, 44, 73, 0.8);
+        width: 200px;
+        margin: 5px;
+        height: 3em;
+        margin-top: 10px;
+    }
+
+    .resourceHydrogene {
+        grid-area: resourceHydrogene;
+        background-color: rgba(0, 44, 73, 0.8);
+        width: 200px;
+        margin: 5px;
+        height: 3em;
 
 
-}
-.resourceDiamant{
-    grid-area: resourceDiamant;
-    background-color: rgba(0, 44, 73, 0.8);
-    width: 200px;
-    margin: 5px;
-    height: 3em;
+    }
 
-}
-.resourceEnergie{
-    grid-area: resourceEnergie;
-    background-color: rgba(0, 44, 73, 0.8);
-    width: 200px;
-    margin: 5px;
-    height: 3em;
+    .resourceDiamant {
+        grid-area: resourceDiamant;
+        background-color: rgba(0, 44, 73, 0.8);
+        width: 200px;
+        margin: 5px;
+        height: 3em;
 
-}
+    }
 
-.buildingList{
-    grid-area: buildingList;
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    list-style-type: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    width: 300px;
+    .resourceEnergie {
+        grid-area: resourceEnergie;
+        background-color: rgba(0, 44, 73, 0.8);
+        width: 200px;
+        margin: 5px;
+        height: 3em;
 
-}
-.shipList{
-    grid-area: shipList;
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    width: 300px;
+    }
 
-}
-.researchList{
-    grid-area: researchList;
-    background-color: rgba(0, 44, 73, 0.8);
-    margin: 5px;
-    width: 300px;
+    .buildingList {
+        grid-area: buildingList;
+        background-color: rgba(0, 44, 73, 0.8);
+        margin: 5px;
+        list-style-type: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        width: 300px;
 
-    // position: relative;
-    // top:500%;
-    // bottom: 0;
-    // right: 0;
+    }
 
-}
+    .shipList {
+        grid-area: shipList;
+        background-color: rgba(0, 44, 73, 0.8);
+        margin: 5px;
+        width: 300px;
+
+    }
+
+    .researchList {
+        grid-area: researchList;
+        background-color: rgba(0, 44, 73, 0.8);
+        margin: 5px;
+        width: 300px;
+
+        // position: relative;
+        // top:500%;
+        // bottom: 0;
+        // right: 0;
+
+    }
 
 
 

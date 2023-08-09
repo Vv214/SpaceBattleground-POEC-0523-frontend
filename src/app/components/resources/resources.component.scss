@@ -1,9 +1,9 @@
-.bg-container { 
-    background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed; 
+.bg-container {
+    background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed;
     height: 750px;
 }
 
-.onPlanet{
+.onPlanet {
     grid-area: onPlanet;
     margin: 5px;
     display: grid;
@@ -12,52 +12,52 @@
     top: 5%
 }
 
-.resourceBuilding{
-    display:grid;
+.resourceBuilding {
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "resourceBuildingName "
-    "resourceBuildingPicture "
-    "resourceBuildingLevel "
-    "futurepanel__footer "
+    grid-template-areas:
+        "resourceBuildingName "
+        "resourceBuildingPicture "
+        "resourceBuildingLevel "
+        "futurepanel__footer "
     ;
     width: 150px;
     height: 150px;
     margin: 2px;
 
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-    border:.1rem solid var(--light-color);
+    border: .1rem solid var(--light-color);
     padding: 5px;
 }
 
-.resourceBuilding:hover{
-    color:var(--primary-color) !important;
+.resourceBuilding:hover {
+    color: var(--primary-color) !important;
     border-color: var(--primary-color);
     cursor: pointer;
 
 }
 
-.resourceBuildingName{
+.resourceBuildingName {
     grid-area: resourceBuildingName;
     font-size: 0.8em;
     font-weight: 700;
     text-align: center;
 }
 
-.resourceBuildingLevel{
+.resourceBuildingLevel {
     grid-area: resourceBuildingLevel;
     text-align: center;
     font-size: 0.8em;
 }
 
-.title{
+.title {
     text-align: center;
     margin: 10px;
 }
 
-.resourceBuildingPicture{
+.resourceBuildingPicture {
     width: 60px;
     grid-area: resourceBuildingPicture;
     display: flex;
@@ -65,7 +65,7 @@
     margin: auto;
 }
 
-.name{
+.name {
     grid-area: name;
     font-size: 0.8em;
     font-weight: 700;
@@ -74,44 +74,44 @@
 
 
 
-@media (min-width:1000px){
-    .bg-container { 
-        background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed; 
-        height: 650px;
+@media (min-width:1000px) {
+    .bg-container {
+        background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed;
+        height: 450px;
     }
 
 
 
-    .resourceBuilding{
-        display:grid;
+    .resourceBuilding {
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "resourceBuildingPicture resourceBuildingName"
-        "resourceBuildingPicture resourceBuildingLevel"
-        "futurepanel__footer futurepanel__footer"
+        grid-template-areas:
+            "resourceBuildingPicture resourceBuildingName"
+            "resourceBuildingPicture resourceBuildingLevel"
+            "futurepanel__footer futurepanel__footer"
         ;
         width: 300px;
         height: 150px;
         margin: auto;
         margin-bottom: 10px;
-    
-        background-color:var(--blue-color);
+
+        background-color: var(--blue-color);
         background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-        border:.1rem solid var(--light-color);
+        border: .1rem solid var(--light-color);
         padding: 5px;
     }
 
-    .onPlanet{
+    .onPlanet {
         grid-area: onPlanet;
         display: grid;
         overflow: visible;
         position: relative;
-        top: 45%;
+        top: 20%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    .resourceBuildingPicture{
+    .resourceBuildingPicture {
         width: 100px;
         margin-top: 15%;
         grid-area: resourceBuildingPicture;
@@ -119,17 +119,24 @@
         margin-bottom: 5%;
     }
 
-    .resourceBuildingName{
-    grid-area: resourceBuildingName;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-}
+    .resourceBuildingName {
+        grid-area: resourceBuildingName;
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+    }
 
-.name{
-    grid-area: name;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-}
+    .name {
+        grid-area: name;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .resourceBuildingLevel {
+        grid-area: resourceBuildingLevel;
+        text-align: center;
+        font-size: 1.1em;
+    }
 }

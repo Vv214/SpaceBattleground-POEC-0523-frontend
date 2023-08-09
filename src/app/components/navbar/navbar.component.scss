@@ -1,13 +1,11 @@
-
-
 #navbar {
-    display:grid;
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "planetInfo planetInfo"
-    "resources  resources"
-    "account  account"
+    grid-template-areas:
+        "planetInfo planetInfo"
+        "resources  resources"
+        "account  account"
     ;
     font-size: 0.8em;
     text-align: center;
@@ -17,88 +15,88 @@
 
 #resources {
     grid-area: resources;
-    display:grid;
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "ironInfo gazInfo" 
-    "diamondInfo energyInfo"
+    grid-template-areas:
+        "ironInfo gazInfo"
+        "diamondInfo energyInfo"
     ;
 }
 
 #planetInfoMobile {
     height: fit-content;
     grid-area: planetInfo;
-    display:grid;
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "planet "
-    "serverTime"
+    grid-template-areas:
+        "planet "
+        "serverTime"
     ;
 }
 
-#planetInfoDesktop{
+#planetInfoDesktop {
     display: none;
 }
 
 #account {
     grid-area: account;
-    display:grid;
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "messageButton"
-    "accountButton"
+    grid-template-areas:
+        "messageButton"
+        "accountButton"
     ;
 }
 
-.icon{
+.icon {
     width: 25px;
     height: 25px;
 }
 
-.ironInfo{
+.ironInfo {
     grid-area: ironInfo;
     margin: 10px;
 }
 
-.gazInfo{
+.gazInfo {
     grid-area: gazInfo;
     margin: 10px;
 }
 
-.diamondInfo{
+.diamondInfo {
     grid-area: diamondInfo;
     margin: 10px;
 }
 
-.energyInfo{
+.energyInfo {
     grid-area: energyInfo;
     margin: 10px;
 }
 
-.planet{
+.planet {
     grid-area: planet;
     margin: 10px;
 }
 
-.serverTime{
+.serverTime {
     grid-area: serverTime;
     margin: 10px;
 }
 
-.alertInfo{
+.alertInfo {
     grid-area: alertInfo;
     margin: 10px;
 }
 
-.messageButton{
+.messageButton {
     grid-area: messageButton;
     margin: 10px;
 }
 
-.accountButton{
+.accountButton {
     grid-area: accountButton;
     margin: 10px;
 }
@@ -115,7 +113,7 @@
 // }
 
 
-button{
+button {
     font-size: 0.9em;
     // margin: 5px;
     height: 30px;
@@ -123,105 +121,100 @@ button{
 
 
 
-@media (min-width:1000px){
+@media (min-width:1000px) {
     #navbar {
-        display:grid;
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "resources planetInfo account"
+        grid-template-areas:
+            "resources planetInfo account"
         ;
         margin-left: 2%;
         margin-right: 2%;
-        font-size: 1em;
+        font-size: 1.2em;
+
         text-align: center;
         justify-content: space-between;
-        color:var(--body-color);
+        color: var(--body-color);
     }
-    
+
     #resources {
         grid-area: resources;
-        display:grid;
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "ironInfo gazInfo diamondInfo energyInfo"
-        ;
-    }
-    
-    #planetInfoDesktop {
-        grid-area: planetInfo;
-        display:grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "planet serverTime"
+        grid-template-areas:
+            "ironInfo gazInfo diamondInfo energyInfo"
         ;
     }
 
-    #planetInfoMobile{
-        display: none;
-    }
-    
-    #account {
-        grid-area: account;
-        display:grid;
+    #planetInfoDesktop {
+        grid-area: planetInfo;
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "alertInfo messageButton accountButton"
+        grid-template-areas:
+            "planet serverTime"
         ;
     }
-    
-    .ironInfo{
+
+    #planetInfoMobile {
+        display: none;
+    }
+
+    #account {
+        grid-area: account;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "alertInfo messageButton accountButton"
+        ;
+    }
+
+    .ironInfo {
         grid-area: ironInfo;
     }
-    
-    .gazInfo{
+
+    .gazInfo {
         grid-area: gazInfo;
     }
-    
-    .diamondInfo{
+
+    .diamondInfo {
         grid-area: diamondInfo;
     }
-    
-    .energyInfo{
+
+    .energyInfo {
         grid-area: energyInfo;
     }
-    
-    .planet{
+
+    .planet {
         grid-area: planet;
     }
-    
-    .serverTime{
+
+    .serverTime {
         grid-area: serverTime;
     }
-    
-    .alertInfo{
+
+    .alertInfo {
         grid-area: alertInfo;
     }
-    
-    .messageButton{
+
+    .messageButton {
         grid-area: messageButton;
     }
-    
-    .accountButton{
+
+    .accountButton {
         grid-area: accountButton;
     }
-    
-    
-    button{
+
+
+    button {
         font-size: 1em;
         height: 2em;
     }
 }
 
-@media (min-width:600px){
-    
-}
+@media (min-width:600px) {}
 
-@media (min-width:416px){
-
-}
-
-
+@media (min-width:416px) {}

@@ -1,8 +1,8 @@
-.bg-container { 
-    background: url("/assets/images/backgrounds/buildingsBackground.jpg") no-repeat center center ; 
-  }
+.bg-container {
+    background: url("/assets/images/backgrounds/buildingsBackground.jpg") no-repeat center center;
+}
 
-  .onPlanet{
+.onPlanet {
     grid-area: onPlanet;
     margin: 5px;
     display: grid;
@@ -11,54 +11,54 @@
     top: 10%;
 }
 
-.buildings{
-    display:grid;
+.buildings {
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "buildingName "
-    "buildingPicture "
-    "buildingLevel "
-    "futurepanel__footer "
+    grid-template-areas:
+        "buildingName "
+        "buildingPicture "
+        "buildingLevel "
+        "futurepanel__footer "
     ;
     width: 150px;
     height: 150px;
     margin: 2px;
-    background-color:var(--blue-color);
-    
+    background-color: var(--blue-color);
+
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-    border:.1rem solid var(--light-color);
+    border: .1rem solid var(--light-color);
     padding: 5px;
 }
 
 
-.buildings:hover{
-    color:var(--primary-color) !important;
+.buildings:hover {
+    color: var(--primary-color) !important;
     border-color: var(--primary-color);
 }
 
-.buildingName{
+.buildingName {
     grid-area: buildingName;
     font-size: 0.8em;
     font-weight: 700;
     text-align: center;
 }
 
-.buildingLevel{
+.buildingLevel {
     grid-area: buildingLevel;
     font-size: 0.8em;
 }
 
-.title{
+.title {
     text-align: center;
     margin: 10px;
 }
 
-.buildingNumber{
+.buildingNumber {
     grid-area: buildingNumber;
 }
 
-.buildingPicture{
+.buildingPicture {
     width: 60px;
     grid-area: buildingPicture;
     display: flex;
@@ -68,80 +68,80 @@
 
 
 
-.name{
+.name {
     grid-area: name;
     font-size: 0.8em;
     font-weight: 700;
     text-align: center;
 }
 
-.capacity{
+.capacity {
     grid-area: capacity;
 }
 
-@media (min-width:1000px){
+@media (min-width:1000px) {
 
-    .bg-container { 
-        background: url("/assets/images/backgrounds/buildingsBackground.png") no-repeat center center fixed; 
-      }
+    .bg-container {
+        background: url("/assets/images/backgrounds/buildingsBackground.png") no-repeat center center fixed;
+    }
 
-    
-    .onPlanet{
+
+    .onPlanet {
         grid-area: onPlanet;
         margin: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         position: relative;
-        top: 70%;
+        top: 60%;
     }
 
-    .buildings{
-        display:grid;
+    .buildings {
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "buildingPicture buildingName"
-        "buildingPicture buildingLevel"
-        "futurepanel__footer futurepanel__footer"
-        // "cross ."
+        grid-template-areas:
+            "buildingPicture buildingName"
+            "buildingPicture buildingLevel"
+            "futurepanel__footer futurepanel__footer"
+            // "cross ."
         ;
         width: 300px;
         height: 150px;
         margin: auto;
-        background-color:var(--blue-color);
-        
+        background-color: var(--blue-color);
+
         background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-        border:.1rem solid var(--light-color);
+        border: .1rem solid var(--light-color);
         padding: 5px;
-        
+
     }
 
 
-    .buildings:hover{
-        color:var(--primary-color) !important;
-        border-color: var(--primary-color) ;
+    .buildings:hover {
+        color: var(--primary-color) !important;
+        border-color: var(--primary-color);
         cursor: pointer;
 
     }
 
-    .disabled{
+    .disabled {
         filter: grayscale(100%);
         // pointer-events:none;
         // border-color: transparent ;
     }
-    
 
-// .cross{
-//     grid-area: cross;
-//     // float: left;
-//     position: relative;
-//     top: -180px;
-//     left: 0;
-//     z-index: 20;
-//     width: 200px;
-// }
 
-    .buildingPicture{
+    // .cross{
+    //     grid-area: cross;
+    //     // float: left;
+    //     position: relative;
+    //     top: -180px;
+    //     left: 0;
+    //     z-index: 20;
+    //     width: 200px;
+    // }
+
+    .buildingPicture {
         width: 100px;
         margin-top: 15%;
         grid-area: buildingPicture;
@@ -149,27 +149,29 @@
         margin-bottom: 5%;
     }
 
-    .buildingLevel{
-        font-size: 1em;
-
+    .buildingLevel {
+        text-align: center;
+        font-size: 1.1em;
     }
-    
 
-    .name{
+
+    .name {
         grid-area: name;
         font-size: 20px;
         font-weight: 700;
         text-align: center;
     }
 
-    .buildingName{
+    .buildingName {
         grid-area: buildingName;
-        font-size: 20px;
+        font-size: 1.5em;
+        margin: 0;
+
         font-weight: 700;
         text-align: center;
     }
-    
-    .title{
+
+    .title {
         text-align: center;
     }
 }

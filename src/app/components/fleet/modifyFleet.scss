@@ -1,251 +1,256 @@
-.colonizeButton{
+.colonizeButton {
     grid-area: colonizeButton;
     display: flex;
     margin: auto;
-    }
-    
-    .attackButton{
+}
+
+.attackButton {
     grid-area: attackButton;
     text-align: center;
 
-    }
+}
 
-    .atkButton{
-        display: flex;
-        margin: auto;
-        text-align: center;
-    }
-    
-    .exploreButton{
-        display: flex;
-        margin: auto;
+.atkButton {
+    display: flex;
+    margin: auto;
+    text-align: center;
+}
+
+.exploreButton {
+    display: flex;
+    margin: auto;
     grid-area: exploreButton;
-    }
-    
-    .transportButton{
-        display: flex;
-        margin: auto;
+}
+
+.transportButton {
+    display: flex;
+    margin: auto;
     grid-area: transportButton;
-    }
-    
-    .spyButton{
-        display: flex;
-        margin: auto;
+}
+
+.spyButton {
+    display: flex;
+    margin: auto;
     grid-area: spyButton;
-    }
+}
 
 
-    ::ng-deep .mdc-dialog .mdc-dialog__content {
-        padding: 10px !important;
-    }
+::ng-deep .mdc-dialog .mdc-dialog__content {
+    padding: 10px !important;
+}
 
-.travel{
+.travel {
     grid-area: travel;
     display: grid;
-    grid-template-areas:  
-    "depart distance arrivee"
+    grid-template-areas:
+        "depart distance arrivee"
     ;
     // margin-right: 20%;
-    }
-    
-    .depart{
+}
+
+.depart {
     grid-area: depart;
     text-align: center;
-    }
-    
-    .distance{
+}
+
+.distance {
     grid-area: distance;
     padding-top: 50%;
     text-align: center;
-    
-    }
-    
-    .arrivee{
+
+}
+
+.arrivee {
     grid-area: arrivee;
     text-align: center;
-    
-    }
-    
-    .missionButtons{
+
+}
+
+.missionButtons {
     grid-area: missionButtons;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:  
-    "exploreButton colonizeButton"
-    "transportButton spyButton"
-    "attackButton attackButton"
+    grid-template-areas:
+        "exploreButton colonizeButton"
+        "transportButton spyButton"
+        "attackButton attackButton"
     ;
     justify-content: space-between;
-    }
-
-    .planetPicture{
-        width: 100px;
-        grid-area: picture;
-    }
-
-
-    .popupButtons{
-        display: flex;
-        justify-content: space-between;
-        margin: 15px;
-        margin: auto;
-    }
-
-    button{
-        font-size: 1.2em;
-        margin: 5px;
-    }
-
-@media (min-width:1000px){
-    
-body{
-    font-family: 'Jura', sans-serif;
 }
 
-.popupButtons{
-    // font-family: 'Jura', sans-serif;
-    // display:grid;
-    // grid-template-columns: auto;
-    // grid-template-rows: auto;
-    // grid-template-areas: 
-    // "updateButton updateButton"
-    // "moveButton attackButton "
-    // ;
-    display: flex;
-    justify-content: space-between;
-    margin: 15px;
-
-}
-
-.distanceArrow{
-    flex-grow: 1;
-    border-bottom: 1px solid var(--body-color);
-}
-
-.bg-container{
-    // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
-    // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
-    // border:.2rem solid var(--primary-color);
-    // font-family: 'Jura', sans-serif;
-    // color:var(--body-color);
-}
-
-.name{
-    grid-area: name;
-    text-align: center;
-    color:var(--body-color);
-    font-weight: 700;
-    font-family: 'Jura', sans-serif;
-}
-
-.picture{
-    width: 200px;
+.planetPicture {
+    width: 100px;
     grid-area: picture;
 }
 
-.position, .capacity{
-    grid-area: level;
-    color:var(--body-color);
-    font-family: 'Jura', sans-serif;
+
+.popupButtons {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    margin: auto;
 }
 
-.shipList{
-    grid-area: level;
-    color:var(--body-color);
-    font-family: 'Jura', sans-serif;
-}
-
-button{
+button {
     font-size: 1.2em;
     margin: 5px;
 }
 
-.attackButton{
-    grid-area: attackButton;
-    text-align: center;
+@media (min-width:1000px) {
+
+    body {
+        font-family: 'Jura', sans-serif;
+    }
+
+    .popupButtons {
+        // font-family: 'Jura', sans-serif;
+        // display:grid;
+        // grid-template-columns: auto;
+        // grid-template-rows: auto;
+        // grid-template-areas: 
+        // "updateButton updateButton"
+        // "moveButton attackButton "
+        // ;
+        display: flex;
+        justify-content: space-between;
+        margin: 15px;
+        font-size: 1.3em;
 
     }
 
-    .atkButton{
+    .distanceArrow {
+        flex-grow: 1;
+        border-bottom: 1px solid var(--body-color);
+    }
+
+    .bg-container {
+        // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
+        // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
+        // border:.2rem solid var(--primary-color);
+        // font-family: 'Jura', sans-serif;
+        // color:var(--body-color);
+    }
+
+    .name {
+        grid-area: name;
+        text-align: center;
+        color: var(--body-color);
+        font-weight: 700;
+        font-family: 'Jura', sans-serif;
+
+    }
+
+    .picture {
+        width: 250px;
+        grid-area: picture;
+    }
+
+    .position,
+    .capacity {
+        grid-area: level;
+        color: var(--body-color);
+        font-family: 'Jura', sans-serif;
+        font-size: 1.2em;
+
+    }
+
+    .shipList {
+        grid-area: level;
+        color: var(--body-color);
+        font-family: 'Jura', sans-serif;
+    }
+
+    button {
+        font-size: 1.3em;
+        margin: 5px;
+    }
+
+    .attackButton {
+        grid-area: attackButton;
+        text-align: center;
+
+    }
+
+    .atkButton {
         display: flex;
         margin: auto;
         text-align: center;
     }
-// .updateButton{
-//     grid-area: updateButton;
-//     margin: auto;
-//     width: auto;
-//     margin-bottom: 10px;
-// }
 
-// .updateButton button{
-//     margin: auto;
-//     width: 250px;
-// }
+    // .updateButton{
+    //     grid-area: updateButton;
+    //     margin: auto;
+    //     width: auto;
+    //     margin-bottom: 10px;
+    // }
 
-// .moveButton button, .attackButton button{
-//     width: 130px;
-//     margin: 2px;
-// }
+    // .updateButton button{
+    //     margin: auto;
+    //     width: 250px;
+    // }
 
-.sendFleet{
-    display: grid;
-    grid-template-areas:  
-    "travel"
-    "missionButtons"
-    ;
-}
+    // .moveButton button, .attackButton button{
+    //     width: 130px;
+    //     margin: 2px;
+    // }
 
-
-
-.travel{
-grid-area: travel;
-display: grid;
-grid-template-areas:  
-"depart distance arrivee"
-;
-}
-
-.depart{
-grid-area: depart;
-text-align: center;
-}
-
-.distance{
-grid-area: distance;
-padding-top: 50%;
-text-align: center;
-
-}
-
-.arrivee{
-grid-area: arrivee;
-text-align: center;
-
-}
-
-.missionButtons{
-grid-area: missionButtons;
-display: grid;
-grid-template-areas:  
-"exploreButton colonizeButton transportButton spyButton"
-"attackButton attackButton attackButton attackButton"
-;
-margin-top: 10px;
-}
+    .sendFleet {
+        display: grid;
+        grid-template-areas:
+            "travel"
+            "missionButtons"
+        ;
+    }
 
 
 
+    .travel {
+        grid-area: travel;
+        display: grid;
+        grid-template-areas:
+            "depart distance arrivee"
+        ;
+    }
+
+    .depart {
+        grid-area: depart;
+        text-align: center;
+    }
+
+    .distance {
+        grid-area: distance;
+        padding-top: 50%;
+        text-align: center;
+
+    }
+
+    .arrivee {
+        grid-area: arrivee;
+        text-align: center;
+
+    }
+
+    .missionButtons {
+        grid-area: missionButtons;
+        display: grid;
+        grid-template-areas:
+            "exploreButton colonizeButton transportButton spyButton"
+            "attackButton attackButton attackButton attackButton"
+        ;
+        margin-top: 10px;
+    }
+
+    .planet {
+        font-size: 1.2em;
+
+    }
 
 
 
-}
-
-
-@media (min-width:600px){
-
-}
-
-@media (min-width:416px){
 
 }
+
+
+@media (min-width:600px) {}
+
+@media (min-width:416px) {}

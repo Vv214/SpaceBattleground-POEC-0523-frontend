@@ -1,8 +1,10 @@
-body{
+body {
     font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+
 }
 
-.popupButtons{
+.popupButtons {
     display: flex;
     justify-content: space-evenly;
     font-family: 'Jura', sans-serif;
@@ -10,84 +12,82 @@ body{
 
 
 
-.name{
+.name {
     grid-area: name;
     text-align: center;
-    color:var(--body-color);
+    color: var(--body-color);
     font-weight: 700;
     font-family: 'Jura', sans-serif;
 }
 
-.picture{
+.picture {
     width: 250px;
     margin: auto;
     grid-area: picture;
 }
 
-.position, .capacity{
+.position,
+.capacity {
     grid-area: level;
-    color:var(--body-color);
+    color: var(--body-color);
     font-family: 'Jura', sans-serif;
 }
 
-.shipList{
+.shipList {
     grid-area: level;
-    color:var(--body-color);
+    color: var(--body-color);
     font-family: 'Jura', sans-serif;
 }
 
 
 
 
-@media (min-width:1000px){
-    body{
+@media (min-width:1000px) {
+    body {
         font-family: 'Jura', sans-serif;
     }
-    
-    .shipDetail{
+
+    .shipDetail {
         padding: 15px;
     }
 
-    .popupButtons{
+    .popupButtons {
         display: flex;
         justify-content: space-evenly;
         font-family: 'Jura', sans-serif;
     }
 
-    .name{
+    .name {
         grid-area: name;
         text-align: center;
-        color:var(--body-color);
+        color: var(--body-color);
         font-weight: 700;
         font-family: 'Jura', sans-serif;
     }
-    
-    .picture{
+
+    .picture {
         width: 400px;
         /* height: 300px; */
         margin: auto;
         grid-area: picture;
     }
-    
-    .position, .capacity{
+
+    .position,
+    .capacity {
         grid-area: level;
-        color:var(--body-color);
+        color: var(--body-color);
         font-family: 'Jura', sans-serif;
     }
-    
-    .shipList{
+
+    .shipList {
         grid-area: level;
-        color:var(--body-color);
+        color: var(--body-color);
         font-family: 'Jura', sans-serif;
     }
-    
+
 
 }
 
-@media (min-width:600px){
-    
-}
+@media (min-width:600px) {}
 
-@media (min-width:416px){
-
-}
+@media (min-width:416px) {}

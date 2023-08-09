@@ -1,11 +1,10 @@
-
 #footer {
     // padding-top: 10px;
-    display:grid;
+    display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto ;
-    grid-template-areas: 
-    "footerButtons  planet"
+    grid-template-rows: auto;
+    grid-template-areas:
+        "footerButtons  planet"
     ;
     margin-left: 5px;
     margin-right: 5px;
@@ -20,48 +19,49 @@
     // bottom: 0;
     // width: 100%;
     // height: 2.5rem;     
-        // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
+    // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
     // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
 }
 
-.button{
+.button {
     margin: 10px;
 }
 
-.icon{
+.icon {
     width: 30px;
     height: 30px;
 }
 
-.topButtons{
+.topButtons {
     width: auto;
     grid-area: topButton;
     display: flex;
     font-size: 20px;
 }
 
-.bottomButtons{
+.bottomButtons {
     width: auto;
     grid-area: botButton;
     display: flex;
 }
 
-.planet{
+.planet {
     width: auto;
-  grid-area: planet;
+    grid-area: planet;
     display: flex;
     overflow: visible;
 }
 
-.planetText{
+.planetText {
     font-size: 15px;
 }
 
-.footerButtonsText{
+.footerButtonsText {
     font-size: 12px;
+
 }
 
-.planet img{
+.planet img {
     width: 90px;
     padding-top: 35px;
 }
@@ -81,27 +81,29 @@
     align-items: center;
 }
 
-#r-arrow svg, #l-arrow svg{
+#r-arrow svg,
+#l-arrow svg {
     fill: #89b1c4;
 }
 
-#r-arrow svg:hover, #l-arrow svg:hover{
-    fill:var(--blue);
-    color:var(--blue-color) !important;
-    -webkit-drop-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
-    -moz-drop-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
-    filter: drop-shadow(2px 2px 4px rgba(45,255,196,0.9));
-    -moz-drop-shadow: 0px 20px 15px 0px rgba(45,255,196,0.9);
+#r-arrow svg:hover,
+#l-arrow svg:hover {
+    fill: var(--blue);
+    color: var(--blue-color) !important;
+    -webkit-drop-shadow: 0px 0px 15px 0px rgba(45, 255, 196, 0.9);
+    -moz-drop-shadow: 0px 0px 15px 0px rgba(45, 255, 196, 0.9);
+    filter: drop-shadow(2px 2px 4px rgba(45, 255, 196, 0.9));
+    -moz-drop-shadow: 0px 20px 15px 0px rgba(45, 255, 196, 0.9);
 }
 
-#footerButtons{
+#footerButtons {
     grid-area: footerButtons;
-    display:grid;
+    display: grid;
     grid-template-columns: 70px 70px 70px;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "buildingButton resourceButton researchButton"
-    "shipyardButton fleetButton allianceButton"
+    grid-template-areas:
+        "buildingButton resourceButton researchButton"
+        "shipyardButton fleetButton allianceButton"
     ;
     position: relative;
     // bottom: 40%;
@@ -111,148 +113,161 @@
 
 
 
-.buildingButton{
+.buildingButton {
     grid-area: buildingButton;
     margin: 5px;
 }
 
-.resourceButton{
+.resourceButton {
     grid-area: resourceButton;
     margin: 5px;
 
 }
 
-.researchButton{
+.researchButton {
     grid-area: researchButton;
     margin: 5px;
 
 }
 
-.fleetButton{
+.fleetButton {
     grid-area: fleetButton;
     margin: 5px;
 
 }
 
-.allianceButton{
+.allianceButton {
     grid-area: allianceButton;
     margin: 5px;
 
 }
 
-.shipyardButton{
+.shipyardButton {
     grid-area: shipyardButton;
     margin: 5px;
 
 }
 
-.marketButton{
+.marketButton {
     grid-area: marketButton;
     margin: 10px;
 }
 
 
-@media (min-width:1000px){
+@media (min-width:1000px) {
     #footer {
-        margin-top: 10px;
-        display:grid;
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: 100px;
-        grid-template-areas: 
-        "footerButtons planet"
+        grid-template-areas:
+            "footerButtons planet"
         ;
-        font-size: 1em;
+        font-size: 1.2em;
+
         text-align: center;
         justify-content: space-between;
         align-items: center;
-    padding-bottom: 10px;
-        
+        margin-right: 4%;
+        padding-bottom: 0;
+
     }
 
 
-#footerButtons{
-    grid-area: footerButtons;
-    display:grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "buildingButton resourceButton researchButton shipyardButton fleetButton  allianceButton "
-    ;
-}
+    #footerButtons {
+        grid-area: footerButtons;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "buildingButton resourceButton researchButton shipyardButton fleetButton  allianceButton "
+        ;
+    }
 
-.buildingButton{
-    grid-area: buildingButton;
-    margin: 10px;
-}
-
-.shipyardButton{
-    grid-area: shipyardButton;
-    margin: 10px;
-}
-
-.resourceButton{
-    grid-area: resourceButton;
-    margin: 10px;
-}
-
-.researchButton{
-    grid-area: researchButton;
-    margin: 10px;
-}
-
-.fleetButton{
-    grid-area: fleetButton;
-    margin: 10px;
-}
-
-.allianceButton{
-    grid-area: allianceButton;
-    margin: 10px;
-}
-
-.marketButton{
-    grid-area: marketButton;
-    margin: 10px;
-}
-    
-    .button{
+    .buildingButton {
+        grid-area: buildingButton;
         margin: 10px;
     }
-    
-    .icon{
+
+    .shipyardButton {
+        grid-area: shipyardButton;
+        margin: 10px;
+    }
+
+    .resourceButton {
+        grid-area: resourceButton;
+        margin: 10px;
+    }
+
+    .researchButton {
+        grid-area: researchButton;
+        margin: 10px;
+    }
+
+    .fleetButton {
+        grid-area: fleetButton;
+        margin: 10px;
+    }
+
+    .allianceButton {
+        grid-area: allianceButton;
+        margin: 10px;
+    }
+
+    .marketButton {
+        grid-area: marketButton;
+        margin: 10px;
+    }
+
+    .button {
+        margin: 10px;
+    }
+
+    .icon {
         width: 50px;
         height: 50px;
     }
-    
-    .topButtons{
+
+    .topButtons {
         width: auto;
         grid-area: topButton;
         display: flex;
         // margin: 10px;
     }
-    
-    .bottomButtons{
+
+    .bottomButtons {
         width: auto;
         grid-area: botButton;
         // margin: 10px;
         display: flex;
     }
-    
-    .planet{
+
+    .planet {
         // width: auto;
         grid-area: planet;
-          display: flex;
-    padding-bottom: 35px;
+        display: flex;
+        padding-bottom: 55px;
 
     }
-    
-    .planet img{
+
+    .planet img {
         width: 100px;
-cursor: pointer;
+        cursor: pointer;
+        padding-top: 35px;
+
     }
-    
+
+    .planetText {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .footerButtonsText {
+        font-size: 0.9em;
+
+    }
+
     // .planetButton{
-    
+
     // }
     // #r-arrow {
     //     height: 100%;
@@ -261,7 +276,7 @@ cursor: pointer;
     //     align-items: center;
     //     overflow: visible;
     // }
-    
+
     // #l-arrow {
     //     height: 100%;
     //     display: flex;
@@ -274,10 +289,10 @@ cursor: pointer;
         // font-weight: 700;
         // font-size: 40px;
         margin-top: 60px;
-cursor: pointer;
+        cursor: pointer;
 
     }
-    
+
     #l-arrow {
         /* margin-right: 40px; */
         // font-weight: 700;
@@ -291,13 +306,9 @@ cursor: pointer;
 
 }
 
-@media (min-width:600px){
-    
-}
+@media (min-width:600px) {}
 
-@media (min-width:416px){
-
-}
+@media (min-width:416px) {}
 
 
 
@@ -331,7 +342,7 @@ cursor: pointer;
     width: 15px;
     height: 15px;
     position: absolute;
-  //   text-align: center;
+    //   text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -344,6 +355,7 @@ cursor: pointer;
     border-left: 2px solid #0fbcf9;
     transition: 0.75s all;
 }
+
 .activeTab:after {
     top: -2px;
     right: -2px;
@@ -352,15 +364,17 @@ cursor: pointer;
     border-right: 2px solid #0fbcf9;
     transition: 0.75s all;
 }
+
 .activeTab p {
     display: block;
-  //   text-align: center;
+    //   text-align: center;
     justify-content: center;
     align-items: center;
     color: #25ccf7 !important;
 
     // margin-left: 8px;
 }
+
 .activeTab p:before {
     bottom: -2px;
     left: -2px;
@@ -369,6 +383,7 @@ cursor: pointer;
     border-left: 2px solid #0fbcf9;
     transition: 0.75s all;
 }
+
 .activeTab p:after {
     bottom: -2px;
     right: -2px;

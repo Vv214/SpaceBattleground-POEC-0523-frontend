@@ -1,85 +1,91 @@
-body{
+body {
     font-family: 'Jura', sans-serif;
 }
 
 
 
 
-.name{
+.name {
     grid-area: name;
     text-align: center;
-    color:var(--body-color);
+    color: var(--body-color);
     font-weight: 700;
     font-family: 'Jura', sans-serif;
 }
 
-.buildingDetail{
-display: grid;
-grid-template-columns: auto;
-grid-template-rows: auto;
-grid-template-areas: 
-"name"
-"picture"
-"level"
-"type "
-"time "
-"ressources "
-"required "
-"description "
-;
+.buildingDetail {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "name"
+        "picture"
+        "level"
+        "type "
+        "time "
+        "ressources "
+        "required "
+        "description "
+    ;
 }
 
-.level{
+.level {
     font-size: 0.8em;
     grid-area: level;
 }
-.type{
+
+.type {
     font-size: 0.8em;
     grid-area: type;
 }
-.time{
+
+.time {
     font-size: 0.8em;
     grid-area: time;
 }
-.ressources{
+
+.ressources {
     font-size: 0.8em;
     grid-area: ressources;
 }
-.required{
+
+.required {
     font-size: 0.8em;
     grid-area: required;
 }
-.description{
+
+.description {
     font-size: 0.8em;
     grid-area: description;
 }
-.capacity{
+
+.capacity {
     font-size: 0.8em;
     grid-area: capacity;
 }
 
 
-.popupButtons{
+.popupButtons {
     display: flex;
     justify-content: space-evenly;
     font-family: 'Jura', sans-serif;
 }
 
-button{
-font-size: 1.2em !important;
+button {
+    font-size: 1.3em !important;
 }
 
 
 
-.name{
+.name {
     grid-area: name;
     text-align: center;
-    color:var(--body-color);
+    color: var(--body-color);
     font-weight: 700;
     font-family: 'Jura', sans-serif;
 }
 
-.picture{
+.picture {
     width: 150px;
     grid-area: picture;
     display: flex;
@@ -88,8 +94,8 @@ font-size: 1.2em !important;
 
 
 
-@media (min-width:1000px){
-    .picture{
+@media (min-width:1000px) {
+    .picture {
         // min-width: 300px;
         max-width: 450px;
         width: auto;
@@ -97,52 +103,58 @@ font-size: 1.2em !important;
         grid-area: picture;
     }
 
-    .buildingDetail{
+    .buildingDetail {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "picture name level"
-        "picture type ."
-        "picture time ."
-        "picture ressources ."
-        "picture required ."
-        "picture description ."
+        grid-template-areas:
+            "picture name level"
+            "picture type ."
+            "picture time ."
+            "picture ressources ."
+            "picture required ."
+            "picture description ."
         ;
-        }
+    }
 
-        .level{
-            font-size: 1em;
-            grid-area: level;
-        }
-        .type{
-            font-size: 1em;
-            grid-area: type;
-        }
-        .time{
-            font-size: 1em;
-            grid-area: time;
-        }
-        .ressources{
-            font-size: 1em;
-            grid-area: ressources;
-        }
-        .required{
-            font-size: 1em;
-            grid-area: required;
-        }
-        .description{
-            font-size: 1em;
-            grid-area: description;
-        }
-        .capacity{
-            font-size: 1em;
-            grid-area: capacity;
-        }
+    .level {
+        font-size: 1.2em;
+        grid-area: level;
+    }
+
+    .type {
+        font-size: 1.2em;
+        grid-area: type;
+    }
+
+    .time {
+        font-size: 1.2em;
+        grid-area: time;
+    }
+
+    .ressources {
+        font-size: 1.2em;
+        grid-area: ressources;
+    }
+
+    .required {
+        font-size: 1.2em;
+        grid-area: required;
+    }
+
+    .description {
+        font-size: 1.2em;
+        grid-area: description;
+    }
+
+    .capacity {
+        font-size: 1.2em;
+        grid-area: capacity;
+    }
 }
 
 // @media (min-width:600px){
-    
+
 // }
 
 // @media (min-width:416px){
