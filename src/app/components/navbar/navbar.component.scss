@@ -6,7 +6,8 @@
     grid-template-rows: auto;
     grid-template-areas: 
     "planetInfo planetInfo"
-    "resources  account"
+    "resources  resources"
+    "account  account"
     ;
     font-size: 0.8em;
     text-align: center;
@@ -20,20 +21,25 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "ironInfo gazInfo"
+    "ironInfo gazInfo" 
     "diamondInfo energyInfo"
     ;
 }
 
-#planetInfo {
+#planetInfoMobile {
     height: fit-content;
     grid-area: planetInfo;
     display:grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "planet serverTime"
+    "planet "
+    "serverTime"
     ;
+}
+
+#planetInfoDesktop{
+    display: none;
 }
 
 #account {
@@ -42,7 +48,8 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "messageButton accountButton"
+    "messageButton"
+    "accountButton"
     ;
 }
 
@@ -98,21 +105,22 @@
 
 #resources>div {
     height: fit-content;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
-#resources>div:hover {
-    letter-spacing: .5px;
-    color:rgba(45,255,196,0.9) !important;
-    text-shadow: rgba(45,255,196,0.9) 0px 0 30px;
-}
+// #resources>div:hover {
+//     letter-spacing: .5px;
+//     color:rgba(45,255,196,0.9) !important;
+//     text-shadow: rgba(45,255,196,0.9) 0px 0 30px;
+// }
 
 
 button{
-    font-size: 0.8em;
-    margin: 5px;
-    height: 50px;
+    font-size: 0.9em;
+    // margin: 5px;
+    height: 30px;
 }
+
 
 
 @media (min-width:1000px){
@@ -141,7 +149,7 @@ button{
         ;
     }
     
-    #planetInfo {
+    #planetInfoDesktop {
         grid-area: planetInfo;
         display:grid;
         grid-template-columns: auto;
@@ -149,6 +157,10 @@ button{
         grid-template-areas: 
         "planet serverTime"
         ;
+    }
+
+    #planetInfoMobile{
+        display: none;
     }
     
     #account {

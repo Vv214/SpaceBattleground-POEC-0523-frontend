@@ -1,111 +1,271 @@
 .bg-container { 
-    background: url("/assets/images/resourcesBackgroundMobile.jpg") no-repeat center center fixed; 
-    background-size: cover;
-    margin-left: 7.5px;
-    margin-right: 7.5px;
-    color:var(--body-color);
-
+    background: url("/assets/images/backgrounds/fleetBackgroundMobile.png") no-repeat center center fixed; 
+height: 1060px;
   }
 
+    #ships{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        // "combatTitle civilTitle"
+        "combatShip"
+        "civilShip"
+        "fleetButton"
+        ;
+        justify-content: space-between;
+        margin-left: 2%;
+        margin-right: 2%;
+        position: relative;
+        // top: 2%
+    }
 
-// #buildings{
-//     display:grid;
-//     grid-template-columns: auto 170px;
-//     grid-template-rows: 400px;
-//     grid-template-areas: 
-//     "onPlanet stock"
-//     ;
-// }  
+    .combatShip{
+        grid-area: combatShip;
+        grid-template-areas: 
+        "combatTitle combatTitle"
+        "ship_lightShip ship_mediumShip"
+        "ship_heavyShip ship_scoutShip"
+        ;
+        margin: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        // height: 250px;
+        overflow: visible;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+    }
+    
+    .civilShip{
+        grid-area: civilShip;
+        grid-template-areas: 
+        "civilTitle civilTitle"
+        "ship_cargoShip ship_heavyCargoShip"
+        " ship_recyclerShip ship_colonisateur";
+        margin: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // height: 250px;
+        overflow: visible;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+    }
 
-// .combat{
-//     grid-area: onPlanet;
-//     // background-color: rgba(0, 44, 73, 0.8);
-//     margin: 5px;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     // overflow: scroll;
+    .combatTitle{
+        grid-area: combatTitle;
+        margin-top: 0;
+        text-align: center;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    }
 
-// }
+    .civilTitle{
+        grid-area: civilTitle;
+        margin-top: 0;
+        text-align: center;
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+    }
 
-// .civil{
-//     grid-area: stock;
-//     // background-color: rgba(0, 44, 73, 0.8);
-//     margin: 5px;
-//     // overflow: scroll;
-// }
+    .fleetButton{
+        grid-area: fleetButton;
+        margin: 10px;
+    }
 
-// .building{
-//     display:grid;
-//     grid-template-columns: auto;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "buildingPicture"
-//     "buildingName"
-//     "buildingLevel"
-//     ;
-//     margin-bottom: 20px;
-//     // background-color: rgba(1, 117, 194, 0.8);
-//     border: 1px solid var(--blue, .2) ;
-//     width: auto;
-//     max-width: 130px;
-//     margin: auto;
-//     margin-bottom: 10px;
-//     padding: 5px;
-// }
+    button{
+        font-size: 1.4em;
+    }
 
-// .buildingName{
-//     grid-area: buildingName;
-//     font-size: 0.8em;
-//     font-weight: 700;
-//     text-align: center;
-// }
+    .ship_lightShip{
+        grid-area: ship_lightShip;
+    }
+    .ship_mediumShip{
+        grid-area: ship_mediumShip;
+    }
+    .ship_heavyShip{
+        grid-area: ship_heavyShip;
+    }
+    .ship_scoutShip{
+        grid-area: ship_scoutShip;
+    }
 
-// .title{
-//     text-align: center;
-//     margin-bottom: 10px;
-//     // font-size: 0.8em;
-// }
+    .ship_cargoShip{
+        grid-area: ship_cargoShip;
+    }
+    .ship_heavyCargoShip{
+        grid-area: ship_heavyCargoShip;
+    }
+    .ship_recyclerShip{
+        grid-area: ship_recyclerShip;
+    }
+    .ship_colonisateur{
+        grid-area: ship_colonisateur;
+    }
+   
 
-// .buildingNumber{
-//     grid-area: buildingNumber;
-// }
-
-// .buildingPicture{
-//     width: 60px;
-//     grid-area: buildingPicture;
-//     display: flex;
-//     align-items: center;
-//     margin: auto;
-// }
-
-// .buildings{
-//     // background-color: rgba(1, 117, 194, 0.8);
-//     margin: 5px;
-//     width: 80px;
-// }
+    
 
 
-// .name{
-//     grid-area: name;
-//     font-size: 0.8em;
-//     font-weight: 700;
-//     text-align: center;
-// }
+    .ship{
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "shipPicture"
+        "shipName"
+        "shipNumber"
+        ;
+        // border: 1px solid var(--blue, .2) ;
+        width: 140px;
+        // height: 180px;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        border:.1rem solid rgba(16, 56, 83, 0.0);;
+    
+        // background-color:var(--blue-color);
+        
+        // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        // border:.1rem solid var(--light-color);
+        // padding: 5px;
+    }
 
-// .capacity{
-//     grid-area: capacity;
-// }
 
-// .title{
-//     text-align: center;
-// }
+    .shipNumber{
+        grid-area: shipNumber;
+        font-weight: 700;
+        text-align: right;
+        background-color: var(--blue-color);
+    }
 
-// button{
-//     background:var(--light-color);
-//     border:.1rem solid var(--light-color);
-//     color:var(--body-color) !important;
-//     cursor: pointer;
-// }
+
+
+    .shipPicture{
+        width: 130px;
+        margin-top: 5px;
+        grid-area: shipPicture;
+        margin-left: 5px;
+    }
+    
+
+    .name{
+        grid-area: name;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .shipName{
+        grid-area: shipName;
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 0px;
+        padding-right: 5px;
+        text-align: center;
+
+    }
+    
+    .title{
+        text-align: center;
+        margin: 10px;
+    }
+
+
+
+    .corner-button:hover:before,
+    .corner-button:hover p:before,
+    .corner-button:hover:after,
+    .corner-button:hover p:after {
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        // text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button {
+        display: inline-block;
+        // font-family: "Roboto", sans-serif;
+        // font-size: 20px;
+        // letter-spacing: 5px;
+        // text-align: center;
+        position: relative;
+        min-width: 100px;
+        // min-height: 10px;
+        // margin: 20px;
+        background: none;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        // color: #25ccf7;
+        border-radius: 10px;
+        // padding: 12px 20px;
+        box-sizing: content-box;
+        border: 2px solid transparent;
+        text-align: center;
+        // line-height: 30px;
+        transition: 0.75s ease;
+        display: block;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .corner-button:hover:before {
+        top: -2px;
+        left: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover:after {
+        top: -2px;
+        right: -2px;
+        border-top: 2px solid #0fbcf9;
+        border-top-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p {
+        display: block;
+        // text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #25ccf7;
+    
+        // margin-left: 8px;
+    }
+    .corner-button:hover p:before {
+        bottom: -2px;
+        left: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-left-radius: 8px;
+        border-left: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+    .corner-button:hover p:after {
+        bottom: -2px;
+        right: -2px;
+        border-bottom: 2px solid #0fbcf9;
+        border-bottom-right-radius: 8px;
+        border-right: 2px solid #0fbcf9;
+        transition: 0.75s all;
+    }
+
 
 
 @media (min-width:1000px){
@@ -292,87 +452,87 @@
 
 
 
-    .corner-button:hover:before,
-    .corner-button:hover p:before,
-    .corner-button:hover:after,
-    .corner-button:hover p:after {
-        display: block;
-        content: "";
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        // text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .corner-button {
-        display: inline-block;
-        // font-family: "Roboto", sans-serif;
-        // font-size: 20px;
-        // letter-spacing: 5px;
-        // text-align: center;
-        position: relative;
-        min-width: 100px;
-        // min-height: 10px;
-        // margin: 20px;
-        background: none;
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-        // color: #25ccf7;
-        border-radius: 10px;
-        // padding: 12px 20px;
-        box-sizing: content-box;
-        border: 2px solid transparent;
-        text-align: center;
-        // line-height: 30px;
-        transition: 0.75s ease;
-        display: block;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .corner-button:hover:before {
-        top: -2px;
-        left: -2px;
-        border-top: 2px solid #0fbcf9;
-        border-top-left-radius: 8px;
-        border-left: 2px solid #0fbcf9;
-        transition: 0.75s all;
-    }
-    .corner-button:hover:after {
-        top: -2px;
-        right: -2px;
-        border-top: 2px solid #0fbcf9;
-        border-top-right-radius: 8px;
-        border-right: 2px solid #0fbcf9;
-        transition: 0.75s all;
-    }
-    .corner-button:hover p {
-        display: block;
-        // text-align: center;
-        justify-content: center;
-        align-items: center;
-        color: #25ccf7;
+    // .corner-button:hover:before,
+    // .corner-button:hover p:before,
+    // .corner-button:hover:after,
+    // .corner-button:hover p:after {
+    //     display: block;
+    //     content: "";
+    //     width: 15px;
+    //     height: 15px;
+    //     position: absolute;
+    //     // text-align: center;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+    // .corner-button {
+    //     display: inline-block;
+    //     // font-family: "Roboto", sans-serif;
+    //     // font-size: 20px;
+    //     // letter-spacing: 5px;
+    //     // text-align: center;
+    //     position: relative;
+    //     min-width: 100px;
+    //     // min-height: 10px;
+    //     // margin: 20px;
+    //     background: none;
+    //     border: none;
+    //     text-decoration: none;
+    //     cursor: pointer;
+    //     // color: #25ccf7;
+    //     border-radius: 10px;
+    //     // padding: 12px 20px;
+    //     box-sizing: content-box;
+    //     border: 2px solid transparent;
+    //     text-align: center;
+    //     // line-height: 30px;
+    //     transition: 0.75s ease;
+    //     display: block;
+    //     text-align: center;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+    // .corner-button:hover:before {
+    //     top: -2px;
+    //     left: -2px;
+    //     border-top: 2px solid #0fbcf9;
+    //     border-top-left-radius: 8px;
+    //     border-left: 2px solid #0fbcf9;
+    //     transition: 0.75s all;
+    // }
+    // .corner-button:hover:after {
+    //     top: -2px;
+    //     right: -2px;
+    //     border-top: 2px solid #0fbcf9;
+    //     border-top-right-radius: 8px;
+    //     border-right: 2px solid #0fbcf9;
+    //     transition: 0.75s all;
+    // }
+    // .corner-button:hover p {
+    //     display: block;
+    //     // text-align: center;
+    //     justify-content: center;
+    //     align-items: center;
+    //     color: #25ccf7;
     
-        // margin-left: 8px;
-    }
-    .corner-button:hover p:before {
-        bottom: -2px;
-        left: -2px;
-        border-bottom: 2px solid #0fbcf9;
-        border-bottom-left-radius: 8px;
-        border-left: 2px solid #0fbcf9;
-        transition: 0.75s all;
-    }
-    .corner-button:hover p:after {
-        bottom: -2px;
-        right: -2px;
-        border-bottom: 2px solid #0fbcf9;
-        border-bottom-right-radius: 8px;
-        border-right: 2px solid #0fbcf9;
-        transition: 0.75s all;
-    }
+    //     // margin-left: 8px;
+    // }
+    // .corner-button:hover p:before {
+    //     bottom: -2px;
+    //     left: -2px;
+    //     border-bottom: 2px solid #0fbcf9;
+    //     border-bottom-left-radius: 8px;
+    //     border-left: 2px solid #0fbcf9;
+    //     transition: 0.75s all;
+    // }
+    // .corner-button:hover p:after {
+    //     bottom: -2px;
+    //     right: -2px;
+    //     border-bottom: 2px solid #0fbcf9;
+    //     border-bottom-right-radius: 8px;
+    //     border-right: 2px solid #0fbcf9;
+    //     transition: 0.75s all;
+    // }
 
 
 

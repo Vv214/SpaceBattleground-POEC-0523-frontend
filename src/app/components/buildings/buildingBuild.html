@@ -1,32 +1,36 @@
-<div class="bg-container">
-    <!-- <h1 mat-dialog-title class="name">Mine de fer</h1> -->
+<div class="popup-container">
     <mat-dialog-content class="mat-typography">
 
-    <div class="buildingDetail">
-       
-        <img class="picture" src="assets/images/buildings/shipFactory.png"/>
-        <h1 class="name">Chantier spatial</h1>
-        <p class="type"><span class="categoryTitle">Type : </span>Production</p>
-        <p class="level"><span class="categoryTitle">Niveau :</span> 1 <span class="upgradeText" *ngIf="isBuilt == true"> -> 2</span></p>
-        <p class="capacity"><span class="categoryTitle">Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p>
-        <p class="time" *ngIf="isBuilt == true"><span class="categoryTitle">Temps d'amélioration : </span>10 min</p>
-        <p class="time" *ngIf="isBuilt == false"><span class="categoryTitle">Temps de construction : </span>10 min</p>
-        <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>200 Fer 300 Hydrogène 100 Diamant</p>
-        <p class="required"><span class="categoryTitle">Prérequis : </span>Recherche spatiale niveau 1</p>
-        <p class="description"><span class="categoryTitle">Description : </span>Permet de construire des vaisseaux</p>
-        
-    </div>
- 
+        <div class="buildingDetail">
+
+            <img class="picture" src="assets/images/buildings/{{buildingNameSrc}}.png" />
+            <h1 class="name">{{buildingName}}</h1>
+            <p class="type"><span class="categoryTitle">Type : </span>{{buildingType}}</p>
+            <p class="level"><span class="categoryTitle">Niveau :</span> {{buildingLevel}} <span class="upgradeText"> -> {{buildingLevel +1}}</span></p>
+            <!-- <p class="capacity"><span class="categoryTitle">Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p> -->
+            <p class="time" *ngIf="this.buildingLevel !== 0"><span class="categoryTitle">Temps d'amélioration :
+                </span>10 min
+            </p>
+            <p class="time" *ngIf="this.buildingLevel == 0"><span class="categoryTitle">Temps de construction :
+                </span>10 min
+            </p>
+            <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>Fer :
+                {{buildingIronPrice}} Hydrogène
+                : {{buildingHydrogenePrice}} Diamant : {{buildingDiamondPrice}}</p>
+            <p class="required"><span class="categoryTitle">Prérequis : </span>Recherche spatiale niveau 1</p>
+            <p class="description"><span class="categoryTitle">Description : </span>{{buildingDescription}}</p>
+
+        </div>
+
     </mat-dialog-content>
 
 
     <mat-dialog-actions class="popupButtons">
-        <!-- <button mat-button mat-dialog-close>Détruire</button> -->
-    
-        <button *ngIf="isBuilt == true" mat-dialog-close (click)="upgradeBuilding()">Améliorer</button>
-        <button *ngIf="isBuilt == false" mat-dialog-close (click)="buildBuilding()">Construire</button>
+
+        <button *ngIf="this.buildingIsBuild == true" mat-dialog-close (click)="upgradeBuilding()">Améliorer</button>
+        <button *ngIf="this.buildingIsBuild == false" mat-dialog-close
+            (click)="buildBuilding(token, buildingName, buildingLevel, buildingIronPrice, buildingDiamondPrice, buildingEnergyPrice, buildingHydrogenePrice, buildingIsBuild, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer)">Construire
+            {{buildingName}}</button>
     </mat-dialog-actions>
 
 </div>
-
-            

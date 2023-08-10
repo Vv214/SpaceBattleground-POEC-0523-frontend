@@ -1,33 +1,33 @@
 <div id="footer">
     <div id="footerButtons">
-        <div class="buildingButton corner-button" (click)="toBuildings()" >
+        <div class="buildingButton corner-button" [ngClass]="{'activeTab': activeBuildings}" (click)="toBuildings()" >
             <img class="icon" src="assets/images/icons/factory.png" />
-            <p><span>Bâtiments</span></p>
+            <p class="footerButtonsText">Bâtiments</p>
         </div>
-        <div class="resourceButton corner-button" (click)="toResources()" >
+        <div class="resourceButton corner-button" [ngClass]="{'activeTab': activeRessources}" (click)="toResources()" >
             <img class="icon" src="assets/images/icons/minerals.png" />
-            <p>Ressources</p>
+            <p class="footerButtonsText">Ressources</p>
         </div>
-        <div class="shipyardButton corner-button" (click)="toShipyard()" >
+        <div class="shipyardButton corner-button" [ngClass]="{'activeTab': activeShipyard}" (click)="toShipyard()" >
             <img class="icon" src="assets/images/icons/space-shuttle.png" />
-            <p>Chantier Spatial</p>
+            <p class="footerButtonsText">Chantier Spatial</p>
         </div>
-        <div class="researchButton corner-button" (click)="toResearch()" >
+        <div class="researchButton corner-button" [ngClass]="{'activeTab': activeResearch}" (click)="toResearch()" >
             <img class="icon" src="assets/images/icons/microscope.png" />
-            <p>Recherche</p>
+            <p class="footerButtonsText">Recherche</p>
         </div>
-        <div class="fleetButton corner-button" (click)="toFleet()" >
+        <div class="fleetButton corner-button" [ngClass]="{'activeTab': activeFleet}" (click)="toFleet()" >
             <img class="icon" src="assets/images/icons/scout-ship.png"  />
-            <p>Flotte</p>
+            <p class="footerButtonsText">Flotte</p>
         </div>
-        <div class="allianceButton corner-button" (click)="toAlliance()" >
+        <div class="allianceButton corner-button" [ngClass]="{'activeTab': activeAlliance}" (click)="toAlliance()" >
             <img class="icon" src="assets/images/icons/hive-mind.png" />
-            <p>Alliance</p>
+            <p class="footerButtonsText">Alliance</p>
         </div>
-        <div class="marketButton corner-button" (click)="toMarket()" >
+        <!-- <div class="marketButton corner-button" (click)="toMarket()" >
             <img class="icon" src="assets/images/icons/cash.png" />
             <p>Marché</p>
-        </div>
+        </div> -->
     </div>
 
  
@@ -39,8 +39,8 @@
         </svg>
       </span>
         <div >
-            <img src="assets/images/planets/planet3.png" (click)="overviewRoute()" />
-            <p>Planète 1</p>
+            <img src="assets/images/planets/planet{{currentPlanet}}.png" (click)="overviewRoute()" />
+            <p class="planetText">{{updatePlanetNameInUI()}}</p>
         </div>
         <span id="r-arrow">
           <svg (click)="nextPlanet()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

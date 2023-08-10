@@ -1,195 +1,130 @@
-
-// .bg-container { 
-//     background: url("/assets/images/resourcesBackground.jpg") no-repeat center center fixed; 
-//     background-size: cover;
-//   }
-
-
-
-// .building{
-//     display:grid;
-//     grid-template-columns: auto;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "name name"
-//     "picture level"
-//     "picture upgrade"
-//     ;
-//     margin-bottom: 20px;
-//     background-color: rgba(0, 44, 73, 0.9);
-//     border: 1px solid var(--blue, .2) ;
-// width: auto;
-// max-width: 350px;
-// margin: auto;
-// margin-bottom: 10px;
-// padding: 5px;
-
-// }
-
-// .name{
-//     grid-area: name;
-//     font-size: 20px;
-//     font-weight: 700;
-//     text-align: center;
-    
-// }
-
-// .picture{
-//     width: 120px;
-//     grid-area: picture;
-//     margin-left: 10%;
-//     margin-bottom: 5%;
-// }
-
-// .level{
-//     grid-area: level;
-// }
-
-// .upgrade{
-//     grid-area: upgrade;
-//     width: 100px;
-// }
-
-// .title{
-//     text-align: center;
-// }
-
-// button{
-//     background:var(--light-color);
-//     border:.1rem solid var(--light-color);
-//     color:var(--body-color) !important;
-// }
-
-
 .bg-container { 
     background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed; 
-    background-size: cover;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 650px;
-    color:var(--body-color);
-
-  }
-
-// #buildings{
-//     display:grid;
-//     grid-template-columns: auto 350px;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "onPlanet stock"
-//     ;
-// }  
+    height: 750px;
+}
 
 .onPlanet{
     grid-area: onPlanet;
-    // background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
     display: grid;
-    overflow: visible;
+    grid-template-columns: 1fr 1fr;
     position: relative;
-    top: 45%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
-
+    top: 5%
 }
-
-// .stock{
-//     grid-area: stock;
-//     // background-color: rgba(0, 44, 73, 0.8);
-//     margin: 5px;
-//     overflow: visible;
-// }
-
-// .resourceBuilding{
-//     display:grid;
-//     grid-template-columns: auto;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "resourceBuildingPicture resourceBuildingName"
-//     "resourceBuildingPicture resourceBuildingLevel"
-//     ;
-//     margin-bottom: 20px;
-//     background-color: rgba(0, 44, 73, 0.8);
-//     border: 1px solid var(--blue, .2) ;
-//     width: 300px;
-//     height: 150px;
-//     margin: auto;
-//     margin-bottom: 10px;
-//     padding: 5px;
-// }
-
-
 
 .resourceBuilding{
     display:grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
-    "resourceBuildingPicture resourceBuildingName"
-    "resourceBuildingPicture resourceBuildingLevel"
-    "futurepanel__footer futurepanel__footer"
+    "resourceBuildingName "
+    "resourceBuildingPicture "
+    "resourceBuildingLevel "
+    "futurepanel__footer "
     ;
-    // margin-bottom: 20px;
-    width: 300px;
+    width: 150px;
     height: 150px;
-
-    // height: 160px;
-    margin: auto;
-    margin-bottom: 10px;
+    margin: 2px;
 
     background-color:var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-    // padding:1rem 2rem;
-    // color:var(--body-color);
-
     border:.1rem solid var(--light-color);
-    // text-indent:0;
-
-
-    // margin-bottom: 10px;
     padding: 5px;
-    
-
 }
-
 
 .resourceBuilding:hover{
-    // background-color:var(--blue-color);
-    // color:var(--blue-color) !important;
     color:var(--primary-color) !important;
     border-color: var(--primary-color);
+    cursor: pointer;
+
 }
 
-// .btn-2{
-//     background-color:var(--light-color);
-//     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-//     padding:1rem 2rem;
-//     color:var(--white-color);  
-//     border:.1rem solid var(--light-color);
-//     text-indent:0;
-//   }
-  
-//   .btn-2:hover{
-//     color:var(--primary-color);
-//     border-color: var(--primary-color);
-//   }
+.resourceBuildingName{
+    grid-area: resourceBuildingName;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.resourceBuildingLevel{
+    grid-area: resourceBuildingLevel;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.title{
+    text-align: center;
+    margin: 10px;
+}
 
 .resourceBuildingPicture{
-    width: 100px;
-    margin-top: 15%;
+    width: 60px;
     grid-area: resourceBuildingPicture;
-    margin-left: 5px;
-    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
-// .buildings{
-//     background-color: rgba(1, 117, 194, 0.8);
-//     margin: auto;
-//     width: 300px;
+.name{
+    grid-area: name;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;
+}
 
-// }
+
+
+@media (min-width:1000px){
+    .bg-container { 
+        background: url("/assets/images/backgrounds/resourcesBackground.jpg") no-repeat center center fixed; 
+        height: 650px;
+    }
+
+
+
+    .resourceBuilding{
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "resourceBuildingPicture resourceBuildingName"
+        "resourceBuildingPicture resourceBuildingLevel"
+        "futurepanel__footer futurepanel__footer"
+        ;
+        width: 300px;
+        height: 150px;
+        margin: auto;
+        margin-bottom: 10px;
+    
+        background-color:var(--blue-color);
+        background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+        border:.1rem solid var(--light-color);
+        padding: 5px;
+    }
+
+    .onPlanet{
+        grid-area: onPlanet;
+        display: grid;
+        overflow: visible;
+        position: relative;
+        top: 45%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .resourceBuildingPicture{
+        width: 100px;
+        margin-top: 15%;
+        grid-area: resourceBuildingPicture;
+        margin-left: 5px;
+        margin-bottom: 5%;
+    }
+
+    .resourceBuildingName{
+    grid-area: resourceBuildingName;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
 
 .name{
     grid-area: name;
@@ -197,28 +132,4 @@
     font-weight: 700;
     text-align: center;
 }
-
-.resourceBuildingName{
-    grid-area: resourceBuildingName;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.resourceBuildingName:hover{
-    color:var(--primary-color) !important;
-
-}
-
-.title{
-    text-align: center;
-    margin: 10px;
-    // font-size: 20px;
-}
-
-.resourceBuildingLevel{
-    grid-area: resourceBuildingLevel;
-    // font-size: 20px;
-    // font-weight: 700;
-    text-align: center;
 }

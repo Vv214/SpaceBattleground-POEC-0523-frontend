@@ -1,7 +1,12 @@
-<app-navbar *ngIf="showNavBar"></app-navbar>
-<router-outlet></router-outlet>
 
-<app-footer *ngIf="showFooter"></app-footer>
+<div class="wrapper">
+    <app-navbar *ngIf="showNavBar"></app-navbar>
+    <router-outlet id="page-container"></router-outlet>
+    <app-footer *ngIf="showFooter" class="footer"></app-footer>
+</div>
+
+
+
 
 <!-- <app-animate-background *ngIf="!showFooter"></app-animate-background> -->
 

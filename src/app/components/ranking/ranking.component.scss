@@ -1,12 +1,18 @@
 button{
-    background:var(--light-color);
-    border:.1rem solid var(--light-color);
-    color:var(--body-color) !important;
-    font-family: 'Jura', sans-serif;
-    margin: 5px;
+    font-size: 1.2em;
 }
 
 .title{
     display: flex;
     margin: 40px;
+}
+
+.rankingButtons{
+    display: flex;
+justify-content: space-around;
+}
+
+.ranking{
+    font-size: 1.1em;
+    margin: 20px;
 }

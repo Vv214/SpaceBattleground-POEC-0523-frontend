@@ -1,3 +1,4 @@
+import { CretatedAlliancesComponent } from './components/cretated-alliances/cretated-alliances.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -20,9 +21,11 @@ import {
   buildingDestroy,
   buildingDetail,
   BuildingsComponent,
+  errorMessage,
 } from './components/buildings/buildings.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ResearchComponent, researchDetail, TechnologyTree } from './components/research/research.component';
-import { FleetComponent, modifyFleet, shipBuild, shipDetail } from './components/fleet/fleet.component';
+import { FleetComponent, modifyFleet } from './components/fleet/fleet.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -38,9 +41,8 @@ import { PopupComponent } from './components/popup/popup.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
-import { ShipyardComponent } from './components/shipyard/shipyard.component';
+import { ShipyardComponent, shipBuild, shipDetail } from './components/shipyard/shipyard.component';
 import { AnimateBackgroundComponent } from './components/animate-background/animate-background.component';
 
 @NgModule({
@@ -79,6 +81,8 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     buildingDestroy,
     AnimateBackgroundComponent,
     shipBuild,
+    CretatedAlliancesComponent,
+    errorMessage,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +92,7 @@ import { AnimateBackgroundComponent } from './components/animate-background/anim
     MatButtonModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    HttpClientModule,
     MatTabsModule,
   ],
   providers: [],

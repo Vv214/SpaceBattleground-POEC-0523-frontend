@@ -1,0 +1,19 @@
+<div class="popup-container">
+    <mat-dialog-content class="mat-typography">
+
+<div class="errorMessage">
+   <p class="errorMessage" *ngIf="this.eMessage == 'ressources'"> Ressources insuffisantes !</p>
+   <p class="errorMessage" *ngIf="this.eMessage == 'laboratory'"> Construisez d'abord le Laboratoire !</p>
+   <p class="errorMessage" *ngIf="this.eMessage == 'shipyard'"> Construisez d'abord le Chantier spatial !</p>
+</div>
+
+
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions class="popupButtons">
+
+        <button mat-dialog-close >Fermer</button>
+    </mat-dialog-actions>
+
+</div>
