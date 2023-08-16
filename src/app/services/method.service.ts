@@ -84,7 +84,7 @@ export class MethodService {
     });
   }
 
-  canDoneAction(
+  haveEnoughRessources(
     ironPrice: number,
     diamondPrice: number,
     energyPrice: number,

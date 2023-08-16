@@ -16,12 +16,9 @@
     list-style-type: none;
     padding-left: 5px;
     padding-right: 5px;
-    // padding-bottom: 10px;
     width: 1fr;
     background-color:var(--blue-color);
     background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-
-    // padding-bottom: 40px;
 }
 
 .mobileList{
@@ -41,9 +38,6 @@
         display: none;
     }
 
-    // .overviewDesktop{
-    //     display: block;
-    // }
     .bg-container { 
         background: url("/assets/images/backgrounds/overviewBackground2.jpg") no-repeat center  center fixed; 
         background-size: cover;
@@ -76,7 +70,6 @@
         ;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        // margin: 10px;
     }
 
 .resourceFer{
@@ -87,30 +80,29 @@
     height: 3em;
     margin-top: 10px;
 }
+
 .resourceHydrogene{
     grid-area: resourceHydrogene;
     background-color: rgba(0, 44, 73, 0.8);
     width: 200px;
     margin: 5px;
     height: 3em;
-
-
 }
+
 .resourceDiamant{
     grid-area: resourceDiamant;
     background-color: rgba(0, 44, 73, 0.8);
     width: 200px;
     margin: 5px;
     height: 3em;
-
 }
+
 .resourceEnergie{
     grid-area: resourceEnergie;
     background-color: rgba(0, 44, 73, 0.8);
     width: 200px;
     margin: 5px;
     height: 3em;
-
 }
 
 .buildingList{
@@ -122,8 +114,8 @@
     padding-right: 5px;
     padding-bottom: 10px;
     width: 300px;
-
 }
+
 .shipList{
     grid-area: shipList;
     background-color: rgba(0, 44, 73, 0.8);
@@ -136,12 +128,6 @@
     background-color: rgba(0, 44, 73, 0.8);
     margin: 5px;
     width: 300px;
-
-    // position: relative;
-    // top:500%;
-    // bottom: 0;
-    // right: 0;
-
 }
 
 

@@ -38,8 +38,6 @@ mat-tab-group{
 .tab {
     position: relative;
     top:2%;
-    // height: 100%;
-    // overflow: visible;
     }
   
   
@@ -138,21 +136,9 @@ button{
     "research_protection research_impulsion"
     "research_astrophysique ."
     ;
-    // background-color:var(--blue-color);
-    // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-
     margin: 5px;
     padding: 5px;
     height: 450px;
-    // height: 100%;
-
-    // max-width: 400px;
-
-    // -webkit-clip-path: var(--cropped-corner);
-    // clip-path: var(--cropped-corner);
-
-    // --corner-value: 20px;
-    // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
 }
 
 .researchBackground{
@@ -176,8 +162,6 @@ button{
 }
 .armySearch{
     grid-area: armySearch;
-    // background-color:var(--blue-color);
-    // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -186,17 +170,10 @@ button{
     ". research_laser "
     ;
     height: 350px;
-
-    // height: 100%;
-    // margin: 5px;
-    // padding: 5px;
-
 }
 
 .mineSearch{
     grid-area: mineSearch;
-    // background-color:var(--blue-color);
-    // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -208,9 +185,6 @@ button{
     margin: 5px;
     padding: 5px;
     height: 450px;
-
-    // height: 100%;
-
 }
 
 
@@ -263,7 +237,6 @@ button{
     margin: 5px;
     padding: 5px;
     cursor: pointer;
-    // border:.1rem solid rgba(16, 56, 83, 0.0);;
     border: 2px solid transparent;
     border-radius: 10px;
 
@@ -296,8 +269,6 @@ button{
       .tab {
         position: relative;
         top:10%;
-        // height: 100%;
-        // overflow: visible;
         }
 
         .spaceSearch{
@@ -317,15 +288,6 @@ button{
             margin: 5px;
             padding: 5px;
             height: 450px;
-            // height: 100%;
-        
-            // max-width: 400px;
-        
-            // -webkit-clip-path: var(--cropped-corner);
-            // clip-path: var(--cropped-corner);
-        
-            // --corner-value: 20px;
-            // --cropped-corner: polygon(100% 0, 100% calc(100% - var(--corner-value)), calc(100% - var(--corner-value)) 100%, 0 100%, 0 0);
         }
 
         .armySearch{
@@ -340,11 +302,6 @@ button{
             ". research_laser "
             ;
             height: 350px;
-        
-            // height: 100%;
-            // margin: 5px;
-            // padding: 5px;
-        
         }
         
         .mineSearch{
@@ -362,9 +319,6 @@ button{
             margin: 5px;
             padding: 5px;
             height: 450px;
-        
-            // height: 100%;
-        
         }
       
 }

@@ -120,14 +120,4 @@ export class Upgrade {
   constructor(public dialog: MatDialog) {}
   isBuilt = true;
 
-  // upgradeBuilding() {
-  //   // upgrade building with userID
-  // }
-
-  // openBuildingDestroy() {
-  //   const dialogRef = this.dialog.open(buildingDestroy);
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
 }

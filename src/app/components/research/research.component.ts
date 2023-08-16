@@ -197,9 +197,6 @@ export class TechnologyTree implements OnInit {
 })
 export class researchDetail implements OnInit {
   constructor(public researchService: ResearchService) {}
-
-  // let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
-  // this.cargoAmelioreLvl = researchs.data.Technologie_cargo.level;
   isBuilt = true;
   public researchName!: string;
   public researchNameSrc!: string;

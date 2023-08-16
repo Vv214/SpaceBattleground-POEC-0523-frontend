@@ -1,29 +1,13 @@
-<!-- 
-<div class="bg-container">
-    <h1 mat-dialog-title class="name">Recherche Spatiale</h1>
-    <mat-dialog-content class="mat-typography">
-    <div class="text"><span class="categoryTitle">Temps de recherche : </span>10 min</div>
-    <div class="text"><span class="categoryTitle">Temps de recherche : </span>10 min</div>
 
-    </mat-dialog-content>
-    
-    <mat-dialog-actions class="popupButtons">
-        <button mat-dialog-close>Retour</button>
-    
-        <button mat-dialog-close>Recherche</button>
-    </mat-dialog-actions>
-</div> -->
 
 <div class="popup-container">
-    <!-- <h1 mat-dialog-title class="name">Mine de fer</h1> -->
     <mat-dialog-content class="mat-typography">
 
         <div class="researchDetail">
 
             <img class="picture" src="assets/images/research/{{researchNameSrc}}.png" />
             <h1 class="name">{{researchName}}</h1>
-            <p class="level"><span class="categoryTitle">Niveau :</span> {{researchLevel}} <span class="upgradeText"
-                    *ngIf="researchIsDone == true"> {{researchLevel}} -> 2</span></p>
+            <p class="level"><span class="categoryTitle">Niveau :</span> {{researchLevel}} <span class="upgradeText"> -> {{researchLevel +1}}</span></p>
             <!-- <p class="capacity"><span>Taille : </span>2 <span class="upgradeText" *ngIf="isBuilt == true"> -> 4</span></p> -->
             <p class="time"><span class="categoryTitle">Temps de recherche : </span>10 min</p>
             <p class="ressources"><span class="categoryTitle">Ressources nécessaires : </span>Fer :
@@ -37,8 +21,6 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <!-- <button mat-button mat-dialog-close>Détruire</button> -->
-
         <button mat-dialog-close (click)="validateResearch()">Rechercher</button>
     </mat-dialog-actions>
 
