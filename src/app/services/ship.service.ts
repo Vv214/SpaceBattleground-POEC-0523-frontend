@@ -52,6 +52,17 @@ export class ShipService {
   public shipHydrogenPrice = 0;
   public shipEnergyPrice = 0;
 
+  public lightShipQuantity!: number;
+  public mediumShipQuantity!: number;
+  public heavyShipQuantity!: number;
+  public scoutShipQuantity!: number;
+  public cargoShipQuantity!: number;
+  public heavyCargoShipQuantity!: number;
+  public recyclerShipQuantity!: number;
+  public colonisateurQuantity!: number;
+  public eMessage = '';
+
+
   checkShipInfo(token: string) {
     return fetch('http://localhost:8080/ship', {
       method: 'GET',
@@ -62,4 +73,20 @@ export class ShipService {
       },
     });
   }
+
+
+  buildShip(token: string) {
+    return fetch('http://localhost:8080/ship/{name}', {
+      method: 'PUT',
+      headers: {
+        'x-token': token,
+      },
+      // body: JSON.stringify({
+  
+      //   level : )
+    });
+  }
+
+
 }
+

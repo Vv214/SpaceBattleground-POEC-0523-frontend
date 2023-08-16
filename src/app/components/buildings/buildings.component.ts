@@ -117,6 +117,10 @@ export class BuildingsComponent implements OnInit {
     return this.buildService.terraformerLevel;
   }
 
+  // updateLevelInUI(buildingName :string) {
+  //   return this.buildService.[buildingName + 'Level'];
+  // }
+
   checkBuildingInfo(token: string) {
     this.buildService.checkBuildingInfo(token).then((response) => {
       if (response.status === 200) {
