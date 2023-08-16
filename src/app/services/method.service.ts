@@ -18,6 +18,20 @@ export class MethodService {
     });
   }
 
+  shipBuild(token: string, shipName: string, shipQuantity: number) {
+    return fetch('http://localhost:8080/ship/' + shipName, {
+      method: 'put',
+      headers: {
+        Accept: 'application/json',
+        'content-type': 'application/json',
+        'x-token': token,
+      },
+      body: JSON.stringify({
+        quantity: shipQuantity,
+      }),
+    });
+  }
+
   async updateStockPlayer(
     token: string,
     ironPrice: number,

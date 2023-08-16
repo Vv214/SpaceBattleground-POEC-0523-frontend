@@ -79,13 +79,4 @@ export class BuildService {
       //   level : )
     });
   }
-
-  buildShip(token: string) {
-    return fetch('http://localhost:8080/shipyard/build', {
-      method: 'POST',
-      headers: {
-        'x-token': token,
-      },
-    });
-  }
 }

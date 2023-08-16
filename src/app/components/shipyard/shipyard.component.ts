@@ -119,7 +119,7 @@ export class ShipyardComponent implements OnInit {
     this.shipService.shipEnergyPrice = ships.data[shipName].energyPrice;
 
     this.shipService.shipNameSrc = shipName;
-    
+
     if (shipName == 'lightShip') {
       this.shipService.shipQuantity = this.shipService.lightShipQuantity;
     } else if (shipName == 'mediumShip') {
@@ -143,8 +143,34 @@ export class ShipyardComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+
+
   }
 
+  cargoShipQuantityInUI() {
+    return this.shipService.cargoShipQuantity;
+  }
+  lightShipQuantityInUI() {
+    return this.shipService.lightShipQuantity
+  }
+  mediumShipQuantityInUI() {
+    return this.shipService.mediumShipQuantity
+  }
+  heavyShipQuantityInUI() {
+    return this.shipService.heavyShipQuantity
+  }
+  scoutShipQuantityInUI() {
+    return this.shipService.scoutShipQuantity
+  }
+  heavyCargoShipQuantityInUI() {
+    return this.shipService.heavyCargoShipQuantity
+  }
+  recyclerShipQuantityInUI() {
+    return this.shipService.recyclerShipQuantity
+  }
+  colonisateurQuantityInUI() {
+    return this.shipService.colonisateurQuantity
+  }
   getShipInfo(token: string) {
     this.shipService.checkShipInfo(token).then((response) => {
       if (response.status === 200) {
@@ -261,14 +287,14 @@ export class shipDetail {
   templateUrl: 'shipBuild.html',
   styleUrls: ['shipBuild.scss'],
 })
-export class shipBuild implements OnInit{
+export class shipBuild implements OnInit {
 
   constructor(
     public dialog: MatDialog,
     private buildService: BuildService,
     private methodService: MethodService,
-    private navbarService:NavbarService,
-    private shipService:ShipService
+    private navbarService: NavbarService,
+    private shipService: ShipService
   ) {}
   public shipName!: string;
   public shipNameSrc!: string;
@@ -330,65 +356,65 @@ export class shipBuild implements OnInit{
     );
 
 
-  // Nouvelle version, à checker
-  if (canBuild) {
-    let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
+    // Nouvelle version, à checker
+    if (canBuild) {
+      let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
 
-    this.methodService
-      .updateStockPlayer(
-        token,
-        shipIronPrice,
-        shipDiamondPrice,
-        shipEnergyPrice,
-        shipHydrogenePrice,
-        ironPlayer,
-        diamondPlayer,
-        hydrogenePlayer,
-        energyPlayer
-      )
-      .then(() => {
-        shipQuantity++;
-        this.methodService.changeIsBuild(token, shipName, shipQuantity).then((response) => {
-          if (response.status === 200) {
-            response.json().then((body) => {
-              if (body.quantity !== 0) {
-                if (shipName === 'Chasseur léger') {
-                  this.shipService.lightShipQuantity = shipQuantity;
+      this.methodService
+        .updateStockPlayer(
+          token,
+          shipIronPrice,
+          shipDiamondPrice,
+          shipEnergyPrice,
+          shipHydrogenePrice,
+          ironPlayer,
+          diamondPlayer,
+          hydrogenePlayer,
+          energyPlayer
+        )
+        .then(() => {
+          shipQuantity++;
+          this.methodService.shipBuild(token, shipName, shipQuantity).then((response) => {
+            if (response.status === 200) {
+              response.json().then((body) => {
+                if (body.quantity !== 0) {
+                  if (shipName === 'Chasseur léger') {
+                    this.shipService.lightShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Chasseur lourd') {
+                    this.shipService.mediumShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Destroyer') {
+                    this.shipService.heavyShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Eclaireur') {
+                    this.shipService.scoutShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Transporteur léger') {
+                    this.shipService.cargoShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Transporteur lourd') {
+                    this.shipService.heavyCargoShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Récolteur') {
+                    this.shipService.recyclerShipQuantity = shipQuantity;
+                  }
+                  if (shipName === 'Colonisateur') {
+                    this.shipService.colonisateurQuantity = shipQuantity;
+                  }
+
+                  this.checkQuantityRessource(token);
                 }
-                if (shipName === 'Chasseur lourd') {
-                  this.shipService.mediumShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Destroyer') {
-                  this.shipService.heavyShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Eclaireur') {
-                  this.shipService.scoutShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Transporteur léger') {
-                  this.shipService.cargoShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Transporteur lourd') {
-                  this.shipService.heavyCargoShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Récolteur') {
-                  this.shipService.recyclerShipQuantity = shipQuantity;
-                }
-                if (shipName === 'Colonisateur') {
-                  this.shipService.colonisateurQuantity = shipQuantity;
-                }
-                
-                this.checkQuantityRessource(token);
-              } 
-             
-            });
-          }
+
+              });
+            }
+          });
         });
-      });
-  } else {
-    this.buildService.eMessage = 'ressources';
-    this.openErrorMessage();
+    } else {
+      this.buildService.eMessage = 'ressources';
+      this.openErrorMessage();
+    }
   }
-}
 
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
