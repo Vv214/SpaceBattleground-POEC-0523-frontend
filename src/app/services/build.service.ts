@@ -47,6 +47,14 @@ export class BuildService {
   public laboratoryLevel!: number;
   public shipyardLevel!: number;
   public terraformerLevel!: number;
+  public ironMineLevel!: number;
+  public hydrogenMineLevel!: number;
+  public diamondMineLevel!: number;
+  public energyMineLevel!: number;
+  public ironStockageLevel!: number;
+  public hydrogenStockageLevel!: number;
+  public diamondStockageLevel!: number;
+  public drillingMachineLevel!: number;
   public eMessage = '';
 
   checkBuildingInfo(token: string) {

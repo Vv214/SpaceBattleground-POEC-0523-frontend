@@ -5,7 +5,6 @@ import { BuildService } from 'src/app/services/build.service';
 import { OnInit } from '@angular/core';
 import { MethodService } from 'src/app/services/method.service';
 import { NavbarService } from '../../services/navbar.service';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 export interface Ressources {
   data: {
@@ -276,124 +275,124 @@ export class buildingBuild implements OnInit {
       energyPlayer
     );
 
-  //   if (canBuild) {
-  //     // console.log("dans methode véran avec canBuild = true");
-  //     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    //   if (canBuild) {
+    //     // console.log("dans methode véran avec canBuild = true");
+    //     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
 
-  //     this.methodService
-  //       .updateStockPlayer(
-  //         token,
-  //         buildingIronPrice,
-  //         buildingDiamondPrice,
-  //         buildingEnergyPrice,
-  //         buildingHydrogenePrice,
-  //         ironPlayer,
-  //         diamondPlayer,
-  //         hydrogenePlayer,
-  //         energyPlayer
-  //       )
-  //       .then(() => {
-  //         buildingLevel++;
-  //         this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
-  //           if (response.status === 200) {
-  //             response.json().then((body) => {
-  //               console.log('pwet : ', body.level);
-  //               if (body.level !== 0) {
-  //                 console.log('level avant true : ', this.buildingLevel);
-  //                 this.buildingIsBuild = body.isBuild;
-  //                 console.log(buildingName);
-  //                 if (buildingName === 'Laboratoire') {
-  //                   console.log('Update level dans if Laboratoire');
-  //                   this.buildService.laboratoryLevel = buildingLevel;
-  //                 }
-  //                 if (buildingName === 'Chantier spatial') {
-  //                   console.log('Update level dans if shipyard');
-  //                   this.buildService.shipyardLevel = buildingLevel;
-  //                 }
-  //                 if (buildingName === 'Terraformeur') {
-  //                   console.log('Update level dans if terraformer');
-  //                   this.buildService.terraformerLevel = buildingLevel;
-  //                 }
-  //                 if (buildingName === 'Usine de robots') {
-  //                   console.log('Update level dans if robotFactory');
-  //                   this.buildService.robotFactoryLevel = buildingLevel;
-  //                 }
-  //                 console.log(`buildingIsBuild :  ${this.buildingIsBuild}` + ` buildingName : ${buildingName}`);
-  //                 // let buildingIsBuildString  'true';
-  //                 // buildingLevel++;
-  //                 console.log('level quand true : ', buildingLevel);
-  //                 this.checkQuantityRessource(token);
-  //                 // localStorage.setItem('level', buildingLevel);
-  //               } else {
-  //                 let buildingIsBuildString = 'false';
-  //                 localStorage.setItem('buildingIsBuild', buildingIsBuildString);
-  //               }
-  //               console.log(buildingLevel, ' dans ma fonction');
-  //               if (body.level !== 0) {
-  //                 // localStorage.setItem('buildingIsBuild', buildingIsBuildString);
-  //                 this.buildingIsBuild = true;
-  //                 console.log('Building is true');
-  //               } else this.buildingIsBuild = false;
-  //             });
-  //           }
-  //         });
-  //       });
-  //   } else {
-  //     this.buildService.eMessage = 'ressources';
-  //     this.openErrorMessage();
-  //   }
-  // }
+    //     this.methodService
+    //       .updateStockPlayer(
+    //         token,
+    //         buildingIronPrice,
+    //         buildingDiamondPrice,
+    //         buildingEnergyPrice,
+    //         buildingHydrogenePrice,
+    //         ironPlayer,
+    //         diamondPlayer,
+    //         hydrogenePlayer,
+    //         energyPlayer
+    //       )
+    //       .then(() => {
+    //         buildingLevel++;
+    //         this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
+    //           if (response.status === 200) {
+    //             response.json().then((body) => {
+    //               console.log('pwet : ', body.level);
+    //               if (body.level !== 0) {
+    //                 console.log('level avant true : ', this.buildingLevel);
+    //                 this.buildingIsBuild = body.isBuild;
+    //                 console.log(buildingName);
+    //                 if (buildingName === 'Laboratoire') {
+    //                   console.log('Update level dans if Laboratoire');
+    //                   this.buildService.laboratoryLevel = buildingLevel;
+    //                 }
+    //                 if (buildingName === 'Chantier spatial') {
+    //                   console.log('Update level dans if shipyard');
+    //                   this.buildService.shipyardLevel = buildingLevel;
+    //                 }
+    //                 if (buildingName === 'Terraformeur') {
+    //                   console.log('Update level dans if terraformer');
+    //                   this.buildService.terraformerLevel = buildingLevel;
+    //                 }
+    //                 if (buildingName === 'Usine de robots') {
+    //                   console.log('Update level dans if robotFactory');
+    //                   this.buildService.robotFactoryLevel = buildingLevel;
+    //                 }
+    //                 console.log(`buildingIsBuild :  ${this.buildingIsBuild}` + ` buildingName : ${buildingName}`);
+    //                 // let buildingIsBuildString  'true';
+    //                 // buildingLevel++;
+    //                 console.log('level quand true : ', buildingLevel);
+    //                 this.checkQuantityRessource(token);
+    //                 // localStorage.setItem('level', buildingLevel);
+    //               } else {
+    //                 let buildingIsBuildString = 'false';
+    //                 localStorage.setItem('buildingIsBuild', buildingIsBuildString);
+    //               }
+    //               console.log(buildingLevel, ' dans ma fonction');
+    //               if (body.level !== 0) {
+    //                 // localStorage.setItem('buildingIsBuild', buildingIsBuildString);
+    //                 this.buildingIsBuild = true;
+    //                 console.log('Building is true');
+    //               } else this.buildingIsBuild = false;
+    //             });
+    //           }
+    //         });
+    //       });
+    //   } else {
+    //     this.buildService.eMessage = 'ressources';
+    //     this.openErrorMessage();
+    //   }
+    // }
 
 
-  // Nouvelle version, à checker
-  if (canBuild) {
-    let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    // Nouvelle version, à checker
+    if (canBuild) {
+      let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
 
-    this.methodService
-      .updateStockPlayer(
-        token,
-        buildingIronPrice,
-        buildingDiamondPrice,
-        buildingEnergyPrice,
-        buildingHydrogenePrice,
-        ironPlayer,
-        diamondPlayer,
-        hydrogenePlayer,
-        energyPlayer
-      )
-      .then(() => {
-        buildingLevel++;
-        this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
-          if (response.status === 200) {
-            response.json().then((body) => {
-              if (body.level !== 0) {
-                if (buildingName === 'Laboratoire') {
-                  this.buildService.laboratoryLevel = buildingLevel;
+      this.methodService
+        .updateStockPlayer(
+          token,
+          buildingIronPrice,
+          buildingDiamondPrice,
+          buildingEnergyPrice,
+          buildingHydrogenePrice,
+          ironPlayer,
+          diamondPlayer,
+          hydrogenePlayer,
+          energyPlayer
+        )
+        .then(() => {
+          buildingLevel++;
+          this.methodService.changeIsBuild(token, buildingName, buildingLevel).then((response) => {
+            if (response.status === 200) {
+              response.json().then((body) => {
+                if (body.level !== 0) {
+                  if (buildingName === 'Laboratoire') {
+                    this.buildService.laboratoryLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Chantier spatial') {
+                    this.buildService.shipyardLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Terraformeur') {
+                    this.buildService.terraformerLevel = buildingLevel;
+                  }
+                  if (buildingName === 'Usine de robots') {
+                    this.buildService.robotFactoryLevel = buildingLevel;
+                  }
+                  this.checkQuantityRessource(token);
                 }
-                if (buildingName === 'Chantier spatial') {
-                  this.buildService.shipyardLevel = buildingLevel;
-                }
-                if (buildingName === 'Terraformeur') {
-                  this.buildService.terraformerLevel = buildingLevel;
-                }
-                if (buildingName === 'Usine de robots') {
-                  this.buildService.robotFactoryLevel = buildingLevel;
-                }
-                this.checkQuantityRessource(token);
-              } 
-              if (body.level !== 0) {
-                this.buildingIsBuild = true;
-                // console.log('Building is true');
-              } else this.buildingIsBuild = false;
-            });
-          }
+                if (body.level !== 0) {
+                  this.buildingIsBuild = true;
+                  // console.log('Building is true');
+                } else this.buildingIsBuild = false;
+              });
+            }
+          });
         });
-      });
-  } else {
-    this.buildService.eMessage = 'ressources';
-    this.openErrorMessage();
+    } else {
+      this.buildService.eMessage = 'ressources';
+      this.openErrorMessage();
+    }
   }
-}
 
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
@@ -438,7 +437,7 @@ export class buildingDestroy {
     public dialog: MatDialog,
     private buildService: BuildService,
     private methodService: MethodService,
-  ){}
+  ) {}
 
   public buildingName!: string;
   public buildingNameSrc!: string;
@@ -458,11 +457,11 @@ export class buildingDestroy {
   public energyPlayer!: number;
 
 
-destroyBuilding(){
-  
-}
+  destroyBuilding() {
 
-  
+  }
+
+
   // destroyBuilding(
   //   token: string,
   //   buildingName: string,
@@ -491,11 +490,11 @@ destroyBuilding(){
   //   ressourcesPlayer[2] = hydrogenePlayer;
   //   ressourcesPlayer[3] = energyPlayer;
 
-    
 
-    
+
+
   //     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-  
+
   //     this.methodService
   //       .updateStockPlayer(
   //         token,
@@ -534,7 +533,7 @@ destroyBuilding(){
   // }
 
 
-  }
+}
 
 
 
