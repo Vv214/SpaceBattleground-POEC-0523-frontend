@@ -138,13 +138,10 @@ export class ShipyardComponent implements OnInit {
       this.shipService.shipQuantity = this.shipService.colonisateurQuantity;
     }
 
-
     const dialogRef = this.dialog.open(shipDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
-
-
   }
 
   cargoShipQuantityInUI() {
@@ -402,7 +399,6 @@ export class shipBuild implements OnInit {
                   if (shipName === 'Colonisateur') {
                     this.shipService.colonisateurQuantity = shipQuantity;
                   }
-
                   this.checkQuantityRessource(token);
                 }
 
