@@ -15,7 +15,8 @@
     </mat-dialog-content>
 
     <mat-dialog-actions class="popupButtons">
-        <button mat-dialog-close>Construire</button>
+        <button mat-dialog-close
+            (click)="buildShip(token, shipName, shipQuantity, shipIronPrice, shipDiamondPrice, shipEnergyPrice, shipHydrogenPrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer)">Construire</button>
     </mat-dialog-actions>
 
 </div>

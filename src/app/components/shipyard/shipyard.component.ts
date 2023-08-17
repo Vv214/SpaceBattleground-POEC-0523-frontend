@@ -201,9 +201,14 @@ export class ShipyardComponent implements OnInit {
   styleUrls: ['shipDetail.scss'],
 })
 export class shipDetail {
-  constructor(public dialog: MatDialog, private shipService: ShipService) {}
+  constructor(public dialog: MatDialog, private shipService: ShipService, private buildService: BuildService,
+    private methodService: MethodService, private navbarService: NavbarService) {}
 
   public token!: string;
+  public ironPlayer!: number;
+  public diamondPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
 
   public shipName!: string;
   public shipNameSrc!: string;
@@ -249,79 +254,21 @@ export class shipDetail {
     });
   }
 
-  ngOnInit(): void {
-    this.token = localStorage.getItem('x-token') ?? '';
-    this.getShipInfo(this.token);
-    let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
-
-    // this.lightShipQuantity = ships.data.lightShip.quantity;
-    // this.mediumShipQuantity = ships.data.mediumShip.quantity;
-    // this.heavyShipQuantity = ships.data.heavyShip.quantity;
-    // this.scoutShipQuantity = ships.data.scoutShip.quantity;
-    // this.cargoShipQuantity = ships.data.cargoShip.quantity;
-    // this.heavyCargoShipQuantity = ships.data.heavyCargoShip.quantity;
-    // this.recyclerShipQuantity = ships.data.recyclerShip.quantity;
-    // this.colonisateurQuantity = ships.data.colonisateur.quantity;
-
-    this.shipName = this.shipService.shipName.toString();
-    this.shipType = this.shipService.shipType.toString();
-    this.shipPv = this.shipService.shipPv;
-    this.shipCapacity = this.shipService.shipCapacity;
-    this.shipQuantity = this.shipService.shipQuantity;
-    this.shipFuel = this.shipService.shipFuel;
-    this.shipDamage = this.shipService.shipDamage;
-    this.shipSpeed = this.shipService.shipSpeed;
-    this.shipIronPrice = this.shipService.shipIronPrice;
-    this.shipDiamondPrice = this.shipService.shipDiamondPrice;
-    this.shipHydrogenPrice = this.shipService.shipHydrogenPrice;
-    this.shipEnergyPrice = this.shipService.shipEnergyPrice;
-    this.shipNameSrc = this.shipService.shipNameSrc;
+  checkQuantityRessource(token: string) {
+    this.navbarService.checkQuantityRessource(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Ressources) => {
+          localStorage.setItem('ressources', JSON.stringify(body));
+        });
+      }
+    });
   }
-}
-
-@Component({
-  selector: 'shipBuild',
-  templateUrl: 'shipBuild.html',
-  styleUrls: ['shipBuild.scss'],
-})
-export class shipBuild implements OnInit {
-
-  constructor(
-    public dialog: MatDialog,
-    private buildService: BuildService,
-    private methodService: MethodService,
-    private navbarService: NavbarService,
-    private shipService: ShipService
-  ) {}
-  public shipName!: string;
-  public shipNameSrc!: string;
-  public shipType!: string;
-  public shipSpeed!: number;
-  public shipPv!: number;
-  public shipDamage!: number;
-  public shipFuel!: number;
-  // public shipDescription!: string;       à ajouter
-  public shipCapacity!: number;
-  public shipQuantity!: number;
-
-  public shipIronPrice!: number;
-  public shipDiamondPrice!: number;
-  public shipHydrogenePrice!: number;
-  public shipEnergyPrice!: number;
-
-  public token!: string;
-  public ironPlayer!: number;
-  public diamondPlayer!: number;
-  public hydrogenePlayer!: number;
-  public energyPlayer!: number;
-
   openErrorMessage() {
     const dialogRef = this.dialog.open(errorMessage);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
   buildShip(
     token: string,
     shipName: string,
@@ -329,23 +276,22 @@ export class shipBuild implements OnInit {
     shipIronPrice: number,
     shipDiamondPrice: number,
     shipEnergyPrice: number,
-    shipHydrogenePrice: number,
+    shipHydrogenPrice: number,
     ironPlayer: number,
     diamondPlayer: number,
     hydrogenePlayer: number,
     energyPlayer: number
   ) {
-    let ressourcesPlayer: Array<number> = [4];
-    ressourcesPlayer[0] = ironPlayer;
-    ressourcesPlayer[1] = diamondPlayer;
-    ressourcesPlayer[2] = hydrogenePlayer;
-    ressourcesPlayer[3] = energyPlayer;
-
+    // let ressourcesPlayer: Array<number> = [4];
+    // ressourcesPlayer[0] = ironPlayer;
+    // ressourcesPlayer[1] = diamondPlayer;
+    // ressourcesPlayer[2] = hydrogenePlayer;
+    // ressourcesPlayer[3] = energyPlayer;
     let canBuild = this.methodService.haveEnoughRessources(
       shipIronPrice,
       shipDiamondPrice,
       shipEnergyPrice,
-      shipHydrogenePrice,
+      shipHydrogenPrice,
       ironPlayer,
       diamondPlayer,
       hydrogenePlayer,
@@ -363,7 +309,7 @@ export class shipBuild implements OnInit {
           shipIronPrice,
           shipDiamondPrice,
           shipEnergyPrice,
-          shipHydrogenePrice,
+          shipHydrogenPrice,
           ironPlayer,
           diamondPlayer,
           hydrogenePlayer,
@@ -412,6 +358,85 @@ export class shipBuild implements OnInit {
     }
   }
 
+  ngOnInit(): void {
+    this.token = localStorage.getItem('x-token') ?? '';
+    this.getShipInfo(this.token);
+    let ships: Ships = JSON.parse(localStorage.getItem('ships') ?? '');
+
+    // this.lightShipQuantity = ships.data.lightShip.quantity;
+    // this.mediumShipQuantity = ships.data.mediumShip.quantity;
+    // this.heavyShipQuantity = ships.data.heavyShip.quantity;
+    // this.scoutShipQuantity = ships.data.scoutShip.quantity;
+    // this.cargoShipQuantity = ships.data.cargoShip.quantity;
+    // this.heavyCargoShipQuantity = ships.data.heavyCargoShip.quantity;
+    // this.recyclerShipQuantity = ships.data.recyclerShip.quantity;
+    // this.colonisateurQuantity = ships.data.colonisateur.quantity;
+
+    this.shipName = this.shipService.shipName.toString();
+    this.shipType = this.shipService.shipType.toString();
+    this.shipPv = this.shipService.shipPv;
+    this.shipCapacity = this.shipService.shipCapacity;
+    this.shipQuantity = this.shipService.shipQuantity;
+    this.shipFuel = this.shipService.shipFuel;
+    this.shipDamage = this.shipService.shipDamage;
+    this.shipSpeed = this.shipService.shipSpeed;
+    this.shipIronPrice = this.shipService.shipIronPrice;
+    this.shipDiamondPrice = this.shipService.shipDiamondPrice;
+    this.shipHydrogenPrice = this.shipService.shipHydrogenPrice;
+    this.shipEnergyPrice = this.shipService.shipEnergyPrice;
+    this.shipNameSrc = this.shipService.shipNameSrc;
+    let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
+    this.ironPlayer = ressources.data.iron.quantity;
+    this.diamondPlayer = ressources.data.diamond.quantity;
+    this.hydrogenePlayer = ressources.data.hydrogene.quantity;
+    this.energyPlayer = ressources.data.energy.quantity;
+  }
+}
+
+@Component({
+  selector: 'shipBuild',
+  templateUrl: 'shipBuild.html',
+  styleUrls: ['shipBuild.scss'],
+})
+export class shipBuild implements OnInit {
+
+  constructor(
+    public dialog: MatDialog,
+    private buildService: BuildService,
+    private methodService: MethodService,
+    private navbarService: NavbarService,
+    private shipService: ShipService
+  ) {}
+  public shipName!: string;
+  public shipNameSrc!: string;
+  public shipType!: string;
+  public shipSpeed!: number;
+  public shipPv!: number;
+  public shipDamage!: number;
+  public shipFuel!: number;
+  // public shipDescription!: string;       à ajouter
+  public shipCapacity!: number;
+  public shipQuantity!: number;
+
+  public shipIronPrice!: number;
+  public shipDiamondPrice!: number;
+  public shipHydrogenPrice!: number;
+  public shipEnergyPrice!: number;
+
+  public token!: string;
+  public ironPlayer!: number;
+  public diamondPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
+
+  openErrorMessage() {
+    const dialogRef = this.dialog.open(errorMessage);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
   ngOnInit() {
     this.token = localStorage.getItem('x-token') ?? '';
     this.shipName = this.shipService.shipName.toString();
@@ -423,7 +448,7 @@ export class shipBuild implements OnInit {
     // this.shipDescription = this.buildService.buildingDescription.toString();
     this.shipIronPrice = this.shipService.shipIronPrice;
     this.shipDiamondPrice = this.shipService.shipDiamondPrice;
-    this.shipHydrogenePrice = this.shipService.shipHydrogenPrice;
+    this.shipHydrogenPrice = this.shipService.shipHydrogenPrice;
     this.shipEnergyPrice = this.shipService.shipEnergyPrice;
     this.shipNameSrc = this.shipService.shipNameSrc;
     let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');

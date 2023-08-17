@@ -19,7 +19,7 @@ export class MethodService {
   }
 
   shipBuild(token: string, shipName: string, shipQuantity: number) {
-    return fetch('http://localhost:8080/ship/' + shipName, {
+    return fetch('http://localhost:8080/ship/' + shipName + '/add', {
       method: 'put',
       headers: {
         Accept: 'application/json',
