@@ -20,8 +20,9 @@
 
 
     <mat-dialog-actions class="popupButtons">
-        <button mat-dialog-close
+        <button *ngIf="this.researchLevel< 5" mat-dialog-close
             (click)="getResearchLevelUp(token, researchName, researchIronPrice, researchDiamondPrice, researchHydrogenPrice, researchEnergyPrice, researchLevel, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer)">Rechercher</button>
+        <div *ngIf="this.researchLevel>= 5" class="errorMessage">Niveau maximum</div>
     </mat-dialog-actions>
 
 </div>

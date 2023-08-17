@@ -101,6 +101,9 @@ export class BuildingsComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  // levelInUI(buildingName: string):  {
+  //   return this.buildings.data[buildingName].level;
+  // }
 
   robotFactoryLevelInUI() {
     return this.buildService.robotFactoryLevel;
