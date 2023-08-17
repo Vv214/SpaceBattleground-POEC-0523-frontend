@@ -2,7 +2,22 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ResearchService } from '../../services/research.service';
+import { MethodService } from 'src/app/services/method.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
+export interface Ressources {
+  data: {
+    iron: Ressource;
+    diamond: Ressource;
+    hydrogene: Ressource;
+    energy: Ressource;
+  };
+}
+
+export interface Ressource {
+  quantity: number;
+  maxStock: number;
+}
 export interface Researchs {
   data: {
     cargo: Research;
@@ -196,7 +211,7 @@ export class TechnologyTree implements OnInit {
   styleUrls: ['researchDetail.scss'],
 })
 export class researchDetail implements OnInit {
-  constructor(public researchService: ResearchService) {}
+  constructor(public researchService: ResearchService, public methodService: MethodService, public navbarService: NavbarService) {}
   isBuilt = true;
   public researchName!: string;
   public researchNameSrc!: string;
@@ -208,9 +223,13 @@ export class researchDetail implements OnInit {
   public researchDiamondPrice!: number;
   public researchHydrogenPrice!: number;
   public researchEnergyPrice!: number;
+  public ironPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
+  public diamondPlayer!: number;
   public token!: string;
 
-  getResearchInfo(token: any) {
+  getResearchInfo(token: string) {
     return fetch('http://localhost:8080/technologie', {
       method: 'GET',
       headers: {
@@ -221,6 +240,37 @@ export class researchDetail implements OnInit {
     });
   }
 
+  checkQuantityRessource(token: string) {
+    this.navbarService.checkQuantityRessource(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Ressources) => {
+          localStorage.setItem('ressources', JSON.stringify(body));
+        });
+      }
+    });
+  }
+
+  getResearchLevelUp(token: string, researchName: string, researchIronPrice: number, researchDiamondPrice: number, researchHydrogenPrice: number, researchEnergyPrice: number, researchLevel: number, ironPlayer: number, diamondPlayer: number, hydrogenePlayer: number, energyPlayer: number) {
+    let canBuild = this.methodService.haveEnoughRessources(researchIronPrice, researchDiamondPrice, researchHydrogenPrice, researchEnergyPrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer);
+    if (canBuild) {
+      this.methodService.updateStockPlayer(token, researchIronPrice, researchDiamondPrice, researchEnergyPrice, researchHydrogenPrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer).then(() => {
+        this.researchService.getResearchLevelUp(token, researchName).then((response) => {
+          if (response.status === 200) {
+            response.json().then((body) => {
+              if (body.quantity !== 0) {
+                if (researchName === 'Technologie cargo') {
+                  this.researchService.cargoLevel = researchLevel;
+                }
+                this.checkQuantityRessource(token);
+              }
+            });
+          }
+        });
+      });
+    } else {
+      console.log("error to do ");
+    }
+  }
   validateResearch() {
     // console.log("dans validate search : ", this.cargoAmelioreLvl);
     // if (
