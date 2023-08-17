@@ -101,9 +101,12 @@ export class BuildingsComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  // levelInUI(buildingName: string):  {
-  //   return this.buildings.data[buildingName].level;
-  // }
+
+  levelInUI(buildingName: string): number {
+    let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+    return buildings.data[buildingName].level;
+    // A faire pour tous les batiments   => delete en dessous 
+  }
 
   robotFactoryLevelInUI() {
     return this.buildService.robotFactoryLevel;

@@ -56,6 +56,8 @@ export class BuildService {
   public diamondStockageLevel!: number;
   public drillingMachineLevel!: number;
   public eMessage = '';
+  public buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+
 
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {
