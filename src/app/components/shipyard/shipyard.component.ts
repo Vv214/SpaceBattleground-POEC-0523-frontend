@@ -316,7 +316,6 @@ export class shipDetail {
           energyPlayer
         )
         .then(() => {
-          shipQuantity++;
           this.methodService.shipBuild(token, shipName, shipQuantity).then((response) => {
             if (response.status === 200) {
               response.json().then((body) => {
