@@ -47,7 +47,17 @@ export class BuildService {
   public laboratoryLevel!: number;
   public shipyardLevel!: number;
   public terraformerLevel!: number;
+  public ironMineLevel!: number;
+  public hydrogenMineLevel!: number;
+  public diamondMineLevel!: number;
+  public energyMineLevel!: number;
+  public ironStockageLevel!: number;
+  public hydrogenStockageLevel!: number;
+  public diamondStockageLevel!: number;
+  public drillingMachineLevel!: number;
   public eMessage = '';
+  public buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
+
 
   checkBuildingInfo(token: string) {
     return fetch('http://localhost:8080/building', {
@@ -69,15 +79,6 @@ export class BuildService {
       // body: JSON.stringify({
 
       //   level : )
-    });
-  }
-
-  buildShip(token: string) {
-    return fetch('http://localhost:8080/shipyard/build', {
-      method: 'POST',
-      headers: {
-        'x-token': token,
-      },
     });
   }
 }

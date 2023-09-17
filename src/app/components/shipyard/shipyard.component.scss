@@ -8,7 +8,6 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-        // "combatTitle civilTitle"
         "combatShip"
         "civilShip"
         "fleetButton"
@@ -31,7 +30,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    // height: 250px;
     overflow: visible;
     position: relative;
     margin-top: 20px;
@@ -50,7 +48,6 @@
     margin: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // height: 250px;
     overflow: visible;
     position: relative;
     margin-top: 20px;
@@ -130,9 +127,7 @@ button {
         "shipName"
         "shipNumber"
     ;
-    // border: 1px solid var(--blue, .2) ;
     width: 140px;
-    // height: 180px;
     margin: auto;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -140,13 +135,6 @@ button {
     padding: 5px;
     cursor: pointer;
     border: .1rem solid rgba(16, 56, 83, 0.0);
-    ;
-
-    // background-color:var(--blue-color);
-
-    // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-    // border:.1rem solid var(--light-color);
-    // padding: 5px;
 }
 
 
@@ -207,25 +195,16 @@ button {
 
 .corner-button {
     display: inline-block;
-    // font-family: "Roboto", sans-serif;
-    // font-size: 20px;
-    // letter-spacing: 5px;
-    // text-align: center;
     position: relative;
     min-width: 100px;
-    // min-height: 10px;
-    // margin: 20px;
     background: none;
     border: none;
     text-decoration: none;
     cursor: pointer;
-    // color: #25ccf7;
     border-radius: 10px;
-    // padding: 12px 20px;
     box-sizing: content-box;
     border: 2px solid transparent;
     text-align: center;
-    // line-height: 30px;
     transition: 0.75s ease;
     display: block;
     text-align: center;
@@ -253,12 +232,9 @@ button {
 
 .corner-button:hover p {
     display: block;
-    // text-align: center;
     justify-content: center;
     align-items: center;
     color: #25ccf7;
-
-    // margin-left: 8px;
 }
 
 .corner-button:hover p:before {
@@ -291,15 +267,6 @@ button {
 
     }
 
-    // #ships{
-    //     display:grid;
-    //     grid-template-columns: auto auto;
-    //     grid-template-rows: auto;
-    //     grid-template-areas: 
-    //     "combatTitle civilTitle"
-    //     "combat civil"
-    //     ;
-    // }  
 
 
     #shipyard {
@@ -307,7 +274,6 @@ button {
         grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas:
-            // "combatTitle civilTitle"
             "combatShip civilShip"
             ". fleetButton"
         ;
@@ -424,7 +390,6 @@ button {
             "shipName"
             "shipNumber"
         ;
-        // border: 1px solid var(--blue, .2) ;
         width: 140px;
         height: 180px;
         margin: auto;
@@ -434,13 +399,6 @@ button {
         padding: 5px;
         cursor: pointer;
         border: .1rem solid rgba(16, 56, 83, 0.0);
-        ;
-
-        // background-color:var(--blue-color);
-
-        // background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-        // border:.1rem solid var(--light-color);
-        // padding: 5px;
     }
 
 
@@ -494,32 +452,22 @@ button {
         width: 15px;
         height: 15px;
         position: absolute;
-        // text-align: center;
         justify-content: center;
         align-items: center;
     }
 
     .corner-button {
         display: inline-block;
-        // font-family: "Roboto", sans-serif;
-        // font-size: 20px;
-        // letter-spacing: 5px;
-        // text-align: center;
         position: relative;
         min-width: 100px;
-        // min-height: 10px;
-        // margin: 20px;
         background: none;
         border: none;
         text-decoration: none;
         cursor: pointer;
-        // color: #25ccf7;
         border-radius: 10px;
-        // padding: 12px 20px;
         box-sizing: content-box;
         border: 2px solid transparent;
         text-align: center;
-        // line-height: 30px;
         transition: 0.75s ease;
         display: block;
         text-align: center;
@@ -547,12 +495,9 @@ button {
 
     .corner-button:hover p {
         display: block;
-        // text-align: center;
         justify-content: center;
         align-items: center;
         color: #25ccf7;
-
-        // margin-left: 8px;
     }
 
     .corner-button:hover p:before {

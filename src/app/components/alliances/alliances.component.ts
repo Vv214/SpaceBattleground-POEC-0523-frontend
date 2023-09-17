@@ -57,9 +57,3 @@ export class AlliancesComponent {
   }
 }
 
-//   AllianceForm = this.fb.group({
-//     allianceName: ['', [Validators.required]],
-//     allianceTag: ['', [Validators.required]],
-//   });
-
-

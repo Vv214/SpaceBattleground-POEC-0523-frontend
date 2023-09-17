@@ -2,7 +2,24 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ResearchService } from '../../services/research.service';
+import { MethodService } from 'src/app/services/method.service';
+import { NavbarService } from 'src/app/services/navbar.service';
+import { errorMessage } from '../buildings/buildings.component';
+import { BuildService } from 'src/app/services/build.service';
 
+export interface Ressources {
+  data: {
+    iron: Ressource;
+    diamond: Ressource;
+    hydrogene: Ressource;
+    energy: Ressource;
+  };
+}
+
+export interface Ressource {
+  quantity: number;
+  maxStock: number;
+}
 export interface Researchs {
   data: {
     cargo: Research;
@@ -93,8 +110,51 @@ export class ResearchComponent implements OnInit {
   public plasmaLevel!: number;
   public energieLevel!: number;
 
-  constructor(public dialog: MatDialog, public researchService: ResearchService) {}
+  public ironPlayer!: number;
+  public diamondPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
 
+  constructor(public dialog: MatDialog, public researchService: ResearchService) {}
+  cargoLevelUI() {
+    return null;
+  }
+  protectionLevelUI() {
+    return null;
+  }
+  astrophysiqueLevelUI() {
+    return null;
+  }
+  combustionLevelUI() {
+    return null;
+  }
+  impulsionLevelUI() {
+    return null;
+  }
+  fleetLevelUI() {
+    return null;
+  }
+  weaponLevelUI() {
+    return null;
+  }
+  laserLevelUI() {
+    return null;
+  }
+  ferLevelUI() {
+    return null;
+  }
+  hydrogeneLevelUI() {
+    return null;
+  }
+  diamantLevelUI() {
+    return null;
+  }
+  plasmaLevelUI() {
+    return null;
+  }
+  energieLevelUI() {
+    return null;
+  }
 
   openTechnologyTree() {
     const dialogRef = this.dialog.open(TechnologyTree);
@@ -105,8 +165,6 @@ export class ResearchComponent implements OnInit {
 
   openResearchDetail(researchName: string) {
     let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
-    console.log('pouet', researchs.data[researchName].name.toString());
-
     this.researchService.researchName = researchs.data[researchName].name.toString();
     this.researchService.researchDescription = researchs.data[researchName].description.toString();
     this.researchService.researchLevel = researchs.data[researchName].level;
@@ -118,7 +176,6 @@ export class ResearchComponent implements OnInit {
 
     this.researchService.researchNameSrc = researchName;
     this.researchService.researchIsDone = researchs.data[researchName].isDone;
-    console.log(this.ferLevel);
     const dialogRef = this.dialog.open(researchDetail);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
@@ -129,7 +186,6 @@ export class ResearchComponent implements OnInit {
     this.researchService.getResearchInfo(token).then((response) => {
       if (response.status === 200) {
         response.json().then((body: Researchs) => {
-          console.log('mon body ', body);
           localStorage.setItem('researchs', JSON.stringify(body));
         });
       }
@@ -154,6 +210,11 @@ export class ResearchComponent implements OnInit {
     this.diamantLevel = researchs.data.diamant.level;
     this.plasmaLevel = researchs.data.plasma.level;
     this.energieLevel = researchs.data.energie.level;
+    let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
+    this.ironPlayer = ressources.data.iron.quantity;
+    this.diamondPlayer = ressources.data.diamond.quantity;
+    this.hydrogenePlayer = ressources.data.hydrogene.quantity;
+    this.energyPlayer = ressources.data.energy.quantity;
   }
 }
 
@@ -196,10 +257,7 @@ export class TechnologyTree implements OnInit {
   styleUrls: ['researchDetail.scss'],
 })
 export class researchDetail implements OnInit {
-  constructor(public researchService: ResearchService) {}
-
-  // let researchs: Researchs = JSON.parse(localStorage.getItem('researchs') ?? '');
-  // this.cargoAmelioreLvl = researchs.data.Technologie_cargo.level;
+  constructor(public buildService: BuildService, public dialog: MatDialog, public researchService: ResearchService, public methodService: MethodService, public navbarService: NavbarService) {}
   isBuilt = true;
   public researchName!: string;
   public researchNameSrc!: string;
@@ -211,9 +269,13 @@ export class researchDetail implements OnInit {
   public researchDiamondPrice!: number;
   public researchHydrogenPrice!: number;
   public researchEnergyPrice!: number;
+  public ironPlayer!: number;
+  public hydrogenePlayer!: number;
+  public energyPlayer!: number;
+  public diamondPlayer!: number;
   public token!: string;
 
-  getResearchInfo(token: any) {
+  getResearchInfo(token: string) {
     return fetch('http://localhost:8080/technologie', {
       method: 'GET',
       headers: {
@@ -224,6 +286,82 @@ export class researchDetail implements OnInit {
     });
   }
 
+  checkQuantityRessource(token: string) {
+    this.navbarService.checkQuantityRessource(token).then((response) => {
+      if (response.status === 200) {
+        response.json().then((body: Ressources) => {
+          localStorage.setItem('ressources', JSON.stringify(body));
+        });
+      }
+    });
+  }
+
+  getResearchLevelUp(token: string, researchName: string, researchIronPrice: number, researchDiamondPrice: number, researchHydrogenPrice: number, researchEnergyPrice: number, researchLevel: number, ironPlayer: number, diamondPlayer: number, hydrogenePlayer: number, energyPlayer: number) {
+    let canBuild = this.methodService.haveEnoughRessources(researchIronPrice, researchDiamondPrice, researchEnergyPrice, researchHydrogenPrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer);
+    if (canBuild) {
+      this.methodService.updateStockPlayer(token, researchIronPrice, researchDiamondPrice, researchEnergyPrice, researchHydrogenPrice, ironPlayer, diamondPlayer, hydrogenePlayer, energyPlayer).then(() => {
+        this.researchService.getResearchLevelUp(token, researchName).then((response) => {
+          if (response.status === 200) {
+            response.json().then((body) => {
+              if (body.quantity !== 0) {
+                if (researchName === 'Technologie cargo') {
+                  this.researchService.cargoLevel = researchLevel;
+                }
+                else if (researchName === 'Coques améliorées') {
+                  this.researchService.protectionLevel = researchLevel;
+                }
+                else if (researchName === 'Astrophysique') {
+                  this.researchService.astrophysiqueLevel = researchLevel;
+                }
+                else if (researchName === 'Réacteur à combustion') {
+                  this.researchService.combustionLevel = researchLevel;
+                }
+                else if (researchName === 'Réacteur à impulsion') {
+                  this.researchService.impulsionLevel = researchLevel;
+                }
+                else if (researchName === 'Technologie flotte') {
+                  this.researchService.fleetLevel = researchLevel;
+                }
+                else if (researchName === 'Technologie Armes à feu') {
+                  this.researchService.weaponLevel = researchLevel;
+                }
+                else if (researchName === 'Technologie Armes laser') {
+                  this.researchService.laserLevel = researchLevel;
+                }
+                else if (researchName === 'Mine de fer améliorée"') {
+                  this.researchService.ferLevel = researchLevel;
+                }
+                else if (researchName === "Extracteur d'hydrogène amélioré") {
+                  this.researchService.hydrogeneLevel = researchLevel;
+                }
+                else if (researchName === "Mine de diamant améliorée") {
+                  this.researchService.diamantLevel = researchLevel;
+                }
+                else if (researchName === 'Technologie plasma') {
+                  this.researchService.plasmaLevel = researchLevel;
+                }
+                else if (researchName === 'Technologie énergétique') {
+                  this.researchService.energieLevel = researchLevel;
+                }
+                this.checkQuantityRessource(token);
+              }
+
+            });
+          }
+        });
+      });
+    } else {
+      this.buildService.eMessage = 'ressources';
+      this.openErrorMessage();
+    }
+  }
+
+  openErrorMessage() {
+    const dialogRef = this.dialog.open(errorMessage);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   validateResearch() {
     // console.log("dans validate search : ", this.cargoAmelioreLvl);
     // if (
@@ -258,6 +396,12 @@ export class researchDetail implements OnInit {
     this.researchDiamondPrice = this.researchService.researchDiamondPrice;
     this.researchHydrogenPrice = this.researchService.researchHydrogenPrice;
     this.researchEnergyPrice = this.researchService.researchEnergyPrice;
+
+    let ressources = JSON.parse(localStorage.getItem('ressources') ?? '');
+    this.ironPlayer = ressources.data.iron.quantity;
+    this.diamondPlayer = ressources.data.diamond.quantity;
+    this.hydrogenePlayer = ressources.data.hydrogene.quantity;
+    this.energyPlayer = ressources.data.energy.quantity;
   }
 
 }

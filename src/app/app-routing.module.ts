@@ -1,4 +1,4 @@
-import { CretatedAlliancesComponent } from './components/cretated-alliances/cretated-alliances.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'fleet', component: FleetComponent },
   { path: 'alliances', component: AlliancesComponent },
-  { path: 'created-alliances', component: CretatedAlliancesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },

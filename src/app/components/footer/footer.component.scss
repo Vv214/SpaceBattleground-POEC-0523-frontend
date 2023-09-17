@@ -1,5 +1,4 @@
 #footer {
-    // padding-top: 10px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
@@ -11,16 +10,7 @@
     font-size: 9px;
     text-align: center;
     justify-content: space-between;
-    // margin-top: auto;
     padding-bottom: 10px;
-
-
-    // position: absolute;
-    // bottom: 0;
-    // width: 100%;
-    // height: 2.5rem;     
-    // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), 
-    // url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
 }
 
 .button {
@@ -106,7 +96,6 @@
         "shipyardButton fleetButton allianceButton"
     ;
     position: relative;
-    // bottom: 40%;
 }
 
 
@@ -167,8 +156,7 @@
         text-align: center;
         justify-content: space-between;
         align-items: center;
-        margin-right: 4%;
-        padding-bottom: 0;
+        padding-bottom: 10px;
 
     }
 
@@ -231,18 +219,15 @@
         width: auto;
         grid-area: topButton;
         display: flex;
-        // margin: 10px;
     }
 
     .bottomButtons {
         width: auto;
         grid-area: botButton;
-        // margin: 10px;
         display: flex;
     }
 
     .planet {
-        // width: auto;
         grid-area: planet;
         display: flex;
         padding-bottom: 55px;
@@ -252,54 +237,16 @@
     .planet img {
         width: 100px;
         cursor: pointer;
-        padding-top: 35px;
-
     }
-
-    .planetText {
-        margin: 0;
-        font-size: 0.9em;
-    }
-
-    .footerButtonsText {
-        font-size: 0.9em;
-
-    }
-
-    // .planetButton{
-
-    // }
-    // #r-arrow {
-    //     height: 100%;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     overflow: visible;
-    // }
-
-    // #l-arrow {
-    //     height: 100%;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
 
     #r-arrow {
-        /* margin-left: 40px; */
-        // font-weight: 700;
-        // font-size: 40px;
         margin-top: 60px;
         cursor: pointer;
-
     }
 
     #l-arrow {
-        /* margin-right: 40px; */
-        // font-weight: 700;
-        // font-size: 40px;
         margin-top: 60px;
         cursor: pointer;
-
     }
 
 
@@ -310,29 +257,6 @@
 
 @media (min-width:416px) {}
 
-
-
-// .active{
-
-// }
-// .active:before{
-//     top: -2px;
-//     left: -2px;
-//     border-top: 2px solid #0fbcf9;
-//     border-top-left-radius: 8px;
-//     border-left: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-// .active:after{
-//     top: -2px;
-//     right: -2px;
-//     border-top: 2px solid #0fbcf9;
-//     border-top-right-radius: 8px;
-//     border-right: 2px solid #0fbcf9;
-//     transition: 0.75s all;
-// }
-
-
 .activeTab:before,
 .activeTab p:before,
 .activeTab:after,
@@ -342,7 +266,6 @@
     width: 15px;
     height: 15px;
     position: absolute;
-    //   text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -367,12 +290,9 @@
 
 .activeTab p {
     display: block;
-    //   text-align: center;
     justify-content: center;
     align-items: center;
     color: #25ccf7 !important;
-
-    // margin-left: 8px;
 }
 
 .activeTab p:before {

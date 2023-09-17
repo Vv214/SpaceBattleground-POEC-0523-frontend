@@ -15,51 +15,37 @@
             <h2 class="MineSearchTitle">Recherche Minière</h2>
 
             <div class="spaceSearch">
-                <!-- <img class="researchBackground" src="assets/images/research/researchGreen.png" /> -->
 
                 <div class="research_cargo research" (click)="openResearchDetail(cargo)" matTooltip="Cargo amélioré">
                     <img class="icon" src="assets/images/research/cargo.png" />
-                    <!-- <p class="name">Cargo amélioré</p> -->
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{cargoLevel}} / 5</p>
-
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{cargoLevelUI()}} / 5</p>
                 </div>
                 <div class="research_protection research" (click)="openResearchDetail(protection)"
                     matTooltip="Coques amélioré">
                     <img class="icon" src="assets/images/research/protection.png" />
-                    <!-- <p class="name">Coques améliorées</p> -->
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{protectionLevel}} / 5</p>
+                    <p class="level">{{protectionLevelUI()}} / 5</p>
 
-                    <!-- <p class="level">Niveau 0</p> -->
                 </div>
                 <div class="research_astrophysique research" (click)="openResearchDetail(astrophysique)"
                     matTooltip="Astrophysique">
                     <img class="icon" src="assets/images/research/astrophysique.png" />
-                    <!-- <p class="name">Astrophysique</p> -->
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{astrophysiqueLevel}} / 5</p>
+                    <p class="level">{{astrophysiqueLevelUI()}} / 5</p>
 
-                    <!-- <p class="level">Niveau 0</p> -->
                 </div>
                 <div class="research_combustion research" (click)="openResearchDetail(combustion)"
                     matTooltip="Réacteur à combustion">
                     <img class="icon" src="assets/images/research/combustion.png" />
-                    <!-- <p class="name">Réacteur à combustion</p> -->
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{combustionLevel}} / 5</p>
-
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{combustionLevelUI()}} / 5</p>
                 </div>
                 <div class="research_impulsion research" (click)="openResearchDetail(impulsion)"
                     matTooltip="Réacteur à impulsion">
                     <img class="icon" src="assets/images/research/impulsion.png" />
-                    <!-- <p class="name">Réacteur à impulsion</p> -->
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{impulsionLevel}} / 5</p>
-
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{impulsionLevelUI()}} / 5</p>
                 </div>
 
             </div>
@@ -72,24 +58,18 @@
                     matTooltip="Technologie flotte">
                     <img class="icon" src="assets/images/research/fleet.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{fleetLevel}} / 5</p>
-                    <!-- <p class="name">Technologie flotte</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{fleetLevelUI()}} / 5</p>
                 </div>
                 <div class="research_weapon research research" (click)="openResearchDetail(weapon)"
                     matTooltip="Armes améliorées">
                     <img class="icon" src="assets/images/research/weapon.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{weaponLevel}} / 5</p>
-                    <!-- <p class="name">Armes améliorées</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{weaponLevelUI()}} / 5</p>
                 </div>
                 <div class="research_laser research" (click)="openResearchDetail(laser)" matTooltip="Armes laser">
                     <img class="icon" src="assets/images/research/laser.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{laserLevel}} / 5</p>
-                    <!-- <p class="name">Armes laser</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{laserLevelUI()}} / 5</p>
                 </div>
 
             </div>
@@ -101,44 +81,33 @@
                 <div class="research_fer research" (click)="openResearchDetail(fer)" matTooltip="Mine de fer améliorée">
                     <img class="icon" src="assets/images/research/fer.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{ferLevel}} / 5</p>
-                    <!-- <p class="name">Mine de fer améliorée</p> -->
+                    <p class="level">{{ferLevelUI()}} / 5</p>
                 </div>
                 <div class="research_hydrogene research" (click)="openResearchDetail(hydrogene)"
                     matTooltip="Extracteur d'hydrogène amélioré">
                     <img class="icon" src="assets/images/research/hydrogene.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{hydrogeneLevel}} / 5</p>
-                    <!-- <p class="name">Extracteur d'hydrogène amélioré</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{hydrogeneLevelUI()}} / 5</p>
                 </div>
                 <div class="research_diamant research" (click)="openResearchDetail(diamant)"
                     matTooltip="Mine de diamant améliorée">
                     <img class="icon" src="assets/images/research/diamant.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{diamantLevel}} / 5</p>
-                    <!-- <p class="name">Mine de diamant améliorée</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{diamantLevelUI()}} / 5</p>
                 </div>
                 <div class="research_plasma research" (click)="openResearchDetail(plasma)"
                     matTooltip="Centrale électrique améliorée">
                     <img class="icon" src="assets/images/research/plasma.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{plasmaLevel}} / 5</p>
-                    <!-- <p class="name">Centrale électrique améliorée</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{plasmaLevelUI()}} / 5</p>
                 </div>
                 <div class="research_energie research" (click)="openResearchDetail(energie)"
                     matTooltip="Technologie Plasma">
                     <img class="icon" src="assets/images/research/energie.png" />
                     <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{energieLevel}} / 5</p>
-                    <!-- <p class="name">Technologie Plasma</p> -->
-                    <!-- <p class="level">Niveau 0</p> -->
+                    <p class="level">{{energieLevelUI()}} / 5</p>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -149,111 +118,113 @@
 
 <div class="research_mobile">
     <div class="bg-container">
-    <div class="center technoTree">
-        <button (click)="openTechnologyTree()">Arbre Technologique</button>
+        <div class="center technoTree">
+            <button (click)="openTechnologyTree()">Arbre Technologique</button>
+        </div>
+        <mat-tab-group class="tab">
+            <mat-tab label="Spatiale">
+
+                <div class="spaceSearch">
+                    <div class="research_cargo research" (click)="openResearchDetail(cargo)"
+                        matTooltip="Cargo amélioré">
+                        <img class="icon" src="assets/images/research/cargo.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{cargoLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_protection research" (click)="openResearchDetail(protection)"
+                        matTooltip="Coques amélioré">
+                        <img class="icon" src="assets/images/research/protection.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{protectionLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_astrophysique research" (click)="openResearchDetail(astrophysique)"
+                        matTooltip="Astrophysique">
+                        <img class="icon" src="assets/images/research/astrophysique.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{astrophysiqueLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_combustion research" (click)="openResearchDetail(combustion)"
+                        matTooltip="Réacteur à combustion">
+                        <img class="icon" src="assets/images/research/combustion.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{combustionLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_impulsion research" (click)="openResearchDetail(impulsion)"
+                        matTooltip="Réacteur à impulsion">
+                        <img class="icon" src="assets/images/research/impulsion.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{impulsionLevelUI()}} / 5</p>
+                    </div>
+
+                </div>
+
+
+            </mat-tab>
+
+            <mat-tab label="Militaire">
+
+
+                <div class="armySearch">
+                    <div class="research_fleet research" (click)="openResearchDetail(fleet)"
+                        matTooltip="Technologie flotte">
+                        <img class="icon" src="assets/images/research/fleet.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{fleetLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_weapon research research" (click)="openResearchDetail(weapon)"
+                        matTooltip="Armes améliorées">
+                        <img class="icon" src="assets/images/research/weapon.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{weaponLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_laser research" (click)="openResearchDetail(laser)" matTooltip="Armes laser">
+                        <img class="icon" src="assets/images/research/laser.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{laserLevelUI()}} / 5</p>
+                    </div>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Minière">
+
+                <div class="mineSearch">
+                    <div class="research_fer research" (click)="openResearchDetail(fer)"
+                        matTooltip="Mine de fer améliorée">
+                        <img class="icon" src="assets/images/research/fer.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{ferLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_hydrogene research" (click)="openResearchDetail(hydrogene)"
+                        matTooltip="Extracteur d'hydrogène amélioré">
+                        <img class="icon" src="assets/images/research/hydrogene.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{hydrogeneLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_diamant research" (click)="openResearchDetail(diamant)"
+                        matTooltip="Mine de diamant améliorée">
+                        <img class="icon" src="assets/images/research/diamant.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{diamantLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_plasma research" (click)="openResearchDetail(plasma)"
+                        matTooltip="Centrale électrique améliorée">
+                        <img class="icon" src="assets/images/research/energie.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{plasmaLevelUI()}} / 5</p>
+                    </div>
+                    <div class="research_energie research" (click)="openResearchDetail(energie)"
+                        matTooltip="Technologie Plasma">
+                        <img class="icon" src="assets/images/research/plasma.png" />
+                        <img class="researchLevel" src="assets/images/research/researchlevel.png" />
+                        <p class="level">{{energieLevelUI()}} / 5</p>
+                    </div>
+                </div>
+
+            </mat-tab>
+
+        </mat-tab-group>
     </div>
-    <mat-tab-group class="tab">
-        <mat-tab label="Spatiale">
-
-            <div class="spaceSearch">
-                <div class="research_cargo research" (click)="openResearchDetail(cargo)" matTooltip="Cargo amélioré">
-                    <img class="icon" src="assets/images/research/cargo.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{cargoLevel}} / 5</p>
-                </div>
-                <div class="research_protection research" (click)="openResearchDetail(protection)"
-                    matTooltip="Coques amélioré">
-                    <img class="icon" src="assets/images/research/protection.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{protectionLevel}} / 5</p>
-                </div>
-                <div class="research_astrophysique research" (click)="openResearchDetail(astrophysique)"
-                    matTooltip="Astrophysique">
-                    <img class="icon" src="assets/images/research/astrophysique.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{astrophysiqueLevel}} / 5</p>
-                </div>
-                <div class="research_combustion research" (click)="openResearchDetail(combustion)"
-                    matTooltip="Réacteur à combustion">
-                    <img class="icon" src="assets/images/research/combustion.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{combustionLevel}} / 5</p>
-                </div>
-                <div class="research_impulsion research" (click)="openResearchDetail(impulsion)"
-                    matTooltip="Réacteur à impulsion">
-                    <img class="icon" src="assets/images/research/impulsion.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{impulsionLevel}} / 5</p>
-                </div>
-
-            </div>
-
-
-        </mat-tab>
-
-        <mat-tab label="Militaire">
-
-
-            <div class="armySearch">
-                <div class="research_fleet research" (click)="openResearchDetail(fleet)"
-                    matTooltip="Technologie flotte">
-                    <img class="icon" src="assets/images/research/fleet.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{fleetLevel}} / 5</p>
-                </div>
-                <div class="research_weapon research research" (click)="openResearchDetail(weapon)"
-                    matTooltip="Armes améliorées">
-                    <img class="icon" src="assets/images/research/weapon.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{weaponLevel}} / 5</p>
-                </div>
-                <div class="research_laser research" (click)="openResearchDetail(laser)" matTooltip="Armes laser">
-                    <img class="icon" src="assets/images/research/laser.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{laserLevel}} / 5</p>
-                </div>
-
-            </div>
-
-        </mat-tab>
-
-        <mat-tab label="Minière">
-
-            <div class="mineSearch">
-                <div class="research_fer research" (click)="openResearchDetail(fer)" matTooltip="Mine de fer améliorée">
-                    <img class="icon" src="assets/images/research/fer.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{ferLevel}} / 5</p>
-                </div>
-                <div class="research_hydrogene research" (click)="openResearchDetail(hydrogene)"
-                    matTooltip="Extracteur d'hydrogène amélioré">
-                    <img class="icon" src="assets/images/research/hydrogene.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{hydrogeneLevel}} / 5</p>
-                </div>
-                <div class="research_diamant research" (click)="openResearchDetail(diamant)"
-                    matTooltip="Mine de diamant améliorée">
-                    <img class="icon" src="assets/images/research/diamant.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{diamantLevel}} / 5</p>
-                </div>
-                <div class="research_plasma research" (click)="openResearchDetail(plasma)"
-                    matTooltip="Centrale électrique améliorée">
-                    <img class="icon" src="assets/images/research/energie.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{plasmaLevel}} / 5</p>
-                </div>
-                <div class="research_energie research" (click)="openResearchDetail(energie)"
-                    matTooltip="Technologie Plasma">
-                    <img class="icon" src="assets/images/research/plasma.png" />
-                    <img class="researchLevel" src="assets/images/research/researchlevel.png" />
-                    <p class="level">{{energieLevel}} / 5</p>
-                </div>
-            </div>
-
-        </mat-tab>
-
-    </mat-tab-group>
-</div>
 
 </div>

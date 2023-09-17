@@ -5,8 +5,6 @@
 
 * {
   font-family: 'Jura', sans-serif;
-  // color:var(--body-color);
-  // color: black;
   color: var(--body-color);
 
 }
@@ -47,7 +45,6 @@ body {
 
   background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png),
     url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
-  // url(https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) repeat;
 }
 
 .ftooltip {
@@ -122,22 +119,9 @@ button:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  // background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), radial-gradient(circle, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5) 50%, rgba(2,0,36,0.2) 91%);
 }
 
 
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-
-// @media (min-width:600px){
-
-// }
-
-// @media (min-width:416px){
-
-// }
 
 .futurepanel__footer {
   box-sizing: border-box;
@@ -148,16 +132,7 @@ button:hover {
   padding-bottom: 0;
 }
 
-//   border-color: var(--primary-color);
-//   background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-//   background-color:rgba(45,255,196,0.9);
-//   color:var(--blue-color) !important;
-//   -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
-//   -moz-box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
-//   box-shadow: 0px 0px 15px 0px rgba(45,255,196,0.9);
-
 ::-webkit-scrollbar-track {
-  // -webkit-box-shadow:0px 0px 15px 0px rgba(45,255,196,0.9);
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 
@@ -175,12 +150,6 @@ button:hover {
   border-radius: 10px;
   background-color: rgba(45, 255, 196, 0.9);
   background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
-  //   background-image: -webkit-gradient(linear,
-  //                                      40% 0%,
-  //                                      75% 84%,
-  //                                      from(#4D9C41),
-  //                                      to(#19911D),
-  //                                      color-stop(.6,#54DE5D))
 }
 
 .destroyButton:hover {
@@ -203,35 +172,24 @@ button:hover {
   width: 15px;
   height: 15px;
   position: absolute;
-  //   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
 .corner-button {
   display: inline-block;
-  // font-family: "Roboto", sans-serif;
-  // font-size: 20px;
-  // letter-spacing: 5px;
-  //   text-align: center;
   position: relative;
   min-width: 65px;
-  // min-height: 10px;
-  // margin: 20px;
   background: none;
   border: none;
   text-decoration: none;
   cursor: pointer;
-  // color: #25ccf7;
   border-radius: 10px;
-  // padding: 12px 20px;
   box-sizing: content-box;
   border: 2px solid transparent;
   text-align: center;
-  // line-height: 30px;
   transition: 0.75s ease;
   display: block;
-  //   text-align: center;
   justify-content: center;
   align-items: center;
 }
@@ -256,12 +214,9 @@ button:hover {
 
 .corner-button:hover p {
   display: block;
-  //   text-align: center;
   justify-content: center;
   align-items: center;
   color: #25ccf7;
-
-  // margin-left: 8px;
 }
 
 .corner-button:hover p:before {
@@ -306,7 +261,6 @@ button:hover {
   position: relative;
   bottom: 0;
   width: 100%;
-  // height: 130px;        /* Footer height */
   margin-top: auto;
   padding-top: 20px;
 }
@@ -316,8 +270,7 @@ button:hover {
     background-size: cover;
     margin-left: 10px;
     margin-right: 10px;
-    height: 450px;
-    // height: 650px;
+    height: 650px;
   }
 
 
@@ -365,35 +318,24 @@ button:hover {
     width: 15px;
     height: 15px;
     position: absolute;
-    //   text-align: center;
     justify-content: center;
     align-items: center;
   }
 
   .corner-button {
     display: inline-block;
-    // font-family: "Roboto", sans-serif;
-    // font-size: 20px;
-    // letter-spacing: 5px;
-    //   text-align: center;
     position: relative;
     min-width: 100px;
-    // min-height: 10px;
-    // margin: 20px;
     background: none;
     border: none;
     text-decoration: none;
     cursor: pointer;
-    // color: #25ccf7;
     border-radius: 10px;
-    // padding: 12px 20px;
     box-sizing: content-box;
     border: 2px solid transparent;
     text-align: center;
-    // line-height: 30px;
     transition: 0.75s ease;
     display: block;
-    //   text-align: center;
     justify-content: center;
     align-items: center;
   }
@@ -418,12 +360,10 @@ button:hover {
 
   .corner-button:hover p {
     display: block;
-    //   text-align: center;
     justify-content: center;
     align-items: center;
     color: #25ccf7;
 
-    // margin-left: 8px;
   }
 
   .corner-button:hover p:before {
@@ -456,23 +396,10 @@ button:hover {
 }
 
 
-// #page-container {
-//     position: relative;
-//     min-height: 100vh;
-//   }
-
-
-
-
-//   #content-wrap {
-//     padding-bottom: 130px;    /* Footer height */
-//   }
-
 .footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  // height: 130px;        /* Footer height */
   margin-top: auto;
 }
 
@@ -482,12 +409,7 @@ button:hover {
   flex-direction: column;
 }
 
-// main {
-//   flex: 1;
-// }
-
 .disable {
   filter: grayscale(100%);
   pointer-events: none;
-  // border-color: transparent ;
 }

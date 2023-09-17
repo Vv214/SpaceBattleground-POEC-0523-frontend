@@ -78,6 +78,23 @@ export class ResourcesComponent implements OnInit {
     this.buildService.buildingNameSrc = buildingName;
     this.buildService.buildingIsBuild = buildings.data[buildingName].isBuild;
 
+    if (buildingName === 'ironMine') {
+      this.buildService.buildingLevel = this.buildService.ironMineLevel;
+    } else if (buildingName === "diamondMine") {
+      this.buildService.buildingLevel = this.buildService.diamondMineLevel;
+    } else if (buildingName === "energyMine") {
+      this.buildService.buildingLevel = this.buildService.energyMineLevel
+    } else if (buildingName === "ironStockage") {
+      this.buildService.buildingLevel = this.buildService.ironStockageLevel
+    } else if (buildingName === "hydrogenStockage") {
+      this.buildService.buildingLevel = this.buildService.hydrogenStockageLevel
+    } else if (buildingName === "diamondStockage") {
+      this.buildService.buildingLevel = this.buildService.diamondStockageLevel
+    } else if (buildingName === "drillingMachine") {
+      this.buildService.buildingLevel = this.buildService.drillingMachineLevel
+    } else if (buildingName === "hydrogenMine") {
+      this.buildService.buildingLevel = this.buildService.hydrogenMineLevel
+    }
     // this.buildService.buildingCapacity = buildings.data[buildingName].capacity;
 
     const dialogRef = this.dialog.open(buildingDetail);
@@ -86,6 +103,30 @@ export class ResourcesComponent implements OnInit {
     });
   }
 
+  ironMineLevelInUI() {
+    return this.buildService.ironMineLevel;
+  }
+  diamondMineLevelInUI() {
+    return this.buildService.diamondMineLevel;
+  }
+  energyMineLevelInUI() {
+    return this.buildService.energyMineLevel;
+  }
+  ironStockageLevelInUI() {
+    return this.buildService.ironStockageLevel;
+  }
+  hydrogenStockageLevelInUI() {
+    return this.buildService.hydrogenStockageLevel;
+  }
+  diamondStockageLevelInUI() {
+    return this.buildService.diamondStockageLevel;
+  }
+  drillingMachineLevelInUI() {
+    return this.buildService.drillingMachineLevel;
+  }
+  hydrogenMineLevelInUI() {
+    return this.buildService.hydrogenMineLevel;
+  }
   checkBuildingInfo(token: string) {
     this.buildService.checkBuildingInfo(token).then((response) => {
       if (response.status === 200) {
@@ -101,14 +142,14 @@ export class ResourcesComponent implements OnInit {
     this.token = localStorage.getItem('x-token') ?? '';
     this.checkBuildingInfo(this.token);
     let buildings: Buildings = JSON.parse(localStorage.getItem('buildings') ?? '');
-    this.ironMineLevel = buildings.data.ironMine.level;
-    this.hydrogenMineLevel = buildings.data.hydrogenMine.level;
-    this.diamondMineLevel = buildings.data.diamondMine.level;
-    this.energyMineLevel = buildings.data.energyMine.level;
-    this.ironStockageLevel = buildings.data.ironStockage.level;
-    this.hydrogenStockageLevel = buildings.data.hydrogenStockage.level;
-    this.diamondStockageLevel = buildings.data.diamondStockage.level;
-    this.drillingMachineLevel = buildings.data.drillingMachine.level;
+    this.buildService.ironMineLevel = buildings.data.ironMine.level;
+    this.buildService.hydrogenMineLevel = buildings.data.hydrogenMine.level;
+    this.buildService.diamondMineLevel = buildings.data.diamondMine.level;
+    this.buildService.energyMineLevel = buildings.data.energyMine.level;
+    this.buildService.ironStockageLevel = buildings.data.ironStockage.level;
+    this.buildService.hydrogenStockageLevel = buildings.data.hydrogenStockage.level;
+    this.buildService.diamondStockageLevel = buildings.data.diamondStockage.level;
+    this.buildService.drillingMachineLevel = buildings.data.drillingMachine.level;
   }
 }
 @Component({
@@ -120,14 +161,4 @@ export class Upgrade {
   constructor(public dialog: MatDialog) {}
   isBuilt = true;
 
-  // upgradeBuilding() {
-  //   // upgrade building with userID
-  // }
-
-  // openBuildingDestroy() {
-  //   const dialogRef = this.dialog.open(buildingDestroy);
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
 }
